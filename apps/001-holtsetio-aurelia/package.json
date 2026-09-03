@@ -1,0 +1,26 @@
+{
+  "name": "aurelia-capability-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:upstream": "node scripts/prepare-upstream.mjs",
+    "predev": "npm run prepare:upstream",
+    "dev": "vite --host 127.0.0.1 --port 4173",
+    "prebuild": "npm run prepare:upstream",
+    "build": "vite build --mode=production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "aurelia-upstream": "https://github.com/holtsetio/aurelia/archive/724aba263459d1b11a49b72bfc7ce8baac840ca8.tar.gz",
+    "three": "0.175.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "7.26.9",
+    "@babel/parser": "7.26.9",
+    "@babel/traverse": "7.26.9",
+    "@babel/types": "7.26.9",
+    "vite": "^6.4.3",
+    "vite-plugin-tsl-operator": "1.2.3"
+  }
+}

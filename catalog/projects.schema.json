@@ -43,7 +43,8 @@
         "tags",
         "studyPath",
         "createdAt",
-        "updatedAt"
+        "updatedAt",
+        "cover"
       ],
       "properties": {
         "id": {

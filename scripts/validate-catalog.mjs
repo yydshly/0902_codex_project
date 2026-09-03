@@ -31,6 +31,7 @@ const REQUIRED_PROJECT_KEYS = [
   'studyPath',
   'createdAt',
   'updatedAt',
+  'cover',
 ];
 const COVER_KEYS = new Set(['path', 'alt', 'caption', 'credit']);
 const DEMO_KEYS = new Set(['sourcePath', 'buildOutput', 'publicPath', 'url', 'status']);
@@ -181,6 +182,23 @@ function validateCover(cover, label, errors, checkFiles) {
 
   if (checkFiles && pathIsValid) {
     validateReference(cover.path, `${label}.path`, 'file', errors);
+  }
+}
+
+function validateStudyReadmeCover(studyPath, coverPath, label, errors) {
+  if (!isSafeRepositoryPath(studyPath) || !isSafeRepositoryPath(coverPath)) {
+    return;
+  }
+
+  const studyFile = resolveRepositoryPath(studyPath);
+  if (!fs.existsSync(studyFile) || !fs.lstatSync(studyFile).isFile()) {
+    return;
+  }
+
+  const relativeCoverPath = path.posix.relative(path.posix.dirname(studyPath), coverPath);
+  const source = fs.readFileSync(studyFile, 'utf8');
+  if (!source.includes(`](${relativeCoverPath})`)) {
+    errors.push(`${label} 必须使用相对路径 ${JSON.stringify(relativeCoverPath)} 展示 catalog 中登记的核心图`);
   }
 }
 
@@ -378,6 +396,14 @@ export function validateCatalog(catalog, { checkFiles = true } = {}) {
 
     if (checkFiles && studyPathIsValid) {
       validateReference(project.studyPath, `${label}.studyPath`, 'file', errors);
+      if (isPlainObject(project.cover) && typeof project.cover.path === 'string') {
+        validateStudyReadmeCover(
+          project.studyPath,
+          project.cover.path,
+          `${label}.studyPath`,
+          errors,
+        );
+      }
     }
   });
 

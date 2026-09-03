@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Neko Master 能力全景图</title>
+  <desc id="desc">从网关连接元数据到实时流量分析，展示数据接入、实时采集、存储扩展、动态分析、观察边界及产品扩展方向。</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16324f" flood-opacity="0.09"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#7a8ba4"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", Arial, sans-serif; }
+      .title { font-size: 44px; font-weight: 700; fill: #10243e; }
+      .subtitle { font-size: 20px; font-weight: 400; fill: #60728b; }
+      .section-title { font-size: 24px; font-weight: 700; fill: #162b46; }
+      .section-num { font-size: 20px; font-weight: 700; fill: #ffffff; }
+      .label { font-size: 17px; font-weight: 600; fill: #1c3553; }
+      .item { font-size: 16px; font-weight: 400; fill: #40566f; }
+      .item-strong { font-size: 16px; font-weight: 600; fill: #1f3856; }
+      .small { font-size: 14px; font-weight: 600; }
+      .tag { font-size: 14px; font-weight: 700; }
+      .road-title { font-size: 18px; font-weight: 700; fill: #1d3652; }
+      .road-copy { font-size: 16px; font-weight: 500; fill: #435a73; }
+      .conclusion { font-size: 21px; font-weight: 700; fill: #ffffff; }
+      .card { fill: #ffffff; stroke: #dce4ee; stroke-width: 1; filter: url(#shadow); }
+      .bullet { fill: #8da0b7; }
+      .flow { fill: none; stroke: #7a8ba4; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#f4f7fb"/>
+  <rect x="0" y="0" width="1920" height="10" fill="#2167d5"/>
+
+  <g class="zh">
+    <text class="title" x="60" y="72">Neko Master 能力全景图</text>
+    <text class="subtitle" x="60" y="108">从网关连接元数据到实时流量分析</text>
+
+    <g transform="translate(1160,48)">
+      <rect x="0" y="0" width="128" height="36" rx="18" fill="#e6f6ee"/>
+      <circle cx="18" cy="18" r="6" fill="#21a366"/>
+      <text class="tag" x="32" y="23" fill="#17784b">上游已有</text>
+      <rect x="142" y="0" width="148" height="36" rx="18" fill="#e8f1ff"/>
+      <circle cx="160" cy="18" r="6" fill="#2a6fdb"/>
+      <text class="tag" x="174" y="23" fill="#235fb8">真实数据链路</text>
+      <rect x="304" y="0" width="152" height="36" rx="18" fill="#fff2da"/>
+      <circle cx="322" cy="18" r="6" fill="#e39522"/>
+      <text class="tag" x="336" y="23" fill="#a8630c">需要安全配置</text>
+      <rect x="470" y="0" width="152" height="36" rx="18" fill="#f1eaff"/>
+      <circle cx="488" cy="18" r="6" fill="#805ad5"/>
+      <text class="tag" x="502" y="23" fill="#6542b6">需要二次建设</text>
+      <rect x="636" y="0" width="116" height="36" rx="18" fill="#ffebeb"/>
+      <circle cx="654" cy="18" r="6" fill="#d94c4c"/>
+      <text class="tag" x="668" y="23" fill="#ae3434">能力边界</text>
+    </g>
+
+    <!-- Primary pipeline -->
+    <path class="flow" d="M370 288 H397"/>
+    <path class="flow" d="M855 288 H882"/>
+    <path class="flow" d="M1330 288 H1357"/>
+
+    <!-- 1 Data ingress -->
+    <g>
+      <rect class="card" x="60" y="150" width="310" height="278" rx="20"/>
+      <rect x="60" y="150" width="8" height="278" rx="4" fill="#21a366"/>
+      <circle cx="96" cy="190" r="20" fill="#21a366"/>
+      <text class="section-num" x="90" y="197">1</text>
+      <text class="section-title" x="128" y="198">数据接入</text>
+      <rect x="258" y="176" width="88" height="28" rx="14" fill="#e6f6ee"/>
+      <text class="small" x="275" y="195" fill="#17784b">上游已有</text>
+      <circle class="bullet" cx="92" cy="242" r="4"/>
+      <text class="item-strong" x="108" y="248">Clash / Mihomo</text>
+      <text class="item" x="108" y="272">WebSocket /connections</text>
+      <circle class="bullet" cx="92" cy="306" r="4"/>
+      <text class="item-strong" x="108" y="312">Surge</text>
+      <text class="item" x="108" y="336">HTTP /v1/requests/recent</text>
+      <circle class="bullet" cx="92" cy="370" r="4"/>
+      <text class="item" x="108" y="376">远程 Agent · 批量上报</text>
+      <text class="item" x="108" y="405">多后端 · 连接测试与心跳</text>
+    </g>
+
+    <!-- 2 Realtime core -->
+    <g>
+      <rect class="card" x="405" y="150" width="450" height="278" rx="20"/>
+      <rect x="405" y="150" width="8" height="278" rx="4" fill="#2a6fdb"/>
+      <circle cx="441" cy="190" r="20" fill="#2a6fdb"/>
+      <text class="section-num" x="435" y="197">2</text>
+      <text class="section-title" x="473" y="198">实时采集核心</text>
+      <rect x="711" y="176" width="120" height="28" rx="14" fill="#e8f1ff"/>
+      <text class="small" x="728" y="195" fill="#235fb8">核心数据语义</text>
+      <circle class="bullet" cx="438" cy="244" r="4"/>
+      <text class="item" x="454" y="250">连接快照 → 累计值 → 本次流量增量</text>
+      <circle class="bullet" cx="438" cy="282" r="4"/>
+      <text class="item" x="454" y="288">连接去重 / lastSeen，避免重复统计</text>
+      <circle class="bullet" cx="438" cy="320" r="4"/>
+      <text class="item" x="454" y="326">计数器回退与网关重启处理</text>
+      <circle class="bullet" cx="438" cy="358" r="4"/>
+      <text class="item" x="454" y="364">BatchBuffer：按分钟与维度批量聚合</text>
+      <circle class="bullet" cx="438" cy="396" r="4"/>
+      <text class="item" x="454" y="402">RealtimeStore：补偿尚未落库的热数据</text>
+    </g>
+
+    <!-- 3 Storage -->
+    <g>
+      <rect class="card" x="890" y="150" width="440" height="278" rx="20"/>
+      <rect x="890" y="150" width="8" height="278" rx="4" fill="#21a366"/>
+      <circle cx="926" cy="190" r="20" fill="#21a366"/>
+      <text class="section-num" x="920" y="197">3</text>
+      <text class="section-title" x="958" y="198">存储与扩展</text>
+      <rect x="1218" y="176" width="88" height="28" rx="14" fill="#e6f6ee"/>
+      <text class="small" x="1235" y="195" fill="#17784b">上游已有</text>
+      <circle class="bullet" cx="923" cy="244" r="4"/>
+      <text class="item" x="939" y="250">SQLite：配置、元数据、默认统计</text>
+      <circle class="bullet" cx="923" cy="282" r="4"/>
+      <text class="item" x="939" y="288">分钟 / 小时事实表</text>
+      <circle class="bullet" cx="923" cy="320" r="4"/>
+      <text class="item" x="939" y="326">域名、IP、代理、规则、设备交叉统计</text>
+      <circle class="bullet" cx="923" cy="358" r="4"/>
+      <text class="item" x="939" y="364">ClickHouse：可选双写与读路由</text>
+      <circle class="bullet" cx="923" cy="396" r="4"/>
+      <text class="item" x="939" y="402">健康检查失败 → SQLite 回退</text>
+    </g>
+
+    <!-- 4 Analysis & display -->
+    <g>
+      <rect class="card" x="1365" y="150" width="495" height="278" rx="20"/>
+      <rect x="1365" y="150" width="8" height="278" rx="4" fill="#2a6fdb"/>
+      <circle cx="1401" cy="190" r="20" fill="#2a6fdb"/>
+      <text class="section-num" x="1395" y="197">4</text>
+      <text class="section-title" x="1433" y="198">动态分析与展示</text>
+      <g>
+        <rect x="1397" y="228" width="202" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1413" y="253">总览与流量趋势</text>
+        <rect x="1615" y="228" width="213" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1631" y="253">域名 / 目标 IP</text>
+        <rect x="1397" y="278" width="202" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1413" y="303">国家 / GeoIP</text>
+        <rect x="1615" y="278" width="213" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1631" y="303">代理节点与完整链路</text>
+        <rect x="1397" y="328" width="202" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1413" y="353">设备 / source IP</text>
+        <rect x="1615" y="328" width="213" height="40" rx="10" fill="#edf4ff"/>
+        <text class="item-strong" x="1631" y="353">规则命中 / 后端健康</text>
+        <rect x="1397" y="378" width="431" height="32" rx="10" fill="#edf4ff"/>
+        <text class="item" x="1413" y="400">设置 · Agent · PWA · 国际化 · 版本更新</text>
+      </g>
+    </g>
+
+    <!-- 5 Observation boundary -->
+    <g>
+      <rect class="card" x="60" y="464" width="870" height="282" rx="20"/>
+      <rect x="60" y="464" width="8" height="282" rx="4" fill="#d94c4c"/>
+      <circle cx="96" cy="504" r="20" fill="#d94c4c"/>
+      <text class="section-num" x="90" y="511">5</text>
+      <text class="section-title" x="128" y="512">可观察范围与能力边界</text>
+      <rect x="786" y="490" width="120" height="28" rx="14" fill="#ffebeb"/>
+      <text class="small" x="803" y="509" fill="#ae3434">不是抓包 / DPI</text>
+
+      <rect x="88" y="544" width="390" height="170" rx="14" fill="#eaf7f0"/>
+      <text class="label" x="112" y="578" fill="#17784b">✓ 网关控制 API 可以提供</text>
+      <circle cx="115" cy="612" r="4" fill="#21a366"/>
+      <text class="item" x="131" y="618">域名、目标 IP、上下行流量</text>
+      <circle cx="115" cy="648" r="4" fill="#21a366"/>
+      <text class="item" x="131" y="654">源 IP / 设备、规则、代理链</text>
+      <circle cx="115" cy="684" r="4" fill="#21a366"/>
+      <text class="item" x="131" y="690">国家地区、网关健康与数据缺口</text>
+
+      <rect x="494" y="544" width="408" height="170" rx="14" fill="#fff0f0"/>
+      <text class="label" x="518" y="578" fill="#ae3434">× 默认不能直接获得</text>
+      <circle cx="521" cy="612" r="4" fill="#d94c4c"/>
+      <text class="item" x="537" y="618">HTTPS 明文、提示词、响应正文</text>
+      <circle cx="521" cy="648" r="4" fill="#d94c4c"/>
+      <text class="item" x="537" y="654">可靠进程身份、绕过网关的流量</text>
+      <circle cx="521" cy="684" r="4" fill="#d94c4c"/>
+      <text class="item" x="537" y="690">Token 数量与实际 API 费用</text>
+    </g>
+
+    <!-- 6 Product extensions -->
+    <g>
+      <rect class="card" x="965" y="464" width="895" height="282" rx="20"/>
+      <rect x="965" y="464" width="8" height="282" rx="4" fill="#805ad5"/>
+      <circle cx="1001" cy="504" r="20" fill="#805ad5"/>
+      <text class="section-num" x="995" y="511">6</text>
+      <text class="section-title" x="1033" y="512">产品扩展方向</text>
+      <rect x="1708" y="490" width="128" height="28" rx="14" fill="#f1eaff"/>
+      <text class="small" x="1725" y="509" fill="#6542b6">需要二次建设</text>
+
+      <g>
+        <rect x="997" y="546" width="255" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1021" y="575">AI 工具识别</text>
+        <text class="item" x="1021" y="599" style="font-size:14px">Codex / OpenCode / Claude Code</text>
+        <rect x="1268" y="546" width="265" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1292" y="575">模型与供应商归因</text>
+        <text class="item" x="1292" y="599">域名规则 + API 元数据</text>
+        <rect x="1549" y="546" width="279" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1573" y="575">应用 / 进程归因</text>
+        <text class="item" x="1573" y="599">需要终端 Agent 或系统事件</text>
+
+        <rect x="997" y="630" width="255" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1021" y="659">Token 与成本分析</text>
+        <text class="item" x="1021" y="683">需要 API 日志或应用埋点</text>
+        <rect x="1268" y="630" width="265" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1292" y="659">异常、泄漏与绕行检测</text>
+        <text class="item" x="1292" y="683">行为基线 + 多源关联</text>
+        <rect x="1549" y="630" width="279" height="66" rx="14" fill="#f3edff"/>
+        <text class="label" x="1573" y="659">告警、审计、团队治理</text>
+        <text class="item" x="1573" y="683">身份、项目、配额与合规</text>
+      </g>
+    </g>
+
+    <!-- Roadmap -->
+    <g>
+      <rect x="60" y="782" width="1800" height="172" rx="24" fill="#ffffff" stroke="#dce4ee" stroke-width="1" filter="url(#shadow)"/>
+      <text class="section-title" x="92" y="824">从当前演示到真实产品</text>
+
+      <rect x="92" y="850" width="430" height="70" rx="16" fill="#eef2f7"/>
+      <circle cx="126" cy="885" r="18" fill="#7b8da5"/>
+      <text class="section-num" x="120" y="892">A</text>
+      <text class="road-title" x="158" y="880">当前演示（模拟数据）</text>
+      <text class="road-copy" x="158" y="905">能力地图与完整交互外壳</text>
+
+      <path class="flow" d="M522 885 H672"/>
+
+      <rect x="682" y="850" width="500" height="70" rx="16" fill="#fff2da"/>
+      <circle cx="716" cy="885" r="18" fill="#e39522"/>
+      <text class="section-num" x="710" y="892">B</text>
+      <text class="road-title" x="748" y="880">接入真实网关控制接口</text>
+      <text class="road-copy" x="748" y="905">启用安全控制端口，替换 Mock 数据源</text>
+
+      <path class="flow" d="M1182 885 H1332"/>
+
+      <rect x="1342" y="850" width="486" height="70" rx="16" fill="#f1eaff"/>
+      <circle cx="1376" cy="885" r="18" fill="#805ad5"/>
+      <text class="section-num" x="1370" y="892">C</text>
+      <text class="road-title" x="1408" y="880">建设 AI 流量治理产品</text>
+      <text class="road-copy" x="1408" y="905">识别、归因、成本、异常、告警、治理</text>
+    </g>
+
+    <rect x="60" y="982" width="1800" height="64" rx="18" fill="#183a64"/>
+    <text class="conclusion" x="960" y="1022" text-anchor="middle">Neko Master 已形成：接入 → 采集 → 存储 → 分析 → 展示 的基础闭环</text>
+  </g>
+</svg>

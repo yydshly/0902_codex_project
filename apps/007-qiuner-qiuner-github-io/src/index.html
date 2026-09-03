@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Qiuner.github.io 多世界作品集的能力展台、架构解释与适用边界。"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; frame-src 'self' https://qiuner.github.io https://yydshly.github.io; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self';"
+    />
+    <title>Qiuner Multiworld · Capability Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#live-stage">跳到实时世界台</a>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark">Q/5</span>
+        <span>Multiworld Atlas</span>
+      </a>
+      <nav aria-label="主要导航">
+        <a href="#live-stage">Live</a>
+        <a href="#capabilities">能力</a>
+        <a href="#architecture">原理</a>
+        <a href="#brand-case">样例</a>
+        <a href="#decision">判断</a>
+      </nav>
+      <a class="source-link" href="https://github.com/Qiuner/Qiuner.github.io" target="_blank" rel="noreferrer">
+        Source ↗
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> LIVE SOURCE · PINNED <b data-meta="commit">85b2063</b></p>
+          <h1>ONE PORTFOLIO<br /><em>FIVE WORLDS.</em></h1>
+          <p class="hero-lead">
+            同一份个人经历，被重新解释为宇宙、群岛、江湖、线稿与工作室。
+            真正可复用的能力不是某种画风，而是一套管理内容、世界、转场与性能的体验运行时。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#live-stage">进入实时世界台 <span>↓</span></a>
+            <a class="text-action" href="#architecture">理解底层协议</a>
+          </div>
+        </div>
+
+        <aside class="hero-orbit" aria-label="项目能力数字">
+          <div class="orbit-ring orbit-one"></div>
+          <div class="orbit-ring orbit-two"></div>
+          <div class="orbit-core"><span>WORLD</span><strong>05</strong><small>ONE RUNTIME</small></div>
+          <div class="orbit-label label-a">ASTRO HOST</div>
+          <div class="orbit-label label-b">THREE.JS</div>
+          <div class="orbit-label label-c">DOM WORLD</div>
+        </aside>
+
+        <div class="hero-metrics" aria-label="已核验规模">
+          <div><strong data-meta="worlds">5</strong><span>可加载世界</span></div>
+          <div><strong data-meta="portals">9</strong><span>Portal 路线</span></div>
+          <div><strong data-meta="tests">73</strong><span>通过测试</span></div>
+          <div><strong data-meta="runtime">17</strong><span>Runtime 模块</span></div>
+        </div>
+      </section>
+
+      <section class="live-section" id="live-stage">
+        <header class="section-heading">
+          <p>01 / LIVE PROOF</p>
+          <div>
+            <h2>不是截图集，<br />直接进入上游世界。</h2>
+            <p>选择一个 World。右侧加载 Qiuner 官方 GitHub Pages；点击、滚动、移动和跨门操作都发生在真实项目中。</p>
+          </div>
+        </header>
+
+        <div class="world-console">
+          <div class="world-sidebar">
+            <div class="world-tabs" data-world-tabs role="tablist" aria-label="选择展示世界"></div>
+            <div class="world-brief" aria-live="polite">
+              <span data-world-index>01 / 06</span>
+              <h3 data-world-title>Cosmic</h3>
+              <p data-world-description></p>
+              <ul data-world-features></ul>
+            </div>
+            <div class="source-fact">
+              <span>RENDER PATH</span>
+              <strong data-world-renderer>Three.js / Perspective</strong>
+            </div>
+          </div>
+
+          <div class="viewport-shell">
+            <div class="viewport-bar">
+              <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+              <code data-live-url>qiuner.github.io/?world=cosmic</code>
+              <div class="viewport-actions">
+                <button type="button" data-reload>刷新</button>
+                <a data-open-live href="https://qiuner.github.io/?world=cosmic" target="_blank" rel="noreferrer">新窗口 ↗</a>
+              </div>
+            </div>
+            <div class="viewport-stage">
+              <div class="frame-loading" data-frame-loading>
+                <span></span><p>LOADING OFFICIAL WORLD</p>
+              </div>
+              <iframe
+                data-live-frame
+                title="Qiuner Cosmic World 实时展示"
+                src="https://qiuner.github.io/?world=cosmic"
+                loading="eager"
+                referrerpolicy="no-referrer"
+                sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"
+              ></iframe>
+            </div>
+            <p class="viewport-note">
+              LIVE UPSTREAM · 跨域嵌入只负责体验展示；源码结构证据来自构建时锁定的 commit。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="capability-section" id="capabilities">
+        <header class="section-heading compact">
+          <p>02 / CAPABILITY MAP</p>
+          <div><h2>六个能力层，<br />组成一台体验机器。</h2></div>
+        </header>
+        <div class="capability-grid">
+          <article class="capability-card feature-card">
+            <span>01 / CONTENT</span>
+            <h3>Content Kernel</h3>
+            <p>项目、经历、链接和媒体只写一次。世界用稳定 ID 映射视觉角色，不按页面顺序绑定。</p>
+            <small>ONE SOURCE OF TRUTH</small>
+          </article>
+          <article class="capability-card">
+            <span>02 / MODULE</span>
+            <h3>World Contract</h3>
+            <p>每个世界只安装到受控 Scope，通过端口取得渲染、输入、生命周期和 Portal 能力。</p>
+            <small>LAZY · ISOLATED · DISPOSABLE</small>
+          </article>
+          <article class="capability-card">
+            <span>03 / RUNTIME</span>
+            <h3>Shared Runtime</h3>
+            <p>全站只有一个 renderer 和一个 RAF；任务按阶段执行，页面隐藏时统一暂停。</p>
+            <small>ONE RENDERER · ONE CLOCK</small>
+          </article>
+          <article class="capability-card">
+            <span>04 / JOURNEY</span>
+            <h3>Atomic Portal</h3>
+            <p>目标安装成功后才提交 URL 与所有权；失败、取消或快速重入都可以回到来源世界。</p>
+            <small>PREPARE → COMMIT / ROLLBACK</small>
+          </article>
+          <article class="capability-card">
+            <span>05 / QUALITY</span>
+            <h3>Adaptive Budget</h3>
+            <p>根据设备信号和真实帧间隔调整像素比、阴影、特效、更新率、预加载和转场。</p>
+            <small>FAST DOWN · SLOW UP</small>
+          </article>
+          <article class="capability-card">
+            <span>06 / FALLBACK</span>
+            <h3>Static First</h3>
+            <p>Astro 先输出完整 HTML。WebGL 是增强层，失败时项目与联系方式仍能被阅读和访问。</p>
+            <small>CONTENT SURVIVES THE CANVAS</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="architecture-section" id="architecture">
+        <header class="section-heading">
+          <p>03 / UNDER THE HOOD</p>
+          <div>
+            <h2>深模块在中间，<br />自由表达在两端。</h2>
+            <p>内容层不理解坐标，Runtime 不理解画风，World 不拥有全局生命周期。边界清楚，才允许五种体验长期共存。</p>
+          </div>
+        </header>
+
+        <div class="pipeline" aria-label="多世界运行时数据流">
+          <div class="pipeline-node content-node">
+            <span>SEMANTIC DATA</span><strong>Content Kernel</strong><small>person · projects · collections · media</small>
+          </div>
+          <div class="pipeline-connector"><i></i><b>stable ids</b></div>
+          <div class="pipeline-node binding-node">
+            <span>INTERPRETATION</span><strong>World Binding</strong><small>role · layout · theme · focus</small>
+          </div>
+          <div class="pipeline-connector"><i></i><b>install</b></div>
+          <div class="pipeline-node runtime-node">
+            <span>OWNERSHIP</span><strong>Shared Runtime</strong><small>renderer · frame · portal · quality · history</small>
+          </div>
+        </div>
+
+        <div class="runtime-ledger">
+          <div class="ledger-heading">
+            <p>SOURCE-VERIFIED LEDGER</p>
+            <span data-meta="status">读取锁定基线…</span>
+          </div>
+          <dl>
+            <div><dt>Source modules</dt><dd data-meta="modules">—</dd></div>
+            <div><dt>Source lines</dt><dd data-meta="lines">—</dd></div>
+            <div><dt>Tracked files</dt><dd data-meta="files">—</dd></div>
+            <div><dt>Public assets</dt><dd data-meta="assets">—</dd></div>
+            <div><dt>Astro / Three</dt><dd data-meta="stack">—</dd></div>
+            <div><dt>License</dt><dd class="warning" data-meta="license">未声明</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="brand-case-section" id="brand-case">
+        <header class="section-heading">
+          <p>04 / REAL BRAND SYSTEM</p>
+          <div>
+            <h2>把能力说清楚，<br />让项目替你作证。</h2>
+            <p>下面不是虚构履历：它直接读取当前仓库 001–006 的真实研究项目，把同一份目录数据重新组织成个人品牌的能力地图、项目证据和可运行 Demo。</p>
+          </div>
+        </header>
+
+        <div class="brand-cockpit" data-brand-cockpit>
+          <header class="brand-profile">
+            <p>LIVE CASE / CATALOG-DRIVEN</p>
+            <div class="brand-profile-copy">
+              <span data-brand-code>0902 / BUILD LOG</span>
+              <h3 data-brand-title>RESEARCH → PROTOTYPE → PROOF</h3>
+              <p data-brand-statement>持续拆解优秀开源项目，把架构理解转化为可运行 Demo 与可复用方法。</p>
+            </div>
+            <dl aria-label="真实样例规模">
+              <div><dt>项目证据</dt><dd data-brand-metric="projects">—</dd></div>
+              <div><dt>可运行 Demo</dt><dd data-brand-metric="publishedDemos">—</dd></div>
+              <div><dt>已完成验证</dt><dd data-brand-metric="validated">—</dd></div>
+              <div><dt>能力标签</dt><dd data-brand-metric="tags">—</dd></div>
+            </dl>
+          </header>
+
+          <section class="brand-simulation" aria-labelledby="simulation-title">
+            <header class="simulation-heading">
+              <div>
+                <span>SIMULATION / NOT A BIOGRAPHICAL CLAIM</span>
+                <h3 id="simulation-title">基于现有项目推导你的个人品牌。</h3>
+              </div>
+              <p data-sim-disclaimer>定位、受众与服务方向为项目证据推导；项目、状态与 Demo 为真实目录数据。</p>
+            </header>
+
+            <div class="simulation-grid">
+              <article class="positioning-card">
+                <span data-sim-label>SIMULATED POSITIONING / EVIDENCE-BASED</span>
+                <h4 data-sim-role>AI 产品与体验系统构建者</h4>
+                <p data-sim-headline>把复杂技术拆成可理解、可运行、可验证的产品体验。</p>
+                <ul data-sim-differentiators></ul>
+              </article>
+
+              <article class="coverage-card">
+                <div class="simulation-card-heading">
+                  <span>EVIDENCE COVERAGE</span>
+                  <small>不是能力评级</small>
+                </div>
+                <div class="coverage-list" data-sim-coverage></div>
+                <p>分数只表示当前目录中的项目数量与验证密度，用于发现品牌表达的强项和证据缺口。</p>
+              </article>
+
+              <article class="audience-card">
+                <div class="simulation-card-heading">
+                  <span>AUDIENCE SIMULATOR</span>
+                  <small>选择目标受众</small>
+                </div>
+                <div class="audience-tabs" data-audience-tabs role="tablist" aria-label="选择模拟品牌受众"></div>
+                <p class="audience-need" data-audience-need>正在生成需求假设…</p>
+                <h4 data-audience-proposition>正在生成价值表达…</h4>
+                <div class="audience-deliverables" data-audience-deliverables></div>
+                <div class="audience-proof" data-audience-proof></div>
+              </article>
+            </div>
+
+            <div class="simulation-gaps">
+              <span>FROM SIMULATION TO REAL BRAND</span>
+              <ol data-sim-gaps></ol>
+            </div>
+          </section>
+
+          <div class="brand-kernel-strip" aria-label="个人品牌内容复用链路">
+            <div><span>CONTENT KERNEL</span><strong>catalog/projects.json</strong></div>
+            <i aria-hidden="true">→</i>
+            <div><span>CAPABILITY LENS</span><strong>能力聚合</strong></div>
+            <i aria-hidden="true">→</i>
+            <div><span>PROOF SURFACE</span><strong>研究 + Demo</strong></div>
+          </div>
+
+          <div class="brand-workbench">
+            <aside class="capability-lens">
+              <p>CAPABILITY LENS</p>
+              <div class="capability-filters" data-brand-filters aria-label="按能力筛选项目"></div>
+              <small data-brand-filter-summary>正在读取真实目录…</small>
+            </aside>
+
+            <div class="brand-project-board">
+              <div class="brand-project-heading">
+                <span>PROJECT EVIDENCE</span>
+                <b data-brand-source>catalog/projects.json</b>
+              </div>
+              <div class="brand-projects" data-brand-projects aria-live="polite">
+                <p class="brand-loading">正在把项目映射到能力…</p>
+              </div>
+            </div>
+
+            <article class="brand-proof" data-brand-proof aria-live="polite">
+              <span data-proof-index>SELECT A PROJECT</span>
+              <h3 data-proof-title>项目会成为能力的证据。</h3>
+              <p data-proof-summary>选择中间的真实项目，查看它证明了什么，以及对应的研究与可运行成果。</p>
+              <div class="proof-capabilities" data-proof-capabilities></div>
+              <div class="proof-tags" data-proof-tags></div>
+              <div class="proof-actions">
+                <button type="button" data-proof-load disabled>在这里运行 Demo</button>
+                <a data-proof-source href="https://github.com" target="_blank" rel="noreferrer" aria-disabled="true">查看上游 ↗</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="brand-live-shell" data-brand-live hidden>
+            <div class="brand-live-bar">
+              <span>LIVE PROOF</span>
+              <code data-proof-url>等待选择项目</code>
+              <div>
+                <button type="button" data-proof-close>关闭预览</button>
+                <a data-proof-open href="#brand-case" target="_blank" rel="noreferrer">新窗口 ↗</a>
+              </div>
+            </div>
+            <div class="brand-live-stage">
+              <div class="brand-frame-loading" data-proof-loading><span></span><p>LOADING REAL DEMO</p></div>
+              <iframe
+                data-proof-frame
+                title="真实项目 Demo"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"
+              ></iframe>
+            </div>
+          </div>
+
+          <p class="brand-data-note" data-brand-error>
+            REAL DATA · 项目名称、简介、标签、状态与链接均来自当前仓库目录；能力分组由标签规则生成。
+          </p>
+        </div>
+      </section>
+
+      <section class="decision-section" id="decision">
+        <header class="section-heading compact">
+          <p>05 / WHERE IT FITS</p>
+          <div><h2>先选任务，<br />再决定是否需要一个世界。</h2></div>
+        </header>
+        <div class="decision-lab">
+          <div class="scenario-tabs" role="tablist" aria-label="选择业务场景">
+            <button type="button" class="is-active" data-scenario="brand">品牌作品集</button>
+            <button type="button" data-scenario="exhibition">数字展览</button>
+            <button type="button" data-scenario="learning">互动叙事</button>
+            <button type="button" data-scenario="dashboard">业务后台</button>
+          </div>
+          <article class="scenario-output" data-scenario-output aria-live="polite">
+            <span data-scenario-verdict>STRONG FIT</span>
+            <h3 data-scenario-title>把经历变成可探索的品牌空间</h3>
+            <p data-scenario-copy></p>
+            <ul data-scenario-points></ul>
+          </article>
+          <aside class="decision-rule">
+            <p>ADOPTION RULE</p>
+            <strong>借鉴架构，<br />不要整库依赖。</strong>
+            <span>当前没有公开 SDK，也没有上游许可证；适合作为参考实现，而非生产依赖。</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="reality-section">
+        <header class="section-heading compact">
+          <p>06 / REALITY CHECK</p>
+          <div><h2>设计很完整，<br />工程兑现仍有边界。</h2></div>
+        </header>
+        <div class="reality-grid">
+          <article class="reality-card good">
+            <span>VERIFIED</span>
+            <h3>主干已经运行</h3>
+            <ul>
+              <li>五个原生 World 均通过注册表延迟加载</li>
+              <li>23 个测试文件、73 个测试通过</li>
+              <li>Astro 生产构建 0 错误 / 0 警告</li>
+              <li>URL、焦点、取消与资源回收有契约测试</li>
+            </ul>
+          </article>
+          <article class="reality-card caution">
+            <span>NOT YET</span>
+            <h3>目标态尚未全部实现</h3>
+            <ul>
+              <li>live-dual 仍是截图覆盖，不是双世界实时混合</li>
+              <li>Manifest 预算没有完整构建期强制校验</li>
+              <li>GPU 泄漏、context lost 与视觉回归验证不足</li>
+              <li>WorldScope 与架构文档存在少量接口漂移</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-section">
+        <header class="section-heading compact">
+          <p>07 / EXTENSION PATH</p>
+          <div><h2>从作品，<br />走向平台。</h2></div>
+        </header>
+        <ol class="roadmap-list">
+          <li><span>P0</span><div><strong>让约束变成门禁</strong><p>资产存在性、传输预算、GPU 预算、E2E、视觉回归和泄漏压测进入 CI。</p></div></li>
+          <li><span>P1</span><div><strong>抽出 Runtime Core</strong><p>形成独立包、World 模板、Manifest Schema 和统一 contract harness。</p></div></li>
+          <li><span>P2</span><div><strong>接入内容与数据</strong><p>CMS、多语言、导览、埋点和语义深链接，让世界不再只服务个人资料。</p></div></li>
+          <li><span>P3</span><div><strong>升级渲染管线</strong><p>glTF/KTX2/LOD、真正双世界合成、可选 WebGPU 与 Worker 渲染。</p></div></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <div><span>007 / QIUNER.GITHUB.IO</span><strong>体验可以多变，所有权必须唯一。</strong></div>
+      <p>研究 Demo 不复制上游源码与媒体；实时画面来自官方 GitHub Pages。</p>
+      <a href="#top">回到顶部 ↑</a>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

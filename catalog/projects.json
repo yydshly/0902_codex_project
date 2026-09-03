@@ -4,6 +4,39 @@
   "updatedAt": "2026-09-03",
   "projects": [
     {
+      "id": "001",
+      "slug": "holtsetio-aurelia",
+      "title": "Aurelia",
+      "repository": "https://github.com/holtsetio/aurelia/",
+      "summary": "从程序化水母出发，研究 GPU 软体与缓冲驱动表面，并扩展为真实弹簧驱动的声场雕塑与可解构、可召回的活体品牌拓扑。",
+      "status": "validated",
+      "tags": [
+        "three.js",
+        "webgpu",
+        "compute",
+        "procedural",
+        "soft-body",
+        "web-audio",
+        "audio-reactive"
+      ],
+      "studyPath": "research/001-holtsetio-aurelia/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/001-holtsetio-aurelia/assets/cover.png",
+        "alt": "Aurelia Field Atlas 首屏以大型中文标题说明从现实因果到交互作品的方法，右侧轨道图配合十项方向、十二个现实原型和十三层技术研究统计",
+        "caption": "用研究图谱概括 Aurelia 如何把现实观察抽象为物理语法、GPU 状态与可交互体验。",
+        "credit": "本研究 Demo 自制截图；方法与讲解层原创，上游 Aurelia 代码遵循 MIT License"
+      },
+      "demo": {
+        "sourcePath": "apps/001-holtsetio-aurelia",
+        "buildOutput": "apps/001-holtsetio-aurelia/dist",
+        "publicPath": "demos/001-holtsetio-aurelia",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/001-holtsetio-aurelia/",
+        "status": "published"
+      }
+    },
+    {
       "id": "002",
       "slug": "larashero3-dotcom-lieflat-charts",
       "title": "Lieflat Charts",
@@ -31,6 +64,167 @@
         "buildOutput": "apps/002-larashero3-dotcom-lieflat-charts/dist",
         "publicPath": "demos/002-larashero3-dotcom-lieflat-charts",
         "url": "https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/",
+        "status": "published"
+      }
+    },
+    {
+      "id": "003",
+      "slug": "mengto-threeui",
+      "title": "ThreeUI",
+      "repository": "https://github.com/MengTo/threeui",
+      "summary": "以 43 个 Community 父条目、163 个具名变体的完整索引和 13 个跨类别实时案例，研究 ThreeUI 如何把 WebGL、Canvas、DOM 与完整网页作品产品化为可预览、可调参、可分发的 React 视觉资产。",
+      "status": "validated",
+      "tags": [
+        "react",
+        "three.js",
+        "webgl",
+        "canvas",
+        "ui-components",
+        "shaders",
+        "agent-skills"
+      ],
+      "studyPath": "research/003-mengto-threeui/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/003-mengto-threeui/assets/cover.webp",
+        "alt": "ThreeUI Runtime Atlas 左侧标明 43 个父条目、163 个变体和 13 个实时案例，右侧运行 Raw WebGL 液态金属效果",
+        "caption": "ThreeUI Runtime Atlas 用完整能力索引、13 个实时案例与底层渲染路径解释组件库的广度、原理和边界。",
+        "credit": "自制展台；Liquid Form 来自 ThreeUI Community（MIT）"
+      },
+      "demo": {
+        "sourcePath": "apps/003-mengto-threeui",
+        "buildOutput": "apps/003-mengto-threeui/dist",
+        "publicPath": "demos/003-mengto-threeui",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/",
+        "status": "published"
+      }
+    },
+    {
+      "id": "004",
+      "slug": "foru17-neko-master",
+      "title": "Neko Master",
+      "repository": "https://github.com/foru17/neko-master",
+      "summary": "研究代理网关如何把连接累计快照转换成实时、多维、可持久化的流量事实，并以合成数据验证差分、批量落库与热数据合并。",
+      "status": "validated",
+      "tags": [
+        "observability",
+        "network",
+        "realtime",
+        "edge-agent",
+        "sqlite",
+        "clickhouse"
+      ],
+      "studyPath": "research/004-foru17-neko-master/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "apps/004-foru17-neko-master/docs/neko-master-capability-panorama.png",
+        "alt": "Neko Master 能力全景图串联数据接入、实时采集、存储扩展、动态分析，并标出可观察范围、能力边界和产品扩展方向",
+        "caption": "一张图说明从代理网关累计快照到实时流量分析的完整链路，以及上游已有能力与仍需建设的治理层。",
+        "credit": "研究团队基于固定版本源码与合成数据自制；不包含真实用户或网络流量"
+      },
+      "demo": {
+        "sourcePath": "apps/004-foru17-neko-master",
+        "buildOutput": "apps/004-foru17-neko-master/dist",
+        "publicPath": "demos/004-foru17-neko-master",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/004-foru17-neko-master/",
+        "status": "published"
+      }
+    },
+    {
+      "id": "005",
+      "slug": "mcncarl-yichen-skills",
+      "title": "Yichen Skills",
+      "repository": "https://github.com/mcncarl/yichen-skills",
+      "summary": "研究一个个人工作流如何被拆成多 Skill 能力库，并以路由、执行器、权限闸门、数据契约和结果验证形成可复用的 Agent 工作协议。",
+      "status": "validated",
+      "tags": [
+        "agent-skills",
+        "workflow-automation",
+        "research",
+        "content-ops",
+        "local-first",
+        "safety"
+      ],
+      "studyPath": "research/005-mcncarl-yichen-skills/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/005-mcncarl-yichen-skills/assets/cover.png",
+        "alt": "Yichen Skills 能力图谱首屏以二十二个 Skill 组成个人工作系统为主题，右侧列出宿主 Agent、自然语言协议、执行适配和证据验收四层结构",
+        "caption": "核心演示图直接解释 Skill 库不是 Agent 本体，而是由宿主路由、协议、执行器和验收证据组成的工作系统。",
+        "credit": "本研究 Demo 自制截图；不包含账号、凭据、聊天内容或上游平台界面"
+      },
+      "demo": {
+        "sourcePath": "apps/005-mcncarl-yichen-skills",
+        "buildOutput": "apps/005-mcncarl-yichen-skills/dist",
+        "publicPath": "demos/005-mcncarl-yichen-skills",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/005-mcncarl-yichen-skills/",
+        "status": "published"
+      }
+    },
+    {
+      "id": "006",
+      "slug": "nevertoday-350-layout-compositions",
+      "title": "350 Layout Compositions",
+      "repository": "https://github.com/nevertoday/350-layout-compositions",
+      "summary": "把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。",
+      "status": "validated",
+      "tags": [
+        "layout",
+        "composition",
+        "visual-design",
+        "taxonomy",
+        "dataset",
+        "static-gallery"
+      ],
+      "studyPath": "research/006-nevertoday-350-layout-compositions/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/006-nevertoday-350-layout-compositions/assets/cover.png",
+        "alt": "能力图鉴首屏，左侧说明项目定位与 350、8、33 三个规模数字，右侧由三张教学海报组成拼贴",
+        "caption": "全量网页档案将 350 项视觉知识、8×33 分类、静态生产管线和数据质量边界放进同一个可检索展示。",
+        "credit": "自制 Demo 截图；内嵌上游海报遵循 CC BY 4.0"
+      },
+      "demo": {
+        "sourcePath": "apps/006-nevertoday-350-layout-compositions",
+        "buildOutput": "apps/006-nevertoday-350-layout-compositions/dist",
+        "publicPath": "demos/006-nevertoday-350-layout-compositions",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/",
+        "status": "published"
+      }
+    },
+    {
+      "id": "007",
+      "slug": "qiuner-qiuner-github-io",
+      "title": "Qiuner.github.io",
+      "repository": "https://github.com/Qiuner/Qiuner.github.io",
+      "summary": "以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用六个真实研究项目演示如何构建可筛选、可验证、可运行的个人品牌证据系统。",
+      "status": "validated",
+      "tags": [
+        "astro",
+        "three.js",
+        "webgl",
+        "multi-world",
+        "interactive-portfolio",
+        "runtime"
+      ],
+      "studyPath": "research/007-qiuner-qiuner-github-io/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/007-qiuner-qiuner-github-io/assets/cover.png",
+        "alt": "Qiuner Multiworld Atlas 首屏以一个作品集、五个世界为主标题，右侧轨道结构强调五个 World 共用一个 Runtime",
+        "caption": "核心演示图用同一内容、五种世界和统一运行时概括多世界互动作品集的产品与架构思想。",
+        "credit": "本研究 Demo 自制截图；首屏未复制上游媒体，实时 World 仅在页面下方通过官方站点加载"
+      },
+      "demo": {
+        "sourcePath": "apps/007-qiuner-qiuner-github-io",
+        "buildOutput": "apps/007-qiuner-qiuner-github-io/dist",
+        "publicPath": "demos/007-qiuner-qiuner-github-io",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/",
         "status": "published"
       }
     }

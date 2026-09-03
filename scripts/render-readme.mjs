@@ -8,6 +8,8 @@ import { loadCatalog, REPOSITORY_ROOT } from './validate-catalog.mjs';
 const README_PATH = path.join(REPOSITORY_ROOT, 'README.md');
 const START_MARKER = '<!-- PROJECT_INDEX_START -->';
 const END_MARKER = '<!-- PROJECT_INDEX_END -->';
+const SHOWCASE_START_MARKER = '<!-- PROJECT_SHOWCASE_START -->';
+const SHOWCASE_END_MARKER = '<!-- PROJECT_SHOWCASE_END -->';
 const PAGES_BASE_URL = 'https://yydshly.github.io/0902_codex_project/';
 const STATUS_LABELS = {
   planned: '待研究',
@@ -32,20 +34,25 @@ function linkTarget(value) {
   return encodeURI(value).replace(/\(/g, '%28').replace(/\)/g, '%29');
 }
 
-function demoCell(project) {
+function projectDemoUrl(project) {
   if (!project.demo || ['archived', 'planned', 'building'].includes(project.demo.status)) {
-    return '—';
+    return null;
   }
 
   if (project.demo.url) {
-    return `[打开](${linkTarget(project.demo.url)})`;
+    return project.demo.url;
   }
 
   if (project.demo.publicPath) {
-    return `[打开](${linkTarget(`${PAGES_BASE_URL}${project.demo.publicPath}/`)})`;
+    return `${PAGES_BASE_URL}${project.demo.publicPath}/`;
   }
 
-  return '—';
+  return null;
+}
+
+function demoCell(project) {
+  const url = projectDemoUrl(project);
+  return url ? `[打开](${linkTarget(url)})` : '—';
 }
 
 export function renderProjectIndex(projects) {
@@ -71,27 +78,77 @@ export function renderProjectIndex(projects) {
   return [...header, ...rows].join('\n');
 }
 
+export function renderProjectShowcase(projects) {
+  if (projects.length === 0) {
+    return '还没有已登记的研究项目。';
+  }
+
+  return projects.map((project) => {
+    if (!project.cover) {
+      throw new Error(`项目 ${project.id} 缺少核心演示图 cover`);
+    }
+
+    const repository = linkTarget(project.repository);
+    const study = `./${linkTarget(project.studyPath)}`;
+    const demo = projectDemoUrl(project);
+    const imageTarget = linkTarget(demo || study);
+    const imagePath = `./${linkTarget(project.cover.path)}`;
+    const caption = [project.cover.caption, project.cover.credit]
+      .filter(Boolean)
+      .map(escapeCell)
+      .join(' · ');
+    const links = [
+      `[阅读研究](${study})`,
+      demo ? `[打开 Demo](${linkTarget(demo)})` : null,
+      `[查看上游](${repository})`,
+    ].filter(Boolean).join(' · ');
+
+    return [
+      `### \`${project.id}\` · [${escapeLinkLabel(project.title)}](${repository})`,
+      `[![${escapeLinkLabel(project.cover.alt)}](${imagePath})](${imageTarget})`,
+      `*${caption}*`,
+      escapeCell(project.summary),
+      links,
+    ].join('\n\n');
+  }).join('\n\n---\n\n');
+}
+
 function countOccurrences(source, marker) {
   return source.split(marker).length - 1;
 }
 
-export function updateReadme(source, projects) {
-  const startCount = countOccurrences(source, START_MARKER);
-  const endCount = countOccurrences(source, END_MARKER);
+function replaceMarkedBlock(source, startMarker, endMarker, content) {
+  const startCount = countOccurrences(source, startMarker);
+  const endCount = countOccurrences(source, endMarker);
   if (startCount !== 1 || endCount !== 1) {
-    throw new Error(`README.md 必须且只能包含一组 ${START_MARKER} / ${END_MARKER} 标记`);
+    throw new Error(`README.md 必须且只能包含一组 ${startMarker} / ${endMarker} 标记`);
   }
 
-  const startIndex = source.indexOf(START_MARKER);
-  const endIndex = source.indexOf(END_MARKER);
+  const startIndex = source.indexOf(startMarker);
+  const endIndex = source.indexOf(endMarker);
   if (endIndex < startIndex) {
     throw new Error('README.md 的项目索引结束标记位于开始标记之前');
   }
 
   const newline = source.includes('\r\n') ? '\r\n' : '\n';
-  const rendered = renderProjectIndex(projects).replace(/\n/g, newline);
-  const replacement = `${START_MARKER}${newline}${rendered}${newline}${END_MARKER}`;
-  return `${source.slice(0, startIndex)}${replacement}${source.slice(endIndex + END_MARKER.length)}`;
+  const rendered = content.replace(/\n/g, newline);
+  const replacement = `${startMarker}${newline}${rendered}${newline}${endMarker}`;
+  return `${source.slice(0, startIndex)}${replacement}${source.slice(endIndex + endMarker.length)}`;
+}
+
+export function updateReadme(source, projects) {
+  const withIndex = replaceMarkedBlock(
+    source,
+    START_MARKER,
+    END_MARKER,
+    renderProjectIndex(projects),
+  );
+  return replaceMarkedBlock(
+    withIndex,
+    SHOWCASE_START_MARKER,
+    SHOWCASE_END_MARKER,
+    renderProjectShowcase(projects),
+  );
 }
 
 function main() {

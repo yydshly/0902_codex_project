@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#02070b" />
+    <meta name="description" content="Rain Membrane：用 Aurelia GPU 弹簧网络演示雨滴局部冲击、膜面传播、积水改张力与程序化雨琴。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M7 34Q32 5 57 34Q44 29 32 34Q20 29 7 34Z' fill='none' stroke='%2379eaff' stroke-width='3'/%3E%3Cpath d='M32 33v19q0 7 7 3' fill='none' stroke='%23c8ff68' stroke-width='3'/%3E%3C/svg%3E" />
+    <title>Rain Membrane / Aurelia 雨落伞面</title>
+  </head>
+  <body class="rain-page" data-runtime="loading" data-mode="rain" data-audio="locked" data-structure="off" data-phase="listen">
+    <a class="skip-link" href="#rain-controls">跳到作品控制</a>
+    <main id="rain-stage" tabindex="0" aria-labelledby="rain-title" aria-describedby="rain-instruction">
+      <div class="rain-grid" aria-hidden="true"></div>
+      <div class="fallback-canopy" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div>
+
+      <header class="rain-topbar">
+        <a class="rain-brand" href="./atlas.html#case-rain"><span>F01</span><b>AURELIA / FIELD PROTOTYPE</b></a>
+        <div class="sample-progress" aria-label="现实样例序列"><i></i><span>01 / 12</span></div>
+        <nav aria-label="作品导航">
+          <a href="./atlas.html#case-rain">研究图谱</a>
+          <a href="./resonance.html">声场雕塑</a>
+          <a href="./identity.html">活体品牌</a>
+        </nav>
+      </header>
+
+      <section class="rain-intro">
+        <p class="eyebrow">FIELD 01 / IMPACT × TENSION × MEMORY</p>
+        <h1 id="rain-title">RAIN<br /><span>MEMBRANE</span></h1>
+        <p>雨不是粒子背景。每一次命中都把能量送入张紧膜；积水继续增加质量，最终让同一把伞改变自己的形态与音高。</p>
+      </section>
+
+      <aside class="causal-panel" aria-labelledby="causal-title">
+        <header><span>CAUSAL CHAIN</span><strong id="causal-title">一滴雨如何改变整体</strong></header>
+        <ol>
+          <li data-phase="impact"><i>01</i><span><b>IMPACT</b><small>局部碰撞 / 凹陷</small></span><em></em></li>
+          <li data-phase="propagate"><i>02</i><span><b>PROPAGATE</b><small>沿膜面与伞骨传播</small></span><em></em></li>
+          <li data-phase="accumulate"><i>03</i><span><b>ACCUMULATE</b><small>积水形成质量记忆</small></span><em></em></li>
+          <li data-phase="retune"><i>04</i><span><b>RETUNE</b><small>张力与音高被重写</small></span><em></em></li>
+        </ol>
+        <div class="rain-presets" role="group" aria-label="降雨预设">
+          <button type="button" data-rain-mode="drizzle" aria-pressed="false">微雨</button>
+          <button type="button" data-rain-mode="rain" aria-pressed="true">中雨</button>
+          <button type="button" data-rain-mode="storm" aria-pressed="false">暴雨</button>
+        </div>
+      </aside>
+
+      <section class="rain-metrics" aria-label="实时伞面状态">
+        <div><span id="rainfall-value">34</span><small>MM/H RAIN</small></div>
+        <div><span id="wetness-value">08%</span><small>WATER LOAD</small></div>
+        <div><span id="tension-value">78%</span><small>MEMBRANE TENSION</small></div>
+        <div><span id="frequency-value">5.6</span><small>RESONANCE HZ</small></div>
+      </section>
+
+      <section class="physics-proof" aria-label="Aurelia 物理规模">
+        <div><span id="vertex-count">—</span><small>GPU NODES</small></div>
+        <div><span id="spring-count">—</span><small>CONSTRAINTS</small></div>
+        <div><span id="solver-rate">—</span><small>STEPS / SEC</small></div>
+        <div><span id="impact-count">0</span><small>IMPACTS</small></div>
+      </section>
+
+      <p id="rain-instruction" class="rain-instruction"><span>TOUCH THE MEMBRANE</span> 点击或轻触伞面，制造一滴更重的雨。</p>
+
+      <section id="rain-controls" class="rain-controls" aria-label="作品控制">
+        <button id="manual-drop" class="primary-control" type="button">
+          <span class="control-symbol">＋</span><span><strong>落下一滴</strong><small>局部冲击</small></span>
+        </button>
+        <label for="rain-intensity"><span>雨量 <output id="intensity-value">42%</output></span><input id="rain-intensity" type="range" min="0.08" max="1" step="0.01" value="0.42" /></label>
+        <button id="drain-water" type="button"><span class="control-symbol">↓</span><span><strong>排水</strong><small>恢复张力</small></span></button>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span class="control-symbol">⌗</span><span><strong>结构透视</strong><small>查看 GPU 约束</small></span></button>
+        <button id="audio-toggle" type="button" aria-pressed="false"><span class="control-symbol">♪</span><span><strong>启动雨琴</strong><small>程序化声场</small></span></button>
+        <button id="view-reset" type="button"><span class="control-symbol">↺</span><span><strong>复位</strong><small>初始雨况</small></span></button>
+      </section>
+
+      <p id="rain-status" class="rain-status" aria-live="polite">中雨正在持续；视觉自主运行，声音等待用户启动。</p>
+
+      <details class="meaning-panel">
+        <summary>WHY THIS MATTERS / 这个样例证明什么</summary>
+        <p><b>不是模拟一把伞，</b>而是验证一条可迁移能力：离散事件进入材料，经约束传播，被时间累积，再反向改变系统参数。它可迁移到建筑膜面、天气品牌、触觉界面与数据声化。</p>
+        <div class="diagnostic-row"><button id="diagnostic-sample" type="button">采样 GPU 状态</button><output id="diagnostic-output" aria-live="polite">尚未采样</output></div>
+      </details>
+
+      <div id="rain-loading" class="rain-loading" role="status" aria-live="polite">
+        <div><p>ASSEMBLING AURELIA RAIN FIELD</p><strong id="loading-label">构建伞面拓扑</strong><span><i></i></span></div>
+      </div>
+
+      <section id="rain-error" class="rain-error" hidden aria-live="assertive">
+        <p>WEBGPU ENHANCEMENT UNAVAILABLE</p>
+        <h2>物理伞面没有启动</h2>
+        <p id="rain-error-message"></p>
+        <p>静态伞面和因果链仍然说明同一核心：局部冲击会传播，积水会重写张力。</p>
+      </section>
+
+      <noscript><p class="noscript-note">JavaScript 未启用：这里原本使用 Aurelia GPU 弹簧网络演示雨滴冲击、传播、积水和再调谐。</p></noscript>
+    </main>
+    <script type="module" src="/src/rain.js"></script>
+  </body>
+</html>

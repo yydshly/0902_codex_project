@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#061019" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='8' fill='%23ff9f77'/%3E%3Cpath d='M32 4v18M32 42v18M4 32h18M42 32h18M12 12l13 13M39 39l13 13M52 12L39 25M25 39L12 52' stroke='%2378edff' stroke-width='4'/%3E%3C/svg%3E" />
+    <meta name="description" content="Aurelia Morph Lab：三种非水母程序化形态与原创 Web Audio 实时互动实验。" />
+    <title>Aurelia Sonic Genesis / 声音驱动生成艺术</title>
+  </head>
+  <body class="morph-page" data-runtime="loading" data-audio="locked" data-form="flower" data-transition="idle">
+    <a class="skip-link" href="#form-selector">跳到形态选择</a>
+    <main id="morph-stage" aria-labelledby="morph-title">
+      <div class="morph-grid" aria-hidden="true"></div>
+
+      <header class="topbar morph-topbar">
+        <a class="brand" href="./" aria-label="返回 Aurelia 基线演示">
+          <span class="brand-mark">001</span>
+          <span>AURELIA / SONIC GENESIS</span>
+        </a>
+        <div class="runtime" aria-live="polite">
+          <span class="runtime-dot" aria-hidden="true"></span>
+          <span id="runtime-label">准备形态引擎</span>
+          <span class="runtime-divider" aria-hidden="true"></span>
+          <span id="render-fps">-- FPS</span>
+        </div>
+        <nav class="top-links" aria-label="演示导航">
+          <a class="lab-link" href="./">基线</a>
+          <a class="lab-link" href="./lab.html">Control Lab</a>
+          <a class="lab-link" href="./directions.html">创意方向 →</a>
+          <a class="source-link" href="https://github.com/holtsetio/aurelia/" target="_blank" rel="noreferrer">源码 ↗</a>
+        </nav>
+      </header>
+
+      <section class="morph-intro">
+        <p class="eyebrow">R4 / GENERATIVE AUDIO ORGANISM</p>
+        <h1 id="morph-title">SONIC<br /><span>GENESIS</span></h1>
+        <p id="form-caption">低频唤醒晶核与花冠，中频掀动多层膜翼，高频释放星尘冲击波。</p>
+      </section>
+
+      <nav id="form-selector" class="form-selector" aria-label="程序化形态">
+        <button type="button" data-form="flower" aria-pressed="true">
+          <span>01</span><strong>星云花</strong><small>CELESTIAL BLOOM</small>
+        </button>
+        <button type="button" data-form="ribbon" aria-pressed="false">
+          <span>02</span><strong>时空织体</strong><small>SPACETIME WEAVE</small>
+        </button>
+        <button type="button" data-form="organism" aria-pressed="false">
+          <span>03</span><strong>量子生命体</strong><small>QUANTUM ORGANISM</small>
+        </button>
+      </nav>
+
+      <aside class="audio-map" aria-labelledby="audio-map-title">
+        <div class="morph-panel-heading">
+          <p>LIVE ANALYSER</p>
+          <h2 id="audio-map-title">声音如何改变形态</h2>
+        </div>
+        <div class="spectrum" aria-label="实时频谱数值">
+          <div data-band="low"><span><i></i></span><strong>LOW</strong><output id="low-value">0.00</output></div>
+          <div data-band="mid"><span><i></i></span><strong>MID</strong><output id="mid-value">0.00</output></div>
+          <div data-band="high"><span><i></i></span><strong>HIGH</strong><output id="high-value">0.00</output></div>
+        </div>
+        <p id="form-mapping" class="form-mapping">BASS → 晶核呼吸 · MID → 膜翼潮汐 · HIGH → 星尘爆发</p>
+        <div class="audio-origin">
+          <span>音源</span>
+          <p>浏览器实时生成 · 五声音阶 · 无外部音频文件</p>
+        </div>
+      </aside>
+
+      <section class="transport" aria-label="音乐控制">
+        <button id="audio-toggle" class="transport-primary" type="button" aria-pressed="false">
+          <span class="transport-icon">▶</span>
+          <span><strong>启动原创声场</strong><small>需要一次用户点击以解锁音频</small></span>
+        </button>
+        <button id="mute-toggle" type="button" aria-pressed="false" aria-label="静音">
+          <span class="transport-icon">◖</span><span><strong>输出</strong><small>有声</small></span>
+        </button>
+        <label class="volume-control" for="volume">
+          <span>音量 <output id="volume-value">55%</output></span>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.55" />
+        </label>
+        <label class="tempo-control" for="tempo">
+          <span>BPM</span>
+          <select id="tempo">
+            <option value="84">84</option>
+            <option value="108" selected>108</option>
+            <option value="132">132</option>
+          </select>
+        </label>
+        <button id="view-reset" type="button">
+          <span class="transport-icon">↺</span><span><strong>视角</strong><small>重置</small></span>
+        </button>
+      </section>
+
+      <p id="audio-status" class="audio-status" aria-live="polite">音乐尚未启动；场景正以自主呼吸运行。</p>
+
+      <div id="morph-loading" class="morph-loading" role="status" aria-live="polite">
+        <div><p>BUILDING PROCEDURAL FORMS</p><strong>创建三套形态拓扑</strong><span><i></i></span></div>
+      </div>
+
+      <section id="morph-error" class="morph-error" hidden aria-live="assertive">
+        <p>ENHANCEMENT UNAVAILABLE</p>
+        <h2>程序化形态没有启动</h2>
+        <p id="morph-error-message"></p>
+        <p>三种形态与声音映射仍可从页面控制和说明中读取。</p>
+      </section>
+    </main>
+    <script type="module" src="/src/morph.js"></script>
+  </body>
+</html>

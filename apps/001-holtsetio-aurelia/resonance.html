@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#020506" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='15' rx='25' ry='7' fill='none' stroke='%23c7ff4a' stroke-width='3'/%3E%3Cellipse cx='32' cy='49' rx='25' ry='7' fill='none' stroke='%236ee9ff' stroke-width='3'/%3E%3Cpath d='M8 15c8 12 8 22 0 34M56 15c-8 12-8 22 0 34' fill='none' stroke='%23f4f3eb' stroke-width='2'/%3E%3C/svg%3E" />
+    <meta name="description" content="Aurelia Resonant Matter：由真实 GPU 弹簧网络和程序化声音驱动的张拉声场雕塑。" />
+    <title>Resonant Matter / Aurelia 声场雕塑</title>
+  </head>
+  <body class="resonance-page" data-runtime="loading" data-audio="locked" data-impact="idle">
+    <a class="skip-link" href="#resonance-controls">跳到作品控制</a>
+    <main id="resonance-stage" aria-labelledby="resonance-title">
+      <div class="stage-grid" aria-hidden="true"></div>
+
+      <header class="resonance-topbar">
+        <a class="resonance-brand" href="./directions.html" aria-label="返回创意方向作品集">
+          <span>01</span><span>AURELIA / RESONANT MATTER</span>
+        </a>
+        <div class="direction-progress" aria-label="作品序列"><i></i><span>01 / 10</span></div>
+        <nav aria-label="作品导航">
+          <a href="./directions.html">方向总览</a>
+          <a href="./identity.html">02 活体品牌 →</a>
+          <a href="./morph.html">Sonic Genesis</a>
+          <a href="https://github.com/holtsetio/aurelia/" target="_blank" rel="noreferrer">源码 ↗</a>
+        </nav>
+      </header>
+
+      <section class="resonance-intro">
+        <p class="eyebrow">DIRECTION 01 / KINETIC ACOUSTIC ARCHITECTURE</p>
+        <h1 id="resonance-title">RESONANT<br /><span>MATTER</span></h1>
+        <p>不是一个跟着节拍缩放的模型。上下锚环牵引张拉膜，声音经过弹簧网络成为具有延迟、回弹和衰减的空间运动。</p>
+      </section>
+
+      <aside class="force-map" aria-labelledby="force-map-title">
+        <div class="panel-title"><span>LIVE FORCE MAP</span><strong id="force-map-title">声音进入结构</strong></div>
+        <div class="force-bands" aria-label="实时声音到物理映射">
+          <div data-band="low"><span>LOW</span><b>锚环张力</b><i><em></em></i><output id="low-value">0.00</output></div>
+          <div data-band="mid"><span>MID</span><b>相位扭转</b><i><em></em></i><output id="mid-value">0.00</output></div>
+          <div data-band="high"><span>HIGH</span><b>膜面行波</b><i><em></em></i><output id="high-value">0.00</output></div>
+        </div>
+        <p id="force-note">自主状态：结构保持微弱呼吸，等待声音输入。</p>
+      </aside>
+
+      <section class="physics-proof" aria-label="GPU 物理规模">
+        <div><span id="vertex-count">—</span><small>GPU POINTS</small></div>
+        <div><span id="spring-count">—</span><small>CONSTRAINTS</small></div>
+        <div><span id="solver-rate">180</span><small>STEPS / SEC</small></div>
+        <div><span id="render-fps">—</span><small>SHORT FPS</small></div>
+      </section>
+
+      <section id="resonance-controls" class="resonance-controls" aria-label="作品控制">
+        <button id="audio-toggle" class="primary-control" type="button" aria-pressed="false">
+          <span class="control-symbol">▶</span><span><strong>启动声场</strong><small>解锁原创程序化音乐</small></span>
+        </button>
+        <button id="impact-trigger" type="button">
+          <span class="control-symbol">⌁</span><span><strong>施加冲击</strong><small>观察结构传播</small></span>
+        </button>
+        <label for="tension"><span>张力 <output id="tension-value">68%</output></span><input id="tension" type="range" min="0.35" max="1" step="0.01" value="0.68" /></label>
+        <button id="mute-toggle" type="button" aria-pressed="false" aria-label="切换静音">
+          <span class="control-symbol">◖</span><span><strong>输出</strong><small>有声</small></span>
+        </button>
+        <button id="view-reset" type="button">
+          <span class="control-symbol">↺</span><span><strong>视角</strong><small>重置</small></span>
+        </button>
+      </section>
+
+      <p id="audio-status" class="audio-status" aria-live="polite">音乐尚未启动；可以先施加一次结构冲击。</p>
+
+      <div id="resonance-loading" class="resonance-loading" role="status" aria-live="polite">
+        <div><p>ASSEMBLING GPU CONSTRAINT FIELD</p><strong id="loading-label">构建张拉膜拓扑</strong><span><i></i></span></div>
+      </div>
+
+      <section id="resonance-error" class="resonance-error" hidden aria-live="assertive">
+        <p>WEBGPU ENHANCEMENT UNAVAILABLE</p>
+        <h2>声场雕塑没有启动</h2>
+        <p id="resonance-error-message"></p>
+        <p>作品概念、声音映射、方向导航与音频控制仍然可用。</p>
+      </section>
+    </main>
+    <script type="module" src="/src/resonance.js"></script>
+  </body>
+</html>

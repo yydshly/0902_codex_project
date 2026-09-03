@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yichen Skills 全量能力图谱：22 个 Skill 的能力、原理、场景、边界与团队价值。" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Yichen Skills｜全量能力图谱</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="返回能力图谱首页">
+        <span class="brand-mark" aria-hidden="true">YS</span>
+        <span>CAPABILITY ATLAS</span>
+      </a>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#scenarios">流程演示</a>
+        <a href="#atlas">能力清单</a>
+        <a href="#architecture">底层原理</a>
+        <a href="#meaning">对我们的意义</a>
+        <a href="#risks">边界</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换到浅色主题">
+          <span class="theme-symbol" aria-hidden="true">◐</span>
+        </button>
+        <button class="menu-button" id="mobile-menu" type="button" aria-label="打开导航" aria-controls="mobile-nav">目录</button>
+      </div>
+    </header>
+
+    <dialog class="mobile-nav" id="mobile-nav" aria-labelledby="mobile-nav-title">
+      <div class="dialog-head">
+        <strong id="mobile-nav-title">浏览目录</strong>
+        <button class="icon-button" data-close-mobile type="button" aria-label="关闭导航">×</button>
+      </div>
+      <nav aria-label="移动端导航">
+        <a href="#overview">01 / 总览</a>
+        <a href="#scenarios">02 / 完整流程</a>
+        <a href="#atlas">03 / 22 项能力</a>
+        <a href="#architecture">04 / 底层原理</a>
+        <a href="#meaning">05 / 对我们的意义</a>
+        <a href="#risks">06 / 风险边界</a>
+      </nav>
+    </dialog>
+
+    <main id="main">
+      <section class="hero page-shell" id="overview" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span>RESEARCH 005</span><span>UPSTREAM 14f10a9</span></p>
+          <h1 id="hero-title">22 个 Skill，<br />拼成一套个人工作系统。</h1>
+          <p class="hero-lead">它不是一个 Agent，也不是一个统一软件产品。它把作者反复使用的研究、归档、内容生产、私域数据和协作方法，整理成宿主 Agent 可发现、可调用、部分可验证的能力包。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#scenarios">走一遍完整流程 <span aria-hidden="true">↘</span></a>
+            <a class="text-action" href="#atlas">浏览全部 22 项能力</a>
+          </div>
+        </div>
+
+        <div class="system-card reveal" aria-label="Skill 系统构成">
+          <div class="system-card-head">
+            <span>它究竟是什么？</span>
+            <span class="live-dot"><i aria-hidden="true"></i> 研究结论</span>
+          </div>
+          <div class="not-agent">
+            <span class="cross" aria-hidden="true">×</span>
+            <div><b>不是 Agent 本体</b><small>没有中央 Planner、常驻循环或自主目标</small></div>
+          </div>
+          <ol class="layer-stack">
+            <li><span>01</span><div><b>宿主 Agent</b><small>理解需求并选择 Skill</small></div></li>
+            <li><span>02</span><div><b>自然语言协议</b><small>SKILL.md 定义 SOP 与边界</small></div></li>
+            <li><span>03</span><div><b>执行与适配</b><small>脚本、浏览器、CLI、API、MCP</small></div></li>
+            <li><span>04</span><div><b>证据与验收</b><small>manifest、hash、回读、状态机</small></div></li>
+          </ol>
+        </div>
+
+        <dl class="metric-strip reveal" aria-label="仓库统计">
+          <div><dt>22</dt><dd>SKILL.md</dd></div>
+          <div><dt>21 + 1</dt><dd>根 Skill + 插件</dd></div>
+          <div><dt>84</dt><dd>Python / Node 文件</dd></div>
+          <div><dt>30</dt><dd>测试与 fixture 文件</dd></div>
+        </dl>
+      </section>
+
+      <section class="identity-band" aria-label="核心判断">
+        <div class="page-shell identity-grid">
+          <p class="section-index">00 / 核心判断</p>
+          <blockquote>本质上，它确实是作者个人日常工作的能力汇总；但成熟部分已经不只是“提示词收藏”，而是带路由、执行器、授权边界和验收证据的工作流协议库。</blockquote>
+        </div>
+      </section>
+
+      <section class="workflow-section page-shell" aria-labelledby="workflow-title">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / 能力链</p>
+          <div><h2 id="workflow-title">从信息到资产，再回到记忆</h2><p>单个 Skill 是零件；连续的 handoff 才构成真实工作流。</p></div>
+        </div>
+        <ol class="workflow-line reveal">
+          <li><span>发现</span><b>统一搜索</b><small>找到候选，不伪装成事实</small></li>
+          <li><span>保存</span><b>内容归档</b><small>已知 URL 才读取或下载</small></li>
+          <li><span>转换</span><b>ASR / 切片</b><small>转写、字幕、卡片与视频</small></li>
+          <li><span>生产</span><b>平台草稿</b><small>写入后回读验证</small></li>
+          <li><span>沉淀</span><b>总结 / 记忆</b><small>事实源与派生索引分离</small></li>
+        </ol>
+      </section>
+
+      <section class="scenarios-section" id="scenarios" aria-labelledby="scenarios-title">
+        <div class="page-shell">
+          <div class="section-heading reveal">
+            <p class="section-index">02 / 场景与完整流程</p>
+            <div><h2 id="scenarios-title">看 Skill 如何接力，而不是只看清单</h2><p>选择一个真实工作目标，逐步查看 Agent 为什么调用某个 Skill、它接收什么、交出什么、在哪里停下来等人确认。</p></div>
+          </div>
+
+          <div class="simulation-note reveal" role="note">
+            <span aria-hidden="true">SIMULATION</span>
+            <p><strong>这是基于仓库协议的流程演示。</strong>页面不会调用真实平台、读取账号或生成真实业务结果；所有数量和产物状态仅用于说明 Skill 如何协作。</p>
+          </div>
+
+          <div class="scenario-tabs reveal" id="scenario-tabs" role="tablist" aria-label="组合使用场景"></div>
+
+          <div class="workflow-simulator reveal">
+            <header class="case-header">
+              <div>
+                <p class="case-kicker" id="case-kicker"></p>
+                <h3 id="case-title"></h3>
+                <p id="case-summary"></p>
+              </div>
+              <div class="flow-controls">
+                <button class="primary-action" id="run-flow" type="button">播放完整流程 <span aria-hidden="true">▶</span></button>
+                <button class="reset-action" id="reset-flow" type="button">重置</button>
+              </div>
+            </header>
+
+            <div class="brief-strip">
+              <span>INPUT / 用户目标</span>
+              <p id="case-brief"></p>
+              <small id="case-note"></small>
+            </div>
+
+            <div class="flow-progress" aria-label="流程进度">
+              <div><span id="flow-status" aria-live="polite">等待开始</span><b id="flow-fraction">0 / 7</b></div>
+              <progress id="flow-progress" max="7" value="0">0 / 7</progress>
+            </div>
+
+            <div class="flow-workspace">
+              <ol class="flow-steps" id="flow-steps" aria-label="工作流步骤"></ol>
+              <article class="step-inspector" id="step-inspector" aria-live="polite">
+                <div class="step-heading">
+                  <div><span id="step-phase"></span><h3 id="step-title"></h3></div>
+                  <span class="step-state" id="step-state">PREVIEW</span>
+                </div>
+                <div class="agent-decision">
+                  <span>AGENT DECISION / 为什么选它</span>
+                  <p id="step-decision"></p>
+                </div>
+                <div class="step-data-grid">
+                  <div><span>输入</span><p id="step-input"></p></div>
+                  <div><span>执行动作</span><p id="step-operation"></p></div>
+                </div>
+                <div class="skill-driver">
+                  <span>DRIVEN BY</span>
+                  <div id="step-skills"></div>
+                </div>
+                <div class="handoff-line">
+                  <span class="handoff-from">当前步骤</span><i aria-hidden="true"></i><div><small>HANDOFF / 交接产物</small><b id="step-handoff"></b></div><i aria-hidden="true"></i><span class="handoff-to">下一步骤</span>
+                </div>
+                <div class="effect-grid">
+                  <div class="guard-box"><span>SAFETY GATE / 停止条件</span><p id="step-guard"></p></div>
+                  <div class="effect-box"><span>VISIBLE EFFECT / 这一步带来什么</span><p id="step-effect"></p></div>
+                </div>
+                <div class="sample-console"><span>EXAMPLE OUTPUT</span><code id="step-sample"></code></div>
+              </article>
+            </div>
+
+            <section class="outcome-board" aria-labelledby="outcome-title">
+              <div class="outcome-intro">
+                <p class="case-kicker">FINAL EFFECT / 模拟完成态</p>
+                <h3 id="outcome-title">一次驱动，形成一组可检查的成果</h3>
+                <div class="meaning-tags" id="flow-meaning"></div>
+              </div>
+              <div class="flow-outcomes" id="flow-outcomes"></div>
+            </section>
+          </div>
+
+          <div class="scenario-principle reveal">
+            <strong>关键不是“自动调用全部 22 个 Skill”</strong>
+            <p>而是由宿主 Agent 根据当前目标选择最小能力组合，通过结构化产物交接；当授权、证据或依赖不足时停止，而不是静默换路或继续扩大范围。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="atlas-section page-shell" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / 全量图谱</p>
+          <div><h2 id="atlas-title">22 项能力，一个不漏</h2><p>按能力域、实现层级或关键词筛选；点击卡片查看机制、依赖、边界和可借鉴价值。</p></div>
+        </div>
+
+        <div class="filter-panel reveal" aria-label="能力筛选">
+          <label class="search-field" for="skill-search">
+            <span>搜索</span>
+            <input id="skill-search" type="search" placeholder="例如：搜索、X、微信、记忆…" autocomplete="off" />
+          </label>
+          <fieldset class="category-filter">
+            <legend>能力域</legend>
+            <button type="button" data-category="all" aria-pressed="true">全部</button>
+            <button type="button" data-category="research" aria-pressed="false">研究与获取</button>
+            <button type="button" data-category="content" aria-pressed="false">内容与媒体</button>
+            <button type="button" data-category="platform" aria-pressed="false">平台与私域</button>
+            <button type="button" data-category="memory" aria-pressed="false">记忆与协作</button>
+          </fieldset>
+          <label class="select-field" for="level-filter">
+            <span>实现层级</span>
+            <select id="level-filter">
+              <option value="all">全部层级</option>
+              <option value="verified">V · 已验证执行器</option>
+              <option value="executor">E · 执行器</option>
+              <option value="bridge">B · 外部桥接</option>
+              <option value="protocol">P · 协议 / SOP</option>
+              <option value="deprecated">D · 退役入口</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="result-bar">
+          <p id="result-count" aria-live="polite">显示 22 / 22 项</p>
+          <p><span class="legend-code">V</span> 验证最深 <span class="legend-code">P</span> 主要靠协议</p>
+        </div>
+        <div class="skill-grid" id="skill-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">∅</span><h3>没有匹配的能力</h3><p>换一个关键词，或清空筛选条件。</p>
+          <button class="secondary-action" id="reset-filters" type="button">重置筛选</button>
+        </div>
+      </section>
+
+      <section class="architecture-section" id="architecture" aria-labelledby="architecture-title">
+        <div class="page-shell">
+          <div class="section-heading reveal">
+            <p class="section-index">04 / 底层原理</p>
+            <div><h2 id="architecture-title">四层，而不是一个万能入口</h2><p>点击每层，查看“Agent 做什么、Skill 做什么、证据如何闭环”。</p></div>
+          </div>
+          <div class="architecture-layout reveal">
+            <div class="layer-tabs" role="tablist" aria-label="架构层级" id="layer-tabs"></div>
+            <article class="layer-detail" id="layer-panel" tabindex="0" aria-live="polite"></article>
+          </div>
+          <div class="principle-grid reveal">
+            <article><span>原则 A</span><h3>意图先路由</h3><p>总入口只负责稳定意图；单阶段任务直接进入最窄 Skill，避免递归与权限扩大。</p></article>
+            <article><span>原则 B</span><h3>授权不继承</h3><p>搜索、私人读取、下载和外部写入分别授权；handoff 传事实，不转移许可。</p></article>
+            <article><span>原则 C</span><h3>结果要回读</h3><p>退出码为 0 不是完成。高成熟度能力用 hash、schema、checkpoint 与持久化回读验收。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="meaning-section page-shell" id="meaning" aria-labelledby="meaning-title">
+        <div class="section-heading reveal">
+          <p class="section-index">05 / 对我们的意义</p>
+          <div><h2 id="meaning-title">复制方法，不复制他的个人环境</h2><p>真正值得带走的是 Skill 工程方法；账号、私有 Runtime、非官方平台路线和高敏数据执行器应重新评估。</p></div>
+        </div>
+        <div class="meaning-layout">
+          <article class="meaning-thesis reveal">
+            <p class="eyebrow">OUR TAKEAWAY</p>
+            <h3>把散落在对话里的经验，升级成团队可复用、可审计、可演进的能力资产。</h3>
+            <p>它给我们的不是一套能直接安装到公司的万能工具，而是一份很具体的样板：哪些经验值得写成 Skill，何时需要脚本，何时必须加硬边界，以及怎样证明一次任务真的完成。</p>
+          </article>
+          <ol class="meaning-list reveal">
+            <li><span>01</span><div><b>建立能力目录</b><p>按用户意图而不是按工具名组织；每项明确触发、不适用与 owner。</p></div></li>
+            <li><span>02</span><div><b>统一交接契约</b><p>用 schema / handoff 连接搜索、读取、生产与记忆，保留来源和授权。</p></div></li>
+            <li><span>03</span><div><b>分级工程化</b><p>低风险 SOP 可以先文本化；高频、高风险或付费动作再升级为执行器与验证器。</p></div></li>
+            <li><span>04</span><div><b>单写者与回读</b><p>外部协作明确谁能写，写后必须回读；避免多 Agent 重复执行和状态漂移。</p></div></li>
+            <li><span>05</span><div><b>企业运行时补强</b><p>补上 RBAC、凭据代理、审计、成本、数据保留、跨平台 CI 与许可证治理。</p></div></li>
+          </ol>
+        </div>
+
+        <div class="adoption-roadmap reveal" aria-label="建议落地路线">
+          <article><span>NOW · 0—2 周</span><h3>盘点 10 个高频动作</h3><p>先把输入、输出、触发词、禁止事项与成功标准写清楚。</p></article>
+          <article><span>NEXT · 2—6 周</span><h3>做 3 个证据化 Skill</h3><p>优先选择研究汇总、内容处理、项目收尾，建立共同 handoff。</p></article>
+          <article><span>LATER · 6 周后</span><h3>建设团队 Runtime</h3><p>将权限、凭据、审计、监控、版本和评测从文本承诺下沉到系统。</p></article>
+        </div>
+      </section>
+
+      <section class="risks-section" id="risks" aria-labelledby="risks-title">
+        <div class="page-shell">
+          <div class="section-heading reveal">
+            <p class="section-index">06 / 风险与边界</p>
+            <div><h2 id="risks-title">不要把“写进 Skill”误认为“系统已保证”</h2><p>安全文本能约束 Agent 行为，但不能替代沙箱、权限系统和真实生产验证。</p></div>
+          </div>
+          <div class="risk-grid reveal">
+            <article class="license-risk"><span>必须先处理</span><h3>许可证不允许直接公司内部部署</h3><p>上游许可限定个人学习与非商业用途，并明确限制未经批准的公司内部部署与商业使用。研究其方法没有问题；复制代码进企业流程前必须单独获得许可或重写。</p></article>
+            <article><span>复现边界</span><h3>部分能力依赖外部或私有组件</h3><p>包括 Agent Memory 独立仓库、平台账号/登录态、Grok 与 WeCom CLI，以及未公开的 Codex × ChatGPT Tunnel / Runtime。</p></article>
+            <article><span>兼容边界</span><h3>平台 UI、DOM 与数据库 schema 会变</h3><p>微信、X、剪映和浏览器自动化都可能随版本失效；离线 fixture 通过不等于真实平台长期可用。</p></article>
+          </div>
+          <div class="test-note reveal">
+            <div><strong>367</strong><span>本地发现测试</span></div>
+            <div><strong>354</strong><span>通过</span></div>
+            <div><strong>1</strong><span>跳过</span></div>
+            <div><strong>12</strong><span>失败 / 错误</span></div>
+            <p>Windows 实测；失败主要来自 POSIX 权限/路径假设和缺失的可选依赖。数字用于说明复现边界，不是上游官方 CI 结论。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-shell">
+      <div><strong>YICHEN SKILLS / CAPABILITY ATLAS</strong><p>基于上游提交 <code>14f10a9</code> 的独立研究性整理。</p></div>
+      <div class="footer-links"><a href="https://github.com/mcncarl/yichen-skills" target="_blank" rel="noreferrer">查看上游仓库 ↗</a><a href="#overview">回到顶部 ↑</a></div>
+    </footer>
+
+    <dialog class="skill-dialog" id="skill-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-head">
+        <div><span id="dialog-kicker"></span><h2 id="dialog-title"></h2></div>
+        <button class="icon-button" data-close-dialog type="button" aria-label="关闭能力详情">×</button>
+      </div>
+      <div class="dialog-body">
+        <p class="dialog-summary" id="dialog-summary"></p>
+        <dl class="detail-list">
+          <div><dt>典型场景</dt><dd id="dialog-scenario"></dd></div>
+          <div><dt>输入</dt><dd id="dialog-input"></dd></div>
+          <div><dt>输出</dt><dd id="dialog-output"></dd></div>
+          <div><dt>底层机制</dt><dd id="dialog-mechanism"></dd></div>
+          <div><dt>外部依赖</dt><dd id="dialog-deps"></dd></div>
+          <div class="boundary-row"><dt>关键边界</dt><dd id="dialog-boundary"></dd></div>
+          <div class="value-row"><dt>对我们的价值</dt><dd id="dialog-value"></dd></div>
+        </dl>
+        <a class="source-link" id="dialog-source" target="_blank" rel="noreferrer">查看固定版本的 SKILL.md ↗</a>
+      </div>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

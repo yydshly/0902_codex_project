@@ -6,6 +6,7 @@ node_modules/
 # Generated Pages output
 dist/
 apps/*/dist/
+apps/*/.generated/
 
 # Framework and tool caches
 .cache/

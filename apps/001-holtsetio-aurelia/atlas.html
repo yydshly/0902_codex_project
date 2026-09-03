@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#070908" />
+    <meta name="description" content="Aurelia Field Atlas：从现实观察、物理抽象和技术模块推演可交互作品的创意研究图谱。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 32h48M32 8v48' stroke='%23d8ff62' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2377dfff' stroke-width='2'/%3E%3C/svg%3E" />
+    <title>Aurelia Field Atlas / 创意研究图谱</title>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"><i></i></div>
+    <a class="skip-link" href="#atlas-content">跳到研究内容</a>
+
+    <header class="atlas-topbar">
+      <a class="atlas-brand" href="./directions.html"><span>001</span><b>AURELIA / FIELD ATLAS</b></a>
+      <nav aria-label="项目导航">
+        <a href="./directions.html">方向总览</a>
+        <a href="./resonance.html">01 声场雕塑</a>
+        <a href="./identity.html">02 活体品牌</a>
+      </nav>
+      <span class="atlas-edition">R10 / 2026.09</span>
+    </header>
+
+    <aside class="chapter-rail" aria-label="章节导航">
+      <span>FIELD<br />ATLAS</span>
+      <nav>
+        <a href="#method" data-section="method"><i>00</i>方法</a>
+        <a href="#directions" data-section="directions"><i>01</i>原规划</a>
+        <a href="#observations" data-section="observations"><i>02</i>现实观察</a>
+        <a href="#technology" data-section="technology"><i>03</i>技术研究</a>
+        <a href="#interactions" data-section="interactions"><i>04</i>交互模块</a>
+        <a href="#matrix" data-section="matrix"><i>05</i>实验矩阵</a>
+        <a href="#roadmap" data-section="roadmap"><i>06</i>优先级</a>
+      </nav>
+    </aside>
+
+    <main id="atlas-content">
+      <section class="atlas-hero" aria-labelledby="atlas-title">
+        <div class="hero-kicker"><span>CREATIVE RESEARCH SYSTEM</span><i></i><span>OBSERVE → ABSTRACT → BUILD</span></div>
+        <div class="hero-title-wrap">
+          <h1 id="atlas-title">把现实世界的<br /><em>因果关系</em><br />变成可交互作品。</h1>
+          <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i><b>FIELD<br />01</b></div>
+        </div>
+        <div class="hero-bottom">
+          <p>我们不从“再做一个造型”开始，而是观察雨滴、风、拥堵、墨迹、光影、磁场和群体同步如何发生，再把其中的锚点、约束、场、冲击与记忆映射到 GPU 物理系统。</p>
+          <dl aria-label="图谱规模">
+            <div><dt>10</dt><dd>原规划方向</dd></div>
+            <div><dt>12</dt><dd>现实观察原型</dd></div>
+            <div><dt>13</dt><dd>技术研究层</dd></div>
+            <div><dt>10</dt><dd>交互模块</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="method" class="atlas-section method-section" aria-labelledby="method-title">
+        <header class="section-heading">
+          <p><span>00</span> METHOD / 转换方法</p>
+          <h2 id="method-title">不是复制外观，<br />而是提取局部因果。</h2>
+        </header>
+        <ol class="method-chain">
+          <li><span>01 / OBSERVE</span><strong>现实观察</strong><p>什么被固定？什么能够移动？变化从哪里开始，又如何消失？</p></li>
+          <li><span>02 / ABSTRACT</span><strong>物理抽象</strong><p>把对象重写为锚点、自由节点、弹簧、场、碰撞、质量与时间记忆。</p></li>
+          <li><span>03 / MAP</span><strong>信号映射</strong><p>把压力、速度、雨量、流量、音量和相位分成连续参数与离散事件。</p></li>
+          <li><span>04 / EXPRESS</span><strong>统一表达</strong><p>同一状态同时驱动形体、结构线、材质、声音和有上限的反馈。</p></li>
+          <li><span>05 / APPLY</span><strong>产品落点</strong><p>进入品牌、舞台、城市、建筑、环境界面与公共艺术，而不止是 Demo。</p></li>
+        </ol>
+        <div class="method-formula" aria-label="转换公式">
+          <span>OBSERVATION</span><i>→</i><span>PHYSICS GRAMMAR</span><i>→</i><span>GPU STATE</span><i>→</i><span>EXPERIENCE</span>
+        </div>
+      </section>
+
+      <section id="directions" class="atlas-section directions-section" aria-labelledby="directions-title">
+        <header class="section-heading split-heading">
+          <div><p><span>01</span> ORIGINAL PLAN / 原规划案例</p><h2 id="directions-title">十个世界，<br />一套物理语法。</h2></div>
+          <p>状态只描述当前交付事实：两件作品已运行，第三件是下一方向，其余仍是研究命题。筛选不会改变路线顺序。</p>
+        </header>
+
+        <div class="filter-bar" role="group" aria-label="按状态筛选原规划方向">
+          <span>FILTER / <b id="direction-count">10</b></span>
+          <button type="button" data-status-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-status-filter="live" aria-pressed="false">LIVE</button>
+          <button type="button" data-status-filter="next" aria-pressed="false">NEXT</button>
+          <button type="button" data-status-filter="planned" aria-pressed="false">PLANNED</button>
+          <button type="button" data-status-filter="research" aria-pressed="false">RESEARCH</button>
+        </div>
+
+        <div class="plan-grid" id="plan-grid">
+          <article class="plan-card is-live" data-direction="01" data-status="live">
+            <header><span>01</span><b>LIVE</b></header><p>RESONANT MATTER</p><h3>声场雕塑</h3>
+            <p class="plan-mechanism">张拉膜 · 锚点驱动 · 结构行波</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>雨滴冲击、拖拽拨弦、空间声源、树影窗帘</p></div>
+            <a href="./resonance.html">进入已完成作品 ↗</a>
+          </article>
+          <article class="plan-card is-live" data-direction="02" data-status="live">
+            <header><span>02</span><b>LIVE</b></header><p>LIVING IDENTITY</p><h3>活体品牌</h3>
+            <p class="plan-mechanism">字形约束 · 解构 · 受力 · 召回</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>速度尾流、拓扑撕裂、自愈、毛笔轨迹、可变文字</p></div>
+            <a href="./identity.html">进入已完成作品 ↗</a>
+          </article>
+          <article class="plan-card is-next" data-direction="03" data-status="next">
+            <header><span>03</span><b>NEXT</b></header><p>PLAYABLE SPACE</p><h3>可演奏空间</h3>
+            <p class="plan-mechanism">动作发声 · 碰撞乐器 · 声音反塑空间</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>可演奏雨幕、窗帘空间音频、群体协奏与多点输入</p></div>
+          </article>
+          <article class="plan-card" data-direction="04" data-status="planned">
+            <header><span>04</span><b>PLANNED</b></header><p>GRAVITY LOOM</p><h3>引力织体</h3>
+            <p class="plan-mechanism">吸引子 · 场线 · 轨道 · 空间褶皱</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>磁铁铁屑、风中晾衣绳、数据权重与极性反转</p></div>
+          </article>
+          <article class="plan-card" data-direction="05" data-status="planned">
+            <header><span>05</span><b>PLANNED</b></header><p>SIGNAL ECOLOGY</p><h3>数据生命网络</h3>
+            <p class="plan-mechanism">图拓扑 · 流量 · 兴奋 · 拥塞传播</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>地铁人流、数据磁场、异常恢复与群体同步</p></div>
+          </article>
+          <article class="plan-card" data-direction="06" data-status="research">
+            <header><span>06</span><b>RESEARCH</b></header><p>MEMORY ALLOY</p><h3>记忆合金</h3>
+            <p class="plan-mechanism">塑性 · 迟滞 · 疲劳 · 形状记忆</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>笔迹时间记忆、损伤积累、不完全恢复与材料人格</p></div>
+          </article>
+          <article class="plan-card" data-direction="07" data-status="research">
+            <header><span>07</span><b>RESEARCH</b></header><p>ACOUSTIC BLACK HOLE</p><h3>声学黑洞</h3>
+            <p class="plan-mechanism">声谱吸积 · 阈值 · 事件视界</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>磁场吸引、深度涡旋、空间音频与临界事件</p></div>
+          </article>
+          <article class="plan-card" data-direction="08" data-status="research">
+            <header><span>08</span><b>RESEARCH</b></header><p>TOPOLOGICAL CLIMATE</p><h3>拓扑气候</h3>
+            <p class="plan-mechanism">风场 · 云层 · 降水 · 材料响应</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>伞面积水、晾衣绳阵风、窗帘透光与真实天气</p></div>
+          </article>
+          <article class="plan-card" data-direction="09" data-status="research">
+            <header><span>09</span><b>RESEARCH</b></header><p>CRYSTAL SYNTAX</p><h3>晶体语法</h3>
+            <p class="plan-mechanism">规则生长 · 断裂 · 继承 · 变异</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>活体书法、可编辑生成规则、可解释断裂与重排</p></div>
+          </article>
+          <article class="plan-card" data-direction="10" data-status="research">
+            <header><span>10</span><b>RESEARCH</b></header><p>COLLECTIVE GLYPH</p><h3>群体字形</h3>
+            <p class="plan-mechanism">局部耦合 · 相位同步 · 符号涌现</p>
+            <div class="plan-extension"><span>EXTEND WITH</span><p>鼓掌合唱、地铁群流、多人输入与公共艺术</p></div>
+          </article>
+        </div>
+        <p id="direction-empty" class="empty-state" hidden>当前筛选没有方向。</p>
+      </section>
+
+      <section id="observations" class="atlas-section observations-section" aria-labelledby="observations-title">
+        <header class="section-heading split-heading">
+          <div><p><span>02</span> FIELD OBSERVATIONS / 现实观察</p><h2 id="observations-title">生活不是素材库，<br />而是机制库。</h2></div>
+          <p>选择一个观察，右侧会把它重组为系统模型，并同步高亮它能够连接的原规划方向与技术模块。</p>
+        </header>
+
+        <div class="filter-bar observation-filter" role="group" aria-label="按物理机制筛选现实观察">
+          <span>MECHANISM LENS / <b id="observation-count">12</b></span>
+          <button type="button" data-observation-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-observation-filter="impact" aria-pressed="false">冲击</button>
+          <button type="button" data-observation-filter="field" aria-pressed="false">场</button>
+          <button type="button" data-observation-filter="flow" aria-pressed="false">流动</button>
+          <button type="button" data-observation-filter="memory" aria-pressed="false">记忆</button>
+          <button type="button" data-observation-filter="collective" aria-pressed="false">群体</button>
+          <button type="button" data-observation-filter="growth" aria-pressed="false">生长</button>
+        </div>
+
+        <div class="observation-workspace">
+          <div class="observation-list">
+            <article id="case-rain" class="observation-card" data-mechanism="impact,structure" data-directions="01,03,08" data-tech="topology,solver,field,collision,surface,input,history,audio" data-modules="drag,charge,conduction" data-title="雨落在伞面" data-signal="离散雨滴先产生局部冲击，形变再沿张紧膜与伞骨向外传播；积水会缓慢改变质量和张力。" data-model="伞骨固定锚 + 膜面弹簧 + 雨滴碰撞 + 积水质量场" data-variables="雨强、滴径、命中位置、膜张力、排水速度、积水质量" data-products="可演奏雨幕、天气品牌装置、降雨数据雕塑">
+              <div class="observation-visual visual-rain" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 01</span><b>IMPACT / TENSION</b></header><h3>雨落在伞面</h3>
+              <p>局部冲击沿张紧表面传播，积水又反过来改变整个结构。</p>
+              <dl><div><dt>PHYSICS</dt><dd>伞骨锚点、膜面弹簧、雨滴冲击、质量变化</dd></div><div><dt>OUTPUT</dt><dd>可演奏雨幕 / 天气品牌装置</dd></div></dl>
+              <div class="case-actions"><button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button><a class="case-demo-link" href="./rain.html">进入可运行样例 <span>→</span></a></div>
+            </article>
+
+            <article id="case-clothesline" class="observation-card" data-mechanism="structure,field" data-directions="04,05,08" data-tech="topology,solver,field,collision,surface,input" data-modules="drag,wake,polarity" data-title="风中的晾衣绳" data-signal="固定端维持整体边界，衣物质量改变局部下垂，方向场与碰撞让扰动沿链式拓扑传递。" data-model="固定端 + 链式约束 + 衣物负重 + 风向场 + 碰撞" data-variables="风向、阵风、衣物质量与面积、绳长、阻尼、碰撞阈值" data-products="数据风向、城市情绪织物、橱窗与建筑装置">
+              <div class="observation-visual visual-line" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 02</span><b>WIND / LOAD</b></header><h3>风中的晾衣绳</h3>
+              <p>固定、负重、阵风和碰撞共同形成有方向、有延迟的链式传播。</p>
+              <dl><div><dt>PHYSICS</dt><dd>固定端、链式拓扑、衣物质量、风场、阻尼</dd></div><div><dt>OUTPUT</dt><dd>数据风向 / 城市情绪织物</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-metro" class="observation-card" data-mechanism="flow,network" data-directions="05,10" data-tech="topology,storage,bridge,field,input,history,feedback,validation,product" data-modules="conduction,memory,mutation" data-title="地铁人流与拥堵" data-signal="单一站点的拥堵不是局部颜色变化；容量压力会沿换乘线路传递，并改变相邻站点的节奏与恢复速度。" data-model="站点节点 + 线路弹簧 + 流量压力 + 拥塞传播" data-variables="进出站量、换乘权重、容量、延迟、恢复率、时间窗口" data-products="实时城市生命网络、交通态势墙、公共数据艺术">
+              <div class="observation-visual visual-metro" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 03</span><b>FLOW / CONGESTION</b></header><h3>地铁人流与拥堵</h3>
+              <p>局部拥堵反向影响全网，让城市状态成为会传播、会恢复的生命网络。</p>
+              <dl><div><dt>PHYSICS</dt><dd>站点节点、线路约束、流量压力、拥塞传播</dd></div><div><dt>OUTPUT</dt><dd>实时城市生命网络 / 交通态势墙</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-ink" class="observation-card" data-mechanism="flow,memory" data-directions="02,06,09" data-tech="topology,storage,bridge,surface,input,history,feedback" data-modules="drag,wake,tear,memory,mutation" data-title="毛笔与墨水" data-signal="压力决定笔迹宽度，速度决定痕迹密度，含水量与纸张吸收让每一笔保留时间记忆。" data-model="笔迹锚点 + 压力宽度 + 流体粒子 + 扩散场 + 时间记忆" data-variables="压力、速度、倾角、含水量、纸张吸收、干燥时间" data-products="活体书法、动态品牌、表演视觉、生成字体">
+              <div class="observation-visual visual-ink" aria-hidden="true"><i></i><i></i><b></b></div>
+              <header><span>FIELD 04</span><b>PRESSURE / MEMORY</b></header><h3>毛笔与墨水</h3>
+              <p>笔触不是一条线：它同时记录力度、速度、扩散和逐渐干燥的时间。</p>
+              <dl><div><dt>PHYSICS</dt><dd>笔迹锚点、流体粒子、扩散场、时间记忆</dd></div><div><dt>OUTPUT</dt><dd>活体书法 / 动态品牌</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-curtain" class="observation-card" data-mechanism="structure,field" data-directions="01,03,08" data-tech="topology,solver,field,collision,surface,input,audio,feedback" data-modules="drag,wake,depth" data-title="树影与窗帘" data-signal="风改变布料褶皱，褶皱改变遮挡与投影，光影又与空间声场和人的距离共同构成环境反馈。" data-model="布料拓扑 + 风场 + 遮挡几何 + 光照投影 + 空间音频" data-variables="风速、透光率、褶皱、太阳角度、室内声场、人体距离" data-products="冥想空间、环境界面、建筑表皮、疗愈装置">
+              <div class="observation-visual visual-curtain" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 05</span><b>LIGHT / OCCLUSION</b></header><h3>树影与窗帘</h3>
+              <p>风、遮挡、光照与声音共同变化，让界面成为有时间感的环境。</p>
+              <dl><div><dt>PHYSICS</dt><dd>布料拓扑、风场、遮挡、投影、空间音频</dd></div><div><dt>OUTPUT</dt><dd>冥想空间 / 环境界面</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-magnet" class="observation-card" data-mechanism="field" data-directions="04,05,07" data-tech="storage,bridge,field,surface,input" data-modules="repel,polarity,depth" data-title="磁铁与铁屑" data-signal="不可见的场通过铁屑密度和朝向显形；多个极点竞争时，局部排列会重写整个场线结构。" data-model="吸引子 + 粒子约束 + 场线密度 + 多极竞争" data-variables="极性、场强、距离、粒子质量、阻尼、数据权重" data-products="引力织体、数据磁场、关系可视化、品牌场域">
+              <div class="observation-visual visual-magnet" aria-hidden="true"><i></i><i></i><b></b></div>
+              <header><span>FIELD 06</span><b>FIELD / POLARITY</b></header><h3>磁铁与铁屑</h3>
+              <p>看不见的关系通过物质排列显形，数据不再只是颜色和数字。</p>
+              <dl><div><dt>PHYSICS</dt><dd>吸引子、粒子约束、场线密度、多极竞争</dd></div><div><dt>OUTPUT</dt><dd>引力织体 / 数据磁场</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-crowd" class="observation-card" data-mechanism="collective,network" data-directions="03,05,10" data-tech="topology,storage,bridge,input,audio,feedback,validation" data-modules="charge,conduction,mutation" data-title="鼓掌、合唱与群体同步" data-signal="每个人只感知邻近节奏，但局部耦合会让独立个体逐渐同步，并在阈值后涌现全局图案。" data-model="独立振荡节点 + 局部耦合 + 相位同步 + 群体阈值" data-variables="节拍、音高、相位差、邻域、耦合强度、参与人数" data-products="群体字形、公共艺术、演唱会互动、协作仪式">
+              <div class="observation-visual visual-crowd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 07</span><b>COUPLING / SYNC</b></header><h3>鼓掌、合唱与群体同步</h3>
+              <p>没有中央指挥，每个个体只与邻近个体耦合，却能共同形成节奏和符号。</p>
+              <dl><div><dt>PHYSICS</dt><dd>振荡节点、局部耦合、相位同步、群体阈值</dd></div><div><dt>OUTPUT</dt><dd>群体字形 / 公共艺术</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-web" class="observation-card" data-mechanism="impact,network" data-directions="01,05,08" data-tech="topology,solver,collision,surface,input,validation" data-modules="charge,tear,conduction" data-title="蛛网与露珠" data-signal="露珠为局部节点增加质量，小虫碰撞触发高频振动；边界固定与径向/螺旋约束决定信号如何跨网传播。" data-model="边界锚点 + 径向/螺旋弹簧 + 露珠质量 + 碰撞冲击" data-variables="丝线张力、露珠质量、碰撞速度、命中位置、断裂阈值、湿度" data-products="脆弱信号界面、预警网络、珠宝互动展示">
+              <div class="observation-visual visual-web" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 08</span><b>FRAGILITY / CONTACT</b></header><h3>蛛网与露珠</h3>
+              <p>质量、冲击和脆性共同决定一张网络怎样放大微小事件。</p>
+              <dl><div><dt>PHYSICS</dt><dd>边界锚点、径向/螺旋约束、露珠质量、碰撞</dd></div><div><dt>OUTPUT</dt><dd>脆弱信号界面 / 预警网络</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-tide" class="observation-card" data-mechanism="flow,memory" data-directions="06,08,09" data-tech="solver,field,collision,surface,input,history" data-modules="wake,memory,mutation" data-title="潮汐冲刷沙面" data-signal="周期外力不断搬运颗粒；沉积与侵蚀把短时波浪积累成长期地貌，让材料本身记录过去。" data-model="高度场 + 颗粒输运 + 侵蚀/沉积规则 + 周期边界力" data-variables="潮位、流速、颗粒尺度、坡度、含水量、沉积与侵蚀率" data-products="时间地貌、数据海岸线、历史记忆装置">
+              <div class="observation-visual visual-tide" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 09</span><b>EROSION / DEPOSITION</b></header><h3>潮汐冲刷沙面</h3>
+              <p>反复发生的小变化累积为不可逆形态，时间成为结构的一部分。</p>
+              <dl><div><dt>PHYSICS</dt><dd>高度场、颗粒输运、侵蚀沉积、周期外力</dd></div><div><dt>OUTPUT</dt><dd>时间地貌 / 数据海岸线</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-condensation" class="observation-card" data-mechanism="phase,memory" data-directions="02,06,08" data-tech="storage,solver,collision,surface,input,history" data-modules="repel,memory,mutation" data-title="玻璃上的呼吸与凝露" data-signal="湿度越过阈值后出现成核，微小液滴相互合并并留下下滑痕迹；触摸或热量又能局部擦除它。" data-model="湿度场 + 成核阈值 + 液滴合并 + 重力滑移 + 蒸发记忆" data-variables="湿度、温差、表面能、滴径、重力、触摸热量、蒸发速度" data-products="私密环境界面、情绪窗、呼吸品牌装置">
+              <div class="observation-visual visual-condensation" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 10</span><b>PHASE / TRACE</b></header><h3>玻璃上的呼吸与凝露</h3>
+              <p>从不可见湿度到可见液滴，阈值、合并与蒸发形成相变叙事。</p>
+              <dl><div><dt>PHYSICS</dt><dd>湿度场、成核、液滴合并、滑移、蒸发</dd></div><div><dt>OUTPUT</dt><dd>情绪窗 / 呼吸品牌装置</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-flock" class="observation-card" data-mechanism="collective,flow" data-directions="03,05,10" data-tech="topology,storage,field,collision,input,feedback,validation" data-modules="wake,conduction,mutation" data-title="鸟群与鱼群转向" data-signal="每个个体只遵守分离、对齐和聚合的局部规则；障碍与少数领航者能让整体在没有中心控制时突然转向。" data-model="自治个体 + 邻域查询 + 分离/对齐/聚合 + 障碍场" data-variables="邻域半径、速度、转向上限、密度、领航权重、障碍距离" data-products="群体品牌、多人导航、公共空间响应幕">
+              <div class="observation-visual visual-flock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 11</span><b>SWARM / TURNING</b></header><h3>鸟群与鱼群转向</h3>
+              <p>简单局部规则产生整体方向，让群体行为成为可设计的材料。</p>
+              <dl><div><dt>PHYSICS</dt><dd>自治个体、邻域规则、领航权重、障碍场</dd></div><div><dt>OUTPUT</dt><dd>群体品牌 / 公共空间响应幕</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+
+            <article id="case-mycelium" class="observation-card" data-mechanism="growth,network,memory" data-directions="05,09,10" data-tech="topology,storage,bridge,field,input,history,feedback,validation" data-modules="conduction,memory,mutation" data-title="根系与菌丝生长" data-signal="生长前沿追随资源梯度，分叉寻找新路径，低收益分支被剪除；长期结构记录了环境中曾经存在的机会与阻碍。" data-model="生长图 + 资源梯度 + 分叉/合并规则 + 修剪 + 长期记忆" data-variables="营养梯度、生长速率、分叉概率、竞争半径、资源消耗、修剪阈值" data-products="长期数据叙事、生成式网络、品牌生态系统">
+              <div class="observation-visual visual-mycelium" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+              <header><span>FIELD 12</span><b>GROWTH / PRUNING</b></header><h3>根系与菌丝生长</h3>
+              <p>结构不是一次生成，而是在资源、竞争和历史中持续生长与淘汰。</p>
+              <dl><div><dt>PHYSICS</dt><dd>生长图、资源梯度、分叉、合并、修剪</dd></div><div><dt>OUTPUT</dt><dd>长期数据叙事 / 品牌生态系统</dd></div></dl>
+              <button type="button" class="case-open" aria-pressed="false">展开系统映射 <span>↗</span></button>
+            </article>
+          </div>
+
+          <aside class="case-inspector" aria-live="polite" aria-labelledby="inspector-title">
+            <div class="inspector-top"><span>ACTIVE FIELD</span><button type="button" id="inspector-reset">清除选择</button></div>
+            <p id="inspector-index">SELECT AN OBSERVATION</p>
+            <h3 id="inspector-title">选择一个现实观察</h3>
+            <p id="inspector-signal">我们会从生活现象中提取可计算的因果关系，并把它连接到现有方向、技术层和交互模块。</p>
+            <dl>
+              <div><dt>PHYSICS MODEL</dt><dd id="inspector-model">锚点 / 节点 / 约束 / 场 / 冲击 / 记忆</dd></div>
+              <div><dt>VARIABLES</dt><dd id="inspector-variables">连续参数 + 离散事件 + 时间状态</dd></div>
+              <div><dt>POSSIBLE OUTPUT</dt><dd id="inspector-products">品牌、空间、城市、环境与公共体验</dd></div>
+              <div><dt>CONNECTED PLAN</dt><dd id="inspector-directions">选择后显示对应方向</dd></div>
+            </dl>
+            <div class="inspector-pulse" aria-hidden="true"><i></i><i></i><b></b></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="technology" class="atlas-section technology-section" aria-labelledby="technology-title">
+        <header class="section-heading split-heading">
+          <div><p><span>03</span> TECHNOLOGY / 技术研究</p><h2 id="technology-title">作品可以不同，<br />底层能力必须复用。</h2></div>
+          <p>每层先说明“已验证”或“当前缺口”，再写需要补齐的研究任务。选择现实案例后，与它有关的技术层会被高亮。</p>
+        </header>
+
+        <div class="technology-stack">
+          <article class="tech-card" data-tech="topology"><span>01</span><div><p>PROCEDURAL TOPOLOGY</p><h3>程序化拓扑</h3><p>已验证：字形采样、张拉膜、环/链/图生成。</p><b>补齐：可编辑拓扑描述、LOD、动态增删节点与约束。</b></div></article>
+          <article class="tech-card" data-tech="storage"><span>02</span><div><p>GPU STATE STORAGE</p><h3>GPU 状态存储</h3><p>已验证：position / force / spring / adjacency storage。</p><b>补齐：状态快照、历史缓冲、确定性重放与跨设备预算。</b></div></article>
+          <article class="tech-card" data-tech="solver"><span>03</span><div><p>CONSTRAINT SOLVER</p><h3>约束求解</h3><p>已验证：固定锚、自由节点、弹簧、阻尼、固定子步。</p><b>补齐：XPBD 柔度、质量、塑性、断裂、迟滞与能量限制。</b></div></article>
+          <article class="tech-card" data-tech="bridge"><span>04</span><div><p>ANALYTIC BRIDGE</p><h3>解析锚点桥</h3><p>已验证：水母钟体、声场锚环、字形记忆锚。</p><b>补齐：轨迹、骨架、场线、实时数据与多目标 morph。</b></div></article>
+          <article class="tech-card" data-tech="field"><span>05</span><div><p>FORCE &amp; FIELD API</p><h3>外力与场</h3><p>已验证：射线排斥、音频锚点、离散冲击。</p><b>补齐：风、重力、磁场、流量压力、流体耦合与多点输入。</b></div></article>
+          <article class="tech-card" data-tech="collision"><span>06</span><div><p>CONTACT &amp; COLLISION</p><h3>接触与碰撞</h3><p>当前缺口：上游没有正式碰撞、自碰撞、摩擦和连续碰撞检测。</p><b>研究：空间哈希 broad phase、SDF 接触、摩擦约束与高速雨滴 swept test。</b></div></article>
+          <article class="tech-card" data-tech="surface"><span>07</span><div><p>BUFFER-DRIVEN SURFACE</p><h3>缓冲驱动表面</h3><p>已验证：节点、弹簧线、膜翼、带状与管状表面。</p><b>补齐：动态法线、厚度、破口边界、湿润和墨迹材质。</b></div></article>
+          <article class="tech-card" data-tech="input"><span>08</span><div><p>INPUT NORMALIZATION</p><h3>输入标准化</h3><p>已验证：指针、按钮、频段与程序化音频。</p><b>补齐：速度、压力、姿态、多触点、传感器、天气与城市流的统一量纲。</b></div></article>
+          <article class="tech-card" data-tech="history"><span>09</span><div><p>HISTORY &amp; REPLAY</p><h3>历史与重放</h3><p>当前缺口：模拟只保留当下状态，无法表达侵蚀、迟滞或回看因果。</p><b>研究：GPU 环形历史缓冲、事件日志、关键帧快照、确定性种子与时间擦洗。</b></div></article>
+          <article class="tech-card" data-tech="audio"><span>10</span><div><p>SPATIAL AUDIO</p><h3>空间声音与声化</h3><p>已验证：程序化音轨、AnalyserNode 与低/中/高频映射。</p><b>补齐：节点级声源、PannerNode、碰撞音色、延迟预算和视觉—听觉因果绑定。</b></div></article>
+          <article class="tech-card" data-tech="feedback"><span>11</span><div><p>FEEDBACK &amp; NARRATIVE</p><h3>反馈与叙事</h3><p>已验证：选择性 Bloom、池化 VFX、状态机与声音反馈。</p><b>补齐：因果解释、时间回放、无障碍等价反馈与场景录制。</b></div></article>
+          <article class="tech-card" data-tech="validation"><span>12</span><div><p>OBSERVABILITY &amp; QA</p><h3>可观测性与验证</h3><p>已验证：GPU readback 有限值检查、状态回归、视口和 fallback 验证。</p><b>补齐：能量哨兵、确定性 fixture、帧时/显存预算、跨 GPU 基准与视觉差异检测。</b></div></article>
+          <article class="tech-card" data-tech="product"><span>13</span><div><p>PRODUCT BOUNDARY</p><h3>产品化边界</h3><p>已验证：多入口构建、移动降档与 WebGPU fallback。</p><b>补齐：公共 API、类型、测试、备用渲染、资源生命周期与数据隐私。</b></div></article>
+        </div>
+      </section>
+
+      <section id="interactions" class="atlas-section interactions-section" aria-labelledby="interactions-title">
+        <header class="section-heading split-heading">
+          <div><p><span>04</span> INTERACTION MODULES / 可复用交互</p><h2 id="interactions-title">一次鼠标靠近，<br />可以长成十种能力。</h2></div>
+          <p>这些不是十个独立特效，而是可组合的输入—物理—反馈模块。筛选查看它们解决的不同体验问题。</p>
+        </header>
+
+        <div class="filter-bar interaction-filter" role="group" aria-label="筛选交互模块">
+          <span>MODULE TYPE / <b id="module-count">10</b></span>
+          <button type="button" data-module-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-module-filter="gesture" aria-pressed="false">动作</button>
+          <button type="button" data-module-filter="field" aria-pressed="false">场</button>
+          <button type="button" data-module-filter="memory" aria-pressed="false">记忆</button>
+          <button type="button" data-module-filter="sound" aria-pressed="false">声音</button>
+        </div>
+
+        <div class="module-grid">
+          <article id="module-repel" class="module-card" data-module="repel" data-type="field" data-directions="01,02,04"><span>01</span><p>PROXIMITY FIELD</p><h3>局部排斥场</h3><dl><div><dt>INPUT</dt><dd>靠近</dd></div><div><dt>STATE</dt><dd>径向外力 + 距离衰减</dd></div><div><dt>FEEDBACK</dt><dd>场环、凹陷、弹簧召回</dd></div></dl></article>
+          <article id="module-drag" class="module-card" data-module="drag" data-type="gesture,sound" data-directions="01,02,03"><span>02</span><p>PLUCK &amp; RELEASE</p><h3>拖拽拨弦</h3><dl><div><dt>INPUT</dt><dd>按下、拖动、释放</dd></div><div><dt>STATE</dt><dd>临时运动锚 + 释放冲量</dd></div><div><dt>FEEDBACK</dt><dd>拉伸轨迹、回弹波、拨弦音</dd></div></dl></article>
+          <article id="module-wake" class="module-card" data-module="wake" data-type="gesture,field" data-directions="02,04,08"><span>03</span><p>VELOCITY WAKE</p><h3>速度尾流</h3><dl><div><dt>INPUT</dt><dd>指针速度</dd></div><div><dt>STATE</dt><dd>切向力 + 涡量</dd></div><div><dt>FEEDBACK</dt><dd>剪切拖尾、风噪、颗粒音</dd></div></dl></article>
+          <article id="module-charge" class="module-card" data-module="charge" data-type="gesture,sound" data-directions="02,03,07"><span>04</span><p>CHARGE &amp; IMPACT</p><h3>长按蓄能</h3><dl><div><dt>INPUT</dt><dd>按住时长</dd></div><div><dt>STATE</dt><dd>力场积分 + 阈值触发</dd></div><div><dt>FEEDBACK</dt><dd>收紧场环、释放冲击波</dd></div></dl></article>
+          <article id="module-polarity" class="module-card" data-module="polarity" data-type="gesture,field" data-directions="02,04,07"><span>05</span><p>POLARITY SHIFT</p><h3>吸引／排斥反转</h3><dl><div><dt>INPUT</dt><dd>修饰键、手势、模式</dd></div><div><dt>STATE</dt><dd>场极性切换</dd></div><div><dt>FEEDBACK</dt><dd>凝结核、扩散环、音色反转</dd></div></dl></article>
+          <article id="module-tear" class="module-card" data-module="tear" data-type="gesture,memory,sound" data-directions="02,06,09"><span>06</span><p>TEAR &amp; HEAL</p><h3>拓扑撕裂与自愈</h3><dl><div><dt>INPUT</dt><dd>高速或高应变</dd></div><div><dt>STATE</dt><dd>约束失效 + 冷却重连</dd></div><div><dt>FEEDBACK</dt><dd>断裂边、裂响、重织</dd></div></dl></article>
+          <article id="module-conduction" class="module-card" data-module="conduction" data-type="sound,field" data-directions="02,05,10"><span>07</span><p>GRAPH CONDUCTION</p><h3>字母／区域传导</h3><dl><div><dt>INPUT</dt><dd>命中区域</dd></div><div><dt>STATE</dt><dd>图上的兴奋传播</dd></div><div><dt>FEEDBACK</dt><dd>顺序电荷、空间音阶</dd></div></dl></article>
+          <article id="module-memory" class="module-card" data-module="memory" data-type="memory" data-directions="02,06,09"><span>08</span><p>TRACE MEMORY</p><h3>轨迹记忆</h3><dl><div><dt>INPUT</dt><dd>路径与时间</dd></div><div><dt>STATE</dt><dd>历史场 + 迟滞 + 遗忘</dd></div><div><dt>FEEDBACK</dt><dd>幽灵拓扑、墨迹残留</dd></div></dl></article>
+          <article id="module-depth" class="module-card" data-module="depth" data-type="gesture,field,sound" data-directions="03,04,07"><span>09</span><p>DEPTH VORTEX</p><h3>深度涡旋</h3><dl><div><dt>INPUT</dt><dd>滚轮、双指、旋转</dd></div><div><dt>STATE</dt><dd>轴向与旋转力</dd></div><div><dt>FEEDBACK</dt><dd>空间漏斗、多普勒声像</dd></div></dl></article>
+          <article id="module-mutation" class="module-card" data-module="mutation" data-type="memory,field" data-directions="02,05,10"><span>10</span><p>STRUCTURE MUTATION</p><h3>字形／结构变异</h3><dl><div><dt>INPUT</dt><dd>文字、数据、多人输入</dd></div><div><dt>STATE</dt><dd>锚点目标重映射</dd></div><div><dt>FEEDBACK</dt><dd>连续 morph、身份切换</dd></div></dl></article>
+        </div>
+        <p id="module-empty" class="empty-state" hidden>当前筛选没有交互模块。</p>
+
+        <div class="recipe-heading"><span>COMPOSITION RECIPES</span><h3>模块组合后，才成为完整体验。</h3></div>
+        <div class="recipe-grid">
+          <article><span>R / 01</span><h3>触感品牌</h3><p>局部排斥场 → 拖拽拨弦 → 速度尾流 → 区域传导</p><b>让 Living Identity 从“会响应”进入“可操纵、可演奏”。</b></article>
+          <article><span>R / 02</span><h3>天气膜面</h3><p>长按蓄能 → 冲击传播 → 轨迹记忆 → 张力回弹</p><b>用于雨伞、蛛网、建筑表皮和实时降雨装置。</b></article>
+          <article><span>R / 03</span><h3>数据场</h3><p>极性反转 → 图上传导 → 深度涡旋 → 结构变异</p><b>让业务或城市数据改变关系结构，而不是只换颜色。</b></article>
+          <article><span>R / 04</span><h3>群体仪式</h3><p>区域传导 → 长按阈值 → 群体同步 → 字形涌现</p><b>用于合唱、演唱会、公共空间和多人协作体验。</b></article>
+        </div>
+      </section>
+
+      <section id="matrix" class="atlas-section matrix-section" aria-labelledby="matrix-title">
+        <header class="section-heading split-heading">
+          <div><p><span>05</span> DIRECTION READINESS / 方向实验矩阵</p><h2 id="matrix-title">每个方向，<br />下一步验证什么？</h2></div>
+          <p>这里把“有趣”改写为可执行研究：先做最小物理证明，再补缺失内核，用可量测标准决定是否进入作品化。</p>
+        </header>
+
+        <div class="readiness-matrix">
+          <details open>
+            <summary><span>01</span><div><p>RESONANT MATTER</p><h3>声场雕塑</h3></div><b>EXTEND LIVE</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>在一块缩小张拉膜上加入 64 个雨滴发射器，验证离散冲击和积水增重。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>高速接触、节点质量、湿润状态与短时历史。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>单滴产生可见传播延迟；积水可改变固有频率；节点全程有限且交互帧率稳定。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>可演奏雨幕、天气品牌装置、建筑声学表皮。</dd></dl></div>
+          </details>
+          <details open>
+            <summary><span>02</span><div><p>LIVING IDENTITY</p><h3>活体品牌</h3></div><b>EXTEND LIVE</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>完成拖拽拨弦、速度尾流、长按冲击和区域音阶四件触感包。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>临时运动锚、指针速度场、约束断裂/重连、节点级声音事件。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>四种手势具备不同物理结果；松开后 2 秒内稳定召回；快速重复不产生非有限值。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>可变 Logo、发布会主视觉、互动门店、用户文字生成。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>03</span><div><p>PLAYABLE SPACE</p><h3>可演奏空间</h3></div><b>NEXT BUILD</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>搭建 6 根空间光弦与 3 个膜面区域，碰触和拨动分别触发不同声源。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>稳定拾取、多触点状态、音频调度器、空间声源与输入延迟测量。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>动作到声音延迟可感知为即时；声音反向改变结构；键鼠与触摸均能完成同一乐句。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>数字乐器、沉浸展览、音乐教育、多人舞台。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>04</span><div><p>GRAVITY LOOM</p><h3>引力织体</h3></div><b>CORE RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>用 2–3 个可移动吸引子组织粒子与结构线，并让一组数据权重改变极性。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>通用场接口、空间分区、奇点附近能量限制、多吸引子竞争。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>数据改变场线拓扑而非粒子数量；极性切换连续；奇点附近不爆炸。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>数据磁场、关系可视化、产品生态图、品牌场域。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>05</span><div><p>SIGNAL ECOLOGY</p><h3>数据生命网络</h3></div><b>CORE RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>用 50 个站点模拟 24 小时地铁流量，支持拥塞传播、恢复和时间擦洗。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>动态图约束、容量压力、历史环形缓冲、数据节流与异常输入隔离。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>局部拥堵能解释地影响相邻站；恢复有时间尺度；历史回放与实时结果一致。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>城市态势墙、运营网络、供应链风险、公共数据艺术。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>06</span><div><p>MEMORY ALLOY</p><h3>记忆合金</h3></div><b>MATERIAL RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>让一条带材经历加载、卸载、加热召回和重复疲劳四阶段。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>XPBD 柔度、塑性应变、迟滞曲线、损伤累积与不完全恢复。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>加载与卸载路径不同；重复冲击留下残余形变；召回比例可控且可解释。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>材料叙事、产品耐久表达、时间雕塑、数据记忆体。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>07</span><div><p>ACOUSTIC BLACK HOLE</p><h3>声学黑洞</h3></div><b>AUDIO RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>建立可穿越阈值的声谱吸积环，频段能量决定轨道与事件视界开合。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>节点级空间声源、声能到场强映射、奇点限制与阈值状态机。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>阈值前后视觉与声音都明确不同；静音有结构含义；高能输入仍保持稳定。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>耳机体验、专辑视觉、声学品牌、沉浸声音装置。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>08</span><div><p>TOPOLOGICAL CLIMATE</p><h3>拓扑气候</h3></div><b>FIELD RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>在同一布料拓扑上叠加方向风、离散降雨、湿润质量和光照遮挡。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>统一场接口、碰撞、可变质量、湿润材质、LOD 与天气输入平滑。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>风、雨、积水和日照产生可区分结果；数据中断时可平滑回到自主状态。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>天气界面、建筑表皮、城市气候叙事、环境品牌。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>09</span><div><p>CRYSTAL SYNTAX</p><h3>晶体语法</h3></div><b>RULE RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>用同一套可编辑规则驱动晶体分枝和毛笔笔迹两种不同表面。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>动态增删约束、规则解释器、断裂/再生、种子与完整谱系记录。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>同种子可复现；每次变异能追溯到规则；断裂后拓扑仍合法。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>生成字体、包装系统、规则化品牌资产、设计探索工具。</dd></dl></div>
+          </details>
+          <details>
+            <summary><span>10</span><div><p>COLLECTIVE GLYPH</p><h3>群体字形</h3></div><b>COLLECTIVE RESEARCH</b></summary>
+            <div class="readiness-body"><dl><dt>NEXT PROOF</dt><dd>模拟 1,000 个局部振荡节点，由多组节拍输入逐渐同步并涌现字形。</dd></dl><dl><dt>MISSING KERNEL</dt><dd>GPU 邻域耦合、相位模型、群体输入聚合、掉线与延迟模拟。</dd></dl><dl><dt>SUCCESS SIGNAL</dt><dd>不使用全局目标也能形成同步；少数异常个体不会摧毁整体；参与强度可被看见。</dd></dl><dl><dt>PRODUCT BRIDGE</dt><dd>公共艺术、演唱会、协作仪式、群体品牌共创。</dd></dl></div>
+          </details>
+        </div>
+
+        <div class="quality-gates" aria-labelledby="quality-gates-title">
+          <header><span>QUALITY GATES</span><h3 id="quality-gates-title">进入作品化之前，必须同时回答五个问题。</h3></header>
+          <ol>
+            <li><span>01</span><strong>因果是否可读？</strong><p>用户能否看出输入从哪里发生、经过哪里、为何消退？</p></li>
+            <li><span>02</span><strong>数值是否稳定？</strong><p>极端输入、长时间运行和快速重复下是否保持有限状态？</p></li>
+            <li><span>03</span><strong>预算是否明确？</strong><p>节点、约束、碰撞、历史和后处理各占多少帧时与显存？</p></li>
+            <li><span>04</span><strong>数据是否诚实？</strong><p>实时数据的延迟、缺失、隐私与推断边界是否被显式处理？</p></li>
+            <li><span>05</span><strong>降级是否保义？</strong><p>无 WebGPU、静音、reduced-motion 和键盘路径是否仍表达同一意义？</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="roadmap" class="atlas-section roadmap-section" aria-labelledby="roadmap-title">
+        <header class="section-heading split-heading">
+          <div><p><span>06</span> RESEARCH PRIORITY / 研发优先级</p><h2 id="roadmap-title">先建立能力，<br />再批量产生作品。</h2></div>
+          <p>优先级不是视觉喜好排序，而是“一个技术投入能否同时服务多个方向”的复用收益排序。</p>
+        </header>
+        <ol class="roadmap-list">
+          <li><span>NOW / 01</span><div><h3>交互触感包</h3><p>在 Living Identity 上实现拖拽拨弦、速度尾流、长按冲击和声音事件。</p><ul><li>复用当前 GPU 指针场</li><li>立即提升已完成作品</li><li>验证输入—物理—声音闭环</li></ul></div><b>02 → 01 / 03</b></li>
+          <li><span>CORE / 02</span><div><h3>通用物理层</h3><p>补齐质量、场接口、碰撞、断裂/重连和历史缓冲。</p><ul><li>同时服务雨伞、晾衣绳与记忆合金</li><li>从一次性场景进入可组合引擎</li><li>建立稳定性与性能预算</li></ul></div><b>01 / 04 / 06 / 08</b></li>
+          <li><span>PROTOTYPE / 03</span><div><h3>两类现实原型</h3><p>先做雨伞验证“冲击沿表面传播”，再做城市网络验证“局部压力改变全局”。</p><ul><li>覆盖连续表面与离散网络</li><li>连接天气与城市数据</li><li>形成两个产品叙事模板</li></ul></div><b>RAIN → METRO</b></li>
+          <li><span>SCALE / 04</span><div><h3>数据与多人系统</h3><p>接入实时天气、城市流或群体声音前，先固定标准化、节流、回放和隐私边界。</p><ul><li>真实输入不直接污染物理层</li><li>支持故障、延迟和离线重放</li><li>面向公共空间与多人协作</li></ul></div><b>05 / 08 / 10</b></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="atlas-footer">
+      <div><span>AURELIA / FIELD ATLAS</span><p>现实观察 → 物理语法 → GPU 状态 → 可交互体验</p></div>
+      <nav><a href="./directions.html">返回方向总览</a><a href="https://github.com/holtsetio/aurelia/" target="_blank" rel="noreferrer">上游源码 ↗</a></nav>
+    </footer>
+    <script type="module" src="/src/atlas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#080707" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M9 48 29 9h7l19 39h-9l-4-9H22l-4 9Zm16-17h14l-7-15Z' fill='%23f0e9da'/%3E%3Cpath d='M6 54h52' stroke='%23ff533d' stroke-width='3'/%3E%3C/svg%3E" />
+    <meta name="description" content="Aurelia Living Identity：由 GPU 弹簧网络维持、解构并召回的活体字标。" />
+    <title>Living Identity / Aurelia 活体品牌</title>
+  </head>
+  <body class="identity-page" data-runtime="loading" data-audio="locked" data-structure="coherent">
+    <a class="skip-link" href="#identity-controls">跳到作品控制</a>
+    <main id="identity-stage" aria-labelledby="identity-title">
+      <div class="identity-grid" aria-hidden="true"></div>
+      <div class="identity-fallback-mark" aria-hidden="true"><span>AURELIA</span><i></i></div>
+
+      <header class="identity-topbar">
+        <a class="identity-brand" href="./directions.html" aria-label="返回创意方向作品集">
+          <span>02</span><span>AURELIA / LIVING IDENTITY</span>
+        </a>
+        <div class="direction-progress" aria-label="作品序列"><i></i><span>02 / 10</span></div>
+        <nav aria-label="作品导航">
+          <a href="./resonance.html">← 01</a>
+          <a href="./directions.html">方向总览</a>
+          <a href="./atlas.html">研究图谱</a>
+          <span aria-label="下一方向尚在规划">03 / NEXT</span>
+        </nav>
+      </header>
+
+      <section class="identity-intro">
+        <p class="eyebrow">DIRECTION 02 / KINETIC BRAND TOPOLOGY</p>
+        <h1 id="identity-title">LIVING<br /><span>IDENTITY</span></h1>
+        <p>字标不是视频贴图。每个笔画节点都被邻接弹簧和隐藏的记忆锚点约束；品牌可以离开平面，但仍知道如何回到自己。</p>
+      </section>
+
+      <aside class="identity-map" aria-labelledby="identity-map-title">
+        <div class="panel-title"><span>LIVE TOPOLOGY</span><strong id="identity-map-title">声音改写品牌状态</strong></div>
+        <div class="identity-bands" aria-label="实时声音到品牌拓扑映射">
+          <div data-band="low"><span>LOW</span><b>空间深度</b><i><em></em></i><output id="low-value">0.00</output></div>
+          <div data-band="mid"><span>MID</span><b>轨道相位</b><i><em></em></i><output id="mid-value">0.00</output></div>
+          <div data-band="high"><span>HIGH</span><b>节点电荷</b><i><em></em></i><output id="high-value">0.00</output></div>
+        </div>
+        <p id="structure-note">COHERENT：字形锚点和自由节点重合，品牌保持可读。</p>
+      </aside>
+
+      <section class="identity-proof" aria-label="GPU 拓扑规模">
+        <div><span id="node-count">—</span><small>VISIBLE NODES</small></div>
+        <div><span id="constraint-count">—</span><small>CONSTRAINTS</small></div>
+        <div><span id="solver-rate">160</span><small>STEPS / SEC</small></div>
+        <div><span id="render-fps">—</span><small>SHORT FPS</small></div>
+      </section>
+
+      <section id="identity-controls" class="identity-controls" aria-label="作品控制">
+        <button id="audio-toggle" class="primary-control" type="button" aria-pressed="false">
+          <span class="control-symbol">▶</span><span><strong>启动声场</strong><small>解锁原创程序化音乐</small></span>
+        </button>
+        <button id="structure-toggle" class="structure-control" type="button" aria-pressed="false">
+          <span class="control-symbol">⌘</span><span><strong>解构品牌</strong><small>展开三维轨道</small></span>
+        </button>
+        <label for="cohesion"><span>凝聚力 <output id="cohesion-value">76%</output></span><input id="cohesion" type="range" min="0.35" max="1" step="0.01" value="0.76" /></label>
+        <button id="mute-toggle" type="button" aria-pressed="false" aria-label="切换静音">
+          <span class="control-symbol">◖</span><span><strong>输出</strong><small>有声</small></span>
+        </button>
+        <button id="identity-reset" type="button">
+          <span class="control-symbol">↺</span><span><strong>召回</strong><small>恢复字形与视角</small></span>
+        </button>
+      </section>
+
+      <p id="audio-status" class="audio-status" aria-live="polite">音乐尚未启动；可以先解构品牌，观察形状记忆。</p>
+
+      <div id="identity-loading" class="identity-loading" role="status" aria-live="polite">
+        <div><p>SAMPLING GLYPH / BAKING CONSTRAINTS</p><strong id="loading-label">采样 AURELIA 字形</strong><span><i></i></span></div>
+      </div>
+
+      <section id="identity-error" class="identity-error" hidden aria-live="assertive">
+        <p>WEBGPU ENHANCEMENT UNAVAILABLE</p>
+        <h2>活体字标没有启动</h2>
+        <p id="identity-error-message">当前浏览器没有可用的 WebGPU，但方向说明、品牌字标和声场控制仍可使用。</p>
+      </section>
+    </main>
+    <script type="module" src="/src/identity.js"></script>
+  </body>
+</html>

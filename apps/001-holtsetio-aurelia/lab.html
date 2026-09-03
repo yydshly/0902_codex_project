@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#061019" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='28' r='20' fill='%2378edff'/%3E%3Cpath d='M16 31c8 7 24 7 32 0M20 40v12m8-10v14m8-14v14m8-16v12' stroke='%23061019' stroke-width='4' fill='none'/%3E%3C/svg%3E" />
+    <meta name="description" content="Aurelia WebGPU 扩展实验室：比较真实实例规模、计算频率、结构与能量视图。" />
+    <title>Aurelia Control Lab / WebGPU 扩展实验室</title>
+  </head>
+  <body class="lab-page" data-runtime="loading" data-mode="life">
+    <a class="skip-link" href="#lab-controls">跳到实验控制</a>
+
+    <main id="container" aria-labelledby="lab-title">
+      <div class="ambient-grid" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="返回 Aurelia 基线演示">
+          <span class="brand-mark">001</span>
+          <span>AURELIA / CONTROL LAB</span>
+        </a>
+        <div class="runtime" aria-live="polite">
+          <span class="runtime-dot" aria-hidden="true"></span>
+          <span id="runtime-label">准备实验</span>
+          <span class="runtime-divider" aria-hidden="true"></span>
+          <span id="fps-label">-- FPS</span>
+        </div>
+        <nav class="top-links" aria-label="演示导航">
+          <a class="lab-link" href="./">基线演示 ←</a>
+          <a class="lab-link" href="./morph.html">形态实验室</a>
+          <a class="lab-link" href="./directions.html">创意方向 →</a>
+          <a class="source-link" href="https://github.com/holtsetio/aurelia/" target="_blank" rel="noreferrer">源码 ↗</a>
+        </nav>
+      </header>
+
+      <section class="lab-heading">
+        <p class="eyebrow">R2 / PRODUCTIONIZATION PROBE</p>
+        <h1 id="lab-title">CONTROL<br /><span>LAB</span></h1>
+        <p>同一套 GPU 数据链，在不同预算下究竟要付出多少计算成本？</p>
+      </section>
+
+      <aside id="lab-controls" class="lab-console" aria-labelledby="controls-title">
+        <div class="lab-panel-heading">
+          <div><span>01</span><p>运行预算</p></div>
+          <h2 id="controls-title">选择质量档位</h2>
+        </div>
+
+        <nav class="profile-switcher" aria-label="质量档位">
+          <a href="./lab.html?profile=eco" data-profile="eco">
+            <strong>轻量</strong><small>1 只 · 120 Hz</small>
+          </a>
+          <a href="./lab.html?profile=balanced" data-profile="balanced">
+            <strong>均衡</strong><small>3 只 · 240 Hz</small>
+          </a>
+          <a href="./lab.html?profile=full" data-profile="full">
+            <strong>完整</strong><small>10 只 · 360 Hz</small>
+          </a>
+        </nav>
+        <p class="reload-note">切换档位会重建 GPU 缓冲，确保比较的是实际计算规模。</p>
+
+        <div class="lab-divider"></div>
+        <div class="lab-panel-heading compact">
+          <div><span>02</span><p>观察方式</p></div>
+          <h2>拆开数据链</h2>
+        </div>
+        <div class="mode-switcher" role="group" aria-label="观察模式">
+          <button type="button" data-mode="life" aria-pressed="true"><span>◉</span>生命</button>
+          <button type="button" data-mode="structure" aria-pressed="false"><span>⌁</span>结构</button>
+          <button type="button" data-mode="energy" aria-pressed="false"><span>✦</span>能量</button>
+        </div>
+
+        <div class="live-controls">
+          <label for="damping">
+            <span>拖尾阻尼 <output id="damping-value">0.9980</output></span>
+            <input id="damping" type="range" min="0.992" max="0.9994" step="0.0002" value="0.998" />
+          </label>
+          <label for="bloom">
+            <span>辉光强度 <output id="bloom-value">0.40</output></span>
+            <input id="bloom" type="range" min="0" max="0.8" step="0.02" value="0.4" />
+          </label>
+        </div>
+
+        <div class="lab-actions">
+          <button type="button" data-action="simulation" aria-pressed="true">暂停模拟</button>
+          <button type="button" data-action="pulse">群体脉冲</button>
+          <button type="button" data-action="reset">重置视角</button>
+        </div>
+      </aside>
+
+      <aside class="lab-telemetry" aria-labelledby="telemetry-title">
+        <div class="lab-panel-heading">
+          <div><span>03</span><p>运行证据</p></div>
+          <h2 id="telemetry-title">GPU 工作集</h2>
+        </div>
+        <dl class="telemetry-grid">
+          <div><dt>实例</dt><dd id="metric-instances">--</dd></div>
+          <div><dt>物理点</dt><dd id="metric-vertices">--</dd></div>
+          <div><dt>弹簧</dt><dd id="metric-springs">--</dd></div>
+          <div><dt>子步频率</dt><dd id="metric-hz">--</dd></div>
+        </dl>
+        <div class="performance-readout">
+          <span>本机短时观察</span>
+          <strong id="performance-fps">采样中</strong>
+          <p id="performance-note">该数字用于档位内比较，不代表跨设备基准。</p>
+        </div>
+        <p id="mode-explanation" class="mode-explanation" aria-live="polite">
+          生命视图：观察解析主动画如何牵引 GPU 次级运动。
+        </p>
+      </aside>
+
+      <p class="lab-footnote">WEBGPU REQUIRED · POINTER TO DISTURB · DRAG TO ORBIT</p>
+
+      <div id="lab-loading" class="lab-loading" role="status" aria-live="polite">
+        <div>
+          <p>ALLOCATING GPU WORKSET</p>
+          <strong id="loading-label">读取实验档位</strong>
+          <span class="lab-progress"><i id="loading-progress"></i></span>
+        </div>
+      </div>
+
+      <section id="lab-error" class="lab-error" hidden aria-live="assertive">
+        <p>WEBGPU UNAVAILABLE</p>
+        <h2>场景未启动，实验说明仍可操作</h2>
+        <p id="lab-error-message"></p>
+        <a href="./">返回基线能力说明</a>
+      </section>
+    </main>
+
+    <script type="module" src="/src/lab.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "neko-master-capability-lab",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "Neko Master 网关流量可观测能力与数据正确性演示。",
+  "scripts": {
+    "check": "node check.mjs",
+    "build": "node check.mjs && node build.mjs",
+    "dev": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
