@@ -1,0 +1,22 @@
+{
+  "name": "0902-codex-project",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "优秀 GitHub 项目的有序研究档案与静态门户。",
+  "scripts": {
+    "catalog:validate": "node scripts/validate-catalog.mjs",
+    "catalog:render": "node scripts/render-readme.mjs",
+    "catalog:sync": "node scripts/render-readme.mjs",
+    "catalog:check": "node scripts/render-readme.mjs --check",
+    "build:apps": "node scripts/build-apps.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "build": "npm run build:apps && npm run build:site",
+    "check": "npm run catalog:validate && npm run catalog:check",
+    "verify": "npm run check && npm run build:apps && npm run build:site"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

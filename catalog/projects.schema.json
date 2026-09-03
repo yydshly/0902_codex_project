@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/yydshly/0902_codex_project/blob/main/catalog/projects.schema.json",
+  "title": "GitHub 项目研究目录",
+  "description": "0902_codex_project 的稳定、有序项目索引。项目 ID 一经发布不得复用或重排。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "updatedAt", "projects"],
+  "properties": {
+    "$schema": {
+      "const": "./projects.schema.json"
+    },
+    "version": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/project"
+      }
+    }
+  },
+  "$defs": {
+    "repositoryPath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "slug",
+        "title",
+        "repository",
+        "summary",
+        "status",
+        "tags",
+        "studyPath",
+        "createdAt",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})$",
+          "description": "从 001 开始的三位稳定编号；允许因归档保留空号。"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[^/\\s]+/[^/\\s?#]+(?:\\.git)?/?$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "status": {
+          "enum": ["planned", "studying", "validated", "archived"]
+        },
+        "tags": {
+          "type": "array",
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          }
+        },
+        "studyPath": {
+          "$ref": "#/$defs/repositoryPath"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "cover": {
+          "$ref": "#/$defs/cover"
+        },
+        "demo": {
+          "$ref": "#/$defs/demo"
+        }
+      }
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "alt", "caption", "credit"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/repositoryPath"
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        }
+      }
+    },
+    "demo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "sourcePath": {
+          "$ref": "#/$defs/repositoryPath"
+        },
+        "buildOutput": {
+          "$ref": "#/$defs/repositoryPath"
+        },
+        "publicPath": {
+          "type": "string",
+          "pattern": "^demos/[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "status": {
+          "enum": ["planned", "building", "published", "external", "archived"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": ["building", "published"]
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["sourcePath", "buildOutput", "publicPath"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "external"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "required": ["url"]
+          }
+        }
+      ]
+    }
+  }
+}
