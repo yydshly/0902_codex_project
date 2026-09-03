@@ -6,8 +6,11 @@ import { spawnSync } from 'node:child_process';
 import { loadCatalog, resolveRepositoryPath } from './validate-catalog.mjs';
 
 function runNpm(arguments_, workingDirectory, projectId) {
-  const executable = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-  const result = spawnSync(executable, arguments_, {
+  const bundledNpmCli = path.join(path.dirname(process.execPath), 'node_modules', 'npm', 'bin', 'npm-cli.js');
+  const npmCli = process.env.npm_execpath || (fs.existsSync(bundledNpmCli) ? bundledNpmCli : null);
+  const executable = npmCli ? process.execPath : (process.platform === 'win32' ? 'npm.cmd' : 'npm');
+  const spawnArguments = npmCli ? [npmCli, ...arguments_] : arguments_;
+  const result = spawnSync(executable, spawnArguments, {
     cwd: workingDirectory,
     env: process.env,
     stdio: 'inherit',

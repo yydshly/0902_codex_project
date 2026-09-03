@@ -2,5 +2,37 @@
   "$schema": "./projects.schema.json",
   "version": 1,
   "updatedAt": "2026-09-03",
-  "projects": []
+  "projects": [
+    {
+      "id": "002",
+      "slug": "larashero3-dotcom-lieflat-charts",
+      "title": "Lieflat Charts",
+      "repository": "https://github.com/larashero3-dotcom/lieflat-charts",
+      "summary": "把数据形状判断、图型选型、编辑设计规则和真实 HTML 模板编码成 Agent 可执行的数据可视化工作流。",
+      "status": "validated",
+      "tags": [
+        "agent-skills",
+        "data-visualization",
+        "html",
+        "svg",
+        "design-system"
+      ],
+      "studyPath": "research/002-larashero3-dotcom-lieflat-charts/README.md",
+      "createdAt": "2026-09-03",
+      "updatedAt": "2026-09-03",
+      "cover": {
+        "path": "research/002-larashero3-dotcom-lieflat-charts/assets/architecture-capability-map.png",
+        "alt": "Lieflat Charts 架构与能力总图，从业务目的和已有数据，经 AI 助手、六层能力内核与浏览器渲染，输出 HTML 图表或报告",
+        "caption": "一张图解释 Lieflat Charts 的输入、Agent 执行、规则与模板资产、底层渲染技术、六层能力和最终交付边界。",
+        "credit": "研究团队自制；不包含上游图表画面"
+      },
+      "demo": {
+        "sourcePath": "apps/002-larashero3-dotcom-lieflat-charts",
+        "buildOutput": "apps/002-larashero3-dotcom-lieflat-charts/dist",
+        "publicPath": "demos/002-larashero3-dotcom-lieflat-charts",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/",
+        "status": "published"
+      }
+    }
+  ]
 }

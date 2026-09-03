@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用中文读懂 Lieflat Charts 的能力、原理、适用场景，并直接体验固定版本的原始模板。">
+  <title>Lieflat Charts · 中文能力展厅</title>
+  <link rel="stylesheet" href="./styles.css?v=8">
+</head>
+<body>
+  <a class="skip-link" href="#use-case-guide" data-i18n="skipLink">跳到业务场景</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" data-i18n-aria="backToTop">
+      <span class="brand-mark" aria-hidden="true">LF</span>
+      <span>
+        <strong>Lieflat Charts</strong>
+        <small data-i18n="brandSubtitle">能力展厅 · 002</small>
+      </span>
+    </a>
+    <div class="header-actions">
+      <div class="language-toggle site-language" id="language-toggle" role="group" data-i18n-aria="languageAria">
+        <span data-i18n="languageLabel">界面语言</span>
+        <button type="button" data-language="zh" aria-pressed="true">中文</button>
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+      <nav class="header-links" data-i18n-aria="externalLinksAria">
+        <a href="https://github.com/larashero3-dotcom/lieflat-charts/tree/4eef5ce00d0907a03b8eff42578b5a04942915e9" target="_blank" rel="noreferrer" data-i18n="upstreamLink">固定版本 ↗</a>
+        <a href="https://github.com/yydshly/0902_codex_project/tree/main/research/002-larashero3-dotcom-lieflat-charts" target="_blank" rel="noreferrer" data-i18n="researchLink">研究记录 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="use-case-section section-shell" id="use-case-guide" aria-labelledby="use-case-title">
+      <div class="section-heading compact">
+        <p class="section-index" data-i18n="useCaseIndex">01 / 先选择实际工作</p>
+        <div>
+          <h2 id="use-case-title" data-i18n="useCaseTitle">你现在正在做哪一种业务任务？</h2>
+          <p data-i18n="useCaseIntro">不用先选图。选一个最接近的工作场景，看它怎样调用这个库。</p>
+        </div>
+      </div>
+      <div class="scenario-workbench">
+        <div class="scenario-list" id="use-case-list" role="group" data-i18n-aria="useCaseListAria"></div>
+        <article class="scenario-detail" id="scenario-detail">
+          <header class="scenario-summary">
+            <div>
+              <p class="scenario-owner" id="scenario-owner"></p>
+              <h3 id="scenario-title"></h3>
+              <p id="scenario-summary"></p>
+            </div>
+            <dl>
+              <div><dt data-i18n="scenarioInputLabel">你手里有什么数据</dt><dd id="scenario-input"></dd></div>
+              <div><dt data-i18n="scenarioOutputLabel">最终要交付什么</dt><dd id="scenario-output"></dd></div>
+            </dl>
+          </header>
+          <p class="call-truth"><strong data-i18n="callTruthTitle">这里的“调用”不是函数接口。</strong> <span data-i18n="callTruthBody">它指 AI 助手读取规则、选中编号模板，再替换数据生成 HTML。</span></p>
+          <div class="call-heading">
+            <span data-i18n="callHeadingLabel">业务拆解</span>
+            <strong data-i18n="callHeadingTitle">同一个任务，会连续调用三项图表能力</strong>
+          </div>
+          <div class="scenario-calls" id="scenario-calls"></div>
+          <div class="scenario-delivery">
+            <span data-i18n="scenarioDeliverableLabel">最终交付模板</span>
+            <div><strong id="scenario-report-title"></strong><small id="scenario-report-note"></small></div>
+            <button type="button" id="open-scenario-report" data-i18n="openScenarioReport">打开最终产出 →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span data-i18n="eyebrowLead">从场景回看能力</span> / <span data-i18n="eyebrowTail">明确这个库负责什么</span></p>
+        <h1 id="hero-title"><span data-i18n="heroTitleLead">一次业务调用背后，</span><br><strong data-i18n="heroTitleStrong">是一整套数据表达方法。</strong></h1>
+        <p class="hero-lede" data-i18n="heroLede">它不是数据平台，也不是运行时 SDK，而是一套供 AI 助手使用的选图规则、模板和成品网页。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#capabilities" data-i18n="browseExhibits">查看架构与能力 ↓</a>
+          <a class="button button-secondary" href="https://github.com/larashero3-dotcom/lieflat-charts/blob/4eef5ce00d0907a03b8eff42578b5a04942915e9/SKILL.md" target="_blank" rel="noreferrer" data-i18n="readRules">阅读原始规则 ↗</a>
+        </div>
+      </div>
+      <dl class="hero-stats" data-i18n-aria="statsAria">
+        <div><dt>64</dt><dd data-i18n="statCharts">种图表</dd><small data-i18n="statChartSystems">分为 5 个体系</small></div>
+        <div><dt>12</dt><dd data-i18n="statReports">套报告</dd><small data-i18n="statBilingual">都有中英双版</small></div>
+        <div><dt>04</dt><dd data-i18n="statVisuals">种内置视觉</dd><small data-i18n="statThemes">黑白灰 + 3 套彩色</small></div>
+        <div><dt>52</dt><dd data-i18n="statSamples">个网页样张</dd><small data-i18n="statCoverage">本展厅全部覆盖</small></div>
+      </dl>
+    </section>
+
+    <section class="capabilities section-shell" id="capabilities" aria-labelledby="capability-title">
+      <div class="section-heading">
+        <p class="section-index" data-i18n="capabilityIndex">02 / 再看库提供什么</p>
+        <div>
+          <h2 id="capability-title" data-i18n="capabilityTitle">一张图看懂：这个库怎样把数据变成可交付效果</h2>
+          <p data-i18n="capabilityIntro">从外部输入到最终网页，AI 助手负责执行，Lieflat Charts 提供规则、模板和质量边界，浏览器负责真正绘制。</p>
+        </div>
+      </div>
+      <figure class="architecture-map" id="architecture-map" aria-labelledby="architecture-map-title" aria-describedby="architecture-map-caption">
+        <section class="architecture-input" aria-labelledby="architecture-map-title">
+          <div class="architecture-layer-heading">
+            <span data-i18n="archInputKicker">外部输入 · 不属于这个库</span>
+            <h3 id="architecture-map-title" data-i18n="archInputTitle">先把业务目的和已有数据交给 AI 助手</h3>
+          </div>
+          <div class="architecture-input-grid">
+            <article>
+              <span class="architecture-node-code">01</span>
+              <strong data-i18n="archGoalTitle">业务目的</strong>
+              <small data-i18n="archGoalBody">要比较、看趋势、查关系，还是交付整页报告？</small>
+            </article>
+            <article>
+              <span class="architecture-node-code">02</span>
+              <strong data-i18n="archDataTitle">已有数据</strong>
+              <small data-i18n="archDataBody">字段、单位、时间范围、数据来源与真实记录</small>
+            </article>
+          </div>
+        </section>
+
+        <div class="architecture-connector" aria-hidden="true"><span>↓</span></div>
+
+        <section class="architecture-agent" aria-labelledby="architecture-agent-title">
+          <div class="architecture-agent-heading">
+            <span data-i18n="archAgentKicker">AI 助手执行层 · 不是函数接口</span>
+            <h3 id="architecture-agent-title" data-i18n="archAgentTitle">AI 读规则、比较候选，再复制并修改真实模板</h3>
+            <p data-i18n="archAgentBody">这部分是“调用”的真正含义：不是把数据传给一个 render()，而是由 AI 完成判断与代码改写。</p>
+          </div>
+          <ol class="architecture-agent-steps">
+            <li><span>01</span><strong data-i18n="step1Title">目的 + 数据</strong><small data-i18n="step1Body">要一张图还是整页报告？数据是什么结构？</small></li>
+            <li><span>02</span><strong data-i18n="step2Title">比较候选</strong><small data-i18n="step2Body">检查表达目的、单位、标签和阅读速度</small></li>
+            <li><span>03</span><strong data-i18n="step3Title">锁定结构</strong><small data-i18n="step3Body">选定图表编号和真实网页代码骨架</small></li>
+            <li><span>04</span><strong data-i18n="step4Title">替换与编排</strong><small data-i18n="step4Body">放入数据、标题、旁注、来源和配色</small></li>
+            <li><span>05</span><strong data-i18n="step5Title">浏览器检查</strong><small data-i18n="step5Body">检查比例、交互、外部资源和网页文件</small></li>
+          </ol>
+        </section>
+
+        <div class="architecture-connector" aria-hidden="true"><span>↓</span></div>
+
+        <section class="architecture-core" aria-labelledby="architecture-core-title">
+          <div class="architecture-layer-heading">
+            <span data-i18n="archCoreKicker">Lieflat Charts 能力内核</span>
+            <h3 id="architecture-core-title" data-i18n="archCoreTitle">规则、目录、模板和设计约束共同组成六层能力</h3>
+          </div>
+          <div class="architecture-capability-grid">
+            <article><span>01</span><small><code>SKILL.md</code> + <code>catalog.md</code></small><h4 data-i18n="cap1Title">理解问题并选图</h4><p data-i18n="cap1Body">把业务问题翻译成比较、趋势、构成、分布、关系或地图。</p></article>
+            <article><span>02</span><small data-i18n="cap2Meta">22 快读 + 20 细读 + 17 基础</small><h4 data-i18n="cap2Title">59 种常规图模板</h4><p data-i18n="cap2Body">覆盖日常比较、时间、构成、分布与多维分析。</p></article>
+            <article><span>03</span><small data-i18n="cap3Meta">2 种地图 + 3 种关系大图</small><h4 data-i18n="cap3Title">5 种专项大图</h4><p data-i18n="cap3Body">负责空间分布、节点关系与多段流向。</p></article>
+            <article><span>04</span><small data-i18n="cap4Meta">12 套 × 中英双版</small><h4 data-i18n="cap4Title">12 套整页报告</h4><p data-i18n="cap4Body">编排周报、月报、调研、仪表盘、年报与分享卡。</p></article>
+            <article><span>05</span><small data-i18n="cap5Meta">黑白灰 + 3 套彩色</small><h4 data-i18n="cap5Title">视觉与交互规则</h4><p data-i18n="cap5Body">规定配色、动画、拖拽、聚焦与动态排序何时有意义。</p></article>
+            <article><span>06</span><small data-i18n="cap6Meta">比例 · 单位 · 来源 · 依赖</small><h4 data-i18n="cap6Title">交付前检查</h4><p data-i18n="cap6Body">检查数据诚实性、标签、外部资源与授权边界。</p></article>
+          </div>
+        </section>
+
+        <div class="architecture-connector" aria-hidden="true"><span>↓</span></div>
+
+        <div class="architecture-runtime-delivery">
+          <section class="architecture-runtime" aria-labelledby="architecture-runtime-title">
+            <span data-i18n="archRuntimeKicker">浏览器渲染层 · 位于库的下方</span>
+            <h3 id="architecture-runtime-title" data-i18n="archRuntimeTitle">真正把结构画出来的三种技术</h3>
+            <div class="architecture-engine-list">
+              <span><strong>SVG</strong><small data-i18n="archSvgBody">编辑图与路径</small></span>
+              <span><strong>ECharts 6</strong><small data-i18n="archEchartsBody">地图、网络与复杂布局</small></span>
+              <span><strong>Chart.js 4</strong><small data-i18n="archChartjsBody">部分基础快读图</small></span>
+            </div>
+          </section>
+          <div class="architecture-output-arrow" aria-hidden="true">→</div>
+          <section class="architecture-output" aria-labelledby="architecture-output-title">
+            <span data-i18n="archOutputKicker">最终交付</span>
+            <h3 id="architecture-output-title" data-i18n="archOutputTitle">可以继续编辑和发布的网页</h3>
+            <div class="architecture-output-list">
+              <span data-i18n="archOutputChart">单张 HTML 图表</span>
+              <span data-i18n="archOutputReport">完整 HTML 报告</span>
+            </div>
+          </section>
+        </div>
+
+        <figcaption id="architecture-map-caption">
+          <strong data-i18n="archBoundaryTitle">能力边界</strong>
+          <span data-i18n="archBoundaryBody">这是 AI 辅助的图表生产工作流，不是直接传数据的运行时 API，也不负责数据查询、清洗与治理。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="architecture-reading-note section-shell" aria-label="架构图阅读结论" data-i18n-aria="archReadingAria">
+      <span data-i18n="archReadingLabel">一句话读图</span>
+      <p data-i18n="archReadingBody">Lieflat Charts 位于“业务数据”和“底层绘图引擎”之间：它把专家的选图方法与模板交给 AI 执行，最后由浏览器生成可交付网页。</p>
+    </section>
+
+    <section class="explorer-section" id="explorer" aria-labelledby="explorer-title">
+      <div class="explorer-intro section-shell">
+        <div class="section-heading compact inverse">
+          <p class="section-index" data-i18n="explorerIndex">03 / 真实效果演示</p>
+          <div>
+            <h2 id="explorer-title" data-i18n="explorerTitle">不要只看介绍，直接运行原作者的样张</h2>
+            <p><span data-i18n="explorerIntroLead">所有展品都来自固定版本</span> <code>4eef5ce</code><span data-i18n="explorerIntroTail">；展厅没有改动图表代码，而且同一时间只运行一个页面。</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="explorer-app">
+        <div class="explorer-toolbar" data-i18n-aria="toolbarAria">
+          <div class="filter-row" id="group-filters" data-i18n-aria="filterAria"></div>
+          <label class="search-box">
+            <span class="visually-hidden" data-i18n="searchLabel">搜索展品</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.5-4.5m2.5-5A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg>
+            <input id="exhibit-search" type="search" placeholder="搜索图表、场景或技术…" data-i18n-placeholder="searchPlaceholder" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="explorer-layout">
+          <aside class="exhibit-sidebar" data-i18n-aria="exhibitListAria">
+            <div class="sidebar-heading">
+              <span id="visible-count">40 个入口</span>
+              <small data-i18n="htmlCoverage">覆盖 52 个原始网页样张</small>
+            </div>
+            <div class="exhibit-list" id="exhibit-list"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <strong data-i18n="emptyTitle">没有匹配项</strong>
+              <span data-i18n="emptyHint">试试“网络”“年报”或“SVG”。</span>
+            </div>
+          </aside>
+
+          <article class="exhibit-stage" aria-live="polite">
+            <section class="invocation-context" id="invocation-context" tabindex="-1" aria-labelledby="invocation-title" hidden>
+              <div class="invocation-context-copy">
+                <span class="invocation-kicker" id="invocation-kicker"></span>
+                <h3 id="invocation-title"></h3>
+                <p class="invocation-detail" id="invocation-detail"></p>
+                <p class="invocation-note" data-i18n="invocationSampleNote">注意：下方运行的是原作者的示例数据。这里借用的是图表结构与交互规则，真正生成时会替换为你的业务数据。</p>
+              </div>
+              <button type="button" id="return-to-scenario" data-i18n="returnToScenario">返回业务拆解 ↑</button>
+            </section>
+            <div class="stage-meta">
+              <div>
+                <div class="stage-kicker"><span id="stage-code">G01–G22</span><span id="stage-group">图表类型</span></div>
+                <h3 id="stage-title">快速读懂系列</h3>
+                <p id="stage-description">用粗柱、大数字和清晰排序，让读者在几秒内看懂高低、变化和异常。</p>
+                <div class="tag-row" id="stage-tags" data-i18n-aria="tagsAria"></div>
+                <dl class="stage-guidance">
+                  <div><dt data-i18n="stageWhenLabel">什么时候用</dt><dd id="stage-when"></dd></div>
+                  <div><dt data-i18n="stageWhyLabel">为什么选</dt><dd id="stage-why"></dd></div>
+                  <div><dt data-i18n="stageAvoidLabel">什么时候别用</dt><dd id="stage-avoid"></dd></div>
+                </dl>
+              </div>
+              <div class="stage-links">
+                <a id="open-exhibit" class="text-link" href="./upstream/templates/glance-gallery.html" target="_blank" data-i18n="openFull">全页打开 ↗</a>
+                <a id="open-source" class="text-link" href="https://github.com/larashero3-dotcom/lieflat-charts/blob/4eef5ce00d0907a03b8eff42578b5a04942915e9/templates/glance-gallery.html" target="_blank" rel="noreferrer" data-i18n="openSource">查看源码 ↗</a>
+              </div>
+            </div>
+
+            <div class="preview-controls">
+              <div class="viewport-toggle" role="group" data-i18n-aria="viewportAria">
+                <button type="button" data-viewport="wide" aria-pressed="true" data-i18n="viewportAuto">自适应</button>
+                <button type="button" data-viewport="tablet" aria-pressed="false">768</button>
+                <button type="button" data-viewport="phone" aria-pressed="false">390</button>
+              </div>
+              <button class="refresh-button" id="refresh-frame" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5m9.3-3A8 8 0 0 0 5.8 6L4 8m16 8-1.8 2A8 8 0 0 1 5.7 15"/></svg>
+                <span data-i18n="refresh">重播 / 刷新</span>
+              </button>
+            </div>
+
+            <div class="preview-canvas" data-viewport="wide" id="preview-canvas">
+              <div class="preview-frame">
+                <div class="browser-chrome" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span id="browser-path">upstream/templates/glance-gallery.html</span>
+                </div>
+                <div class="frame-status" id="frame-status" role="status">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <strong data-i18n="loadingTitle">正在载入原始样张</strong>
+                  <small data-i18n="loadingBody">部分图表还会请求 ECharts、Chart.js、字体或地图数据。</small>
+                </div>
+                <iframe
+                  id="exhibit-frame"
+                  title="快速读懂系列原始样张"
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                  referrerpolicy="no-referrer"
+                ></iframe>
+              </div>
+            </div>
+            <p class="dependency-note"><span aria-hidden="true">◌</span> <span data-i18n="dependencyNote">展厅外壳离线可读；预览窗口里的部分样张需要访问外部资源。若图表没有出现，可全页打开或查看源码确认依赖。</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit-section section-shell" aria-labelledby="fit-title">
+      <div class="section-heading compact">
+        <p class="section-index" data-i18n="fitIndex">04 / 适合与不适合</p>
+        <div>
+          <h2 id="fit-title" data-i18n="fitTitle">它擅长把数据表达出来，不负责建设数据平台</h2>
+          <p data-i18n="fitIntro">把边界说清楚，比把所有能力都包装成“自动化”更有价值。</p>
+        </div>
+      </div>
+      <div class="fit-grid">
+        <article class="fit-card fit-yes">
+          <span data-i18n="goodFitLabel">适合使用</span>
+          <h3 data-i18n="goodFitTitle">研究、年报、快报、海报、一次性专题</h3>
+          <ul>
+            <li data-i18n="goodFit1">读者愿意细读的数据故事，或需要几秒钟判断的业务快照</li>
+            <li data-i18n="goodFit2">规模不大、结构明确、强调真实单位的数据</li>
+            <li data-i18n="goodFit3">由 AI 助手辅助生产的网页图表和报告</li>
+          </ul>
+        </article>
+        <article class="fit-card fit-no">
+          <span data-i18n="notReplacementLabel">不能替代</span>
+          <h3 data-i18n="notReplacementTitle">商业智能系统、实时平台、产品组件库、数据治理</h3>
+          <ul>
+            <li data-i18n="notReplacement1">没有数据库查询、数据清洗、权限控制、指标口径和查询引擎</li>
+            <li data-i18n="notReplacement2">没有软件包接口，也没有 React 或 Vue 组件</li>
+            <li data-i18n="notReplacement3">商业复用受到 PolyForm Noncommercial 许可证限制</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span data-i18n="footerBaseline">研究基线</span> <code>4eef5ce</code> · <span data-i18n="footerFetched">获取于 2026-09-03</span> · <span data-i18n="footerNoncommercial">非商业研究展示</span></p>
+    <p><span data-i18n="footerOwnership">上游内容归原作者所有，适用</span> <a href="./upstream/LICENSE" target="_blank">PolyForm Noncommercial 1.0.0</a> <span data-i18n="footerAnd">与</span> <a href="./upstream/THIRD_PARTY_NOTICES.md" target="_blank" data-i18n="thirdPartyNotices">第三方声明</a>。</p>
+  </footer>
+
+  <noscript>本展厅需要 JavaScript 来切换展品。你仍可访问 <a href="./upstream/templates/glance-gallery.html">原始样张</a>。</noscript>
+  <script type="module" src="./app.js?v=8"></script>
+</body>
+</html>

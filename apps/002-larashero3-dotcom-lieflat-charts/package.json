@@ -1,0 +1,15 @@
+{
+  "name": "lieflat-charts-capability-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "固定版本的 Lieflat Charts 能力总结与原始模板展厅。",
+  "scripts": {
+    "check": "node check.mjs",
+    "build": "node check.mjs && node build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

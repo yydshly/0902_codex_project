@@ -10,12 +10,20 @@
 
 根 README 只保留摘要、入口和稳定索引。完整研究、证据与图片解释放在对应的 `research/` 子目录中，避免总览随着项目增加而失去可读性。
 
+## 本次研究：Lieflat Charts
+
+[Lieflat Charts](https://github.com/larashero3-dotcom/lieflat-charts) 不是新的运行时图表 SDK，而是一套面向 AI 助手的数据表达工作流：它把数据形状判断、图型选择、视觉约束、真实 HTML 模板和交付检查写成 Agent 可执行的规则。
+
+本研究固定在上游 commit `4eef5ce`，梳理了 **64 种图表、12 套中英双语报告、4 种视觉系统**，并用六类真实业务任务解释什么时候选择什么效果。配套展厅支持完整中英切换，包含架构与能力总图，并可直接运行固定版本的 52 个原始 HTML 样张。
+
+[阅读完整研究](./research/002-larashero3-dotcom-lieflat-charts/README.md) · [打开在线能力展厅](https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/) · [查看上游源库](https://github.com/larashero3-dotcom/lieflat-charts)
+
 ## 研究索引
 
 <!-- PROJECT_INDEX_START -->
 | 编号 | 项目 | 一句话摘要 | 状态 | 标签 | 研究记录 | Web Demo | 最近更新 |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| — | 还没有已登记的研究项目 | 首个项目将从 `001` 开始 | — | — | [如何新增](CONTRIBUTING.md) | — | — |
+| `002` | [Lieflat Charts](https://github.com/larashero3-dotcom/lieflat-charts) | 把数据形状判断、图型选型、编辑设计规则和真实 HTML 模板编码成 Agent 可执行的数据可视化工作流。 | 已验证 | `agent-skills` `data-visualization` `html` `svg` `design-system` | [查看](./research/002-larashero3-dotcom-lieflat-charts/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/) | 2026-09-03 |
 <!-- PROJECT_INDEX_END -->
 
 研究编号使用三位数字：`001`、`002`、`003`……编号一经发布便不修改、不复用。目录清单 [`catalog/projects.json`](catalog/projects.json) 是顺序与元数据的唯一来源，上表由脚本同步生成。
