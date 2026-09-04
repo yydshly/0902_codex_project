@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="基于 MediaCMS v8.4.0 源码梳理其能力、架构、适用场景、系统重量与扩展方向，并提供采用判断。" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none';" />
+    <title>MediaCMS 决策图谱｜能力、架构与采用判断</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#hero">跳到核心结论</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到页面顶部">
+        <span class="brand-mark">M/09</span>
+        <span>MediaCMS 决策图谱</span>
+      </a>
+      <nav class="desktop-nav" aria-label="页面目录">
+        <a href="#cost">能力与代价</a>
+        <a href="#architecture">架构链路</a>
+        <a href="#fit">适用边界</a>
+        <a href="#adoption-checker">采用评估</a>
+        <a href="#evidence">证据</a>
+      </nav>
+      <details class="compact-nav">
+        <summary>目录</summary>
+        <nav aria-label="紧凑页面目录">
+          <a href="#cost">能力与代价</a>
+          <a href="#architecture">架构链路</a>
+          <a href="#fit">适用边界</a>
+          <a href="#adoption-checker">采用评估</a>
+          <a href="#evidence">证据</a>
+        </nav>
+      </details>
+      <a class="header-source" href="https://github.com/mediacms-io/mediacms" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="hero page-shell" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>源码研究快照</span> <b data-meta="release">v8.4.0</b> · <code data-meta="commit">d146be7</code></p>
+          <h1>它不是视频组件，<br /><em>而是一套完整<br />媒体平台。</em></h1>
+          <p class="hero-lead">一句话理解：MediaCMS 是可自托管的媒体库管理系统，把上传、转码、权限、检索、字幕与网页播放串成一条完整链路。</p>
+          <div class="verdict-strip" aria-label="快速结论">
+            <span><i>01</i> 媒体库系统</span>
+            <span><i>02</i> 研究价值按需</span>
+            <span><i>03</i> 部署成本较重</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#adoption-checker">判断是否适合我们</a>
+            <a class="button secondary" href="#architecture">看懂底层架构</a>
+          </div>
+        </div>
+
+        <aside class="decision-card" aria-label="研究结论">
+          <div class="decision-head">
+            <span>研究结论</span>
+            <span class="fact-tag evaluation">我们的评价</span>
+          </div>
+          <strong>有自己的媒体库需求，才值得重点投入。</strong>
+          <p>如果只是给现有产品加一个播放器、上传少量视频或调用云点播，它通常过重；如果要掌控私有媒体资产、访问权限和加工链路，它就是一套有价值的工程参照。</p>
+          <dl class="signal-list">
+            <div><dt>系统形态</dt><dd>完整应用</dd></div>
+            <div><dt>建设门槛</dt><dd>中高</dd></div>
+            <div><dt>替代成本</dt><dd>取决于数据规模</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="marquee" aria-label="系统组成">
+        <div>DJANGO · REACT · POSTGRESQL · REDIS · CELERY · FFMPEG · BENTO4 · WHISPER · VIDEO.JS</div>
+      </section>
+
+      <section class="section page-shell" id="cost">
+        <header class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">01 / 能力与代价</p>
+            <h2>一条媒体生产线，<br />不只是一个文件列表。</h2>
+          </div>
+          <p>“重”来自完整性：每多接管一环，团队就少依赖一个外部平台，同时也多承担一份基础设施与运维责任。</p>
+        </header>
+
+        <div class="capability-grid">
+          <article class="capability-card accent-blue">
+            <span class="card-index">A</span>
+            <h3>资产管理</h3>
+            <p>视频、音频、图片与 PDF 统一入库，带分类、标签、搜索、播放列表和元数据。</p>
+            <small class="fact-tag confirmed">上游事实</small>
+          </article>
+          <article class="capability-card accent-mint">
+            <span class="card-index">B</span>
+            <h3>媒体加工</h3>
+            <p>异步转码、缩略图、HLS、自适应播放与可选 Whisper 字幕形成处理流水线。</p>
+            <small class="fact-tag confirmed">上游事实</small>
+          </article>
+          <article class="capability-card accent-orange">
+            <span class="card-index">C</span>
+            <h3>权限与门户</h3>
+            <p>公开、私有、非公开链接、直接授权、分类组权限，以及 SAML、LTI 1.3 等集成。</p>
+            <small class="fact-tag confirmed">上游事实</small>
+          </article>
+          <article class="capability-card weight-card">
+            <span class="weight-label">为什么说它重？</span>
+            <strong>7+ 服务</strong>
+            <p>Nginx、Django/Gunicorn、PostgreSQL、Redis、Celery worker/beat 与媒体工具需要共同运行。</p>
+            <div class="weight-meter" aria-label="相对运维重量较高"><span></span></div>
+          </article>
+        </div>
+
+        <div class="cost-ledger">
+          <div class="cost-number"><strong>约 3×</strong><span>原文件容量</span></div>
+          <div>
+            <h3>容量不是附件，而是架构变量</h3>
+            <p>README 建议为原件、编码版本与 HLS 预留约三倍空间。扩容时，Web 与 worker 还需访问同一份媒体文件，因此共享文件系统会成为关键依赖。</p>
+          </div>
+          <span class="fact-tag inference">事实 + 代码推断</span>
+        </div>
+      </section>
+
+      <section class="section architecture-section" id="architecture">
+        <div class="page-shell">
+          <header class="section-heading split-heading inverse">
+            <div>
+              <p class="eyebrow">02 / 底层原理</p>
+              <h2>控制面管规则，<br />数据面搬大文件。</h2>
+            </div>
+            <p>下面三条链路共用同一套节点。切换任务，可看到请求如何穿过前端、应用、队列、媒体工具与存储。</p>
+          </header>
+
+          <div class="flow-tabs" role="tablist" aria-label="架构任务链路">
+            <button type="button" role="tab" id="tab-upload" aria-controls="flow-panel" aria-selected="true" data-flow="upload">上传与入库</button>
+            <button type="button" role="tab" id="tab-process" aria-controls="flow-panel" aria-selected="false" data-flow="process" tabindex="-1">异步处理</button>
+            <button type="button" role="tab" id="tab-playback" aria-controls="flow-panel" aria-selected="false" data-flow="playback" tabindex="-1">鉴权与播放</button>
+          </div>
+
+          <div class="architecture-layout">
+            <div class="system-map" aria-label="MediaCMS 系统节点">
+              <div class="map-column actors">
+                <article class="map-node active" data-node="creator"><small>输入</small><strong>内容管理员</strong><span>上传与管理</span></article>
+                <article class="map-node" data-node="viewer"><small>输出</small><strong>访问者</strong><span>检索与播放</span></article>
+              </div>
+              <div class="map-arrow" aria-hidden="true">→</div>
+              <div class="map-column">
+                <article class="map-node active" data-node="react"><small>体验层</small><strong>React</strong><span>管理界面 / video.js</span></article>
+                <article class="map-node active" data-node="nginx"><small>入口层</small><strong>Nginx</strong><span>反向代理 / 媒体分发</span></article>
+              </div>
+              <div class="map-arrow" aria-hidden="true">→</div>
+              <div class="map-column central">
+                <article class="map-node active" data-node="django"><small>控制面</small><strong>Django + REST</strong><span>内容、用户、权限、任务编排</span></article>
+                <article class="map-node" data-node="redis"><small>状态与队列</small><strong>Redis</strong><span>Celery broker / 缓存</span></article>
+                <article class="map-node" data-node="postgres"><small>元数据</small><strong>PostgreSQL</strong><span>业务记录 / 全文检索</span></article>
+              </div>
+              <div class="map-arrow" aria-hidden="true">→</div>
+              <div class="map-column tools">
+                <article class="map-node" data-node="celery"><small>任务执行</small><strong>Celery</strong><span>异步 worker / beat</span></article>
+                <article class="map-node" data-node="ffmpeg"><small>媒体工具</small><strong>FFmpeg</strong><span>转码 / 探测 / 缩略图</span></article>
+                <article class="map-node" data-node="bento"><small>流媒体</small><strong>Bento4</strong><span>HLS 打包</span></article>
+                <article class="map-node" data-node="whisper"><small>可选 AI</small><strong>Whisper</strong><span>语音转字幕</span></article>
+              </div>
+              <div class="map-arrow" aria-hidden="true">→</div>
+              <div class="map-column storage">
+                <article class="map-node active" data-node="storage"><small>数据面</small><strong>共享媒体存储</strong><span>原件 / 编码 / HLS / 字幕</span></article>
+              </div>
+            </div>
+
+            <aside class="flow-panel" id="flow-panel" role="tabpanel" aria-labelledby="tab-upload" tabindex="0">
+              <p class="panel-kicker" id="flow-label">当前链路 · 上传与入库</p>
+              <h3 id="flow-title">文件进入系统，媒体记录随之建立。</h3>
+              <p id="flow-summary">客户端分片上传，服务端合并文件、识别媒体类型并创建媒体记录。</p>
+              <ol id="flow-steps">
+                <li>分片上传</li><li>合并原文件</li><li>识别媒体类型</li><li>写入元数据</li>
+              </ol>
+              <p class="flow-note"><span></span>发光节点属于当前任务链；顺序由文字步骤表达。</p>
+            </aside>
+          </div>
+
+          <figure class="architecture-figure">
+            <img src="./assets/architecture.png" alt="MediaCMS 从用户和外部系统，经 React、Nginx、Django、PostgreSQL 与 Redis/Celery，到 FFmpeg、Bento4、Whisper 和共享媒体存储的完整架构图" width="1600" height="900" loading="lazy" />
+            <figcaption><span>完整架构图</span> 基于固定版本源码整理；官方开发文档的 System architecture 章节尚未给出正式架构图。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section page-shell" id="fit">
+        <header class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">03 / 使用场景</p>
+            <h2>关键不是“能不能用”，<br />而是“是否值得养”。</h2>
+          </div>
+          <p>它最适合需要拥有数据、权限与处理链路的组织；当需求只停留在播放组件或轻量托管时，完整平台反而会拖慢团队。</p>
+        </header>
+
+        <div class="fit-grid">
+          <article class="fit-card yes-card">
+            <header><span>适合</span><strong>需求与能力对得上</strong></header>
+            <ul>
+              <li><b>企业私有媒体库</b><span>素材、会议、知识视频集中治理</span></li>
+              <li><b>培训与教育门户</b><span>LMS、SAML、LTI 1.3 与分组权限</span></li>
+              <li><b>敏感媒体自托管</b><span>数据、访问策略和基础设施自己掌控</span></li>
+              <li><b>AI 视频知识库底座</b><span>从字幕、搜索继续扩展理解与问答</span></li>
+            </ul>
+          </article>
+          <article class="fit-card no-card">
+            <header><span>不适合</span><strong>平台成本大于业务价值</strong></header>
+            <ul>
+              <li><b>只需嵌入播放器</b><span>video.js 或云视频 SDK 更直接</span></li>
+              <li><b>少量文件上传播放</b><span>对象存储 + CDN 已经足够</span></li>
+              <li><b>直播、低延迟或 DRM</b><span>并非其现成主能力</span></li>
+              <li><b>全球超大规模分发</b><span>需要重做存储与转码基础设施</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section checker-section" id="adoption-checker">
+        <div class="page-shell checker-layout">
+          <div class="checker-copy">
+            <p class="eyebrow">04 / 采用评估</p>
+            <h2>把抽象讨论，<br />变成需求匹配。</h2>
+            <p>选择当前真实条件，得到方向性建议。它不是采购评分，也不替代容量压测、安全评估或许可证法律意见。</p>
+            <div class="checker-result" id="checker-result" data-state="idle" aria-live="polite">
+              <span id="result-label">等待选择</span>
+              <strong id="result-title">先勾选你的真实需求</strong>
+              <p id="result-copy">我们会同时计算平台收益与引入成本，并对直播、DRM、轻量需求等硬边界优先提示。</p>
+              <div class="score-line"><span id="score-positive">收益 0</span><span id="score-negative">成本 0</span></div>
+            </div>
+          </div>
+
+          <form class="checker-form" id="checker-form">
+            <fieldset>
+              <legend>我们确实需要……</legend>
+              <label><input type="checkbox" name="needs" value="private" data-points="3" /> <span><b>私有媒体资产库</b><small>数据和权限必须自主管理</small></span></label>
+              <label><input type="checkbox" name="needs" value="cms" data-points="2" /> <span><b>完整内容门户</b><small>分类、搜索、播放列表、用户协作</small></span></label>
+              <label><input type="checkbox" name="needs" value="lms" data-points="2" /> <span><b>培训 / LMS 集成</b><small>SAML、LTI 1.3 或分组访问</small></span></label>
+              <label><input type="checkbox" name="needs" value="selfhost" data-points="2" /> <span><b>必须自托管</b><small>无法接受公共云视频托管</small></span></label>
+              <label><input type="checkbox" name="needs" value="ai" data-points="1" /> <span><b>后续做 AI 媒体知识库</b><small>字幕、摘要、检索、问答</small></span></label>
+            </fieldset>
+            <fieldset>
+              <legend>现实约束是……</legend>
+              <label><input type="checkbox" name="risks" value="simple" data-points="3" /> <span><b>只需上传和播放少量视频</b><small>没有复杂权限和加工流程</small></span></label>
+              <label><input type="checkbox" name="risks" value="live" data-points="4" /> <span><b>核心是直播 / 低延迟 / DRM</b><small>需要专门流媒体产品能力</small></span></label>
+              <label><input type="checkbox" name="risks" value="scale" data-points="2" /> <span><b>全球超大规模分发</b><small>优先对象存储与云转码</small></span></label>
+              <label><input type="checkbox" name="risks" value="closed" data-points="2" /> <span><b>无法接受 AGPL 约束</b><small>需要先完成法务与架构评估</small></span></label>
+            </fieldset>
+            <button type="reset" class="reset-button">清空选择</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section page-shell" id="extensions">
+        <header class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">05 / 可扩展方向</p>
+            <h2>别先加功能，<br />先拆掉规模瓶颈。</h2>
+          </div>
+          <p>最有价值的工作不是换皮，而是把当前本地共享文件系统与固定转码工具链抽象成可替换基础设施，再向上建设 AI 和治理。</p>
+        </header>
+        <ol class="extension-list">
+          <li><span>01</span><div><small>基础设施优先</small><h3>对象存储与 CDN</h3><p>抽象本地路径依赖，支持直传、生命周期、分发与跨区容灾。</p></div></li>
+          <li><span>02</span><div><small>性能优先</small><h3>弹性转码后端</h3><p>扩展 GPU、外部转码服务、幂等重试、队列可观测与自动伸缩。</p></div></li>
+          <li><span>03</span><div><small>产品增量</small><h3>AI 媒体知识层</h3><p>说话人、章节、摘要、OCR、内容审核、向量检索与视频问答。</p></div></li>
+          <li><span>04</span><div><small>规模化前提</small><h3>企业治理</h3><p>OIDC/SCIM、审计、保留策略、水印、DRM 与真正的租户隔离。</p></div></li>
+        </ol>
+        <div class="storage-warning">
+          <span>关键代码推断</span>
+          <p>当前多处媒体处理直接使用文件的本地 <code>.path</code>、系统命令与文件存在性检查，因此接入 S3 / MinIO 不是“改一项配置”，而是一项存储抽象工程。</p>
+        </div>
+      </section>
+
+      <section class="section evidence-section" id="evidence">
+        <div class="page-shell">
+          <header class="section-heading split-heading inverse">
+            <div>
+              <p class="eyebrow">06 / 证据与边界</p>
+              <h2>结论能追到源码，<br />评价仍保持克制。</h2>
+            </div>
+            <div class="legend" aria-label="证据类型图例"><span class="fact-tag confirmed">上游事实</span><span class="fact-tag inference">代码推断</span><span class="fact-tag evaluation">我们的评价</span></div>
+          </header>
+
+          <div class="evidence-layout">
+            <div class="evidence-notes">
+              <article><span>版本边界</span><p>研究固定在 <b data-meta="release">v8.4.0</b> / <code data-meta="commit-full">d146be7c3c6828075dfc83719c37819f1b6fbef7</code>，避免文档与代码漂移。</p></article>
+              <article><span>验证边界</span><p>已完成源码检查、研究页构建和浏览器验收；没有部署或压力测试 MediaCMS 本体。</p></article>
+              <article><span>许可证提醒</span><p>项目采用 AGPL-3.0。网络服务修改版可能涉及对应源码提供义务，正式商用前需结合部署与修改方式做法律评估。</p></article>
+              <article><span>维护提醒</span><p>安全策略仅支持最新稳定版，生产采用意味着持续升级，而不是一次部署后长期冻结。</p></article>
+            </div>
+            <div class="source-panel">
+              <div class="source-panel-head"><strong>一手来源</strong><span id="source-count">12 条</span></div>
+              <ol id="source-list">
+                <li><a href="https://github.com/mediacms-io/mediacms" target="_blank" rel="noreferrer">MediaCMS 官方仓库</a></li>
+                <li><a href="https://github.com/mediacms-io/mediacms/releases/tag/v8.4.0" target="_blank" rel="noreferrer">v8.4.0 发布页</a></li>
+              </ol>
+              <p id="evidence-status" class="source-status">正在加载固定提交的源码证据…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-shell">
+      <div><span class="brand-mark">M/09</span><strong>结论不是“要不要研究”，而是“我们有没有值得它承载的媒体资产问题”。</strong></div>
+      <p>研究日期 2026-09-04 · 架构图与研究页面原创 · 上游 MediaCMS 遵循 AGPL-3.0</p>
+    </footer>
+  </body>
+</html>

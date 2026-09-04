@@ -260,6 +260,39 @@
         "url": "https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/",
         "status": "published"
       }
+    },
+    {
+      "id": "009",
+      "slug": "mediacms-io-mediacms",
+      "title": "MediaCMS",
+      "repository": "https://github.com/mediacms-io/mediacms",
+      "summary": "把 MediaCMS 还原为媒体资产管理、异步加工、权限与点播门户一体化的平台，并基于固定版本源码判断系统重量、适用边界、扩展优先级和我们的采用价值。",
+      "status": "validated",
+      "tags": [
+        "media-cms",
+        "video",
+        "django",
+        "react",
+        "ffmpeg",
+        "celery",
+        "self-hosted"
+      ],
+      "studyPath": "research/009-mediacms-io-mediacms/README.md",
+      "createdAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "cover": {
+        "path": "research/009-mediacms-io-mediacms/assets/architecture.png",
+        "alt": "MediaCMS 视频管理平台架构图，展示用户和外部系统如何经过 React、Nginx、Django、PostgreSQL、Redis 与 Celery 连接 FFmpeg、Bento4、Whisper 和共享媒体存储",
+        "caption": "一张图解释 MediaCMS 的上传入库、异步处理、权限鉴权与网页播放链路，以及完整平台为何需要多项服务共同运行。",
+        "credit": "研究团队基于 MediaCMS v8.4.0 固定版本源码原创绘制；上游遵循 AGPL-3.0"
+      },
+      "demo": {
+        "sourcePath": "apps/009-mediacms-io-mediacms",
+        "buildOutput": "apps/009-mediacms-io-mediacms/dist",
+        "publicPath": "demos/009-mediacms-io-mediacms",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/009-mediacms-io-mediacms/",
+        "status": "published"
+      }
     }
   ]
 }

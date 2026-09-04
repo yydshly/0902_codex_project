@@ -31,6 +31,7 @@
 | `006` | [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并以当前仓库文章演示可解释选版及网页、轮播、知识图和 PPT 四种成品，同时标明语义映射风险。 | 已验证 | `layout` `composition` `visual-design` `taxonomy` `dataset` `static-gallery` | [查看](./research/006-nevertoday-350-layout-compositions/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) | 2026-09-04 |
 | `007` | [Qiuner.github.io](https://github.com/Qiuner/Qiuner.github.io) | 以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用七个真实研究项目与一个原创 3D 产品原型验证个人品牌证据系统。 | 已验证 | `astro` `three.js` `webgl` `multi-world` `interactive-portfolio` `runtime` | [查看](./research/007-qiuner-qiuner-github-io/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/) | 2026-09-04 |
 | `008` | [fanqiang](https://github.com/bannedbook/fanqiang) | 以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。 | 已验证 | `network` `proxy` `sing-box` `android` `rss` `toolbox` `control-plane` | [查看](./research/008-bannedbook-fanqiang/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/) | 2026-09-04 |
+| `009` | [MediaCMS](https://github.com/mediacms-io/mediacms) | 把 MediaCMS 还原为媒体资产管理、异步加工、权限与点播门户一体化的平台，并基于固定版本源码判断系统重量、适用边界、扩展优先级和我们的采用价值。 | 已验证 | `media-cms` `video` `django` `react` `ffmpeg` `celery` `self-hosted` | [查看](./research/009-mediacms-io-mediacms/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/009-mediacms-io-mediacms/) | 2026-09-04 |
 <!-- PROJECT_INDEX_END -->
 
 ## 项目核心演示与架构图
@@ -131,6 +132,18 @@
 以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。
 
 [阅读研究](./research/008-bannedbook-fanqiang/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/) · [查看上游](https://github.com/bannedbook/fanqiang)
+
+---
+
+### `009` · [MediaCMS](https://github.com/mediacms-io/mediacms)
+
+[![MediaCMS 视频管理平台架构图，展示用户和外部系统如何经过 React、Nginx、Django、PostgreSQL、Redis 与 Celery 连接 FFmpeg、Bento4、Whisper 和共享媒体存储](./research/009-mediacms-io-mediacms/assets/architecture.png)](https://yydshly.github.io/0902_codex_project/demos/009-mediacms-io-mediacms/)
+
+*一张图解释 MediaCMS 的上传入库、异步处理、权限鉴权与网页播放链路，以及完整平台为何需要多项服务共同运行。 · 研究团队基于 MediaCMS v8.4.0 固定版本源码原创绘制；上游遵循 AGPL-3.0*
+
+把 MediaCMS 还原为媒体资产管理、异步加工、权限与点播门户一体化的平台，并基于固定版本源码判断系统重量、适用边界、扩展优先级和我们的采用价值。
+
+[阅读研究](./research/009-mediacms-io-mediacms/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/009-mediacms-io-mediacms/) · [查看上游](https://github.com/mediacms-io/mediacms)
 <!-- PROJECT_SHOWCASE_END -->
 
 研究编号使用三位数字：`001`、`002`、`003`……编号一经发布便不修改、不复用。目录清单 [`catalog/projects.json`](catalog/projects.json) 是顺序与元数据的唯一来源，上表由脚本同步生成。
