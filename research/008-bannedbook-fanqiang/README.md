@@ -8,7 +8,7 @@
 - 在线演示：<https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/>
 - 本地 Demo：[`apps/008-bannedbook-fanqiang`](../../apps/008-bannedbook-fanqiang)
 
-![fanqiang 项目架构、能力归属与研究优先级](assets/cover.svg)
+![fanqiang 项目架构、能力归属与研究优先级](assets/cover.png)
 
 ## 一、项目到底是什么
 

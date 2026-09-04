@@ -124,9 +124,9 @@
 
 ### `008` · [fanqiang](https://github.com/bannedbook/fanqiang)
 
-[![fanqiang 架构摘要图：仓库层分出 ChromeGo Windows 工具箱和 FQNews2 Android 新闻应用；ChromeGo 启动多个独立工具，FQNews2 当前集成 sing-box/libcore，真正协议能力位于上游内核](./research/008-bannedbook-fanqiang/assets/cover.svg)](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/)
+[![fanqiang 项目架构、能力归属与研究优先级总图：区分 fanqiang 仓库、ChromeGo、FQNews2、底层代理内核与协议，并列出六级研究路线](./research/008-bannedbook-fanqiang/assets/cover.png)](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/)
 
-*架构图把仓库、两条不同的产品路径和真实内核依赖分开，并明确集合不等于统一适配框架、可配置不等于任意替换内核。 · 研究团队基于固定提交源码自制；不包含上游二进制、节点、配置或应用界面*
+*一张图总结 fanqiang 的项目本质、ChromeGo 与 FQNews2 的不同调用链、能力边界，以及从内核原理到业务应用封装的研究优先级。 · 研究团队基于固定提交源码自制；不包含上游二进制、节点、配置或应用界面*
 
 以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。
 
