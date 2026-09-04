@@ -74,7 +74,7 @@ for (const marker of [
   if (!html.includes(marker)) throw new Error(`页面缺少关键节点：${marker}`);
 }
 if (!html.includes('./product-lab/')) throw new Error('研究展台缺少真实 3D 产品实验入口。');
-if (!html.includes('rel="canonical"') || !html.includes('property="og:image"')) {
+if (!html.includes('rel="canonical"') || !html.includes('rel="icon"') || !html.includes('property="og:image"')) {
   throw new Error('研究展台缺少 canonical 或 Open Graph 发布元数据。');
 }
 if (!productLabIndex.includes('./assets/')) throw new Error('3D 产品实验室资源路径未适配 Pages 子路径。');

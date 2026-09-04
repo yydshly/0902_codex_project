@@ -14,7 +14,7 @@ const world = read("src/CapabilityWorld.jsx");
 const vite = read("vite.config.mjs");
 const builtIndex = read("dist/client/index.html");
 
-for (const marker of ["rel=\"canonical\"", "property=\"og:image\"", "Content-Security-Policy", "Qiuner 架构落地"]) {
+for (const marker of ["rel=\"canonical\"", "rel=\"icon\"", "property=\"og:image\"", "Content-Security-Policy", "Qiuner 架构落地"]) {
   requireText(index, marker, "index.html");
 }
 for (const marker of ["Yichen Skills", "Aurelia", "Neko Master", "Lieflat Charts", "350 Layout Compositions", "Qiuner Reference", "desktop-gate", "SOURCE_REPOSITORY"]) {
