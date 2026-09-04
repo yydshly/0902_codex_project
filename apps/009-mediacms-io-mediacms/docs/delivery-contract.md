@@ -41,5 +41,5 @@ Observable completion criteria: 桌面与手机无横向溢出；首屏能读出
 | 完善 Web | 首屏与三条链路 | 1280×800 / light | 截图与 DOM 状态 | 2–5 | pass | 无横向溢出；页签点击与 Home/End 通过 |
 | 完善 Web | 手机阅读与评估器 | 390×844 / light / keyboard | 截图、溢出量、焦点与结果状态 | 5–7 | pass | 双列架构、目录 Escape、四态评估器通过 |
 | 构建验证 | 项目与根目录检查 | production build | `npm run verify` 与根目录校验 | 9 | pass | MediaCMS app 与 9 个 catalog Demo 全量构建通过 |
-| 提交远端 | 仅包含 MediaCMS 研究文件 | git main | staged diff、commit、push | 9 | continue | 验证后精确暂存 |
-| 确认部署 | GitHub Pages | production URL | Actions 结论与线上 HTTP/页面检查 | 9 | continue | 推送后等待 workflow |
+| 提交远端 | 仅包含 MediaCMS 研究文件 | git main | staged diff、commit、push | 9 | pass | `1138002` 已推送，未包含现有 `006` 未跟踪素材 |
+| 确认部署 | GitHub Pages | production URL | Actions 结论与线上 HTTP/页面检查 | 9 | pass | run `33867891924` 成功；页面、证据 JSON 与架构图均为 HTTP 200 |

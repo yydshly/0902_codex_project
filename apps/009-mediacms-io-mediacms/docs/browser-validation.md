@@ -24,3 +24,10 @@
 ## 边界
 
 本记录验证的是研究 Demo 的信息、布局、交互与构建产物，不代表 MediaCMS 本体完成了部署、转码压力或故障恢复测试。
+
+## 线上发布
+
+- GitHub Pages workflow：`33867891924`，结论 `success`，部署提交 `1138002`。
+- 公开 Demo、`upstream/evidence.json` 与 `assets/architecture.png` 均返回 HTTP 200。
+- 线上证据列表加载 12 项；“异步处理”页签展示完整四步；控制台无 error 或 warning。
+- 根站线上 catalog 共 9 项，`009 / mediacms-io-mediacms` 的 Demo URL 与公开地址一致。
