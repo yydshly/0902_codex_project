@@ -209,8 +209,8 @@
 
 | 用户阶段 | 要求或产物 | 表面 / 状态 | 所需证据 | 阶段 | 状态 | 下一动作 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 理解收束 | 三层能力归属与核心判断在研究文档中可快速扫描 | research README | 结构化表格、能力边界、对我们的意义 | 3 | continue | 补充三层能力归属 |
-| Web 完善 | 页面直接解释上游、Demo 与未来产品的区别 | `#image-case` | 桌面 / 手机截图、DOM 标记 | 2–7 | continue | 增加三层能力账本并回归 |
-| 总库登记 | 项目摘要、更新时间与封面说明反映当前研究闭环 | catalog / root README | catalog 校验与 README 同步检查 | 9 | continue | 更新项目目录并重新渲染 |
-| 提交边界 | 只提交 `006`、必要项目目录和根 README，不包含 `005`、`009` 等无关修改 | git index | staged diff 与 status | 9 | continue | 精确暂存并审计 |
-| GitHub 部署 | 推送 `main`，Pages 工作流成功，线上 Demo 返回新版本 | origin / Actions / Pages | commit、workflow conclusion、线上内容探针 | 9 | continue | 推送后等待并验证 |
+| 理解收束 | 三层能力归属与核心判断在研究文档中可快速扫描 | research README | 三层表格、产品公式、能力边界与对我们的意义均已进入公开研究 | 3 | pass | — |
+| Web 完善 | 页面直接解释上游、Demo 与未来产品的区别 | `#image-case` | 1440 与窄屏实测；`ownershipCards=3`；零横向溢出 | 2–7 | pass | — |
+| 总库登记 | 项目摘要、更新时间与封面说明反映当前研究闭环 | catalog / root README | `catalog:validate` 与 `catalog:check` 通过，根 README 已同步 | 9 | pass | — |
+| 提交边界 | 只提交 `006`、必要项目目录和根 README，不包含 `005`、`009` 等无关修改 | git index | 主提交 `9157bc8` 共 21 个限定文件；其他工作区修改未暂存 | 9 | pass | — |
+| GitHub 部署 | 推送 `main`，Pages 工作流成功，线上 Demo 返回新版本 | origin / Actions / Pages | Actions `33858025809` success；线上 HTML / catalog 均 200，catalog 为 350 项；真实浏览器可见新账本 | 9 | pass | — |

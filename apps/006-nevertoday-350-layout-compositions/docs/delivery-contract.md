@@ -38,7 +38,7 @@
 | 自动回归 | CDP 实测 `ownershipCards=3`；1440×1000 与 390×844 零横向溢出，浏览器错误为空 | pass |
 | 总库登记 | `catalog/projects.json` 的摘要、更新时间和封面说明已反映文章到四种媒介成品的研究闭环 | pass |
 | 发布边界 | 提交只包含 `006` 项目、对应目录条目和自动生成的根 README；工作区其他项目修改未暂存 | pass |
-| GitHub Pages | 推送 `main` 后由既有 `pages.yml` 执行 `npm run verify` 并部署 `dist`；线上探针结果记录在本节终端审计 | continue |
+| GitHub Pages | 主提交 `9157bc8` 推送后，Pages run `33858025809` 在 10m41s 内完成验证、构建、上传和部署；线上 HTML 与 catalog 均返回 200 | pass |
 
 ## 修订 7 可复现结果（历史）
 
@@ -94,3 +94,4 @@
 - `npm run verify` 已通过；根目录 `npm run check` 已通过。
 - 发布目录已同步到 `dist/demos/006-nevertoday-350-layout-compositions/`，核心文件与应用构建哈希一致。
 - 独立应用无运行时依赖和外部字体；高清原图链接仍需要网络。
+- GitHub Pages 主部署：[Actions run 33858025809](https://github.com/yydshly/0902_codex_project/actions/runs/33858025809) 成功；线上 HTML 包含 `capability-ownership` 与“先分清三层”，`upstream/catalog.json` 返回 350 项。
