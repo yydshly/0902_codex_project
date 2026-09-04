@@ -201,7 +201,7 @@
       "slug": "qiuner-qiuner-github-io",
       "title": "Qiuner.github.io",
       "repository": "https://github.com/Qiuner/Qiuner.github.io",
-      "summary": "以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用六个真实研究项目演示如何构建可筛选、可验证、可运行的个人品牌证据系统。",
+      "summary": "以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用七个真实研究项目与一个原创 3D 产品原型验证个人品牌证据系统。",
       "status": "validated",
       "tags": [
         "astro",
@@ -213,7 +213,7 @@
       ],
       "studyPath": "research/007-qiuner-qiuner-github-io/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "research/007-qiuner-qiuner-github-io/assets/cover.png",
         "alt": "Qiuner Multiworld Atlas 首屏以一个作品集、五个世界为主标题，右侧轨道结构强调五个 World 共用一个 Runtime",

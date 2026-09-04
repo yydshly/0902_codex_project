@@ -17,6 +17,8 @@ const indexPath = requireFile('index.html');
 const appPath = requireFile('app.js');
 requireFile('styles.css');
 requireFile('upstream/RIGHTS-NOTICE.txt');
+const productLabIndex = fs.readFileSync(requireFile('product-lab/index.html'), 'utf8');
+requireFile('product-lab/og-cover.png');
 const metadata = JSON.parse(fs.readFileSync(requireFile('upstream/meta.json'), 'utf8'));
 const brandCase = JSON.parse(fs.readFileSync(requireFile('brand/case.json'), 'utf8'));
 const html = fs.readFileSync(indexPath, 'utf8');
@@ -36,7 +38,7 @@ if (metadata.counts.testFiles !== 23 || metadata.verified.testCases !== 73) {
 if (metadata.license !== 'not-declared') {
   throw new Error('上游许可证状态发生变化，请重新审核发布边界。');
 }
-if (brandCase.metrics.projects !== 6 || brandCase.metrics.publishedDemos !== 6) {
+if (brandCase.metrics.projects !== 7 || brandCase.metrics.publishedDemos !== 7) {
   throw new Error(
     `真实样例规模异常：${brandCase.metrics.projects} projects / ${brandCase.metrics.publishedDemos} demos`,
   );
@@ -71,5 +73,14 @@ for (const marker of [
 ]) {
   if (!html.includes(marker)) throw new Error(`页面缺少关键节点：${marker}`);
 }
+if (!html.includes('./product-lab/')) throw new Error('研究展台缺少真实 3D 产品实验入口。');
+if (!html.includes('rel="canonical"') || !html.includes('property="og:image"')) {
+  throw new Error('研究展台缺少 canonical 或 Open Graph 发布元数据。');
+}
+if (!productLabIndex.includes('./assets/')) throw new Error('3D 产品实验室资源路径未适配 Pages 子路径。');
+if (!productLabIndex.includes('Qiuner 架构落地')) throw new Error('3D 产品实验室缺少清晰的来源关系标题。');
+if (!productLabIndex.includes('rel="canonical"') || !productLabIndex.includes('og-cover.png')) {
+  throw new Error('3D 产品实验室缺少 canonical 或分享封面。');
+}
 
-console.log('检查通过：五世界、真实品牌样例、证据元数据与权利边界均已登记。');
+console.log('检查通过：五世界、真实品牌样例、3D 产品实验、证据元数据与权利边界均已登记。');

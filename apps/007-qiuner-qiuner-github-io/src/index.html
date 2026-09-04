@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Qiuner.github.io 多世界作品集的能力展台、架构解释与适用边界。"
+      content="从五个实时 World、共享 Runtime 和个人品牌系统理解 Qiuner.github.io，并进入原创 Three.js 产品实验。"
     />
+    <meta name="theme-color" content="#090b0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="Qiuner Multiworld · Capability Atlas" />
+    <meta property="og:description" content="理解一份内容、五个世界和统一运行时，并体验原创 3D 个人能力空间。" />
+    <meta property="og:url" content="https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/" />
+    <meta property="og:image" content="https://yydshly.github.io/0902_codex_project/research/007-qiuner-qiuner-github-io/assets/cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/" />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; frame-src 'self' https://qiuner.github.io https://yydshly.github.io; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self';"
@@ -27,6 +37,7 @@
         <a href="#capabilities">能力</a>
         <a href="#architecture">原理</a>
         <a href="#brand-case">样例</a>
+        <a href="./product-lab/">3D 原型</a>
         <a href="#decision">判断</a>
       </nav>
       <a class="source-link" href="https://github.com/Qiuner/Qiuner.github.io" target="_blank" rel="noreferrer">
@@ -46,6 +57,7 @@
           <div class="hero-actions">
             <a class="primary-action" href="#live-stage">进入实时世界台 <span>↓</span></a>
             <a class="text-action" href="#architecture">理解底层协议</a>
+            <a class="text-action" href="./product-lab/">体验我们的 3D 落地 ↗</a>
           </div>
         </div>
 
@@ -208,9 +220,24 @@
           <p>04 / REAL BRAND SYSTEM</p>
           <div>
             <h2>把能力说清楚，<br />让项目替你作证。</h2>
-            <p>下面不是虚构履历：它直接读取当前仓库 001–006 的真实研究项目，把同一份目录数据重新组织成个人品牌的能力地图、项目证据和可运行 Demo。</p>
+            <p>下面不是虚构履历：它直接读取当前仓库中除本研究外的七个已验证项目，把同一份目录数据重新组织成个人品牌的能力地图、项目证据和可运行 Demo。</p>
           </div>
         </header>
+
+        <aside class="product-lab-bridge" aria-labelledby="product-lab-title">
+          <div>
+            <span>ARCHITECTURE → PRODUCT PROOF</span>
+            <h3 id="product-lab-title">从理解源库，走到自己的真实 3D 能力空间。</h3>
+            <p>这不是 Qiuner 世界的复制版。我们只吸收共享渲染器、单帧循环、射线意图、引导式相机和 DOM / WebGL 分层，再用原创程序化场景验证一个桌面端个人能力入口。</p>
+          </div>
+          <ul aria-label="3D 原型已实现能力">
+            <li>真实 Three.js 几何、灯光与阴影</li>
+            <li>拖动环绕、滚轮缩放、点击聚焦</li>
+            <li>四个能力房间与项目详情层</li>
+            <li>WebGL 失败和窄屏语义降级</li>
+          </ul>
+          <a class="primary-action" href="./product-lab/">打开 3D 产品实验 <span>↗</span></a>
+        </aside>
 
         <div class="brand-cockpit" data-brand-cockpit>
           <header class="brand-profile">

@@ -16,6 +16,9 @@ const outputDirectory = path.join(appDirectory, 'dist');
 const upstreamOutput = path.join(outputDirectory, 'upstream');
 const brandOutput = path.join(outputDirectory, 'brand');
 const catalogPath = path.join(repositoryRoot, 'catalog', 'projects.json');
+const productLabDirectory = path.join(repositoryRoot, 'apps', '009-ai-product-capability-lab');
+const productLabSource = path.join(productLabDirectory, 'dist', 'client');
+const productLabOutput = path.join(outputDirectory, 'product-lab');
 
 const UPSTREAM_REPOSITORY = 'https://github.com/Qiuner/Qiuner.github.io.git';
 const UPSTREAM_COMMIT = '85b20634da13a02bcc2e67b2f42fb50d4aba7b93';
@@ -72,6 +75,46 @@ function runGit(arguments_, cwd = repositoryRoot) {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'inherit'],
   }).trim();
+}
+
+function runNpm(arguments_, cwd) {
+  const npmCli = process.env.npm_execpath;
+  const executable = npmCli ? process.execPath : (process.platform === 'win32' ? 'npm.cmd' : 'npm');
+  const spawnArguments = npmCli ? [npmCli, ...arguments_] : arguments_;
+  execFileSync(executable, spawnArguments, {
+    cwd,
+    env: process.env,
+    stdio: 'inherit',
+  });
+}
+
+function copyTree(source, destination) {
+  const stat = fs.lstatSync(source);
+  if (stat.isSymbolicLink()) throw new Error(`拒绝复制符号链接：${source}`);
+  if (stat.isDirectory()) {
+    fs.mkdirSync(destination, { recursive: true });
+    for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+      copyTree(path.join(source, entry.name), path.join(destination, entry.name));
+    }
+    return;
+  }
+  if (!stat.isFile()) throw new Error(`只支持复制普通文件或目录：${source}`);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.copyFileSync(source, destination);
+}
+
+function buildProductLab() {
+  for (const filename of ['package.json', 'package-lock.json']) {
+    const required = path.join(productLabDirectory, filename);
+    if (!fs.existsSync(required)) throw new Error(`3D 产品实验室缺少 ${filename}`);
+  }
+  runNpm(['ci'], productLabDirectory);
+  runNpm(['run', 'verify'], productLabDirectory);
+  if (!fs.existsSync(path.join(productLabSource, 'index.html'))) {
+    throw new Error('3D 产品实验室没有生成 dist/client/index.html');
+  }
+  requireInside(outputDirectory, productLabOutput);
+  copyTree(productLabSource, productLabOutput);
 }
 
 function ensureUpstream() {
@@ -343,8 +386,10 @@ function build() {
     'utf8',
   );
 
+  buildProductLab();
+
   console.log(
-    `构建完成：${metadata.counts.worlds} Worlds / ${metadata.counts.portalRoutes} Portal routes / ${brandSample.metrics.projects} 个真实样例项目。`,
+    `构建完成：${metadata.counts.worlds} Worlds / ${metadata.counts.portalRoutes} Portal routes / ${brandSample.metrics.projects} 个真实样例项目 / 1 个真实 3D 产品原型。`,
   );
 }
 

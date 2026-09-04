@@ -17,7 +17,7 @@
 | 上游许可证 | 未发现 `LICENSE`；不得默认复制、修改或再分发 |
 | 研究状态 | `validated` |
 | 首次研究 | 2026-09-03 |
-| 最近更新 | 2026-09-03 |
+| 最近更新 | 2026-09-04 |
 | 标签 | `astro`, `three.js`, `webgl`, `multi-world`, `interactive-portfolio`, `runtime` |
 
 ## 核心结论
@@ -31,7 +31,14 @@
 - **实测：** 23 个测试文件、73 个测试全部通过；生产构建 0 错误、0 警告、0 hints，生成 2 个静态页面。
 - **边界：** 文档中的双世界实时转场、构建期预算门禁、context-lost 静态回退和完整资产管线尚未全部由当前代码兑现。
 - **评价：** 适合作为多主题品牌空间、数字展厅和互动叙事的架构参考，不适合作为业务后台，也不应在许可证缺失时直接整库依赖。
-- **落地样例：** 当前 Demo 已把仓库 001–006 的六个真实项目作为 Content Kernel，生成五类能力视角、项目证据卡和六个可运行 Demo，验证“个人品牌系统”不必依赖虚构案例。
+- **落地样例：** 当前 Demo 已把仓库中除本研究外的七个已验证项目作为 Content Kernel，生成五类能力视角、项目证据卡和七个可运行 Demo，验证“个人品牌系统”不必依赖虚构案例。
+- **产品验证：** 新增的 [3D AI 产品与能力实验室](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/product-lab/) 不再使用“3D 风格图片 + HTML 热点”，而是以真实 Three.js 场景验证共享 renderer、单 RAF、raycast 选择、引导式相机、DOM / WebGL 分层和语义降级。
+
+## 最容易误解的三点
+
+1. **它首先是一个个人作品站，不是可安装的产品库。** Astro、Three.js、Vue 和自定义 Runtime 是实现手段；仓库没有对外承诺稳定 SDK，也未在研究基线声明许可证。
+2. **价值不等于“五个 3D 主题”。** 真正可复用的是一份内容事实如何被多个 World 解释，以及 renderer、帧循环、输入、URL、切换和资源释放如何保持唯一所有者。
+3. **参考架构不等于复制源码。** 我们可以重新实现 renderer ownership、world contract、resource scope 和 portal transaction 等原语，但不能在许可证缺失时把上游源码或媒体直接打包进自己的产品。
 
 ## 能力地图
 
@@ -110,6 +117,27 @@ Portal 的当前实际提交路径是：
 
 在此基础上，Demo 进一步生成一份“证据驱动模拟”：当前项目组合指向 `AI 产品与体验系统构建者`，核心表达是“把复杂技术拆成可理解、可运行、可验证的产品体验”。证据覆盖分只计算项目数量与验证密度；目标受众、服务方向和价值主张全部标记为模拟，不能替代真实履历、客户反馈与量化结果。
 
+## 从研究到产品：真实 3D 能力空间
+
+[![3D AI 产品与能力实验室首屏：四个程序化能力房间、中央枢纽、右侧项目证据卡和底部能力导航](../../apps/009-ai-product-capability-lab/qa/webgl-final-1280x720.png)](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/product-lab/)
+
+这一步回答了前期讨论中的关键问题：**是的，可以把普通项目列表改写成一座可探索的 3D 产品空间；但空间必须连接真实内容和证据，而不能只做装饰。**
+
+当前原型选择四个能力房间作为最小结构：Agent 工作流、视觉计算、数据系统、设计研究。它已经具备真实 WebGL 几何、材质、灯光、阴影、相机、OrbitControls、Raycaster、3D 标签投影、项目详情层、WebGL 失败回退和窄屏语义说明。项目内容使用当前研究库中的真实名称与已验证能力，空间归类明确标记为演示映射。
+
+它只实现了源库中与单世界原型直接相关的一小部分：
+
+| 已吸收 | 当前证据 | 仍需后续建设 |
+| --- | --- | --- |
+| 共享 renderer | 一个 `THREE.WebGLRenderer` 负责完整场景 | 多 World 复用与切换 |
+| 单帧循环 | 一个 RAF 更新相机、动画、标签和渲染 | 分阶段任务调度器 |
+| 空间意图 | Raycaster 点击真实房间 Mesh | 跨 World 输入所有权 |
+| 引导式相机 | 选中空间后阻尼移动 camera / target | Portal 事务与回滚 |
+| DOM / WebGL 分层 | Canvas 管空间，React 管文字、控制和可访问性 | Astro 静态内容内核与完整 SSR |
+| 局部资源释放 | 卸载时回收监听器、Controls、Geometry、Material、Renderer | Resource Scope、长时间 GPU 泄漏验证 |
+
+因此，下一阶段不是继续“增加 3D 效果”，而是按需接入真实履历、项目链接、封面、职责、结果和联系入口；若要升级为多世界系统，再引入稳定 Content Kernel、World Registry、Portal Transaction 和质量预算。
+
 ## 验证记录
 
 2026-09-03 在锁定基线上执行：
@@ -126,9 +154,11 @@ npm audit     → 2 high transitive findings in build/tooling dependencies
 ## Demo
 
 - 本地源码：[`apps/007-qiuner-qiuner-github-io/`](../../apps/007-qiuner-qiuner-github-io/)
-- 计划地址：<https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/>
-- 展示方式：原创能力解释页 + 上游官方 GitHub Pages 实时 iframe + 当前仓库六个真实项目构成的个人品牌证据台。
+- 研究展台：<https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/>
+- 3D 产品实验：<https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/product-lab/>
+- 展示方式：原创能力解释页 + 上游官方 GitHub Pages 实时 iframe + 当前仓库七个真实项目构成的个人品牌证据台。
 - 权利边界：不复制上游源码或媒体到发布产物；构建期稀疏 clone 仅用于锁定基线和生成事实元数据。
+- 产品原型源码：[`apps/009-ai-product-capability-lab/`](../../apps/009-ai-product-capability-lab/)；发布时由 007 构建脚本收入 `product-lab/` 子路径，避免把同一上游重复登记成新的研究项目。
 
 ## 主要证据
 
