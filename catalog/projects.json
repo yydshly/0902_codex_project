@@ -137,7 +137,7 @@
       "slug": "mcncarl-yichen-skills",
       "title": "Yichen Skills",
       "repository": "https://github.com/mcncarl/yichen-skills",
-      "summary": "研究一个个人工作流如何被拆成多 Skill 能力库，并以路由、执行器、权限闸门、数据契约和结果验证形成可复用的 Agent 工作协议。",
+      "summary": "确认 Yichen Skills 是由宿主 Agent 驱动的 22 项个人工作流能力库，而非 Agent 本体；全量展示其路由、执行、权限与验收，并提供按需采用决策和本地试用台账。",
       "status": "validated",
       "tags": [
         "agent-skills",
@@ -149,7 +149,7 @@
       ],
       "studyPath": "research/005-mcncarl-yichen-skills/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "research/005-mcncarl-yichen-skills/assets/cover.png",
         "alt": "Yichen Skills 能力图谱首屏以二十二个 Skill 组成个人工作系统为主题，右侧列出宿主 Agent、自然语言协议、执行适配和证据验收四层结构",

@@ -337,6 +337,85 @@ export const SKILL_SCENARIOS = {
   'yichen-social-bookmarks-exporter': '旧自动化仍调用历史名称时提供迁移入口；所有新任务应改用 yichen-bookmarks-export。',
 };
 
+export const ADOPTION_META = {
+  reference: {
+    code: 'R', label: '方法借鉴', short: '提取协议与工程模式，不直接复制上游实现。',
+    rule: '适用于通用性强、最值得内化的方法：路由、handoff、证据、单写者与失败关闭。',
+  },
+  pilot: {
+    code: 'P', label: '个人试用', short: '仅在个人、非商业、低影响环境中验证真实价值。',
+    rule: '需要账号、付费服务或平台兼容，但风险和范围可由个人控制。',
+  },
+  rewrite: {
+    code: 'W', label: '授权后重写', short: '先解决许可，再按我们的工具、权限和审计要求实现。',
+    rule: '业务价值明确，但执行层与作者环境、平台登录态或外部产品强耦合。',
+  },
+  hold: {
+    code: 'H', label: '暂不采用', short: '当前风险、兼容性或重复性高于可验证收益。',
+    rule: '涉及高敏数据库、实验性输入、退役入口，或当前没有足够业务必要性。',
+  },
+};
+
+export const ADOPTION_DECISIONS = {
+  'yichen-web-research': { decision: 'reference', reason: '总入口与子 Skill 分工清楚，最值得复用的是范围锁定和证据 bundle。', next: '用一个真实行业研究任务重写最小版研究 brief。' },
+  'yichen-unified-search': { decision: 'reference', reason: '候选归一化、provenance 与 null 语义是跨搜索后端的通用基础。', next: '先定义我们的 candidate schema，再接一个现有搜索源。' },
+  'yichen-content-archive': { decision: 'reference', reason: '把发现、读取与下载授权拆开，并用 manifest 管理结果，通用价值很高。', next: '为已知网页 URL 实现只读 archive 最小闭环。' },
+  'yichen-asr': { decision: 'reference', reason: '供应商路由、恢复原任务和防重复计费可迁移到所有付费模型调用。', next: '先抽象 provider、request ID 与 billing state。' },
+  'yichen-video-content': { decision: 'reference', reason: '纯 SOP、低接入成本，适合验证个人分析框架是否能稳定复用。', next: '用 3 个真实对标视频检查 13 模块是否都必要。' },
+  'yichen-summary': { decision: 'reference', reason: '日常高频且风险可控，适合作为我们第一个收尾型 Skill。', next: '加入冲突保护、隐私过滤和固定输出目录。' },
+  'yichen-codex-chatgpt': { decision: 'reference', reason: '单写者、只读审查、消息 marker 和有限修复次数适合多 Agent 协作。', next: '先复用协议，不依赖未公开的私有 Tunnel。' },
+
+  'yichen-chatgpt-web-research': { decision: 'pilot', reason: '能验证网页产品路线的质量，但依赖个人登录态和易变 UI。', next: '个人账号完成 1 次同题对照，记录时间与人工介入。' },
+  'yichen-grok-consult': { decision: 'pilot', reason: 'X 原生搜索和反方顾问有价值，但查询会发送给 xAI 且依赖 CLI。', next: '只用公开主题进行一次只读 challenge 试验。' },
+  'yichen-volc-asr': { decision: 'pilot', reason: '时间戳和粗剪价值可量化，但涉及媒体上传、费用与主观删留。', next: '用 10 分钟非敏感口播记录成本、准确率和返工量。' },
+  'yichen-x-slicer': { decision: 'pilot', reason: '产物验证很完整，适合测试内容再利用效率；平台兼容仍需观察。', next: '选一个本人公开 Thread，比较手工与自动流程耗时。' },
+  'yichen-mac-wechat-dual-open': { decision: 'pilot', reason: '个人问题明确、作用范围小，但仅适用于 Mac 且更新后需要修复。', next: '仅在有双账号刚需的测试机上验证，不作为团队能力。' },
+
+  'yichen-bookmarks-export': { decision: 'rewrite', reason: '私人收藏是高价值输入，但登录态、DOM 与非官方 GraphQL 不适合直接成为团队依赖。', next: '取得许可后优先设计平台无关 handoff 与一次性授权。' },
+  'yichen-jianying-editor': { decision: 'rewrite', reason: '桌面 SOP 有现实价值，但 Computer Use 坐标和 UI 变化导致复现性不足。', next: '先把编辑决策模板化，再评估是否值得自动控制 UI。' },
+  'x-article-draft-uploader': { decision: 'rewrite', reason: '回读验证模式优秀，但 cookie、X DOM 与发布账号属于高风险写入面。', next: '复用“写入后回读”原则，在我们的草稿系统实现。' },
+  'yichen-wechat-mp-batch-exporter': { decision: 'rewrite', reason: '内容归档需求真实，但外部工具、代理证书和账号权限链过长。', next: '先明确合法来源和最小 URL 归档需求，再独立实现。' },
+  'yichen-wecom-operations': { decision: 'rewrite', reason: '官方 CLI 与回执机制值得采用，但企业租户权限和写操作必须进入统一审计。', next: '取得许可后接入我们的审批、凭据代理和回读日志。' },
+  'yichen-agent-memory': { decision: 'rewrite', reason: 'Markdown 事实源、claim ledger 与派生索引分离非常重要，核心实现却在外部仓库。', next: '先定义我们的事实源和会话所有权，再选择索引实现。' },
+
+  'yichen-wechat-local-vault': { decision: 'hold', reason: '涉及本地密钥捕获与私人明文数据库，合规和泄露风险高。', next: '没有明确、合法、必要的个人场景前不启用。' },
+  'yichen-wechat-windows-reader': { decision: 'hold', reason: '只读设计严谨，但仍是实验性 schema，真实版本兼容尚未证明。', next: '等待真实兼容证据和明确数据治理要求。' },
+  'yichen-wecom-local-vault': { decision: 'hold', reason: '企业通信数据敏感度极高，重签、扫描与解密链不适合常规团队试用。', next: '仅在法务、安全和数据 owner 全部批准后重新评估。' },
+  'yichen-social-bookmarks-exporter': { decision: 'hold', reason: '这是退役兼容名，没有新的独立能力，采用会造成入口重复。', next: '现有调用迁移到 yichen-bookmarks-export 后删除旧入口。' },
+};
+
+export const SKILL_TEMPLATE_TEXT = `# Skill 设计卡
+
+## 1. 触发条件
+- 用户在什么情况下会调用它？
+- 哪些相似请求不应触发？
+
+## 2. 输入与输出
+- 最小必需输入：
+- 明确输出与文件结构：
+
+## 3. SOP
+1. 前置检查
+2. 最小执行步骤
+3. 结果回读与交付
+
+## 4. 工具与执行器
+- Agent 负责的判断：
+- 脚本 / API / 浏览器负责的确定性动作：
+
+## 5. 权限与数据边界
+- 本次授权范围：
+- 不可继承的授权：
+- 凭据、费用、外部数据流：
+
+## 6. 验收证据
+- 什么证据能证明完成？
+- manifest / receipt / hash / screenshot / test：
+
+## 7. 失败与恢复
+- 哪些情况必须 fail closed？
+- 如何续跑、去重、避免覆盖或重复计费？`;
+
 export const WORKFLOW_SCENARIOS = [
   {
     id: 'creator',
