@@ -30,6 +30,7 @@
 | `005` | [Yichen Skills](https://github.com/mcncarl/yichen-skills) | 研究一个个人工作流如何被拆成多 Skill 能力库，并以路由、执行器、权限闸门、数据契约和结果验证形成可复用的 Agent 工作协议。 | 已验证 | `agent-skills` `workflow-automation` `research` `content-ops` `local-first` `safety` | [查看](./research/005-mcncarl-yichen-skills/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/005-mcncarl-yichen-skills/) | 2026-09-03 |
 | `006` | [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。 | 已验证 | `layout` `composition` `visual-design` `taxonomy` `dataset` `static-gallery` | [查看](./research/006-nevertoday-350-layout-compositions/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) | 2026-09-03 |
 | `007` | [Qiuner.github.io](https://github.com/Qiuner/Qiuner.github.io) | 以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用六个真实研究项目演示如何构建可筛选、可验证、可运行的个人品牌证据系统。 | 已验证 | `astro` `three.js` `webgl` `multi-world` `interactive-portfolio` `runtime` | [查看](./research/007-qiuner-qiuner-github-io/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/) | 2026-09-03 |
+| `008` | [fanqiang](https://github.com/bannedbook/fanqiang) | 以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。 | 已验证 | `network` `proxy` `sing-box` `android` `rss` `toolbox` `control-plane` | [查看](./research/008-bannedbook-fanqiang/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/) | 2026-09-04 |
 <!-- PROJECT_INDEX_END -->
 
 ## 项目核心演示与架构图
@@ -118,6 +119,18 @@
 以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用六个真实研究项目演示如何构建可筛选、可验证、可运行的个人品牌证据系统。
 
 [阅读研究](./research/007-qiuner-qiuner-github-io/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/) · [查看上游](https://github.com/Qiuner/Qiuner.github.io)
+
+---
+
+### `008` · [fanqiang](https://github.com/bannedbook/fanqiang)
+
+[![fanqiang 架构摘要图：仓库层分出 ChromeGo Windows 工具箱和 FQNews2 Android 新闻应用；ChromeGo 启动多个独立工具，FQNews2 当前集成 sing-box/libcore，真正协议能力位于上游内核](./research/008-bannedbook-fanqiang/assets/cover.svg)](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/)
+
+*架构图把仓库、两条不同的产品路径和真实内核依赖分开，并明确集合不等于统一适配框架、可配置不等于任意替换内核。 · 研究团队基于固定提交源码自制；不包含上游二进制、节点、配置或应用界面*
+
+以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。
+
+[阅读研究](./research/008-bannedbook-fanqiang/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/) · [查看上游](https://github.com/bannedbook/fanqiang)
 <!-- PROJECT_SHOWCASE_END -->
 
 研究编号使用三位数字：`001`、`002`、`003`……编号一经发布便不修改、不复用。目录清单 [`catalog/projects.json`](catalog/projects.json) 是顺序与元数据的唯一来源，上表由脚本同步生成。

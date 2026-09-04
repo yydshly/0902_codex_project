@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">fanqiang 项目架构、能力边界与研究优先级</title>
+  <desc id="desc">fanqiang 是集合与分发仓库而非统一适配框架。ChromeGo 启动多个独立代理工具；FQNews2 是当前集成 sing-box/libcore 的 Android RSS 应用。协议、加密、路由、DNS 与转发由上游内核完成。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1119"/>
+      <stop offset="1" stop-color="#05070a"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#27313e" stroke-width="1" opacity=".34"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5 0 10Z" fill="#718094"/>
+    </marker>
+    <style>
+      text{font-family:Inter,"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#f3f6f8}
+      .mono{font-family:ui-monospace,Consolas,monospace;letter-spacing:2px}
+      .muted{fill:#93a0b0}.green{fill:#b7f15b}.cyan{fill:#62d9e8}.orange{fill:#ff9b62}
+      .box{fill:#0d131c;stroke:#2c3847;stroke-width:2}.line{fill:none;stroke:#718094;stroke-width:2;marker-end:url(#arrow)}
+      .chip{fill:#111925;stroke:#46576b;stroke-width:1}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <text x="80" y="72" class="mono green" font-size="18">FQ/08 · SOURCE-VERIFIED CAPABILITY ATLAS</text>
+  <text x="80" y="137" font-size="54" font-weight="800">一个仓库，两条不同的产品路径。</text>
+  <text x="80" y="197" class="green" font-size="54" font-weight="800">真正的网络能力来自上游内核。</text>
+  <text x="80" y="239" class="muted" font-size="21">fanqiang ≠ 代理协议 ≠ 统一客户端 ≠ 统一适配框架</text>
+
+  <rect x="500" y="278" width="600" height="116" rx="2" class="box" stroke="#62d9e8"/>
+  <text x="534" y="312" class="mono cyan" font-size="15">01 / COLLECTION &amp; DISTRIBUTION</text>
+  <text x="534" y="354" font-size="35" font-weight="800">fanqiang</text>
+  <text x="735" y="354" class="muted" font-size="19">文档 · 配置 · 脚本 · Release · 产品目录</text>
+  <text x="534" y="381" class="cyan" font-size="16">松耦合集合，没有统一插件接口与运行时</text>
+
+  <path d="M800 394V438H420V470" class="line"/>
+  <path d="M800 394V438H1180V470" class="line"/>
+
+  <rect x="100" y="470" width="640" height="150" rx="2" class="box" stroke="#ff9b62"/>
+  <text x="134" y="504" class="mono orange" font-size="15">02A / WINDOWS TOOLBOX</text>
+  <text x="134" y="550" font-size="36" font-weight="800">ChromeGo</text>
+  <text x="134" y="586" class="muted" font-size="19">用户选工具 → CMD 启动器 → 本地端口 → Chrome</text>
+  <text x="134" y="611" class="orange" font-size="16">多个独立程序并列，不共享统一策略模型</text>
+
+  <rect x="860" y="470" width="640" height="150" rx="2" class="box" stroke="#b7f15b"/>
+  <text x="894" y="504" class="mono green" font-size="15">02B / ANDROID BUSINESS APP</text>
+  <text x="894" y="550" font-size="36" font-weight="800">FQNews2</text>
+  <text x="894" y="586" class="muted" font-size="19">RSS → 节点测试与选择 → :5888 → OkHttp → 缓存</text>
+  <text x="894" y="611" class="green" font-size="16">应用级代理产品，不接管 Android 全局流量</text>
+
+  <path d="M420 620V672" class="line"/>
+  <path d="M1180 620V672" class="line"/>
+
+  <rect x="100" y="672" width="640" height="130" rx="2" class="box" stroke="#ff9b62"/>
+  <text x="134" y="706" class="mono orange" font-size="15">03A / INDEPENDENT TOOL CORES</text>
+  <text x="134" y="748" font-size="26" font-weight="800">Clash Meta · Xray · sing-box · Hysteria · Psiphon</text>
+  <text x="134" y="780" class="muted" font-size="17">ChromeGo 分别启动；协议、配置和生命周期各自处理</text>
+
+  <rect x="860" y="672" width="640" height="130" rx="2" class="box" stroke="#b7f15b"/>
+  <text x="894" y="706" class="mono green" font-size="15">03B / CURRENT FQNEWS2 DATA PLANE</text>
+  <text x="894" y="748" font-size="30" font-weight="800">sing-box / libcore</text>
+  <text x="894" y="780" class="muted" font-size="17">当前集成关系：可配置节点与协议 ≠ 可任意替换内核</text>
+
+  <rect x="80" y="838" width="1440" height="38" rx="2" class="chip"/>
+  <text x="102" y="863" class="mono cyan" font-size="13">RESEARCH ORDER</text>
+  <text x="300" y="863" font-size="15" font-weight="700">1 代理内核</text>
+  <text x="470" y="863" font-size="15" font-weight="700">2 FQNews2 业务集成</text>
+  <text x="720" y="863" font-size="15" font-weight="700">3 可靠性与控制面</text>
+  <text x="960" y="863" font-size="15" font-weight="700">4 ChromeGo 分发封装</text>
+  <text x="1232" y="863" class="muted" font-size="15" font-weight="700">5 fanqiang 仓库</text>
+</svg>

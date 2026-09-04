@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="用源码证据解释 fanqiang、ChromeGo、FQNews2 与 Clash 的区别，以及能力归属和研究优先级。" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none';"
+    />
+    <title>fanqiang 是什么？· 架构与能力说明</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#architecture-map">跳到核心结论</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回顶部"><span>FQ/08</span><strong>fanqiang 研究图谱</strong></a>
+      <nav class="desktop-nav" aria-label="页面目录">
+        <a href="#architecture-map">先看结论</a>
+        <a href="#product-switcher">三者区别</a>
+        <a href="#request-simulator">FQNews2 链路</a>
+        <a href="#ownership-matrix">能力边界</a>
+        <a href="#research-priority">研究顺序</a>
+      </nav>
+      <details class="compact-nav">
+        <summary>章节目录</summary>
+        <nav aria-label="紧凑页面目录">
+          <a href="#architecture-map">先看结论</a>
+          <a href="#product-switcher">三者区别</a>
+          <a href="#request-simulator">FQNews2 链路</a>
+          <a href="#ownership-matrix">能力边界</a>
+          <a href="#research-priority">研究顺序</a>
+        </nav>
+      </details>
+      <a class="source-link" href="https://github.com/bannedbook/fanqiang" target="_blank" rel="noreferrer">源码 ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="overview" id="architecture-map">
+        <div class="snapshot-line">
+          <span>基于源码，而非只看 README</span>
+          <b data-meta="commit">6b09e61</b>
+          <small>固定研究快照</small>
+        </div>
+
+        <div class="overview-title">
+          <div>
+            <p class="section-label">先回答最重要的问题</p>
+            <h1><span>fanqiang</span> 到底是什么？</h1>
+          </div>
+          <div class="answer-card">
+            <div class="claim-meta"><span>结论</span><small class="evidence-badge is-confirmed">源码确认</small></div>
+            <strong>它是工具与产品的集合、适配和分发仓库。</strong>
+            <p>不是一种代理协议，不是一个统一代理内核，也不是单一软件。</p>
+            <p class="misread-note"><b>避免误解：</b>它也不是统一适配框架——仓库没有统一插件接口、配置模型、运行时或生命周期管理，各子项目基本独立组合。</p>
+          </div>
+        </div>
+
+        <div class="quick-definitions" aria-label="四个对象的快速定义">
+          <article>
+            <span>仓库</span>
+            <h2>fanqiang</h2>
+            <p>把说明、配置、脚本、发行包和多个产品放在一起。</p>
+          </article>
+          <article>
+            <span>桌面产品</span>
+            <h2>ChromeGo</h2>
+            <p>Windows 浏览器代理工具箱；用户选择并启动某个独立工具。</p>
+          </article>
+          <article>
+            <span>移动产品</span>
+            <h2>FQNews2</h2>
+            <p>Android RSS 应用；为自己的内容请求自动选择并启动代理。</p>
+          </article>
+          <article>
+            <span>对照对象</span>
+            <h2>Clash 类软件</h2>
+            <p>统一内核、配置、规则和控制接口；与前面三者不在同一层。</p>
+          </article>
+        </div>
+
+        <div class="architecture-board" aria-label="fanqiang 架构与能力归属">
+          <div class="board-column repository-column">
+            <span class="column-label">① 仓库层：组织与分发</span>
+            <article><strong>fanqiang</strong><p>收集、包装、说明、更新</p><small>不执行代理协议</small></article>
+          </div>
+          <div class="board-arrow" aria-hidden="true"><span>包含</span><b>→</b></div>
+          <div class="board-column product-column">
+            <span class="column-label">② 产品层：解决具体任务</span>
+            <article class="chrome-product"><strong>ChromeGo</strong><p>帮浏览器选择工具</p><small>薄封装</small></article>
+            <article class="news-product"><strong>FQNews2</strong><p>让 RSS 请求自动走代理</p><small>业务集成</small></article>
+          </div>
+          <div class="board-arrow" aria-hidden="true"><span>调用</span><b>→</b></div>
+          <div class="board-column core-column">
+            <span class="column-label">③ 内核层：真正完成连接</span>
+            <article><strong>sing-box · Xray · Clash Meta…</strong><p>协议、加密、DNS、路由、数据转发</p><small>真正的底层能力</small></article>
+          </div>
+        </div>
+
+        <div class="memory-strip">
+          <strong>一句话记忆</strong>
+          <p><b>fanqiang</b> 是货架，<b>ChromeGo</b> 是工具箱，<b>FQNews2</b> 是内置工具的新闻产品，<b>代理内核</b> 才是发动机。</p>
+        </div>
+      </section>
+
+      <section class="comparison-section" id="product-switcher">
+        <header class="section-heading">
+          <p>01 / 三者区别</p>
+          <div><h2>同一个仓库，不代表同一个产品。</h2><p>定位、用户动作、调用方式和能力边界放在同一屏比较，不再依赖来回切换。</p></div>
+        </header>
+
+        <div class="comparison-grid" aria-label="fanqiang、ChromeGo、FQNews2 和 Clash 对照">
+          <article class="comparison-card repository-card">
+            <div class="card-top"><span>COLLECTION</span><b>仓库</b></div><h3>fanqiang</h3>
+            <dl><div><dt>它是什么</dt><dd>项目集合与分发入口</dd></div><div><dt>用户使用什么</dt><dd>仓库里的具体产品或文档</dd></div><div><dt>底层能力</dt><dd>自身不统一执行代理</dd></div></dl>
+          </article>
+          <article class="comparison-card chrome-card">
+            <div class="card-top"><span>WINDOWS</span><b>工具箱</b></div><h3>ChromeGo</h3>
+            <dl><div><dt>它是什么</dt><dd>浏览器代理启动套件</dd></div><div><dt>用户怎么用</dt><dd>从菜单选择一个工具</dd></div><div><dt>底层能力</dt><dd>来自被启动的独立内核</dd></div></dl>
+          </article>
+          <article class="comparison-card news-card">
+            <div class="card-top"><span>ANDROID</span><b>业务应用</b></div><h3>FQNews2</h3>
+            <dl><div><dt>它是什么</dt><dd>带应用级代理的 RSS 阅读器</dd></div><div><dt>用户怎么用</dt><dd>阅读新闻，应用自动选路</dd></div><div><dt>底层能力</dt><dd>主要来自 sing-box/libcore</dd></div></dl>
+          </article>
+          <article class="comparison-card clash-card">
+            <div class="card-top"><span>RUNTIME</span><b>统一体系</b></div><h3>Clash 类</h3>
+            <dl><div><dt>它是什么</dt><dd>统一代理内核/客户端体系</dd></div><div><dt>用户怎么用</dt><dd>加载配置、规则和策略组</dd></div><div><dt>底层能力</dt><dd>由自己的运行时统一执行</dd></div></dl>
+          </article>
+        </div>
+
+        <div class="path-compare">
+          <article><div><span>A</span><strong>ChromeGo 的路径</strong><small>用户主动选工具</small></div><ol><li>菜单</li><li>CMD 启动器</li><li>某个代理内核</li><li>本地端口</li><li>Chrome</li></ol></article>
+          <article><div><span>B</span><strong>FQNews2 的路径</strong><small>应用按业务需要自动选路</small></div><ol><li>RSS 同步</li><li>节点测试</li><li>选择节点</li><li>sing-box</li><li>本地端口</li><li>OkHttp</li></ol></article>
+        </div>
+      </section>
+
+      <section class="runtime-section" id="request-simulator">
+        <header class="section-heading">
+          <p>02 / FQNews2 链路</p>
+          <div><h2>FQNews2 到底做了什么？</h2><p>它把“选择代理”变成 RSS 同步的一段自动流程，但真正的协议连接仍交给 sing-box。</p></div>
+        </header>
+
+        <div class="plain-layers" aria-label="FQNews2 三层职责">
+          <article><span>业务层</span><strong>决定要读取什么</strong><p>订阅 RSS、保存文章、提供缓存与离线阅读。</p></article>
+          <article><span>控制面</span><strong>决定使用哪个节点</strong><p>导入、解析、测速、选择节点并生成配置。</p></article>
+          <article><span>数据面</span><strong>真正建立网络连接</strong><p>sing-box 执行协议、加密、DNS、路由和转发。</p></article>
+        </div>
+
+        <div class="runtime-console">
+          <div class="state-tabs" role="tablist" aria-label="选择 FQNews2 运行状态" data-state-tabs></div>
+          <div class="runtime-summary" aria-live="polite">
+            <div><span data-runtime-code>STATE / 02</span><h3 data-runtime-title>RSS 请求已通过本地代理</h3></div>
+            <div class="decision-box"><small>应用当前决定</small><strong data-runtime-decision>使用最低延迟可用节点</strong><b class="status-pill" data-runtime-status data-status="connected">CONNECTED</b></div>
+          </div>
+          <div class="request-flow" data-request-flow aria-label="FQNews2 八步请求链"></div>
+          <div class="runtime-explanation"><p data-runtime-copy></p><ul data-runtime-facts></ul></div>
+        </div>
+
+        <aside class="runtime-boundary">
+          <div><strong>能力边界</strong><span class="evidence-badge is-confirmed">源码确认</span></div>
+          <p>这条链只服务 FQNews2 自己的网络请求。现有代码连接的是 <code>ProxyService</code>，VPN/TUN 路径没有启用，所以它不是 Android 系统全局代理。它能导入多种节点和协议，是因为当前集成了 sing-box/libcore；<b>可配置节点与协议，不等于可以任意替换代理内核。</b></p>
+        </aside>
+      </section>
+
+      <section class="ownership-section" id="ownership-matrix">
+        <header class="section-heading compact">
+          <p>03 / 能力归属</p>
+          <div><h2>哪些是它自己的，哪些是借来的？</h2><p>“代码里出现某个协议名称”只能说明产品能配置或调用它，不能证明产品自己实现了协议。</p></div>
+        </header>
+        <div class="table-shell">
+          <table>
+            <thead><tr><th>能力</th><th>fanqiang</th><th>ChromeGo</th><th>FQNews2</th><th>代理内核/外部节点</th></tr></thead>
+            <tbody>
+              <tr><th>集合、说明和分发</th><td class="owns">主要负责</td><td>被收录</td><td>被收录</td><td>能力来源</td></tr>
+              <tr><th>面向用户的产品入口</th><td>仓库目录</td><td class="owns">CMD + Chrome</td><td class="owns">Android 新闻应用</td><td>不负责</td></tr>
+              <tr><th>节点导入、测速和选择</th><td>提供材料</td><td>各工具分别处理</td><td class="owns">应用集成实现</td><td>提供节点与测试能力</td></tr>
+              <tr><th>协议、加密、路由和转发</th><td>不负责</td><td>不负责</td><td>不负责</td><td class="core">真正实现</td></tr>
+              <tr><th>RSS 阅读与离线缓存</th><td>不负责</td><td>不负责</td><td class="owns">真正实现</td><td>不负责</td></tr>
+              <tr><th>Android 系统全局 VPN</th><td>不统一提供</td><td>不适用</td><td class="warning">当前未启用</td><td>内核具备 ≠ 产品已接入</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="boundary-conclusion"><div><span>最终判断</span><small class="evidence-badge is-inferred">代码推断</small></div><strong>项目的深度主要在“产品组合与业务集成”，不在“自研协议和网络内核”。</strong></div>
+      </section>
+
+      <section class="risk-section" id="boundary-board">
+        <header class="section-heading compact">
+          <p>04 / 深度与风险</p>
+          <div><h2>能运行，不等于适合直接作为生产底座。</h2><p>下面是代码与发布物暴露出的边界；它们用于判断研究重点，不是对项目作恶意结论。</p></div>
+        </header>
+        <div class="depth-scale">
+          <article><span>高</span><strong>降低使用门槛</strong><p>把复杂工具包装成浏览器入口或新闻应用。</p></article>
+          <article><span>中高</span><strong>应用级代理集成</strong><p>FQNews2 形成节点、服务、HTTP 与缓存闭环。</p></article>
+          <article><span>低</span><strong>协议与内核创新</strong><p>没有证据表明项目自研新的代理协议或密码系统。</p></article>
+        </div>
+        <div class="risk-grid">
+          <article><span>01</span><div><strong>TLS 校验</strong><p>客户端路径可跳过证书链与主机名验证，不适合作为生产安全默认值。</p></div></article>
+          <article><span>02</span><div><strong>失败恢复</strong><p>测速失败会进入删除节点路径；更稳妥的设计应使用冷却、退避和恢复探测。</p></div></article>
+          <article><span>03</span><div><strong>可信更新</strong><p>桌面脚本存在跳过 TLS 校验、覆盖配置的路径，缺少签名和完整性门禁。</p></div></article>
+          <article><span>04</span><div><strong>构建溯源</strong><p>源码缺少本地 AAR 和部分 Go 依赖，APK revision 也无法与仓库历史一一对应。</p></div></article>
+        </div>
+        <div class="validation-gap"><span class="evidence-badge is-unverified">尚未验证</span><p>本页没有完成干净环境全量构建、真实节点连通和 Android 真机流量审计，因此不能据此断言它具备生产可用性。</p></div>
+      </section>
+
+      <section class="priority-section" id="research-priority">
+        <header class="section-heading compact">
+          <p>05 / 研究顺序</p>
+          <div><h2>真正值得研究的，是底层工具和产品化思路。</h2><p>如果目标是沉淀长期能力，应从发动机开始，再研究如何把能力接进业务。</p></div>
+        </header>
+        <ol class="priority-ladder">
+          <li><span>01</span><div><strong>代理内核</strong><p>协议、加密、DNS、路由、TUN、转发。</p></div><b>最高</b></li>
+          <li><span>02</span><div><strong>FQNews2 的业务集成</strong><p>应用如何管理节点、自动选路并提供离线兜底。</p></div><b>中高</b></li>
+          <li><span>03</span><div><strong>可靠性与控制面</strong><p>健康检测、熔断、自动切换、观测与可信更新。</p></div><b>中高</b></li>
+          <li><span>04</span><div><strong>ChromeGo 的分发封装</strong><p>多工具兜底、便携打包与低门槛触达。</p></div><b>中</b></li>
+          <li><span>05</span><div><strong>fanqiang 仓库本身</strong><p>理解目录、发行与传播方式即可。</p></div><b>低</b></li>
+        </ol>
+        <div class="meaning-card"><span>对我们的意义</span><div><h3>不要复制一个工具箱，应该建设一套可信的“业务代理运行时”。</h3><p>统一适配内核、编译配置、管理节点健康、记录选路原因，并通过签名配置和可回滚更新保证可信交付；浏览器、移动端和业务应用只声明访问需求。</p></div></div>
+      </section>
+
+      <section class="evidence-section" id="evidence-drawer">
+        <details>
+          <summary><span>06 / 源码证据</span><strong>展开 11 个固定源码入口</strong><i>+</i></summary>
+          <div class="evidence-content">
+            <div class="evidence-intro"><p>关键结论固定到同一个提交，不把 README 宣称直接当作代码事实。</p><span data-meta="status">正在读取证据快照…</span></div>
+            <div class="evidence-legend" aria-label="研究结论的证据状态">
+              <span><b class="evidence-badge is-confirmed">源码确认</b>代码可直接定位</span>
+              <span><b class="evidence-badge is-inferred">代码推断</b>由结构与调用关系得出</span>
+              <span><b class="evidence-badge is-unverified">尚未验证</b>需要构建、真机或网络实验</span>
+            </div>
+            <div class="evidence-grid" data-evidence-list></div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>FQ/08</strong><span>fanqiang 研究图谱</span></div><p>原创研究页面；不分发上游可执行文件、APK、节点或配置。</p><a href="#top">回到顶部 ↑</a>
+    </footer>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

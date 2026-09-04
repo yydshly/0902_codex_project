@@ -227,6 +227,39 @@
         "url": "https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/",
         "status": "published"
       }
+    },
+    {
+      "id": "008",
+      "slug": "bannedbook-fanqiang",
+      "title": "fanqiang",
+      "repository": "https://github.com/bannedbook/fanqiang",
+      "summary": "以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。",
+      "status": "validated",
+      "tags": [
+        "network",
+        "proxy",
+        "sing-box",
+        "android",
+        "rss",
+        "toolbox",
+        "control-plane"
+      ],
+      "studyPath": "research/008-bannedbook-fanqiang/README.md",
+      "createdAt": "2026-09-04",
+      "updatedAt": "2026-09-04",
+      "cover": {
+        "path": "research/008-bannedbook-fanqiang/assets/cover.svg",
+        "alt": "fanqiang 架构摘要图：仓库层分出 ChromeGo Windows 工具箱和 FQNews2 Android 新闻应用；ChromeGo 启动多个独立工具，FQNews2 当前集成 sing-box/libcore，真正协议能力位于上游内核",
+        "caption": "架构图把仓库、两条不同的产品路径和真实内核依赖分开，并明确集合不等于统一适配框架、可配置不等于任意替换内核。",
+        "credit": "研究团队基于固定提交源码自制；不包含上游二进制、节点、配置或应用界面"
+      },
+      "demo": {
+        "sourcePath": "apps/008-bannedbook-fanqiang",
+        "buildOutput": "apps/008-bannedbook-fanqiang/dist",
+        "publicPath": "demos/008-bannedbook-fanqiang",
+        "url": "https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/",
+        "status": "published"
+      }
     }
   ]
 }
