@@ -311,7 +311,7 @@ Browser Quality Gate / 质量验收
 
 ## 变更记录
 
-- `2026-09-04`：收束最终理解并准备公开发布。研究首页增加本质、能力、原理、场景、扩展和项目意义的一屏结论；Web 首屏改为“视觉 Registry → PageSpec 主入口 → 证据 → 实时 renderer”，补充 skip link、canonical、Open Graph 与 Twitter 元数据，更新 1440×900 封面和根目录项目卡。目标应用 240 模块构建、根站聚合、Pages 子路径、代表性同源资产、桌面浏览器和精确 390×844 检查通过。
+- `2026-09-04`：收束最终理解并完成公开发布。研究首页增加本质、能力、原理、场景、扩展和项目意义的一屏结论；Web 首屏改为“视觉 Registry → PageSpec 主入口 → 证据 → 实时 renderer”，补充 skip link、canonical、Open Graph 与 Twitter 元数据，更新 1440×900 封面和根目录项目卡。提交 `e100b04` 已推送到 `origin/main`，GitHub Pages run `33855715630` 成功；公开页面、目录、封面与代表性同源素材 HTTP 200，公网 `Release Atlas → PageSpec R02.0`、48 个 Live tab、单活动 renderer、零横向溢出与零 console error 通过。
 - `2026-09-04`：把固定 brief 选择器升级为 `自然语言 Brief → PageSpec → 可编辑成品 → JSON`。用 `Aurora Field` 真实需求验证品牌/受众/目标提取、三层 slot、内容实时预览与 `R02.1` 保存；普通浏览器复制成功，受限剪贴板有手动恢复。重跑 1280/1024/390px、全屏单实例、reduced-motion、无 WebGL 和 240 模块构建。
 - `2026-09-04`：把 Registry 组合结果从工作台内嵌样机升级为全屏成品体验，并增加集成透视；当前页面角色、ThreeUI id、runtime、成本、fallback、选择理由与 DOM/renderer 边界可同步检查。完成焦点接管/恢复、Escape、背景滚动锁、业务跳转退出前景层、四种视口、reduced-motion、无 WebGL、单实例和 240 模块构建验证。
 - `2026-09-04`：新增 Registry 自动选型原型，把四类项目 brief、两种设备与三档预算映射为三层视觉组合；结果包含分数、理由、runtime、成本、fallback、预算排除项与 JSON，并用单一真实 renderer 预览后回跳 Live Lab。完成设备差异、轻量预算、键盘、1280/1024/390px、reduced-motion、无 WebGL 与 240 模块构建验证。

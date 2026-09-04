@@ -287,7 +287,7 @@
 | 第十二轮研究理解收束 | 一屏解释本质、真实能力、不能替代什么、采用方式与项目意义 | 研究 README、能力地图、Web 首屏 | README 新增最终理解表与完整调用链；能力地图区分上游四层和本 Demo 的 PageSpec 产品化链；Web 首屏明确“Registry 而非生成器”，三处口径一致 | 0–3 | pass | 无 |
 | 第十二轮 Web 发布完善 | 主旅程可从首屏直接进入，公开页面具备准确元数据和目录信息 | Hero、SEO、目录卡、封面 | 两个首屏 CTA、48 / 162 / 43/43 / PageSpec 0.1 状态、skip link、canonical / OG / Twitter、更新后的目录摘要与 1440×900 WebP 封面均已实装 | 2–6 | pass | 无 |
 | 第十二轮 Pages 子路径 | 根站构建后的真实发布路径可完整加载 | `/demos/003-mengto-threeui/`、静态资源、锚点 | 根站构建完成 8 项/8 封面/8 Demo；Demo、JS、CSS、封面及代表性同源 HTML/图片全部 HTTP 200；构建产物桌面与精确 390×844 均 overflow 0、overlay false、浏览器 error 0，Brief 生成 `Release Atlas / R02.0` | 6–9 | pass | 无 |
-| 第十二轮 Git 与远端部署 | 只提交本项目相关改动，远端 workflow 完成且公开 URL 可访问 | git diff、commit、push、Actions、public URL | 定向 staged diff、远端 commit、Pages job success、公开页面关键路径通过 | 9 | continue | 本地验收后提交、推送并等待部署 |
+| 第十二轮 Git 与远端部署 | 只提交本项目相关改动，远端 workflow 完成且公开 URL 可访问 | git diff、commit、push、Actions、public URL | 仅定向提交 003、目录与根 README；`e100b04` 已推送至 `origin/main`；Pages run `33855715630` success；公开页面、目录、封面与 6 个代表性同源资源 HTTP 200；公网 `Release Atlas` Brief 编译为 `R02.0`，1280×720 页面/selector overflow 0、48 个 Live tab、1 个活动视觉实例、overlay false、console error 0 | 9 | pass | 上游 Performance Gauges iframe 仍报告 Tailwind CDN 生产提示，已作为第三方依赖治理边界公开记录 |
 
 ## 验证环境
 
@@ -296,6 +296,7 @@
 - 能力路径：WebGL 正常、WebGL 人工拒绝、`prefers-reduced-motion: reduce`。
 - 浏览器结果：HTTP 200，无错误 overlay；实时舞台保持 48 项、162 个可运行配置与 43 LIVE / 0 PARTIAL / 0 INDEX。自然语言 Brief → PageSpec → 可编辑成品 → JSON 主旅程通过：`Aurora Field` 正确形成受众、目标、三层 slot 与 `R02.0 → R02.1` 内容修订；编辑前后 slot 不变，普通浏览器复制成功，受限剪贴板有恢复路径。1280/1024/390px 的 Planner input、PageSpec、selector 与生成页均无横向溢出；全屏保持 1 active + 2 standby、Escape 恢复焦点并锁定背景。reduced-motion + WebGL 拒绝时可读 fallback、宿主 DOM、3 个导航和 CTA 保留。
 - 发布预览：根目录 `build:site` 完成 8 个项目、8 张封面和 8 个 Demo；`/demos/003-mengto-threeui/` 的主 HTML、JS、CSS、封面与 8 条代表性同源资产请求均为 HTTP 200。构建产物在应用浏览器和独立 Chrome 152 DevTools 中通过；精确 390×844 下页面与 selector overflow 均为 0，首屏主按钮为 354×44px，应用异常、错误日志与非取消网络失败均为 0。`Release Atlas` Brief 在部署结构中编译为 `R02.0`。
+- 远端交付：提交 `e100b04` 已推送到 `origin/main`；GitHub Pages workflow run `33855715630` 完成且结论为 `success`。公开页面、目录 JSON、封面和代表性同源 HTML/图片均返回 HTTP 200；公网 1280×720 实测无页面或 selector 横向溢出、无 Vite overlay、console error 为 0，保持 48 个 Live tab 与 1 个活动视觉实例。已知的 Tailwind CDN warning 来自上游 Performance Gauges iframe，不影响主流程，并保留为生产依赖治理项。
 - 依赖结果：上一轮 `npm audit --audit-level=low` 为 0；第十二轮 240 模块 `npm run build` 通过，主应用 356.77 / 113.60 kB、CSS 180.29 / 45.57 kB（raw / gzip）；原 Sylva wrapper chunk 继续保持移除。
 
 ## 精炼记录
