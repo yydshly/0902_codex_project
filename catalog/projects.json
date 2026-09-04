@@ -8,7 +8,7 @@
       "slug": "holtsetio-aurelia",
       "title": "Aurelia",
       "repository": "https://github.com/holtsetio/aurelia/",
-      "summary": "从程序化水母出发，研究 GPU 软体与缓冲驱动表面，并扩展为真实弹簧驱动的声场雕塑与可解构、可召回的活体品牌拓扑。",
+      "summary": "从程序化水母出发，把 GPU 软体、动态材料、交互、声音和业务数据扩展为 15 个案例，并以研究总账记录能力证据、真实边界和下一阶段决策。",
       "status": "validated",
       "tags": [
         "three.js",
@@ -21,7 +21,7 @@
       ],
       "studyPath": "research/001-holtsetio-aurelia/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "research/001-holtsetio-aurelia/assets/cover.png",
         "alt": "Aurelia Field Atlas 首屏以大型中文标题说明从现实因果到交互作品的方法，右侧轨道图配合十项方向、十二个现实原型和十三层技术研究统计",

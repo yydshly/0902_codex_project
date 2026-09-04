@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050912" />
+    <meta name="description" content="Metro Pulse：用 Aurelia GPU 弹簧网络演示地铁客流、容量压力、拥塞传播与恢复。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M7 46L23 28l14 8 20-21' fill='none' stroke='%236ff1de' stroke-width='3'/%3E%3Ccircle cx='23' cy='28' r='5' fill='%23050912' stroke='%23ffd06a' stroke-width='3'/%3E%3Ccircle cx='37' cy='36' r='4' fill='%23050912' stroke='%23ff705f' stroke-width='3'/%3E%3C/svg%3E" />
+    <title>Metro Pulse / Aurelia 城市拥塞传播</title>
+  </head>
+  <body class="metro-page" data-runtime="loading" data-phase="ingress" data-scenario="commute" data-structure="off" data-dragging="false" data-motion="full">
+    <a class="skip-link" href="#metro-controls">跳到运营控制</a>
+    <main id="metro-stage" tabindex="0" aria-labelledby="metro-title" aria-describedby="metro-instruction">
+      <div class="metro-grid" aria-hidden="true"></div>
+      <div class="fallback-network" aria-hidden="true">
+        <i class="fallback-route route-a"></i><i class="fallback-route route-b"></i><i class="fallback-route route-c"></i>
+        <b style="--x:17%;--y:63%"></b><b style="--x:31%;--y:48%"></b><b class="transfer" style="--x:45%;--y:43%"></b><b style="--x:58%;--y:52%"></b><b class="hot" style="--x:69%;--y:35%"></b><b style="--x:83%;--y:24%"></b>
+      </div>
+
+      <header class="metro-topbar">
+        <a class="metro-brand" href="./atlas.html#case-metro"><span>F03</span><b>AURELIA / FIELD PROTOTYPE</b></a>
+        <div class="sample-progress" aria-label="现实样例序列"><i></i><span>03 / 12</span></div>
+        <nav aria-label="作品导航">
+          <a href="./atlas.html#case-metro">研究图谱</a>
+          <a href="./clothesline.html">上一样例</a>
+          <a href="./ink.html">下一样例</a>
+        </nav>
+      </header>
+
+      <section class="metro-intro">
+        <p class="eyebrow">FIELD 03 / SYNTHETIC OPERATIONS × LIVE NETWORK</p>
+        <h1 id="metro-title">METRO<br /><span>PULSE</span></h1>
+        <p class="intro-copy">不是把站点涂红，而是让容量压力成为结构：客流在换乘核积累，节点被顶出城市平面，回压沿线路传向相邻站，恢复也有自己的时间尺度。</p>
+        <p class="data-stamp"><span>SYNTHETIC DATA</span><span>非真实运营数据</span></p>
+      </section>
+
+      <aside class="causal-panel" aria-labelledby="causal-title">
+        <header><span>CAUSAL CHAIN</span><strong id="causal-title">一次拥堵如何改变全网</strong></header>
+        <ol>
+          <li data-phase="ingress"><i>01</i><span><b>INGRESS</b><small>客流进入目标站</small></span><em></em></li>
+          <li data-phase="pressure"><i>02</i><span><b>PRESSURE</b><small>容量余量被耗尽</small></span><em></em></li>
+          <li data-phase="backflow"><i>03</i><span><b>BACKFLOW</b><small>积压反向传向邻站</small></span><em></em></li>
+          <li data-phase="recover"><i>04</i><span><b>RECOVER</b><small>网络重新分配并恢复</small></span><em></em></li>
+        </ol>
+        <div class="scenario-tabs" role="group" aria-label="合成运营情景">
+          <button type="button" data-scenario="commute" aria-pressed="true">晚高峰</button>
+          <button type="button" data-scenario="event" aria-pressed="false">活动散场</button>
+          <button type="button" data-scenario="closure" aria-pressed="false">中央封站</button>
+        </div>
+      </aside>
+
+      <section class="metro-metrics" aria-label="合成网络状态">
+        <div><span id="flow-value">4,820</span><small>PASSENGERS / MIN</small></div>
+        <div><span id="saturation-value">62%</span><small>NETWORK SATURATION</small></div>
+        <div><span id="delay-value">2</span><small>DELAYED STATIONS</small></div>
+        <div><span id="recovery-value">04:20</span><small>RECOVERY ETA</small></div>
+      </section>
+
+      <section class="physics-proof" aria-label="Aurelia 网络规模">
+        <div><span id="station-count">—</span><small>STATIONS</small></div>
+        <div><span id="constraint-count">—</span><small>GPU CONSTRAINTS</small></div>
+        <div><span id="packet-count">—</span><small>FLOW PACKETS</small></div>
+        <div><span id="event-count">0</span><small>CROWD EVENTS</small></div>
+      </section>
+
+      <div id="station-tooltip" class="station-tooltip" hidden aria-live="polite">
+        <span id="station-code">M07</span><strong id="station-name">中央环</strong><small><b id="station-load">62%</b> 容量压力</small>
+      </div>
+
+      <p id="metro-instruction" class="metro-instruction"><span>SELECT · INJECT · ORBIT</span> 轻点站点注入客流；拖动环绕 3D 网络；方向键选择站点，Enter 注入，0 复位。</p>
+
+      <section id="metro-controls" class="metro-controls" aria-label="运营控制">
+        <button id="inject-trigger" class="primary-control" type="button"><span class="control-symbol">＋</span><span><strong>注入客流</strong><small id="inject-target">中央环 · +1,200</small></span></button>
+        <label for="demand-factor"><span>需求 <output id="demand-value">100%</output></span><input id="demand-factor" type="range" min="0.65" max="1.55" step="0.01" value="1" /></label>
+        <label for="recovery-factor"><span>恢复 <output id="recovery-factor-value">58%</output></span><input id="recovery-factor" type="range" min="0.25" max="1" step="0.01" value="0.58" /></label>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span class="control-symbol">⌗</span><span><strong>结构透视</strong><small>GPU 节点与弹簧</small></span></button>
+        <button id="metro-reset" type="button"><span class="control-symbol">↺</span><span><strong>复位</strong><small>初始网络</small></span></button>
+      </section>
+
+      <p id="metro-status" class="metro-status" aria-live="polite">晚高峰合成数据运行中；当前瓶颈会以高度、热色和客流减速共同显形。</p>
+
+      <details class="meaning-panel">
+        <summary>WHY THIS MATTERS / 这个样例证明什么</summary>
+        <p><b>它把不可见的系统风险变成可以理解和干预的空间因果。</b>同一机制可映射交通态势、供应链中断、服务容量、舆情扩散和组织协作；真实产品中只需把合成输入替换为经过治理的实时或历史数据。</p>
+        <div class="diagnostic-row"><button id="diagnostic-sample" type="button">采样 GPU 状态</button><output id="diagnostic-output" aria-live="polite">尚未采样</output></div>
+      </details>
+
+      <div id="metro-loading" class="metro-loading" role="status" aria-live="polite">
+        <div><p>COMPILING AURELIA NETWORK</p><strong id="loading-label">建立城市换乘拓扑</strong><span><i></i></span></div>
+      </div>
+
+      <section id="metro-error" class="metro-error" hidden aria-live="assertive">
+        <p>WEBGPU ENHANCEMENT UNAVAILABLE</p>
+        <h2>实时拥塞网络没有启动</h2>
+        <p id="metro-error-message"></p>
+        <p>静态网络仍保留核心关系：站点具有容量，局部积压会沿换乘关系传播；这里的数值均为构造数据。</p>
+      </section>
+
+      <noscript><p class="noscript-note">JavaScript 未启用：这里原本使用 Aurelia GPU 弹簧网络演示客流、容量、回压与恢复。</p></noscript>
+    </main>
+    <script type="module" src="/src/metro.js"></script>
+  </body>
+</html>

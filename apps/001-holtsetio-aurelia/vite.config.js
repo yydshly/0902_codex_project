@@ -20,6 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         baseline: resolve(appRoot, "index.html"),
+        summary: resolve(appRoot, "summary.html"),
         lab: resolve(appRoot, "lab.html"),
         morph: resolve(appRoot, "morph.html"),
         directions: resolve(appRoot, "directions.html"),
@@ -27,6 +28,13 @@ export default defineConfig({
         identity: resolve(appRoot, "identity.html"),
         atlas: resolve(appRoot, "atlas.html"),
         rain: resolve(appRoot, "rain.html"),
+        weatherproof: resolve(appRoot, "weatherproof.html"),
+        clothesline: resolve(appRoot, "clothesline.html"),
+        metro: resolve(appRoot, "metro.html"),
+        ink: resolve(appRoot, "ink.html"),
+        curtain: resolve(appRoot, "curtain.html"),
+        arena: resolve(appRoot, "arena.html"),
+        cuttlefish: resolve(appRoot, "cuttlefish.html"),
       },
     },
   },

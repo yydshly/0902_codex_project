@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07100f" />
+    <meta name="description" content="Weatherproof：把天气场景、Aurelia 物理体验、产品推荐和预约转化连接成一条真实官网业务路径。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M7 35Q32 8 57 35' fill='none' stroke='%23c8ff68' stroke-width='4'/%3E%3Cpath d='M32 34v19' stroke='%2379eaff' stroke-width='3'/%3E%3Ccircle cx='48' cy='15' r='5' fill='%23ffbd7a'/%3E%3C/svg%3E" />
+    <title>AEGIS FIELD / Weatherproof 产品官网原型</title>
+  </head>
+  <body data-scenario="commute" data-product="urban" data-enhancement="loading">
+    <a class="skip-link" href="#weatherproof-main">跳到主要内容</a>
+
+    <header class="site-header">
+      <a class="site-brand" href="./weatherproof.html" aria-label="AEGIS FIELD 首页">
+        <span>AF</span>
+        <strong>AEGIS FIELD</strong>
+      </a>
+      <p>WEATHERPROOF SYSTEMS <i>业务原型</i></p>
+      <nav aria-label="主要导航">
+        <a href="#match">产品</a>
+        <a href="#evidence">数据</a>
+        <a href="#method">技术</a>
+        <a href="./rain.html">实验室</a>
+      </nav>
+      <a class="header-cta open-consult" href="mailto:hello@example.com?subject=AEGIS%20FIELD%20体验预约">预约体验</a>
+    </header>
+
+    <main id="weatherproof-main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">SCENARIO-LED WEATHER PROTECTION / 01</p>
+          <h1 id="hero-title">让天气，<br /><em>成为选择依据。</em></h1>
+          <p class="hero-lead">不只告诉你“防雨抗风”。选择真实出行情境，看见冲击如何进入结构，再找到与你匹配的防护方案。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#scenario-selector">开始场景诊断 <span>↘</span></a>
+            <a class="text-action" href="./rain.html">进入完整物理实验室 <span>↗</span></a>
+          </div>
+          <ul class="hero-proof" aria-label="体验能力">
+            <li><b>03</b><span>天气场景</span></li>
+            <li><b>03</b><span>演示型号</span></li>
+            <li><b>01</b><span>转化路径</span></li>
+          </ul>
+        </div>
+
+        <figure class="hero-scene">
+          <div id="rain-experience" class="rain-experience" tabindex="0" role="application" aria-label="可交互雨伞物理场景：拖动观察，轻点产生冲击">
+            <div class="scene-fallback"><span>PHYSICS ENHANCEMENT</span><p>当前环境将使用可读产品界面；完整 WebGPU 场景不会阻塞诊断与预约。</p></div>
+          </div>
+          <figcaption>
+            <span><i class="scene-status" aria-hidden="true"></i><b id="scene-status-label">AURELIA FIELD 正在连接</b></span>
+            <span>拖动观察 · 轻点冲击</span>
+          </figcaption>
+          <div class="scene-reading" aria-live="polite">
+            <span>LIVE DIGITAL TWIN <b id="live-product">URBAN 08</b></span>
+            <dl>
+              <div><dt>积水</dt><dd id="live-water">--</dd></div>
+              <div><dt>张力</dt><dd id="live-tension">--</dd></div>
+              <div><dt>材料样机</dt><dd id="live-material">轻量织膜</dd></div>
+              <div><dt>可视骨架</dt><dd id="live-frame">8 骨</dd></div>
+            </dl>
+            <small>演示参数 · 非检测结论</small>
+          </div>
+        </figure>
+
+        <div id="scenario-selector" class="scenario-dock" role="group" aria-label="选择天气场景">
+          <div class="dock-heading">
+            <span>01 / YOUR WEATHER</span>
+            <strong>你今天要面对什么？</strong>
+          </div>
+          <button type="button" data-scenario-option="commute" aria-pressed="true">
+            <span>01</span><strong>日常通勤</strong><small data-scenario-reading>18 mm/h · 4 m/s</small>
+          </button>
+          <button type="button" data-scenario-option="storm" aria-pressed="false">
+            <span>02</span><strong>城市暴雨</strong><small data-scenario-reading>72 mm/h · 11 m/s</small>
+          </button>
+          <button type="button" data-scenario-option="coast" aria-pressed="false">
+            <span>03</span><strong>沿海阵风</strong><small data-scenario-reading>48 mm/h · 17 m/s</small>
+          </button>
+        </div>
+      </section>
+
+      <section id="match" class="match-section section-shell" aria-labelledby="match-title">
+        <header class="section-heading">
+          <p><span>02</span> PRODUCT MATCH / 场景推荐</p>
+          <h2 id="match-title">不是展示参数，<br />而是解释为什么适合你。</h2>
+        </header>
+
+        <div class="match-layout">
+          <article class="recommendation-panel" aria-live="polite">
+            <p class="recommendation-kicker"><span id="scenario-code">COMMUTE / 18 MM/H</span><b id="match-state-label">当前推荐</b></p>
+            <div>
+              <p id="recommendation-code">AF / URBAN 08</p>
+              <h3 id="recommendation-name">CITY LIGHT</h3>
+              <p id="recommendation-summary">在日常阵雨和高频收纳之间取得平衡，优先降低随身负担。</p>
+            </div>
+            <dl class="twin-specs" aria-label="当前数字样机策略">
+              <div><dt>材料样机</dt><dd id="twin-material">轻量织膜</dd></div>
+              <div><dt>结构样机</dt><dd id="twin-structure">8 骨轻量框架</dd></div>
+              <div><dt>响应倾向</dt><dd id="twin-response">柔韧吸收 / 适度蓄水</dd></div>
+              <div><dt>初始张力</dt><dd id="twin-tension">76 / 100</dd></div>
+            </dl>
+            <ul id="recommendation-reasons">
+              <li>轻量优先，适合地铁与步行换乘</li>
+              <li>快速排水，减少进出室内的残留水</li>
+              <li>演示匹配度 92 / 100</li>
+            </ul>
+            <div class="recommendation-actions">
+              <a class="primary-action open-consult" href="mailto:hello@example.com?subject=AEGIS%20FIELD%20体验预约">预约体验</a>
+              <a id="deep-lab-link" class="text-action" href="./rain.html?mode=drizzle">用完整实验验证 <span>↗</span></a>
+            </div>
+          </article>
+
+          <div class="product-grid" aria-label="演示产品列表">
+            <article class="product-card is-recommended" data-product-card="urban">
+              <header><span data-card-code>AF / 08</span><b class="recommendation-flag">推荐</b></header>
+              <div><p data-card-name>CITY LIGHT</p><h3 data-card-model>URBAN 08</h3><small data-card-use>轻量通勤系统</small></div>
+              <dl><div><dt>雨况</dt><dd data-card-score="rain">72</dd></div><div><dt>抗风</dt><dd data-card-score="wind">58</dd></div><div><dt>携带</dt><dd data-card-score="carry">96</dd></div></dl>
+              <footer><strong data-card-price>¥399</strong><button type="button" data-select-product="urban" aria-pressed="true">查看方案</button></footer>
+            </article>
+            <article class="product-card" data-product-card="storm">
+              <header><span data-card-code>AF / 12</span><b class="recommendation-flag">推荐</b></header>
+              <div><p data-card-name>STORM ARC</p><h3 data-card-model>STORM 12</h3><small data-card-use>高雨量防护系统</small></div>
+              <dl><div><dt>雨况</dt><dd data-card-score="rain">94</dd></div><div><dt>抗风</dt><dd data-card-score="wind">88</dd></div><div><dt>携带</dt><dd data-card-score="carry">66</dd></div></dl>
+              <footer><strong data-card-price>¥699</strong><button type="button" data-select-product="storm" aria-pressed="false">查看方案</button></footer>
+            </article>
+            <article class="product-card" data-product-card="coast">
+              <header><span data-card-code>AF / 14</span><b class="recommendation-flag">推荐</b></header>
+              <div><p data-card-name>COAST FRAME</p><h3 data-card-model>COAST 14</h3><small data-card-use>强风结构系统</small></div>
+              <dl><div><dt>雨况</dt><dd data-card-score="rain">86</dd></div><div><dt>抗风</dt><dd data-card-score="wind">98</dd></div><div><dt>携带</dt><dd data-card-score="carry">48</dd></div></dl>
+              <footer><strong data-card-price>¥899</strong><button type="button" data-select-product="coast" aria-pressed="false">查看方案</button></footer>
+            </article>
+          </div>
+        </div>
+        <p class="prototype-note">以上品牌、价格、评分与型号均为体验原型数据，不代表真实产品检测或销售承诺。</p>
+      </section>
+
+      <section class="compare-section section-shell" aria-labelledby="compare-title">
+        <header class="section-heading split-heading">
+          <div><p><span>03</span> DECISION SUPPORT / 型号比较</p><h2 id="compare-title">把“更强”拆成<br />与你有关的取舍。</h2></div>
+          <p>单一最高参数不等于最合适。官网应该帮助用户理解防护、重量、收纳和价格之间的选择。</p>
+        </header>
+        <div class="comparison-wrap">
+          <table>
+            <thead><tr><th scope="col">选择维度</th><th scope="col">URBAN 08</th><th scope="col">STORM 12</th><th scope="col">COAST 14</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">主要场景</th><td data-compare-product="urban" data-compare-field="useCase">日常通勤</td><td data-compare-product="storm" data-compare-field="useCase">高雨量城市</td><td data-compare-product="coast" data-compare-field="useCase">沿海阵风</td></tr>
+              <tr><th scope="row">结构策略</th><td data-compare-product="urban" data-compare-field="structure">8 骨轻量</td><td data-compare-product="storm" data-compare-field="structure">12 骨张力</td><td data-compare-product="coast" data-compare-field="structure">14 骨抗扭</td></tr>
+              <tr><th scope="row">携带倾向</th><td data-compare-product="urban" data-compare-field="carryBias">优先</td><td data-compare-product="storm" data-compare-field="carryBias">平衡</td><td data-compare-product="coast" data-compare-field="carryBias">结构优先</td></tr>
+              <tr><th scope="row">合成价格</th><td data-compare-product="urban" data-compare-field="price">¥399</td><td data-compare-product="storm" data-compare-field="price">¥699</td><td data-compare-product="coast" data-compare-field="price">¥899</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="evidence" class="data-evidence-section section-shell" aria-labelledby="evidence-title">
+        <header class="section-heading split-heading evidence-heading">
+          <div>
+            <p><span>04</span> SYNTHETIC EVIDENCE / 合成数据实验</p>
+            <h2 id="evidence-title">先构造可追踪数据，<br />再验证体验是否成立。</h2>
+          </div>
+          <div class="dataset-stamp">
+            <span>SYNTHETIC / 非检测数据</span>
+            <strong id="dataset-id">SYN-AF-R18-20260904</strong>
+            <small id="dataset-method">确定性规则构造 / 六点采样</small>
+          </div>
+        </header>
+
+        <div class="evidence-workspace">
+          <article class="evidence-summary" aria-live="polite">
+            <header>
+              <p>ACTIVE DATA TWIN</p>
+              <span id="evidence-batch">SYN-R18-U08-01</span>
+            </header>
+            <p id="evidence-product-code">AF / URBAN 08</p>
+            <h3 id="evidence-product-name">CITY LIGHT</h3>
+            <dl>
+              <div><dt>DEMO SKU</dt><dd id="evidence-sku">DEMO-AF-U08-MOSS</dd></div>
+              <div><dt>合成价格</dt><dd id="evidence-price">¥399</dd></div>
+              <div><dt>重量样本</dt><dd id="evidence-weight">286 g</dd></div>
+              <div><dt>库存快照</dt><dd id="evidence-stock">46 件</dd></div>
+              <div><dt>30 min 张力</dt><dd id="evidence-tension">59%</dd></div>
+              <div><dt>17 m/s 形变</dt><dd id="evidence-wind">88 mm</dd></div>
+            </dl>
+            <footer>
+              <span id="evidence-colorway">MOSS GLASS</span>
+              <small id="evidence-stock-id">SYN-STOCK-0903-A</small>
+            </footer>
+          </article>
+
+          <article class="curve-panel">
+            <header>
+              <div>
+                <p>COMPARATIVE RESPONSE CURVE</p>
+                <h3 id="curve-title">膜面张力保持</h3>
+              </div>
+              <div class="curve-controls" role="group" aria-label="选择合成实验维度">
+                <button type="button" data-evidence-metric="tension" aria-pressed="true">张力</button>
+                <button type="button" data-evidence-metric="retention" aria-pressed="false">滞水</button>
+                <button type="button" data-evidence-metric="wind" aria-pressed="false">形变</button>
+              </div>
+            </header>
+            <div class="curve-canvas-wrap">
+              <canvas id="evidence-chart" width="960" height="420" role="img" aria-labelledby="curve-title curve-description"></canvas>
+              <p id="curve-description">三种数字样机的合成对照曲线；当前选中 URBAN 08。</p>
+            </div>
+            <div class="curve-footer">
+              <ul id="curve-legend" aria-label="曲线型号">
+                <li><strong>URBAN 08</strong><span>当前样机</span></li>
+                <li><strong>STORM 12</strong><span>对照</span></li>
+                <li><strong>COAST 14</strong><span>对照</span></li>
+              </ul>
+              <div class="curve-table-wrap">
+                <table id="evidence-table">
+                  <caption>当前样机的合成采样值</caption>
+                  <thead><tr><th id="evidence-x-heading" scope="col">持续淋雨 / min</th><th id="evidence-y-heading" scope="col">张力 / %</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <ul class="data-source-ledger" aria-label="当前数据来源">
+          <li><span>WEATHER INPUT</span><strong id="data-weather-source">SYN-WX-COMMUTE-01</strong><small id="data-weather-values">18 mm/h · 4 m/s · 19°C</small></li>
+          <li><span>PIM SNAPSHOT</span><strong id="data-pim-source">DEMO-AF-U08-MOSS</strong><small>商品身份、价格、重量与色号</small></li>
+          <li><span>LAB BATCH</span><strong id="data-lab-source">SYN-R18-U08-01</strong><small>规则构造的三组六点曲线</small></li>
+          <li><span>INVENTORY</span><strong id="data-stock-source">SYN-STOCK-0903-A</strong><small id="data-stock-values">合成总量 46 · 四区域快照</small></li>
+        </ul>
+        <p class="data-disclaimer" id="dataset-disclaimer">仅用于交互、推荐和数据接入演示；不是商品检测、实时库存或销售承诺。</p>
+      </section>
+
+      <section id="method" class="method-section section-shell" aria-labelledby="method-title">
+        <header class="section-heading">
+          <p><span>05</span> FROM EFFECT TO BUSINESS / 能力接入</p>
+          <h2 id="method-title">同一份状态，<br />同时服务体验与业务。</h2>
+        </header>
+        <ol class="business-chain">
+          <li><span>01</span><p>SCENARIO INPUT</p><h3>场景输入</h3><small>城市、雨量、风力与出行方式，构成用户的实际任务。</small></li>
+          <li><span>02</span><p>PHYSICS PROOF</p><h3>可感知证明</h3><small>Aurelia 把冲击、传播、积水和张力变成可操作的解释。</small></li>
+          <li><span>03</span><p>PRODUCT MATCH</p><h3>产品匹配</h3><small>产品数据与场景权重形成推荐结果，而不是展示一排孤立 SKU。</small></li>
+          <li><span>04</span><p>BUSINESS ACTION</p><h3>业务行动</h3><small>预约、咨询或购买把体验转成可跟进的真实意向。</small></li>
+        </ol>
+        <section class="real-product-pipeline" aria-labelledby="real-product-title">
+          <header>
+            <p>REAL PRODUCT PIPELINE / 真实商品接入</p>
+            <h3 id="real-product-title">现在是数字样机；<br />真实上线，需要四类可信输入。</h3>
+            <small>大模型可以辅助生成概念方向和材质预览，但不能替代产品几何、材料扫描和实验室数据。</small>
+          </header>
+          <ol>
+            <li><span>01</span><strong>商品几何</strong><p>实物摄影、摄影测量、CAD 或经过优化的 GLB，决定轮廓、开合结构与细节可信度。</p><b>PHOTO / CAD / GLB</b></li>
+            <li><span>02</span><strong>真实材料</strong><p>PBR 扫描、布纹、透明度、粗糙度与雨水状态，让伞面在不同光线下仍像同一件商品。</p><b>PBR / FABRIC SCAN</b></li>
+            <li><span>03</span><strong>实测响应</strong><p>风洞、淋雨、张力与排水曲线校准模拟，使互动解释有产品证据，而不是视觉猜测。</p><b>TEST CURVES</b></li>
+            <li><span>04</span><strong>业务数据</strong><p>PIM/SKU、价格、库存、城市天气与 CRM 把数字孪生连接到推荐、购买和销售跟进。</p><b>PIM / API / CRM</b></li>
+          </ol>
+        </section>
+        <div class="signal-panel">
+          <div><span>DEMO EVENT STREAM</span><strong id="event-count">01</strong></div>
+          <p id="last-event">page_view · weatherproof_home</p>
+          <small>当前仅记录在浏览器内存；真实上线时可映射到分析平台与 CRM。</small>
+        </div>
+      </section>
+
+      <section class="closing-section" aria-labelledby="closing-title">
+        <p>WEATHER IS NOT A BACKDROP</p>
+        <h2 id="closing-title">让每一次天气变化，<br />都成为产品被理解的理由。</h2>
+        <div>
+          <a class="primary-action open-consult" href="mailto:hello@example.com?subject=AEGIS%20FIELD%20体验预约">预约体验</a>
+          <a class="text-action" href="./atlas.html">查看创意研究图谱 <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="site-brand" href="#weatherproof-main"><span>AF</span><strong>AEGIS FIELD</strong></a>
+      <p>BUSINESS PROTOTYPE / NOT A COMMERCIAL OFFER</p>
+      <p>Powered by the Aurelia research adaptation</p>
+    </footer>
+
+    <dialog id="consult-dialog" aria-labelledby="consult-title">
+      <div class="dialog-shell">
+        <button id="dialog-close" class="dialog-close" type="button" aria-label="关闭预约窗口">关闭</button>
+        <div id="consult-form-view">
+          <p class="eyebrow">FIELD APPOINTMENT / DEMO</p>
+          <h2 id="consult-title">把你的真实业务，<br />接入这套体验。</h2>
+          <p>提交内容只用于演示成功状态，不会发送到服务器。</p>
+          <form id="consult-form">
+            <label><span>称呼</span><input name="name" autocomplete="name" required placeholder="如何称呼你" /></label>
+            <label><span>联系方式</span><input name="contact" autocomplete="email" required placeholder="邮箱或手机号" /></label>
+            <label><span>关注方向</span><select name="interest"><option>产品销售官网</option><option>品牌互动体验</option><option>软件 / 数据产品</option><option>企业定制方案</option></select></label>
+            <label><span>补充说明</span><textarea name="note" rows="3" placeholder="你的行业、产品或希望验证的业务路径"></textarea></label>
+            <button class="primary-action" type="submit">提交演示预约</button>
+          </form>
+        </div>
+        <div id="consult-success" class="consult-success" hidden tabindex="-1">
+          <span>REQUEST / CAPTURED</span>
+          <h2>业务意向已经进入演示事件流。</h2>
+          <p>真实上线时，这里将连接 CRM、邮件通知或销售工作台；当前没有发送任何数据。</p>
+          <button id="success-close" class="primary-action" type="button">返回官网</button>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript><p class="noscript-note">JavaScript 未启用：你仍可阅读产品方案，并通过 <a href="mailto:hello@example.com?subject=AEGIS%20FIELD%20体验预约">邮件预约体验</a>。</p></noscript>
+    <script type="module" src="/src/weatherproof.js"></script>
+  </body>
+</html>

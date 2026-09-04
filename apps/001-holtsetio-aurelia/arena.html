@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#02060b" />
+    <meta name="description" content="Aurelia Flagship Arena：以水母为基准，实时比较光翼生命体、星种绽放与磁流体祭坛。" />
+    <title>Flagship Arena / Aurelia 第二旗舰竞技场</title>
+  </head>
+  <body class="arena-page" data-runtime="loading" data-candidate="manta" data-audio="locked" data-structure="off">
+    <a class="skip-link" href="#candidate-selector">跳到候选选择</a>
+    <main id="arena-stage" aria-labelledby="arena-title">
+      <div class="arena-vignette" aria-hidden="true"></div>
+      <div class="arena-grain" aria-hidden="true"></div>
+
+      <div class="fallback-stage" aria-hidden="true">
+        <div class="fallback-manta"><i></i><i></i><b></b></div>
+        <div class="fallback-seed"><span></span></div>
+        <div class="fallback-ferro"><span></span></div>
+      </div>
+
+      <header class="arena-topbar">
+        <a class="arena-brand" href="./" aria-label="打开水母基准">
+          <span>F∞</span>
+          <strong>AURELIA / FLAGSHIP ARENA</strong>
+        </a>
+        <div class="arena-runtime" aria-live="polite">
+          <i></i><span id="runtime-label">构建候选生命体</span><b>·</b><span id="fps-label">-- FPS</span>
+        </div>
+        <nav aria-label="作品导航">
+          <a href="./">水母基准</a>
+          <a href="./cuttlefish.html">墨光乌贼</a>
+          <a href="./morph.html">旧形态实验</a>
+          <a href="./atlas.html">研究图谱</a>
+        </nav>
+      </header>
+
+      <section class="arena-intro">
+        <p>R30 · SECOND FLAGSHIP SEARCH</p>
+        <h1 id="arena-title"><span>第二个</span><br />旗舰</h1>
+        <p id="candidate-caption">翼膜、骨架、尾丝与内部能量共同构成可转向的空中生命。</p>
+      </section>
+
+      <nav id="candidate-selector" class="candidate-selector" aria-label="旗舰候选">
+        <button type="button" data-candidate="manta" aria-pressed="true">
+          <span>01</span><strong>光翼生命体</strong><small>SOLAR MANTA · PRIMARY</small>
+        </button>
+        <button type="button" data-candidate="seed" aria-pressed="false">
+          <span>02</span><strong>星种绽放</strong><small>CELESTIAL SEED</small>
+        </button>
+        <button type="button" data-candidate="ferro" aria-pressed="false">
+          <span>03</span><strong>磁流体祭坛</strong><small>FERRO ALTAR</small>
+        </button>
+      </nav>
+
+      <aside class="arena-benchmark" aria-labelledby="benchmark-title">
+        <div class="benchmark-head">
+          <p>REFERENCE / 10.0</p>
+          <h2 id="benchmark-title">水母仍是基准</h2>
+          <a href="./">打开完整基线 ↗</a>
+        </div>
+        <div class="candidate-rank">
+          <span id="rank-label">CHALLENGER 01</span>
+          <strong id="candidate-score">8.6</strong>
+          <small id="maturity-label">LIVE PROTOTYPE · 尚未替代水母</small>
+        </div>
+        <dl class="score-grid" aria-label="统一作品评分">
+          <div><dt>轮廓</dt><dd><i data-score="silhouette"></i></dd><output data-output="silhouette">9.2</output></div>
+          <div><dt>空间</dt><dd><i data-score="space"></i></dd><output data-output="space">8.8</output></div>
+          <div><dt>运动</dt><dd><i data-score="motion"></i></dd><output data-output="motion">8.7</output></div>
+          <div><dt>材质</dt><dd><i data-score="material"></i></dd><output data-output="material">8.2</output></div>
+          <div><dt>结构</dt><dd><i data-score="structure"></i></dd><output data-output="structure">9.0</output></div>
+          <div><dt>交互</dt><dd><i data-score="interaction"></i></dd><output data-output="interaction">8.4</output></div>
+        </dl>
+        <p class="benchmark-note">这是设计决策工具，不是营销分数。只有真实运行证据能够改变结论。</p>
+      </aside>
+
+      <section class="arena-causal" aria-label="当前候选的动态层">
+        <p id="mapping-copy">LOW 翼膜呼吸 · MID 骨架行波 · HIGH 尾丝放电</p>
+        <ol>
+          <li><span>01</span><b>轮廓</b></li>
+          <li><span>02</span><b>骨架</b></li>
+          <li><span>03</span><b>能量</b></li>
+          <li><span>04</span><b>群游</b></li>
+        </ol>
+      </section>
+
+      <section class="arena-controls" aria-label="竞技场控制">
+        <button id="audio-toggle" class="control-primary" type="button" aria-pressed="false">
+          <span>▶</span><span><strong>启动声场</strong><small>原创程序化音频</small></span>
+        </button>
+        <button id="pulse-trigger" type="button">
+          <span>◎</span><span><strong>能量脉冲</strong><small>触发离散事件</small></span>
+        </button>
+        <button id="structure-toggle" type="button" aria-pressed="false">
+          <span>⌁</span><span><strong>内部结构</strong><small>显示真实构造</small></span>
+        </button>
+        <button id="mute-toggle" type="button" aria-pressed="false">
+          <span>◖</span><span><strong>声音输出</strong><small>有声</small></span>
+        </button>
+        <button id="view-reset" type="button">
+          <span>↺</span><span><strong>回到主镜头</strong><small>重置能量与视角</small></span>
+        </button>
+      </section>
+
+      <p id="arena-status" class="arena-status" aria-live="polite">移动指针改变生命体朝向；按住扫过注入局部能量。</p>
+
+      <div id="arena-loading" class="arena-loading" role="status" aria-live="polite">
+        <div><p>ASSEMBLING THE ARENA</p><strong>建立翼膜、花瓣与磁场拓扑</strong><span><i></i></span></div>
+      </div>
+
+      <section id="arena-error" class="arena-error" hidden aria-live="assertive">
+        <p>ENHANCEMENT UNAVAILABLE</p>
+        <h2>实时 WebGPU 场景未启动</h2>
+        <p id="arena-error-message"></p>
+        <p>候选选择、评价框架和动态轮廓仍可操作；完整形态需要支持 WebGPU 的浏览器。</p>
+      </section>
+    </main>
+    <script type="module" src="/src/arena.js"></script>
+  </body>
+</html>

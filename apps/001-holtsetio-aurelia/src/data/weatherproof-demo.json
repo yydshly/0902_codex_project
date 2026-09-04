@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "datasetId": "SYN-AF-R18-20260904",
+    "generatedAt": "2026-09-04T08:00:00+08:00",
+    "label": "合成业务验证数据",
+    "method": "确定性规则构造 / 六点采样",
+    "disclaimer": "仅用于交互、推荐和数据接入演示；不是商品检测、实时库存或销售承诺。"
+  },
+  "metrics": {
+    "tension": {
+      "label": "膜面张力保持",
+      "shortLabel": "张力",
+      "xLabel": "持续淋雨",
+      "xUnit": "min",
+      "yLabel": "张力",
+      "yUnit": "%",
+      "yMin": 50,
+      "yMax": 100,
+      "summaryKey": "tension30Pct",
+      "summaryLabel": "30 min 张力"
+    },
+    "retention": {
+      "label": "膜面滞水质量",
+      "shortLabel": "滞水",
+      "xLabel": "持续淋雨",
+      "xUnit": "min",
+      "yLabel": "滞水",
+      "yUnit": "g",
+      "yMin": 0,
+      "yMax": 80,
+      "summaryKey": "retainedWater30G",
+      "summaryLabel": "30 min 滞水"
+    },
+    "wind": {
+      "label": "伞缘受风形变",
+      "shortLabel": "形变",
+      "xLabel": "风速",
+      "xUnit": "m/s",
+      "yLabel": "形变",
+      "yUnit": "mm",
+      "yMin": 0,
+      "yMax": 100,
+      "summaryKey": "deflection17Mm",
+      "summaryLabel": "17 m/s 形变"
+    }
+  },
+  "scenarios": {
+    "commute": {
+      "code": "COMMUTE / 18 MM/H",
+      "intensity": 0.18,
+      "product": "urban",
+      "labMode": "drizzle",
+      "sceneLabel": "日常阵雨 / 轻量响应",
+      "weather": {
+        "sourceId": "SYN-WX-COMMUTE-01",
+        "rainMmH": 18,
+        "windMs": 4,
+        "temperatureC": 19,
+        "humidityPct": 82
+      }
+    },
+    "storm": {
+      "code": "STORM / 72 MM/H",
+      "intensity": 0.9,
+      "product": "storm",
+      "labMode": "storm",
+      "sceneLabel": "城市暴雨 / 高密冲击",
+      "weather": {
+        "sourceId": "SYN-WX-STORM-02",
+        "rainMmH": 72,
+        "windMs": 11,
+        "temperatureC": 23,
+        "humidityPct": 96
+      }
+    },
+    "coast": {
+      "code": "COAST / 17 M/S",
+      "intensity": 0.68,
+      "product": "coast",
+      "labMode": "rain",
+      "sceneLabel": "沿海阵风 / 结构优先",
+      "weather": {
+        "sourceId": "SYN-WX-COAST-03",
+        "rainMmH": 48,
+        "windMs": 17,
+        "temperatureC": 21,
+        "humidityPct": 91
+      }
+    }
+  },
+  "products": {
+    "urban": {
+      "code": "AF / URBAN 08",
+      "name": "CITY LIGHT",
+      "summary": "在日常阵雨和高频收纳之间取得平衡，优先降低随身负担。",
+      "reasons": [
+        "轻量优先，适合地铁与步行换乘",
+        "快速排水，减少进出室内的残留水",
+        "合成匹配度 92 / 100"
+      ],
+      "material": "轻量织膜",
+      "structure": "8 骨轻量框架",
+      "response": "柔韧吸收 / 适度蓄水",
+      "useCase": "日常通勤",
+      "carryBias": "优先",
+      "scores": { "rain": 72, "wind": 58, "carry": 96 },
+      "pim": {
+        "sku": "DEMO-AF-U08-MOSS",
+        "collection": "URBAN SYSTEM",
+        "demoPriceCny": 399,
+        "weightG": 286,
+        "packedLengthCm": 29,
+        "colorway": "MOSS GLASS",
+        "availability": {
+          "snapshotId": "SYN-STOCK-0903-A",
+          "total": 46,
+          "regions": { "华东": 18, "华南": 12, "华北": 9, "西南": 7 }
+        }
+      },
+      "test": {
+        "batchId": "SYN-R18-U08-01",
+        "summary": { "tension30Pct": 59, "retainedWater30G": 69, "deflection17Mm": 88 },
+        "curves": {
+          "tension": [[0, 76], [6, 72], [12, 69], [18, 65], [24, 62], [30, 59]],
+          "retention": [[0, 0], [6, 13], [12, 25], [18, 38], [24, 54], [30, 69]],
+          "wind": [[0, 0], [4, 9], [8, 19], [12, 36], [15, 58], [17, 88]]
+        }
+      },
+      "profile": {
+        "id": "urban-08",
+        "ribs": 8,
+        "baseTension": 0.76,
+        "wetSoftening": 0.4,
+        "waterRetention": 1.14,
+        "drainage": 0.92,
+        "dryRoughness": 0.47,
+        "wetRoughness": 0.16,
+        "dryClearcoat": 0.62,
+        "wetClearcoat": 0.9,
+        "baseA": "#071f24",
+        "baseB": "#17645f",
+        "wetColor": "#0a3b45",
+        "rimColor": "#5b8c55",
+        "glowColor": "#42bea9",
+        "frameColor": "#3e5954",
+        "frameEmissive": "#78a62e",
+        "gripColor": "#1f3029",
+        "gripEmissive": "#6f9430",
+        "frameGlow": 0.3,
+        "gripGlow": 0.18
+      }
+    },
+    "storm": {
+      "code": "AF / STORM 12",
+      "name": "STORM ARC",
+      "summary": "为持续高雨量保留更高膜面张力，让冲击更快分散到十二根结构骨。",
+      "reasons": [
+        "高雨量场景优先，减少局部积水",
+        "十二骨张力结构承担连续冲击",
+        "合成匹配度 95 / 100"
+      ],
+      "material": "高密疏水膜",
+      "structure": "12 骨张力框架",
+      "response": "快速传播 / 高效排水",
+      "useCase": "高雨量城市",
+      "carryBias": "平衡",
+      "scores": { "rain": 94, "wind": 88, "carry": 66 },
+      "pim": {
+        "sku": "DEMO-AF-S12-GLACIER",
+        "collection": "STORM SYSTEM",
+        "demoPriceCny": 699,
+        "weightG": 418,
+        "packedLengthCm": 34,
+        "colorway": "GLACIER BLUE",
+        "availability": {
+          "snapshotId": "SYN-STOCK-0903-B",
+          "total": 18,
+          "regions": { "华东": 6, "华南": 5, "华北": 4, "西南": 3 }
+        }
+      },
+      "test": {
+        "batchId": "SYN-R18-S12-02",
+        "summary": { "tension30Pct": 79, "retainedWater30G": 42, "deflection17Mm": 70 },
+        "curves": {
+          "tension": [[0, 90], [6, 88], [12, 86], [18, 83], [24, 81], [30, 79]],
+          "retention": [[0, 0], [6, 7], [12, 14], [18, 22], [24, 31], [30, 42]],
+          "wind": [[0, 0], [4, 7], [8, 15], [12, 29], [15, 46], [17, 70]]
+        }
+      },
+      "profile": {
+        "id": "storm-12",
+        "ribs": 12,
+        "baseTension": 0.9,
+        "wetSoftening": 0.25,
+        "waterRetention": 0.7,
+        "drainage": 1.38,
+        "dryRoughness": 0.27,
+        "wetRoughness": 0.065,
+        "dryClearcoat": 0.84,
+        "wetClearcoat": 1,
+        "baseA": "#061a2f",
+        "baseB": "#0b5393",
+        "wetColor": "#072f57",
+        "rimColor": "#58abc3",
+        "glowColor": "#57d5ff",
+        "frameColor": "#516b78",
+        "frameEmissive": "#2aa8c8",
+        "gripColor": "#182a33",
+        "gripEmissive": "#267e9c",
+        "frameGlow": 0.46,
+        "gripGlow": 0.24
+      }
+    },
+    "coast": {
+      "code": "AF / COAST 14",
+      "name": "COAST FRAME",
+      "summary": "牺牲部分便携性，换取强阵风场景下更明确的抗扭与结构稳定倾向。",
+      "reasons": [
+        "强风环境优先，强调结构稳定",
+        "十四骨抗扭布局应对方向变化",
+        "合成匹配度 97 / 100"
+      ],
+      "material": "抗扭复合膜",
+      "structure": "14 骨强化框架",
+      "response": "高张力 / 方向稳定",
+      "useCase": "沿海阵风",
+      "carryBias": "结构优先",
+      "scores": { "rain": 86, "wind": 98, "carry": 48 },
+      "pim": {
+        "sku": "DEMO-AF-C14-LICHEN",
+        "collection": "COAST SYSTEM",
+        "demoPriceCny": 899,
+        "weightG": 536,
+        "packedLengthCm": 39,
+        "colorway": "LICHEN GOLD",
+        "availability": {
+          "snapshotId": "SYN-STOCK-0903-C",
+          "total": 12,
+          "regions": { "华东": 3, "华南": 5, "华北": 2, "西南": 2 }
+        }
+      },
+      "test": {
+        "batchId": "SYN-R18-C14-03",
+        "summary": { "tension30Pct": 85, "retainedWater30G": 55, "deflection17Mm": 45 },
+        "curves": {
+          "tension": [[0, 94], [6, 93], [12, 91], [18, 89], [24, 87], [30, 85]],
+          "retention": [[0, 0], [6, 9], [12, 18], [18, 29], [24, 41], [30, 55]],
+          "wind": [[0, 0], [4, 5], [8, 11], [12, 20], [15, 31], [17, 45]]
+        }
+      },
+      "profile": {
+        "id": "coast-14",
+        "ribs": 14,
+        "baseTension": 0.94,
+        "wetSoftening": 0.18,
+        "waterRetention": 0.82,
+        "drainage": 1.18,
+        "dryRoughness": 0.21,
+        "wetRoughness": 0.055,
+        "dryClearcoat": 0.88,
+        "wetClearcoat": 1,
+        "baseA": "#24170b",
+        "baseB": "#71511a",
+        "wetColor": "#2c2814",
+        "rimColor": "#bfc757",
+        "glowColor": "#d8df58",
+        "frameColor": "#665f43",
+        "frameEmissive": "#b3be45",
+        "gripColor": "#342d1c",
+        "gripEmissive": "#9a8f32",
+        "frameGlow": 0.5,
+        "gripGlow": 0.28
+      }
+    }
+  }
+}

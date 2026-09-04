@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#d9d1c3" />
+    <meta name="description" content="以 Aurelia GPU 布料、风、树影投影和空间声音构成的环境交互实验。" />
+    <title>Veil of Light / Aurelia 树影与窗帘</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9d1c3'/%3E%3Cpath d='M16 10h12v44H16c7-12 7-32 0-44Zm32 0H36v44h12c-7-12-7-32 0-44Z' fill='%235b6650'/%3E%3C/svg%3E" />
+  </head>
+  <body data-runtime="loading" data-phase="still" data-preset="noon" data-audio="locked" data-structure="off" data-motion="full">
+    <a class="skip-link" href="#ambient-controls">跳到环境控制</a>
+    <main id="curtain-stage" tabindex="0" aria-labelledby="curtain-title">
+      <header class="topbar">
+        <a class="field-mark" href="./atlas.html#case-curtain"><span>F05</span><b>AURELIA / ENVIRONMENT STUDY</b></a>
+        <p class="sequence"><i></i><span>05 / 12</span></p>
+        <nav aria-label="作品导航"><a href="./atlas.html#case-curtain">研究图谱</a><a href="./ink.html">上一样例</a><a href="./atlas.html#case-magnet">下一研究</a></nav>
+      </header>
+
+      <section class="title-block">
+        <p>FIELD 05 · LIGHT / OCCLUSION</p>
+        <h1 id="curtain-title"><span>树影</span><span>与帘</span></h1>
+        <div class="english-title">VEIL<br />OF LIGHT</div>
+        <p class="lead">风没有形状，直到它掀起帘布；光没有记忆，直到树影在褶皱上改变。</p>
+      </section>
+
+      <section class="preset-rail" aria-label="环境时刻">
+        <p>ROOM / 时刻</p>
+        <button type="button" data-preset="dawn" aria-pressed="false"><span>晨雾</span><small>07:40</small></button>
+        <button type="button" data-preset="noon" aria-pressed="true"><span>午后</span><small>13:00</small></button>
+        <button type="button" data-preset="dusk" aria-pressed="false"><span>薄暮</span><small>17:20</small></button>
+      </section>
+
+      <aside class="sun-readout" aria-label="当前环境状态">
+        <p>SIMULATED AMBIENCE</p>
+        <time id="sun-time">13:00</time>
+        <span><i id="sun-orbit"></i></span>
+        <dl>
+          <div><dt>WIND</dt><dd><b id="wind-metric">10</b><small>km/h</small></dd></div>
+          <div><dt>OPEN</dt><dd><b id="open-metric">48</b><small>%</small></dd></div>
+          <div><dt>SHADOW</dt><dd><b id="shadow-metric">46</b><small>%</small></dd></div>
+          <div><dt>FIELD</dt><dd><b id="field-metric">0</b><small>%</small></dd></div>
+        </dl>
+      </aside>
+
+      <section class="causal-poem" aria-label="环境因果链">
+        <p>一阵风，经过四层变化</p>
+        <ol>
+          <li data-phase="near"><b>01</b><span>靠近</span><small>PROXIMITY</small></li>
+          <li data-phase="wake"><b>02</b><span>起褶</span><small>FOLD</small></li>
+          <li data-phase="settle"><b>03</b><span>移影</span><small>OCCLUDE</small></li>
+          <li data-phase="still"><b>04</b><span>归静</span><small>SETTLE</small></li>
+        </ol>
+      </section>
+
+      <section class="interaction-hint" aria-live="polite">
+        <strong>把鼠标靠近帘布，它会先于点击回应你。</strong>
+        <span id="curtain-status">靠近产生局部气流；按住扫过，则把方向和速度留在褶皱里。</span>
+      </section>
+
+      <section id="ambient-controls" class="control-dock" aria-label="环境控制">
+        <button id="audio-toggle" class="sound-control" type="button" aria-pressed="false"><span class="control-icon">◌</span><span><strong>开启声场</strong><small>风 / 叶 / 室内共鸣</small></span></button>
+        <label><span><b>风速</b><output id="wind-value">28%</output></span><input id="wind-control" type="range" min="0" max="1" step="0.01" value="0.28" /></label>
+        <label><span><b>开合</b><output id="open-value">48%</output></span><input id="open-control" type="range" min="0" max="1" step="0.01" value="0.48" /></label>
+        <label><span><b>透光</b><output id="transmission-value">58%</output></span><input id="transmission-control" type="range" min="0" max="1" step="0.01" value="0.58" /></label>
+        <label><span><b>日照</b><output id="sun-value">13:28</output></span><input id="sun-control" type="range" min="0" max="1" step="0.01" value="0.58" /></label>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span class="control-icon">⌁</span><span><strong>帘布结构</strong><small><i id="vertex-count">—</i> nodes / <i id="spring-count">—</i> springs</small></span></button>
+        <button id="reset-trigger" type="button"><span class="control-icon">↺</span><span><strong>回到午后</strong><small>重置空间状态</small></span></button>
+      </section>
+
+      <details class="meaning-panel">
+        <summary>这间房间证明了什么？<span>＋</span></summary>
+        <div>
+          <p>同一阵风先进入 Aurelia 布料节点，再改变褶皱、遮挡、树影密度和左右声像。这里的价值不是一张会动的窗帘，而是一套可迁移的环境界面：真实天气、人体距离、建筑传感器或品牌节奏，都能进入同一状态链。</p>
+          <ul><li><b id="diagnostic-nodes">—</b> CLOTH NODES</li><li><b id="diagnostic-springs">—</b> CONSTRAINTS</li><li><b>CC0</b> FABRIC DETAIL</li></ul>
+          <p class="provenance-note"><span>环境：AI 摄影底片　帘布：CC0 扫描材质　运动：Aurelia GPU</span><a href="./assets/curtain/ASSET_PROVENANCE.md">查看素材清单</a></p>
+          <div class="diagnostic-row"><button id="diagnostic-sample" type="button">采样帘布状态</button><output id="diagnostic-output" aria-live="polite">尚未采样</output></div>
+        </div>
+      </details>
+
+      <p id="curtain-error" class="curtain-error" role="status" hidden><b>2D ROOM MODE</b><span id="curtain-error-message">GPU 帘布尚未启动，但光影和环境控制仍可使用。</span></p>
+      <div id="curtain-loading" class="curtain-loading" role="status" aria-live="polite"><div><p>OPENING THE ROOM</p><strong id="loading-label">让日光进入房间</strong><span><i></i></span></div></div>
+    </main>
+    <script type="module" src="/src/curtain.js"></script>
+  </body>
+</html>

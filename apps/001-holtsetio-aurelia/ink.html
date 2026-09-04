@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#e7decc" />
+    <meta name="description" content="Living Ink：用 Aurelia GPU 笔锋约束与可扩散墨层演示压力、速度、含水量和时间记忆。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23eee5d4'/%3E%3Cpath d='M10 44c13-2 18-24 29-26 8-2 7 13 15 17-13-4-21 12-44 9Z' fill='%23181411'/%3E%3Ccircle cx='50' cy='49' r='6' fill='%23a8382a'/%3E%3C/svg%3E" />
+    <title>Living Ink / Aurelia 活体书法</title>
+  </head>
+  <body class="ink-page" data-runtime="loading" data-phase="remember" data-ink="dense" data-structure="off" data-motion="full" data-drawing="false">
+    <a class="skip-link" href="#ink-controls">跳到笔墨工具</a>
+    <main id="ink-stage" tabindex="0" aria-labelledby="ink-title" aria-describedby="ink-instruction">
+      <div class="paper-fiber" aria-hidden="true"></div>
+
+      <header class="ink-topbar">
+        <a class="ink-brand" href="./atlas.html#case-ink"><span>F04</span><b>AURELIA / FIELD STUDY</b></a>
+        <div class="sample-progress" aria-label="现实样例序列"><i></i><span>04 / 12</span></div>
+        <nav aria-label="作品导航">
+          <a href="./atlas.html#case-ink">研究图谱</a>
+          <a href="./metro.html">上一样例</a>
+          <a href="./curtain.html">下一样例</a>
+        </nav>
+      </header>
+
+      <section class="ink-intro">
+        <p class="eyebrow">FIELD 04 · PRESSURE / MEMORY</p>
+        <h1 id="ink-title"><span>活</span><span>体</span><span>书</span><span>写</span></h1>
+        <p class="english-title">LIVING<br />INK</p>
+        <p class="intro-copy">压力不是数字，速度不是滑块。它们落到纸上，成为宽度、飞白、湿边与无法撤销的时间。</p>
+      </section>
+
+      <aside class="ink-modes" aria-label="墨法选择">
+        <p>INK / 墨法</p>
+        <button type="button" data-ink="dense" aria-pressed="true"><i></i><span>浓墨<small>DENSE</small></span></button>
+        <button type="button" data-ink="pale" aria-pressed="false"><i></i><span>淡墨<small>PALE</small></span></button>
+        <button type="button" data-ink="cinnabar" aria-pressed="false"><i></i><span>朱砂<small>SEAL</small></span></button>
+      </aside>
+
+      <section class="ink-metrics" aria-label="当前笔墨状态">
+        <div><small>PRESSURE</small><span id="pressure-metric">68</span><em>%</em></div>
+        <div><small>VELOCITY</small><span id="speed-metric">0.0</span><em>m/s</em></div>
+        <div><small>WET MEMORY</small><span id="wet-metric">0</span><em>marks</em></div>
+        <div><small>STROKES</small><span id="stroke-metric">0</span><em>gestures</em></div>
+      </section>
+
+      <aside class="causal-strip" aria-labelledby="causal-title">
+        <p id="causal-title">一笔如何留下时间</p>
+        <ol>
+          <li data-phase="contact"><i>壹</i><span>触纸<small>CONTACT</small></span></li>
+          <li data-phase="drag"><i>贰</i><span>分锋<small>SPLIT</small></span></li>
+          <li data-phase="diffuse"><i>叁</i><span>洇染<small>BLEED</small></span></li>
+          <li data-phase="remember"><i>肆</i><span>留痕<small>REMEMBER</small></span></li>
+        </ol>
+      </aside>
+
+      <p id="ink-instruction" class="ink-instruction"><b>按住并拖动，直接在纸上落笔。</b><span>慢而重则宽润，快而轻则飞白；压感笔会覆盖力度滑块。</span></p>
+
+      <section id="ink-controls" class="ink-controls" aria-label="笔墨工具">
+        <button id="demo-trigger" class="primary-control" type="button"><span class="control-symbol">々</span><span><strong>示范一笔</strong><small>观看压力与速度变化</small></span></button>
+        <label for="pressure-control"><span>力度 <output id="pressure-value">68%</output></span><input id="pressure-control" type="range" min="0.12" max="1" step="0.01" value="0.68" /></label>
+        <label for="water-control"><span>含水 <output id="water-value">58%</output></span><input id="water-control" type="range" min="0.08" max="1" step="0.01" value="0.58" /></label>
+        <label for="absorption-control"><span>吸收 <output id="absorption-value">62%</output></span><input id="absorption-control" type="range" min="0.12" max="1" step="0.01" value="0.62" /></label>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span class="control-symbol">⌁</span><span><strong>笔锋结构</strong><small>Aurelia 节点 / 弹簧</small></span></button>
+        <button id="clear-trigger" type="button"><span class="control-symbol">○</span><span><strong>清纸</strong><small>重新书写</small></span></button>
+      </section>
+
+      <p id="ink-status" class="ink-status" aria-live="polite">宣纸已经展开。按住纸面，让第一笔从压力变成形状。</p>
+
+      <details class="meaning-panel">
+        <summary>这不是绘图画板，它证明了什么？</summary>
+        <p><b>同一次输入可以同时成为形态、材质和时间。</b>真实产品可把笔压换成呼吸、音乐、交易强度或品牌数据，让每次生成都保留原因和过程，而不只是输出一张随机图片。</p>
+        <div class="physics-proof"><span><b id="vertex-count">—</b> BRISTLE NODES</span><span><b id="spring-count">—</b> CONSTRAINTS</span><span><b id="particle-count">—</b> SPLAT POOL</span></div>
+        <div class="diagnostic-row"><button id="diagnostic-sample" type="button">采样笔锋状态</button><output id="diagnostic-output" aria-live="polite">尚未采样</output></div>
+      </details>
+
+      <div class="seal-mark" aria-hidden="true"><span>墨</span><i>R26</i></div>
+
+      <div id="ink-loading" class="ink-loading" role="status" aria-live="polite">
+        <div><p>PREPARING THE PAPER</p><strong id="loading-label">展开纸纤维</strong><span><i></i></span></div>
+      </div>
+
+      <section id="ink-error" class="ink-error" hidden aria-live="polite">
+        <p>2D PAPER MODE</p><strong>GPU 笔锋结构未启动，仍可直接书写。</strong>
+        <span id="ink-error-message"></span>
+      </section>
+
+      <noscript><p class="noscript-note">JavaScript 未启用：这里原本允许用压力、速度与含水量在纸面生成具有时间记忆的墨迹。</p></noscript>
+    </main>
+    <script type="module" src="/src/ink.js"></script>
+  </body>
+</html>

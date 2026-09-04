@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#020712" />
+    <meta name="description" content="Lumen Cuttlefish：以 WebGPU、TSL 与 GPU Verlet 探索有眼神、色素信号、鳍膜和触腕惯性的墨光乌贼群。" />
+    <title>Lumen Cuttlefish / 墨光乌贼群</title>
+  </head>
+  <body data-runtime="loading" data-event="idle" data-poke="idle" data-behavior="glide" data-audio="locked" data-structure="off" data-motion="full" data-view="hero" data-locomotion="fin-cruise">
+    <a class="skip-link" href="#cuttlefish-controls">跳到生命体控制</a>
+    <main id="cuttlefish-stage" aria-labelledby="cuttlefish-title">
+      <div class="stage-vignette" aria-hidden="true"></div>
+      <div class="stage-grain" aria-hidden="true"></div>
+
+      <div class="fallback-ocean" aria-hidden="true">
+        <div class="fallback-cuttlefish">
+          <div class="fallback-fin fallback-fin-left"></div>
+          <div class="fallback-fin fallback-fin-right"></div>
+          <div class="fallback-mantle"></div>
+          <div class="fallback-head"><i></i><i></i></div>
+          <div class="fallback-arms">
+            <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+          </div>
+          <div class="fallback-ink"></div>
+        </div>
+        <div class="fallback-follower follower-a"></div>
+        <div class="fallback-follower follower-b"></div>
+      </div>
+
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="打开水母基准"><span>L∞</span><strong>AURELIA / LUMEN CUTTLEFISH</strong></a>
+        <div class="runtime" aria-live="polite"><i></i><span id="runtime-label">组装深海生命体</span><b>·</b><span id="fps-label">-- FPS</span></div>
+        <nav aria-label="研究导航">
+          <a href="./">水母基准</a>
+          <a href="./arena.html">竞技场草图</a>
+          <a href="./atlas.html">研究图谱</a>
+        </nav>
+      </header>
+
+      <section class="intro">
+        <p>R38 · MUSCULAR SKIN / FIN CRUISE / 3D</p>
+        <h1 id="cuttlefish-title">墨光<br /><em>乌贼群</em></h1>
+        <p>斑驳皮肤包裹连续头胴，周缘鳍维持低速巡航；触碰后才收缩、虹吸喷射并向后逃逸。拖动或切换视角检查真实体积。</p>
+      </section>
+
+      <aside class="life-map" aria-label="生命体动态层">
+        <p>ONE CAUSAL BODY</p>
+        <ol>
+          <li><span>01</span><b>凝视</b><small>GAZE</small></li>
+          <li><span>02</span><b>鳍膜</b><small>FIN WAVE</small></li>
+          <li><span>03</span><b>色素</b><small>CHROMA</small></li>
+          <li><span>04</span><b>触腕</b><small>VERLET</small></li>
+          <li><span>05</span><b>虹吸</b><small>JET</small></li>
+          <li><span>06</span><b>群游</b><small>SCHOOL</small></li>
+        </ol>
+      </aside>
+
+      <section id="cuttlefish-controls" class="controls" aria-label="墨光乌贼控制">
+        <button id="audio-toggle" type="button" aria-pressed="false"><span>▶</span><span><strong>声场</strong><small>SOUND</small></span></button>
+        <button id="signal-trigger" class="control-primary" type="button"><span>◉</span><span><strong>发出信号</strong><small>SIGNAL</small></span></button>
+        <button id="ink-trigger" type="button"><span>✦</span><span><strong>释放墨云</strong><small>INK</small></span></button>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span>⌁</span><span><strong>内部结构</strong><small>ANATOMY</small></span></button>
+        <button id="view-cycle" type="button"><span>◒</span><span><strong>切换视角</strong><small>HERO</small></span></button>
+        <button id="view-reset" type="button"><span>↺</span><span><strong>回到深潜</strong><small>RESET</small></span></button>
+      </section>
+
+      <div class="interaction-note">
+        <p id="stage-status" aria-live="polite">移动指针：眼睛先看见你，皮肤随后产生局部信号。</p>
+        <span>DRAG TO ORBIT · V CHANGE VIEW · CLICK / P TO JET · ENTER SIGNAL · I INK · S ANATOMY · 0 RESET</span>
+      </div>
+
+      <div id="loading" class="loading" role="status" aria-live="polite">
+        <div><p>DESCENDING BELOW THE LIGHT</p><strong>连接皮肤信号、鳍膜与 GPU 触腕</strong><span><i></i></span></div>
+      </div>
+
+      <section id="runtime-error" class="runtime-error" hidden aria-live="assertive">
+        <p>CAPABILITY FALLBACK</p>
+        <h2>实时 WebGPU 生命体未启动</h2>
+        <p id="error-message"></p>
+        <p>降级形态仍保留凝视、信号、喷墨和完整语义控制。</p>
+      </section>
+    </main>
+    <script type="module" src="/src/cuttlefish.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#071018" />
+    <meta name="description" content="Windline：用 Aurelia GPU 弹簧网络演示固定端、衣物负重、方向风场与链式传播。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M5 25Q31 33 59 19' fill='none' stroke='%23ffb257' stroke-width='3'/%3E%3Cpath d='M18 29v19h14V31M38 27v24h17V23' fill='none' stroke='%2386e7df' stroke-width='2'/%3E%3C/svg%3E" />
+    <title>Windline / Aurelia 风中的晾衣绳</title>
+  </head>
+  <body class="wind-page" data-runtime="loading" data-phase="anchor" data-structure="off" data-motion="full" data-preset="breeze" data-dragging="false">
+    <a class="skip-link" href="#wind-controls">跳到风场控制</a>
+    <main id="wind-stage" tabindex="0" aria-labelledby="wind-title" aria-describedby="wind-instruction">
+      <div class="wind-grid" aria-hidden="true"></div>
+      <div class="fallback-line" aria-hidden="true">
+        <i class="fallback-rope"></i><i class="fallback-pole pole-a"></i><i class="fallback-pole pole-b"></i>
+        <b class="cloth cloth-a"></b><b class="cloth cloth-b"></b><b class="cloth cloth-c"></b>
+        <span class="wind-mark wind-mark-a">→</span><span class="wind-mark wind-mark-b">→</span>
+      </div>
+
+      <header class="wind-topbar">
+        <a class="wind-brand" href="./atlas.html#case-clothesline"><span>F02</span><b>AURELIA / FIELD PROTOTYPE</b></a>
+        <div class="sample-progress" aria-label="现实样例序列"><i></i><span>02 / 12</span></div>
+        <nav aria-label="作品导航">
+          <a href="./atlas.html#case-clothesline">研究图谱</a>
+          <a href="./rain.html">上一样例</a>
+          <a href="./metro.html">下一样例</a>
+        </nav>
+      </header>
+
+      <section class="wind-intro">
+        <p class="eyebrow">FIELD 02 / AUTHORED GARMENT × LIVE PHYSICS</p>
+        <h1 id="wind-title">WIND<br /><span>LINE</span></h1>
+        <p class="intro-copy">专业服装模型和实拍织物负责质感，Aurelia 只负责实时行为：固定端定义边界，重量写入绳索，局部阵风沿拓扑传播，再被阻尼吸收。</p>
+        <p class="asset-stamp"><span>AUTHORED GLB</span><span>SCANNED PBR</span><a href="/assets/clothesline/ASSET_SOURCES.md" target="_blank" rel="noreferrer">SOURCE / LICENSE ↗</a></p>
+      </section>
+
+      <aside class="causal-panel" aria-labelledby="causal-title">
+        <header><span>CAUSAL CHAIN</span><strong id="causal-title">一阵风如何穿过结构</strong></header>
+        <ol>
+          <li data-phase="anchor"><i>01</i><span><b>ANCHOR</b><small>固定端建立边界</small></span><em></em></li>
+          <li data-phase="load"><i>02</i><span><b>LOAD</b><small>衣物质量改变垂度</small></span><em></em></li>
+          <li data-phase="advect"><i>03</i><span><b>ADVECT</b><small>阵风推动局部表面</small></span><em></em></li>
+          <li data-phase="settle"><i>04</i><span><b>SETTLE</b><small>扰动沿链传播并衰减</small></span><em></em></li>
+        </ol>
+        <div class="wind-presets" role="group" aria-label="风场预设">
+          <button type="button" data-wind-preset="breeze" aria-pressed="true">微风</button>
+          <button type="button" data-wind-preset="cross" aria-pressed="false">横风</button>
+          <button type="button" data-wind-preset="squall" aria-pressed="false">阵风</button>
+        </div>
+      </aside>
+
+      <section class="wind-metrics" aria-label="实时风场状态">
+        <div><span id="wind-speed-value">18</span><small>KM/H WIND</small></div>
+        <div><span id="wind-bearing-value">082°</span><small>BEARING</small></div>
+        <div><span id="wind-load-value">3.1</span><small>KG LOAD</small></div>
+        <div><span id="wind-delay-value">240</span><small>MS PROPAGATION</small></div>
+      </section>
+
+      <section class="physics-proof" aria-label="Aurelia 物理规模">
+        <div><span id="node-count">—</span><small>GPU NODES</small></div>
+        <div><span id="constraint-count">—</span><small>CONSTRAINTS</small></div>
+        <div><span id="solver-rate">—</span><small>STEPS / SEC</small></div>
+        <div><span id="gust-count">0</span><small>GUST EVENTS</small></div>
+      </section>
+
+      <p id="wind-instruction" class="wind-instruction"><span>ORBIT · WIND · RELEASE</span> 拖动环绕观察 3D 空间，同时把阵风吹向手势方向；轻点产生局部风脉冲，0 复位视角与风场。</p>
+
+      <section id="wind-controls" class="wind-controls" aria-label="风场控制">
+        <button id="gust-trigger" class="primary-control" type="button"><span class="control-symbol">↝</span><span><strong>释放阵风</strong><small>局部方向脉冲</small></span></button>
+        <label for="wind-strength"><span>风力 <output id="wind-strength-value">34%</output></span><input id="wind-strength" type="range" min="0.08" max="1" step="0.01" value="0.34" /></label>
+        <label for="load-factor"><span>负重 <output id="load-factor-value">100%</output></span><input id="load-factor" type="range" min="0.55" max="1.6" step="0.01" value="1" /></label>
+        <label for="damping-factor"><span>阻尼 <output id="damping-factor-value">64%</output></span><input id="damping-factor" type="range" min="0.35" max="0.92" step="0.01" value="0.64" /></label>
+        <button id="structure-toggle" type="button" aria-pressed="false"><span class="control-symbol">⌗</span><span><strong>结构透视</strong><small>查看节点与约束</small></span></button>
+        <button id="wind-reset" type="button"><span class="control-symbol">↺</span><span><strong>复位</strong><small>初始风场</small></span></button>
+      </section>
+
+      <p id="wind-status" class="wind-status" aria-live="polite">微风从东偏北进入；三种负重正在建立不同垂度。</p>
+
+      <details class="meaning-panel">
+        <summary>WHY THIS MATTERS / 这个样例证明什么</summary>
+        <p><b>不是用代码画一件假衣服，</b>而是把专业资产接入实时因果系统：真实模型与扫描材质提供可信外观，Aurelia 让风、质量、约束和恢复变成可操控的产品行为。它可迁移到服装展示、材料测试、橱窗和建筑表皮。</p>
+        <div class="diagnostic-row"><button id="diagnostic-sample" type="button">采样 GPU 状态</button><output id="diagnostic-output" aria-live="polite">尚未采样</output></div>
+      </details>
+
+      <div id="wind-loading" class="wind-loading" role="status" aria-live="polite">
+        <div><p>LOADING AUTHORED GARMENT + AURELIA FIELD</p><strong id="loading-label">加载专业服装模型与扫描织物</strong><span><i></i></span></div>
+      </div>
+
+      <section id="wind-error" class="wind-error" hidden aria-live="assertive">
+        <p>WEBGPU ENHANCEMENT UNAVAILABLE</p>
+        <h2>物理风场没有启动</h2>
+        <p id="wind-error-message"></p>
+        <p>静态织物仍保留核心关系：固定端提供边界，负重改变垂度，方向风通过链式结构传播。</p>
+      </section>
+
+      <noscript><p class="noscript-note">JavaScript 未启用：这里原本使用 Aurelia GPU 弹簧网络演示风、负重与链式传播。</p></noscript>
+    </main>
+    <script type="module" src="/src/clothesline.js"></script>
+  </body>
+</html>

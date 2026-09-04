@@ -23,7 +23,7 @@
 <!-- PROJECT_INDEX_START -->
 | 编号 | 项目 | 一句话摘要 | 状态 | 标签 | 研究记录 | Web Demo | 最近更新 |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| `001` | [Aurelia](https://github.com/holtsetio/aurelia/) | 从程序化水母出发，研究 GPU 软体与缓冲驱动表面，并扩展为真实弹簧驱动的声场雕塑与可解构、可召回的活体品牌拓扑。 | 已验证 | `three.js` `webgpu` `compute` `procedural` `soft-body` `web-audio` `audio-reactive` | [查看](./research/001-holtsetio-aurelia/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/001-holtsetio-aurelia/) | 2026-09-03 |
+| `001` | [Aurelia](https://github.com/holtsetio/aurelia/) | 从程序化水母出发，把 GPU 软体、动态材料、交互、声音和业务数据扩展为 15 个案例，并以研究总账记录能力证据、真实边界和下一阶段决策。 | 已验证 | `three.js` `webgpu` `compute` `procedural` `soft-body` `web-audio` `audio-reactive` | [查看](./research/001-holtsetio-aurelia/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/001-holtsetio-aurelia/) | 2026-09-04 |
 | `002` | [Lieflat Charts](https://github.com/larashero3-dotcom/lieflat-charts) | 把数据形状判断、图型选型、编辑设计规则和真实 HTML 模板编码成 Agent 可执行的数据可视化工作流。 | 已验证 | `agent-skills` `data-visualization` `html` `svg` `design-system` | [查看](./research/002-larashero3-dotcom-lieflat-charts/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/) | 2026-09-03 |
 | `003` | [ThreeUI](https://github.com/MengTo/threeui) | 以 43 个 Community 父条目、163 个具名变体的完整索引和 13 个跨类别实时案例，研究 ThreeUI 如何把 WebGL、Canvas、DOM 与完整网页作品产品化为可预览、可调参、可分发的 React 视觉资产。 | 已验证 | `react` `three.js` `webgl` `canvas` `ui-components` `shaders` `agent-skills` | [查看](./research/003-mengto-threeui/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/) | 2026-09-03 |
 | `004` | [Neko Master](https://github.com/foru17/neko-master) | 研究代理网关如何把连接累计快照转换成实时、多维、可持久化的流量事实，并以合成数据验证差分、批量落库与热数据合并。 | 已验证 | `observability` `network` `realtime` `edge-agent` `sqlite` `clickhouse` | [查看](./research/004-foru17-neko-master/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/004-foru17-neko-master/) | 2026-09-04 |
@@ -44,7 +44,7 @@
 
 *用研究图谱概括 Aurelia 如何把现实观察抽象为物理语法、GPU 状态与可交互体验。 · 本研究 Demo 自制截图；方法与讲解层原创，上游 Aurelia 代码遵循 MIT License*
 
-从程序化水母出发，研究 GPU 软体与缓冲驱动表面，并扩展为真实弹簧驱动的声场雕塑与可解构、可召回的活体品牌拓扑。
+从程序化水母出发，把 GPU 软体、动态材料、交互、声音和业务数据扩展为 15 个案例，并以研究总账记录能力证据、真实边界和下一阶段决策。
 
 [阅读研究](./research/001-holtsetio-aurelia/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/001-holtsetio-aurelia/) · [查看上游](https://github.com/holtsetio/aurelia/)
 

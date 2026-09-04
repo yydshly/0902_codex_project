@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#070a0b" />
+    <meta name="description" content="Aurelia 项目研究总账：十五个案例、运行证据、技术链路、能力矩阵、研究方向、演进记录与下一阶段决策。" />
+    <link rel="stylesheet" href="/src/summary.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%2384e8ff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23d9ff6f'/%3E%3Cpath d='M32 4v12M32 48v12M4 32h12M48 32h12' stroke='%2384e8ff'/%3E%3C/svg%3E" />
+    <title>Aurelia Project Synthesis / 项目总览</title>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"><i></i></div>
+    <a class="skip-link" href="#summary-content">跳到项目总览</a>
+
+    <header class="summary-topbar">
+      <a class="summary-brand" href="./index.html"><span>001</span><b>AURELIA / SYNTHESIS</b></a>
+      <nav aria-label="项目导航">
+        <a href="./index.html">水母基准</a>
+        <a href="./atlas.html">研究图谱</a>
+        <a href="./directions.html">方向总览</a>
+        <a href="./weatherproof.html">业务样例</a>
+      </nav>
+      <span class="summary-edition">R40 / RESEARCH LEDGER</span>
+    </header>
+
+    <aside class="chapter-rail" aria-label="章节导航">
+      <span>PROJECT<br />SYNTHESIS</span>
+      <nav>
+        <a href="#snapshot" data-section="snapshot"><i>01</i>现状</a>
+        <a href="#cases" data-section="cases"><i>02</i>案例</a>
+        <a href="#evidence" data-section="evidence"><i>03</i>证据</a>
+        <a href="#capabilities" data-section="capabilities"><i>04</i>能力</a>
+        <a href="#pipeline" data-section="pipeline"><i>05</i>技术</a>
+        <a href="#benchmark" data-section="benchmark"><i>06</i>基准</a>
+        <a href="#research" data-section="research"><i>07</i>研究</a>
+        <a href="#evolution" data-section="evolution"><i>08</i>演进</a>
+        <a href="#gaps" data-section="gaps"><i>09</i>缺口</a>
+        <a href="#value" data-section="value"><i>10</i>价值</a>
+        <a href="#decision" data-section="decision"><i>11</i>决策</a>
+      </nav>
+    </aside>
+
+    <main id="summary-content">
+      <section class="summary-hero" aria-labelledby="summary-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>PROJECT SYNTHESIS</span><i></i><span>EVIDENCE · CAPABILITY · DIRECTION</span></p>
+          <h1 id="summary-title">我们已经拥有的，<br />不是十五个<em>特效</em>。</h1>
+          <p class="hero-lede">这是一次从程序化水母出发，对数字生命、动态材料、GPU 物理和业务表达的连续研究。上半页给出判断，下半页公开案例参数、运行链路、验证证据、失败边界与 R0–R40 演进。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#evidence">下钻研究总账 <span>↓</span></a>
+            <a class="text-action" href="./index.html">回看水母基准 <span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-system" aria-label="项目由形态、物理、状态和体验四层共同组成">
+          <div class="system-orbit" aria-hidden="true">
+            <i class="orbit orbit-one"></i><i class="orbit orbit-two"></i><i class="orbit orbit-three"></i>
+            <span class="node node-shape">SHAPE</span>
+            <span class="node node-physics">PHYSICS</span>
+            <span class="node node-state">STATE</span>
+            <span class="node node-story">EXPERIENCE</span>
+            <b><small>ONE</small>CAUSE</b>
+          </div>
+          <dl class="hero-stats" aria-label="项目关键数量">
+            <div><dt>15</dt><dd>可运行案例入口</dd></div>
+            <div><dt>13</dt><dd>技术研究层</dd></div>
+            <div><dt>12</dt><dd>现实观察原型</dd></div>
+            <div><dt>01</dt><dd>正式质量基准</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-thesis">
+          <span>CORE THESIS / 核心判断</span>
+          <p>技术链可以复用，作品品质不会自动复用。只有选题、结构、运动、材质、环境和交互形成同一条因果链，才可能接近原水母的完成度。</p>
+        </div>
+      </section>
+
+      <section id="snapshot" class="summary-section snapshot-section" aria-labelledby="snapshot-title">
+        <header class="section-heading split-heading">
+          <div><p><span>01</span> CURRENT STATE / 项目现状</p><h2 id="snapshot-title">从一个源代码案例，<br />走到五类研究资产。</h2></div>
+          <p>这里不把所有页面放在同一成熟度上。基准、研究工具、机制样例、业务切片和旗舰探索承担不同任务。</p>
+        </header>
+
+        <ol class="asset-flow">
+          <li class="is-benchmark"><span>01</span><div><p>QUALITY BENCHMARK</p><h3>水母基准</h3><b>定义完成度</b></div><em>→</em></li>
+          <li class="is-tool"><span>02</span><div><p>RESEARCH TOOLS</p><h3>实验与图谱</h3><b>理解和测量</b></div><em>→</em></li>
+          <li class="is-validated"><span>03</span><div><p>MECHANISM PROOFS</p><h3>机制样例</h3><b>验证可迁移</b></div><em>→</em></li>
+          <li class="is-business"><span>04</span><div><p>PRODUCT SLICE</p><h3>业务纵切</h3><b>进入用户路径</b></div><em>→</em></li>
+          <li class="is-paused"><span>05</span><div><p>FLAGSHIP SEARCH</p><h3>旗舰探索</h3><b>暴露质量门槛</b></div></li>
+        </ol>
+
+        <div class="truth-note">
+          <span>STATUS LANGUAGE</span>
+          <p><b>机制已验证</b>表示核心因果链能在真实浏览器中运行；它不等于视觉达到水母基准，也不等于已经可以作为生产产品上线。</p>
+        </div>
+      </section>
+
+      <section id="cases" class="summary-section cases-section" aria-labelledby="cases-title">
+        <header class="section-heading split-heading">
+          <div><p><span>02</span> CASE MAP / 案例版图</p><h2 id="cases-title">十五个入口，<br />五种真实状态。</h2></div>
+          <p>筛选的不是画面风格，而是案例在研究中的职责。每个条目同时说明“已经证明什么”和“现在该如何看待它”。</p>
+        </header>
+
+        <div class="filter-bar" role="group" aria-label="按案例状态筛选">
+          <span>SHOWING / <b id="case-count" aria-live="polite">15</b></span>
+          <button type="button" data-case-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-case-filter="benchmark" aria-pressed="false">基准</button>
+          <button type="button" data-case-filter="tool" aria-pressed="false">研究工具</button>
+          <button type="button" data-case-filter="validated" aria-pressed="false">机制验证</button>
+          <button type="button" data-case-filter="business" aria-pressed="false">业务纵切</button>
+          <button type="button" data-case-filter="paused" aria-pressed="false">暂停探索</button>
+        </div>
+        <noscript><p class="noscript-note">JavaScript 未启用：筛选不可操作，但以下十五个案例和链接仍完整显示。</p></noscript>
+
+        <div class="case-grid" id="case-grid">
+          <article class="case-card case-featured" data-case-status="benchmark">
+            <header><span>00 / SOURCE</span><b>质量基准</b></header>
+            <p class="case-en">AURELIA / PROCEDURAL MEDUSAE</p><h3>程序化水母</h3>
+            <p class="case-proof">解析钟体、GPU 弹簧、触手与口腕、程序化光色、群体节奏和指针刺激形成一条完整生命因果链。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>仍是全项目唯一正式质量基准。</p></div>
+            <a href="./index.html">进入基准演示 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="tool">
+            <header><span>01 / LAB</span><b>研究工具</b></header>
+            <p class="case-en">CONTROL LAB</p><h3>GPU 扩展实验室</h3>
+            <p class="case-proof">真实切换 1 / 3 / 10 个实例、不同求解频率与生命 / 结构 / 能量观察模式。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>用于教学、参数理解和工作集比较。</p></div>
+            <a href="./lab.html">进入实验室 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>02 / MORPH</span><b>表现原型</b></header>
+            <p class="case-en">SONIC GENESIS</p><h3>声音驱动形态</h3>
+            <p class="case-proof">将音频压缩成连续状态，分别驱动流体花、能量织带和数据生命体。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>输入—状态—形态解耦成立，视觉仍属实验性。</p></div>
+            <a href="./morph.html">查看形态实验 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="tool">
+            <header><span>03 / ROUTES</span><b>研究工具</b></header>
+            <p class="case-en">CREATIVE DIRECTIONS</p><h3>创意方向总览</h3>
+            <p class="case-proof">十个创意世界按 LIVE、NEXT、PLANNED 和 RESEARCH 组织。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>是路线索引，不代表所有方向都已实现。</p></div>
+            <a href="./directions.html">查看方向 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>04 / DIRECTION 01</span><b>机制已验证</b></header>
+            <p class="case-en">RESONANT MATTER</p><h3>声场雕塑</h3>
+            <p class="case-proof">声音改变锚环，GPU 弹簧将扰动传播到交叉张拉膜、线框、材质与声场。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>非生物迁移中因果链最完整的证据之一。</p></div>
+            <a href="./resonance.html">进入声场雕塑 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>05 / DIRECTION 02</span><b>机制已验证</b></header>
+            <p class="case-en">LIVING IDENTITY</p><h3>活体品牌</h3>
+            <p class="case-proof">同一批 GPU 节点在可读字形、空间轨道、受力解构和形状记忆之间连续变化。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>证明品牌可以拥有物理状态与记忆。</p></div>
+            <a href="./identity.html">进入活体品牌 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="tool">
+            <header><span>06 / ATLAS</span><b>研究工具</b></header>
+            <p class="case-en">FIELD ATLAS</p><h3>创意研究图谱</h3>
+            <p class="case-proof">组织 10 个方向、12 个现实观察、13 层技术、10 种交互和逐方向实验标准。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>承担方法导航，不承担作品质量基准。</p></div>
+            <a href="./atlas.html">进入研究图谱 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>07 / FIELD 01</span><b>机制已验证</b></header>
+            <p class="case-en">RAIN MEMBRANE</p><h3>雨落伞面</h3>
+            <p class="case-proof">雨滴冲击经伞骨和张紧膜传播；积水继续改变质量、张力和雨琴音高。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>因果链较完整，伞体仍是数字样机。</p></div>
+            <a href="./rain.html">进入雨幕实验 <span>↗</span></a>
+          </article>
+
+          <article class="case-card case-business" data-case-status="business">
+            <header><span>08 / PRODUCT</span><b>业务纵切</b></header>
+            <p class="case-en">WEATHERPROOF</p><h3>天气产品官网</h3>
+            <p class="case-proof">天气选择同步改变物理状态、商品推荐、比较理由、合成曲线和预约转化。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>业务链成立；商品、库存和检测数据仍是演示数据。</p></div>
+            <a href="./weatherproof.html">进入业务样例 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>09 / FIELD 02</span><b>机制已验证</b></header>
+            <p class="case-en">WINDLINE</p><h3>风中的晾衣绳</h3>
+            <p class="case-proof">真实服装和扫描织物绑定 GPU 物理代理，受固定端、负重、风向与拖动共同影响。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>资产管线有价值；艺术完成度低于水母。</p></div>
+            <a href="./clothesline.html">进入风场实验 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>10 / FIELD 03</span><b>机制已验证</b></header>
+            <p class="case-en">METRO PULSE</p><h3>城市拥塞传播</h3>
+            <p class="case-proof">容量、流量和恢复参数通过结构锚点改变站点高度、线路形态和邻站节奏。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>数据能改变结构；尚不是实时城市系统。</p></div>
+            <a href="./metro.html">进入城市网络 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>11 / FIELD 04</span><b>机制已验证</b></header>
+            <p class="case-en">LIVING INK</p><h3>活体书法</h3>
+            <p class="case-proof">压力、速度、鬃毛弹簧、纸张扩散与干燥记忆共同决定一笔的形态。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>视觉语言独立；流体与纸张仍是艺术化近似。</p></div>
+            <a href="./ink.html">进入书写实验 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="validated">
+            <header><span>12 / FIELD 05</span><b>机制已验证</b></header>
+            <p class="case-en">VEIL OF LIGHT</p><h3>树影与窗帘</h3>
+            <p class="case-proof">帘布、开合锚、风场、靠近、树影、透光和空间声场共享环境状态。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>机制相连；空间真实感仍需更高质量资产与运动。</p></div>
+            <a href="./curtain.html">进入光帘实验 <span>↗</span></a>
+          </article>
+
+          <article class="case-card" data-case-status="tool">
+            <header><span>13 / ARENA</span><b>研究工具</b></header>
+            <p class="case-en">FLAGSHIP ARENA</p><h3>第二旗舰竞技场</h3>
+            <p class="case-proof">用统一维度比较光翼生命体、星种和磁流体，并显露作品级差距。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>对照结论有效；候选造型不是旗舰答案。</p></div>
+            <a href="./arena.html">查看对照场 <span>↗</span></a>
+          </article>
+
+          <article class="case-card case-paused" data-case-status="paused">
+            <header><span>14 / EXPLORATION</span><b>暂停探索</b></header>
+            <p class="case-en">LUMEN CUTTLEFISH</p><h3>墨光乌贼群</h3>
+            <p class="case-proof">已验证 3D 观察、8+2 附肢、鳍巡航、喷射状态机、GPU 触腕和皮肤信号。</p>
+            <div class="case-verdict"><span>CURRENT VERDICT</span><p>保留研究价值，暂不继续局部优化。</p></div>
+            <a href="./cuttlefish.html">查看保留样例 <span>↗</span></a>
+          </article>
+        </div>
+        <p class="empty-state" id="case-empty" hidden>当前筛选没有案例。</p>
+      </section>
+
+      <section id="evidence" class="summary-section evidence-section" aria-labelledby="evidence-title">
+        <header class="section-heading split-heading">
+          <div><p><span>03</span> CASE EVIDENCE LEDGER / 案例证据账</p><h2 id="evidence-title">不只说做过，<br />还要说明做到了哪一步。</h2></div>
+          <p>以下十五条把案例规模、输入、同源输出、验证结果和当前边界放在同一处。数字来自项目记录与本地浏览器观察，不把演示数据写成生产数据。</p>
+        </header>
+
+        <div class="ledger-toolbar">
+          <div><b>15</b><span>ENTRIES / 全部可追溯</span></div>
+          <div class="ledger-actions" role="group" aria-label="案例证据展开控制">
+            <button type="button" data-ledger-action="expand">展开全部</button>
+            <button type="button" data-ledger-action="collapse">收起全部</button>
+          </div>
+        </div>
+
+        <div class="evidence-ledger" id="evidence-ledger">
+          <details open>
+            <summary><span>00</span><div><b>程序化水母</b><small>QUALITY BENCHMARK</small></div><em>10 个体 · 32,400 物理点 · 92,920 弹簧 · 360 Hz</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>解析钟体、钟缘物理网格、20 条触手与口腕；默认工作集为 10 只水母。</dd></div><div><dt>输入</dt><dd>内部收缩相位、群体节律、指针刺激与相机观察。</dd></div><div><dt>同源输出</dt><dd>钟体变形、弹簧受力、拖尾、上浮转向、皮肤脉冲和 Bloom 共同来自生命状态。</dd></div><div><dt>证据 / 边界</dt><dd>WebGPU + TSL compute 真正运行；上游仍是作品级单体架构，不是稳定公共库。</dd></div></dl>
+              <footer><code>src/main.js · upstream 724aba2</code><a href="./index.html">运行基准 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>01</span><div><b>GPU 扩展实验室</b><small>CONTROL LAB</small></div><em>1 / 3 / 10 实例 · 120 / 240 / 360 Hz</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>Lite 3,240 点 / 9,292 弹簧；Balanced 9,720 / 27,876；Full 32,400 / 92,920。</dd></div><div><dt>输入</dt><dd>工作集、求解频率、DPR，以及生命 / 结构 / 能量观察模式。</dd></div><div><dt>同源输出</dt><dd>同一场景在不同预算下重建，直接比较运动、结构和渲染成本。</dd></div><div><dt>证据 / 边界</dt><dd>三套配置可真实切换；它是参数研究工具，不是自适应性能系统。</dd></div></dl>
+              <footer><code>src/lab.js</code><a href="./lab.html">打开实验室 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>02</span><div><b>声音驱动形态</b><small>SONIC GENESIS</small></div><em>1 路音频状态 · 3 种视觉语法</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>流体花、能量织带、数据生命体三个独立形态原型，共享一套音频特征。</dd></div><div><dt>输入</dt><dd>音量、频段、瞬态和时间平滑后的连续状态。</dd></div><div><dt>同源输出</dt><dd>形态尺度、扭曲、流速、色彩和节拍反馈。</dd></div><div><dt>证据 / 边界</dt><dd>证明输入—状态—表现可以解耦；物理结构和视觉完成度仍低于水母。</dd></div></dl>
+              <footer><code>src/morph/audio-engine.js · src/morph/scene.js</code><a href="./morph.html">查看实验 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>03</span><div><b>创意方向总览</b><small>CREATIVE ROUTES</small></div><em>10 个方向 · 4 级状态</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>LIVE、NEXT、PLANNED、RESEARCH 四级组织十个可扩展世界。</dd></div><div><dt>输入</dt><dd>现实观察、物理机制、交互潜力与产品意义。</dd></div><div><dt>同源输出</dt><dd>方向说明、状态、进入已实现案例或下一研究任务的入口。</dd></div><div><dt>证据 / 边界</dt><dd>完成的是方向建模，不代表十个方向均已工程实现。</dd></div></dl>
+              <footer><code>directions.html · src/directions.js</code><a href="./directions.html">查看方向 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>04</span><div><b>声场雕塑</b><small>RESONANT MATTER</small></div><em>3,120 GPU 节点 · ≈13,200 约束 · 180 steps/s</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>桌面 3,120 节点，移动端约 1,600；交叉张拉膜与解析锚环共同构成结构。</dd></div><div><dt>输入</dt><dd>声音频谱、节拍能量、指针位置和场景模式。</dd></div><div><dt>同源输出</dt><dd>锚点位移传播至膜面、线框、材质响应、粒子和声场。</dd></div><div><dt>证据 / 边界</dt><dd>本地短观察 79–87 FPS；守卫槽修正过非有限位置，仍缺跨 GPU 矩阵。</dd></div></dl>
+              <footer><code>src/resonance/scene.js</code><a href="./resonance.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>05</span><div><b>活体品牌</b><small>LIVING IDENTITY</small></div><em>1,264 可见节点 · 6,382 约束 · 160 steps/s</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>桌面 2,529 总顶点（含锚点与守卫槽）；移动端 654 可见节点、约 3,100 约束。</dd></div><div><dt>输入</dt><dd>鼠标靠近、按压、拖动、释放，以及字形 / 轨道 / 记忆状态切换。</dd></div><div><dt>同源输出</dt><dd>GPU 节点同时驱动可读字形、空间轨道、受力解构和恢复记忆。</dd></div><div><dt>证据 / 边界</dt><dd>本地 55–67 FPS；证明品牌可拥有状态，尚不是完整品牌内容系统。</dd></div></dl>
+              <footer><code>src/identity/scene.js</code><a href="./identity.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>06</span><div><b>创意研究图谱</b><small>FIELD ATLAS</small></div><em>10 方向 · 12 观察 · 13 技术层 · 10 交互</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>把观察、抽象、内核、实验、验证门和产品桥接组织成研究地图。</dd></div><div><dt>输入</dt><dd>生活现象、已有案例、技术缺口、失败证据和业务问题。</dd></div><div><dt>同源输出</dt><dd>方向优先级、所需内核、交互模块、验收条件和下一实验。</dd></div><div><dt>证据 / 边界</dt><dd>方法框架已成形；仍需以新旗舰和公共 runtime 证明它能持续复用。</dd></div></dl>
+              <footer><code>atlas.html · notes/research-atlas.md</code><a href="./atlas.html">打开图谱 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>07</span><div><b>雨落伞面</b><small>RAIN MEMBRANE</small></div><em>854 GPU 节点 · ≈3,300 约束 · 12 伞骨</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>张紧膜、伞骨锚点、8 槽冲击历史和雨滴系统。</dd></div><div><dt>输入</dt><dd>雨滴位置与强度、湿载荷、积水、指针冲击和 3D 相机拖动。</dd></div><div><dt>同源输出</dt><dd>局部凹陷、环形传播、整体张力、材料亮度与雨琴音高。</dd></div><div><dt>证据 / 边界</dt><dd>位移 / 速度预算与重置 kernel 已加入；伞体仍是数字样机而非真实商品资产。</dd></div></dl>
+              <footer><code>src/rain/scene.js · src/rain/audio.js</code><a href="./rain.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>08</span><div><b>天气产品官网</b><small>WEATHERPROOF PRODUCT SLICE</small></div><em>3 天气源 · 3 SKU · 3 检测批次 · 6 点曲线</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>天气诊断、商品推荐、参数比较、检测证据、库存状态和咨询表单构成完整路径。</dd></div><div><dt>输入</dt><dd>构造的天气、PIM / SKU、库存快照与实验室曲线。</dd></div><div><dt>同源输出</dt><dd>视觉天气、物理状态、推荐理由、比较证据和 CTA 同步变化。</dd></div><div><dt>证据 / 边界</dt><dd>业务链已可演示；页面明确标注全部商品、库存和检测值为合成数据。</dd></div></dl>
+              <footer><code>src/data/weatherproof-demo.json</code><a href="./weatherproof.html">运行业务样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>09</span><div><b>风中的晾衣绳</b><small>WINDLINE</small></div><em>591 物理节点 · ≈2,986 约束 · 144 steps/s</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>真实服装 / 扫描织物资产绑定到 13×20 物理代理，使用双线性权重传递变形。</dd></div><div><dt>输入</dt><dd>固定端、衣物质量、风向风强、hover / press / drag / release 与有界 orbit。</dd></div><div><dt>同源输出</dt><dd>衣绳下垂、布面摆动、阵风波、拖动回弹和环境风线保持同向。</dd></div><div><dt>证据 / 边界</dt><dd>使用 Smithsonian / Poly Haven 可追溯资产；代理仍不能表达高精度褶皱与自碰撞。</dd></div></dl>
+              <footer><code>src/clothesline/scene.js</code><a href="./clothesline.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>10</span><div><b>城市拥堵网络</b><small>METRO PULSE</small></div><em>15 站点 · 4 线路 · 32 GPU 约束 · 150 人流粒子</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>站点节点、线路弹簧、流量压力、传播邻接和人流粒子。</dd></div><div><dt>输入</dt><dd>合成进站流量、局部拥堵注入、时间状态与指针探测。</dd></div><div><dt>同源输出</dt><dd>节点压力、线路形变、邻站传播、粒子密度和运营解释。</dd></div><div><dt>证据 / 边界</dt><dd>约 1.8 秒内源站 0.720→1.049，相邻站同步抬升；不是实际城市预测系统。</dd></div></dl>
+              <footer><code>src/metro/scene.js</code><a href="./metro.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>11</span><div><b>活体书法</b><small>LIVING INK</small></div><em>44 GPU 笔毫节点 · 53 弹簧约束 · 11 组笔毫</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>四节点笔毫组、墨迹粒子、湿度记忆、扩散场和二维保义路径。</dd></div><div><dt>输入</dt><dd>压力控制宽度，速度控制飞白，停留时间控制积墨与扩散。</dd></div><div><dt>同源输出</dt><dd>笔毫开合、墨线宽度、干湿边缘、时间记忆与音色。</dd></div><div><dt>证据 / 边界</dt><dd>语义映射成立；不是流体力学墨水模拟，也未覆盖真实笔刷硬件。</dd></div></dl>
+              <footer><code>src/ink/painter.js · src/ink/scene.js</code><a href="./ink.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>12</span><div><b>树影与窗帘</b><small>BREATHING ROOM</small></div><em>864 节点样本 · 真实布料代理 · 多时段环境</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>窗帘布料拓扑、风场、树冠遮挡、投影层和空间音频环境。</dd></div><div><dt>输入</dt><dd>风向、光照、时间状态、树冠运动、指针扰动与 motion 偏好。</dd></div><div><dt>同源输出</dt><dd>布面波、树影位移、光照遮挡、房间色温和环境声同步。</dd></div><div><dt>证据 / 边界</dt><dd>机制样本记录最大位移 1.683 / 约 7.7ms；资产与艺术指导仍未达到旗舰质量。</dd></div></dl>
+              <footer><code>src/curtain/scene.js · src/curtain/audio.js</code><a href="./curtain.html">运行样例 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>13</span><div><b>旗舰候选对照场</b><small>FLAGSHIP ARENA</small></div><em>3 候选方向 · 1 套对照问题</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>光翼、星种、磁液三个候选被放入同一空间比较形态、运动和交互。</dd></div><div><dt>输入</dt><dd>相同相机、场景预算、指针刺激和质量问题。</dd></div><div><dt>同源输出</dt><dd>并置体验与结构化判断，而非继续孤立优化某个造型。</dd></div><div><dt>证据 / 边界</dt><dd>自评分 8.6 不是有效旗舰证据；它只证明三者都缺少水母级因果闭环。</dd></div></dl>
+              <footer><code>src/arena/scene.js</code><a href="./arena.html">查看对照场 ↗</a></footer>
+            </div>
+          </details>
+
+          <details>
+            <summary><span>14</span><div><b>墨光乌贼群</b><small>LUMEN CUTTLEFISH / FROZEN</small></div><em>200 点 · 418 弹簧 · 156 吸盘 · 10 附肢</em></summary>
+            <div class="evidence-body">
+              <dl><div><dt>结构 / 规模</dt><dd>桌面约 8,736 三角形、8 腕 + 2 捕食触腕、鳍面、吸盘与皮肤信号；移动端有降级工作集。</dd></div><div><dt>输入</dt><dd>观察、点击、拖动相机、signal / startle / defense 和喷墨触发。</dd></div><div><dt>同源输出</dt><dd>鳍巡航、压缩—喷射—恢复状态机、触腕拖尾、皮肤信号和墨云。</dd></div><div><dt>证据 / 边界</dt><dd>R37 曾观察约 101 FPS；仍是 L2–L3 程序化混合资产，与生物和电影级乌贼差距显著，现已冻结。</dd></div></dl>
+              <footer><code>src/cuttlefish/scene.js · src/cuttlefish/tentacles.js</code><a href="./cuttlefish.html">查看保留样例 ↗</a></footer>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="capabilities" class="summary-section capabilities-section" aria-labelledby="capabilities-title">
+        <header class="section-heading split-heading">
+          <div><p><span>04</span> CAPABILITY MAP / 能力地图</p><h2 id="capabilities-title">已经跑通的，<br />是四层系统能力。</h2></div>
+          <p>能力以真实运行和源码证据为准；“尚缺”部分明确说明为什么当前还不能被包装成通用平台。</p>
+        </header>
+
+        <div class="capability-grid">
+          <article>
+            <span>01 / GPU</span><h3>渲染与计算</h3>
+            <ul><li>Three.js WebGPURenderer</li><li>TSL 节点材质</li><li>Storage Buffer</li><li>GPU Compute</li><li>MRT 选择性 Bloom</li></ul>
+            <details><summary>尚缺什么</summary><p>跨 GPU 性能矩阵、显存预算、统一资源生命周期和备用渲染路径。</p></details>
+          </article>
+          <article>
+            <span>02 / MATTER</span><h3>形态与物理</h3>
+            <ul><li>程序化拓扑</li><li>锚点与自由节点</li><li>弹簧、阻尼与恢复</li><li>场、冲击和湿载荷</li><li>缓冲驱动表面</li></ul>
+            <details><summary>尚缺什么</summary><p>XPBD、质量契约、塑性、断裂、自碰撞和可编辑动态拓扑。</p></details>
+          </article>
+          <article>
+            <span>03 / RESPONSE</span><h3>动态与交互</h3>
+            <ul><li>连续状态与离散事件</li><li>hover / press / drag / release</li><li>点击与 orbit 意图分流</li><li>声音输入与状态声化</li><li>结构、尾流与传播反馈</li></ul>
+            <details><summary>尚缺什么</summary><p>统一交互控制器、多触点、节点级空间声音、历史回放和无障碍等价反馈。</p></details>
+          </article>
+          <article>
+            <span>04 / PRODUCT</span><h3>数据与业务</h3>
+            <ul><li>输入标准化</li><li>数据驱动物理结构</li><li>DOM 与 WebGPU 协作</li><li>诊断、推荐和比较</li><li>表单转化与诚实数据</li></ul>
+            <details><summary>尚缺什么</summary><p>正式 schema、真实 PIM / 库存 / CRM、数据治理和可复用业务状态配置层。</p></details>
+          </article>
+        </div>
+
+        <div class="kernel-map">
+          <header><span>EXTRACTION CANDIDATES</span><h3>九个可抽取的项目内核</h3></header>
+          <div>
+            <span>Physics Runtime</span><span>Topology Builder</span><span>Anchor Bridge</span><span>Field Input</span><span>Surface Binding</span><span>Interaction Controller</span><span>Audio Mapper</span><span>Diagnostics</span><span>Experience Fallback</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="pipeline" class="summary-section pipeline-section" aria-labelledby="pipeline-title">
+        <header class="section-heading split-heading">
+          <div><p><span>05</span> TECHNICAL DEEP DIVE / 技术运行链</p><h2 id="pipeline-title">每一帧，<br />到底发生了什么。</h2></div>
+          <p>核心不是“Three.js 做了一个动画”，而是 CPU 先定义可计算结构，GPU 持续推进状态，同一批状态再驱动几何、材质、声音与产品界面。</p>
+        </header>
+
+        <ol class="runtime-flow" aria-label="Aurelia 每帧运行链">
+          <li><span>00 / OBSERVE</span><h3>现实或业务输入</h3><p>声音、天气、指针、雨滴、风、压力、流量，先被压缩成稳定、可解释的控制量。</p><code>raw input → normalized state</code></li>
+          <li><span>01 / BUILD</span><h3>CPU 构造拓扑</h3><p>生成节点、锚点、边、约束、表面索引和绑定权重；这一阶段决定对象能怎样运动。</p><code>points · springs · indices · weights</code></li>
+          <li><span>02 / STORE</span><h3>GPU 保存状态</h3><p>位置、上一帧位置、速度、约束和事件历史进入 Storage Buffer，避免逐帧 CPU 回读。</p><code>position · velocity · constraint · history</code></li>
+          <li><span>03 / SOLVE</span><h3>固定步长求解</h3><p>外力、锚点、弹簧、阻尼、恢复和预算钳制按子步执行；不同案例使用不同 steps/s。</p><code>force → integrate → constrain → guard</code></li>
+          <li><span>04 / BIND</span><h3>同缓冲驱动表面</h3><p>渲染顶点直接读取物理状态或代理权重，因此布、膜、字形和附肢不会与物理脱节。</p><code>storage state → vertex surface</code></li>
+          <li><span>05 / EXPRESS</span><h3>多通道反馈</h3><p>位移、应力、湿度和相位继续映射到材质、Bloom、声音、DOM 解释和业务 CTA。</p><code>one cause → many readable effects</code></li>
+        </ol>
+
+        <div class="architecture-facts">
+          <article><span>UPSTREAM</span><strong>724aba2</strong><p>本地适配固定上游提交，并准备 22 个源文件。它更像作品源码，不是发布过语义版本的公共 SDK。</p></article>
+          <article><span>INTEGRATOR</span><strong>Velocity–Spring</strong><p>项目沿用“Verlet”称呼，但从实现行为看更接近带阻尼的速度—弹簧积分；这一点影响稳定性判断。</p></article>
+          <article><span>DEFAULT CLOCK</span><strong>360 Hz</strong><p>水母通过固定子步维持结构；其他案例依据工作集在 110–180 steps/s 等范围取舍，不等于显示刷新率。</p></article>
+          <article><span>KNOWN LIMIT</span><strong>No XPBD</strong><p>当前没有统一质量 / 柔度契约，也没有通用碰撞、自碰撞、塑性、断裂或动态拓扑。</p></article>
+        </div>
+
+        <div class="matrix-header">
+          <div><span>CAPABILITY × CASE</span><h3>哪些能力在哪些案例里真的出现过</h3></div>
+          <p><i class="mark verified">V</i> 已验证 <i class="mark partial">P</i> 部分覆盖 <i class="mark absent">—</i> 不承担</p>
+        </div>
+        <div class="matrix-scroll" tabindex="0" aria-label="能力案例矩阵，可横向滚动">
+          <table class="capability-matrix">
+            <thead><tr><th scope="col">案例</th><th scope="col">GPU 物理</th><th scope="col">场 / 冲击</th><th scope="col">表面绑定</th><th scope="col">指针交互</th><th scope="col">声音</th><th scope="col">业务数据</th><th scope="col">真实资产</th><th scope="col">降级保义</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">水母</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+              <tr><th scope="row">声场雕塑</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+              <tr><th scope="row">活体品牌</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+              <tr><th scope="row">雨落伞面</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+              <tr><th scope="row">天气官网</th><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td></tr>
+              <tr><th scope="row">晾衣绳</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+              <tr><th scope="row">地铁网络</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td></tr>
+              <tr><th scope="row">活体书法</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td></tr>
+              <tr><th scope="row">树影窗帘</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td></tr>
+              <tr><th scope="row">乌贼</th><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark verified">V<span> 已验证</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark absent">—<span> 不承担</span></b></td><td><b class="mark partial">P<span> 部分</span></b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="matrix-note">矩阵只记录项目内已经出现的能力，不评价审美质量。V 也不等于生产就绪；它表示该链路在当前案例中可观察地成立。</p>
+      </section>
+
+      <section id="benchmark" class="summary-section benchmark-section" aria-labelledby="benchmark-title">
+        <header class="section-heading split-heading">
+          <div><p><span>06</span> WHY JELLYFISH / 为什么仍以水母为基准</p><h2 id="benchmark-title">不是更亮，<br />而是一因多果。</h2></div>
+          <p>原水母的每一层都能追溯到同一个内部驱动力。它不是多个效果同时播放，而是一个原因自然产生多个结果。</p>
+        </header>
+
+        <ol class="causal-chain">
+          <li><span>01</span><p>INTERNAL DRIVE</p><h3>钟体收缩相位</h3></li>
+          <li><span>02</span><p>SHAPE</p><h3>解析钟体变形</h3></li>
+          <li><span>03</span><p>PHYSICS</p><h3>钟缘弹簧受力</h3></li>
+          <li><span>04</span><p>SECONDARY MOTION</p><h3>触手与口腕拖尾</h3></li>
+          <li><span>05</span><p>LOCOMOTION</p><h3>上浮与转向</h3></li>
+          <li><span>06</span><p>MATERIAL</p><h3>皮肤脉冲与辉光</h3></li>
+          <li><span>07</span><p>WORLD</p><h3>深海群体节奏</h3></li>
+        </ol>
+
+        <blockquote>
+          <span>FLAGSHIP RULE</span>
+          <p>后续选题必须先拥有同等级的完整因果闭环，再讨论模型、Shader、粒子和后处理。</p>
+        </blockquote>
+      </section>
+
+      <section id="research" class="summary-section research-section" aria-labelledby="research-title">
+        <header class="section-heading split-heading">
+          <div><p><span>07</span> RESEARCH SYSTEM / 研究体系</p><h2 id="research-title">从生活现象，<br />抽取可计算语法。</h2></div>
+          <p>图谱不是灵感清单，而是一条转换公式：现实观察 → 物理抽象 → GPU 状态 → 交互体验 → 产品表达。</p>
+        </header>
+
+        <div class="research-stats">
+          <article><strong>10</strong><span>创意方向</span><p>声场雕塑、活体品牌、可演奏空间、引力织体、数据生命网络等。</p></article>
+          <article><strong>12</strong><span>现实观察</span><p>雨伞、晾衣绳、地铁、墨迹、窗帘、磁场、群体、菌丝等。</p></article>
+          <article><strong>13</strong><span>技术研究层</span><p>从拓扑、状态和求解，延伸到历史、声音、验证与产品边界。</p></article>
+          <article><strong>10</strong><span>交互模块</span><p>排斥、拨弦、尾流、蓄能、传导、记忆、涡旋和结构变异。</p></article>
+          <article><strong>06</strong><span>作品质量门</span><p>因果、稳定、预算、数据、降级，以及新增的审美与资产门。</p></article>
+        </div>
+
+        <div class="research-ledger-heading"><span>10 CREATIVE ROUTES / 十个创意方向</span><p>状态表示研究进度，不表示视觉排名。</p></div>
+        <div class="route-ledger">
+          <article><span>01</span><div><b>Resonant Matter / 声场雕塑</b><small>LIVE</small></div><p>声音改变锚点，张拉网络传播扰动，结构继续生成视觉与声场。</p><em>下一步：节点级空间声与可演奏结构。</em></article>
+          <article><span>02</span><div><b>Living Identity / 活体品牌</b><small>LIVE</small></div><p>字形不是贴图，而是有状态、有记忆、可受力又能恢复的物质。</p><em>下一步：品牌状态 schema 与内容编排。</em></article>
+          <article><span>03</span><div><b>Playable Space / 可演奏空间</b><small>NEXT</small></div><p>把触碰、路径和多人位置变成空间中的局部激励与可听传播。</p><em>缺口：多触点控制器与空间音频拓扑。</em></article>
+          <article><span>04</span><div><b>Gravity Loom / 引力织体</b><small>PLANNED</small></div><p>不可见的吸引子通过粒子、丝线和密度被物质化，形成可读的场。</p><em>缺口：稳定邻域、场线编织与碰撞。</em></article>
+          <article><span>05</span><div><b>Signal Ecology / 数据生命网络</b><small>PLANNED</small></div><p>多个局部事件在网络中竞争、共生与扩散，显露系统状态。</p><em>缺口：数据契约、时间窗与解释层。</em></article>
+          <article><span>06</span><div><b>Memory Alloy / 记忆合金</b><small>RESEARCH</small></div><p>材料保留受力历史，在恢复、迟滞和永久变形之间切换。</p><em>缺口：塑性、迟滞与可逆记忆模型。</em></article>
+          <article><span>07</span><div><b>Acoustic Black Hole / 声学黑洞</b><small>RESEARCH</small></div><p>声音越靠近中心越被拉伸、吸收和重组，让空间成为滤波器。</p><em>缺口：声学映射与视觉场的一致校准。</em></article>
+          <article><span>08</span><div><b>Topological Climate / 拓扑气候</b><small>RESEARCH</small></div><p>天气不仅换背景，而是改变连接、材料相态和群落关系。</p><em>缺口：动态拓扑与可解释气候状态机。</em></article>
+          <article><span>09</span><div><b>Crystal Syntax / 晶体语法</b><small>RESEARCH</small></div><p>规则、缺陷与生长竞争共同生成结构，适合表达组织与知识。</p><em>缺口：生长 kernel、缺陷传播和 LOD。</em></article>
+          <article><span>10</span><div><b>Collective Glyph / 群体字形</b><small>RESEARCH</small></div><p>独立个体在局部耦合中逐渐同步，最终浮现公共图形或文字。</p><em>缺口：相位同步、多人输入与失同步叙事。</em></article>
+        </div>
+
+        <div class="research-ledger-heading"><span>12 REALITY MAPPINGS / 十二个现实映射</span><p>不是复刻外观，而是提取“什么固定、什么自由、什么传播、什么被记住”。</p></div>
+        <div class="observation-grid">
+          <article><span>01</span><h3>雨落伞面</h3><p><b>现实：</b>局部冲击沿张紧表面传播，积水反过来改变张力。</p><p><b>映射：</b>伞骨锚点 + 膜面弹簧 + 冲击历史 + 湿载荷。</p><em>已实现 / Rain + Weatherproof</em></article>
+          <article><span>02</span><h3>风中晾衣绳</h3><p><b>现实：</b>固定端、负重和阵风共同产生链式摆动。</p><p><b>映射：</b>绳链拓扑 + 衣物质量 + 方向场 + 阻尼。</p><em>已实现 / Clothesline</em></article>
+          <article><span>03</span><h3>地铁人流</h3><p><b>现实：</b>局部拥堵会沿线路传播并反向影响整个网络。</p><p><b>映射：</b>站点节点 + 线路约束 + 压力 + 邻接传播。</p><em>已实现 / Metro</em></article>
+          <article><span>04</span><h3>毛笔与墨水</h3><p><b>现实：</b>压力决定宽度，速度和时间留下不同痕迹。</p><p><b>映射：</b>笔毫锚点 + 墨粒 + 扩散场 + 湿度记忆。</p><em>已实现 / Ink</em></article>
+          <article><span>05</span><h3>树影与窗帘</h3><p><b>现实：</b>风、遮挡和光共同改变室内空间感。</p><p><b>映射：</b>布料拓扑 + 风场 + 遮挡投影 + 空间声。</p><em>已实现 / Curtain</em></article>
+          <article><span>06</span><h3>磁铁与铁屑</h3><p><b>现实：</b>不可见场通过物质密度和方向显形。</p><p><b>映射：</b>吸引子 + 粒子约束 + 场线密度 + 极性。</p><em>待研究 / Gravity Loom</em></article>
+          <article><span>07</span><h3>鼓掌与合唱</h3><p><b>现实：</b>独立个体通过局部感知逐渐相位同步。</p><p><b>映射：</b>振荡节点 + 局部耦合 + 阈值 + 群体字形。</p><em>待研究 / Collective Glyph</em></article>
+          <article><span>08</span><h3>蛛网与露珠</h3><p><b>现实：</b>微小质量改变张力，振动沿非均匀网络传播。</p><p><b>映射：</b>稀疏网 + 质量节点 + 预张力 + 高频冲击。</p><em>候选 / 精细结构验证</em></article>
+          <article><span>09</span><h3>潮汐与沙面</h3><p><b>现实：</b>周期流动不断写入、抹除和重排表面。</p><p><b>映射：</b>高度场 + 沉积 / 侵蚀 + 周期边界 + 记忆。</p><em>候选 / Topological Climate</em></article>
+          <article><span>10</span><h3>玻璃凝露</h3><p><b>现实：</b>微滴成核、合并、滑落并留下暂态路径。</p><p><b>映射：</b>粒子成核 + 邻域合并 + 重力阈值 + 痕迹。</p><em>候选 / 界面材料</em></article>
+          <article><span>11</span><h3>鸟群与鱼群</h3><p><b>现实：</b>没有中心指挥，局部规则生成整体方向。</p><p><b>映射：</b>分离 + 对齐 + 聚合 + 捕食 / 障碍场。</p><em>候选 / 群体生命</em></article>
+          <article><span>12</span><h3>根系与菌丝</h3><p><b>现实：</b>网络向资源生长，同时保留高效连接。</p><p><b>映射：</b>生长尖端 + 营养场 + 分叉 + 路径强化。</p><em>候选 / Signal Ecology</em></article>
+        </div>
+
+        <div class="research-details">
+          <details open>
+            <summary><span>01</span> 八条最重要的研究结论</summary>
+            <ol><li>可迁移的是方法，不是水母外观。</li><li>“有物理”不等于“看得见物理”。</li><li>“是真 3D”不等于具有空间体验。</li><li>程序化建模有明确适用边界。</li><li>输入、状态与表现应当解耦。</li><li>单一因果链优于效果叠加。</li><li>业务价值来自解释与决策，不来自背景装饰。</li><li>失败样例同样是选择和质量研究的资产。</li></ol>
+          </details>
+          <details>
+            <summary><span>02</span> 十二个现实观察</summary>
+            <p>雨落伞面 · 风中晾衣绳 · 地铁拥堵 · 毛笔墨水 · 树影窗帘 · 磁铁铁屑 · 群体同步 · 蛛网露珠 · 潮汐沙面 · 玻璃凝露 · 鸟群鱼群 · 根系菌丝。</p>
+          </details>
+          <details>
+            <summary><span>03</span> 十三层技术研究</summary>
+            <p>程序化拓扑 · GPU 状态存储 · 约束求解 · 解析锚点桥 · 外力与场 · 接触碰撞 · 缓冲驱动表面 · 输入标准化 · 历史重放 · 空间声音 · 反馈叙事 · 可观测性验证 · 产品化边界。</p>
+          </details>
+          <details>
+            <summary><span>04</span> 六项作品质量门</summary>
+            <p>因果可读 · 数值稳定 · 预算明确 · 数据诚实 · 降级保义 · 审美与资产达标。</p>
+          </details>
+        </div>
+        <a class="section-link" href="./atlas.html">进入完整 Field Atlas <span>→</span></a>
+      </section>
+
+      <section id="evolution" class="summary-section evolution-section" aria-labelledby="evolution-title">
+        <header class="section-heading split-heading">
+          <div><p><span>08</span> EVOLUTION &amp; SOURCE INDEX / 演进与索引</p><h2 id="evolution-title">这些结论，<br />是怎样一步步得到的。</h2></div>
+          <p>时间线保留转折，而不把每次局部修改都写成成果。右侧索引指出每组结论对应的演示、源码入口和研究记录。</p>
+        </header>
+
+        <div class="evolution-layout">
+          <ol class="timeline">
+            <li><span>R00–R06</span><div><b>建立水母基准与可运行环境</b><p>固定上游提交、识别程序化拓扑 / GPU compute / TSL 材质链，建立 Lite / Balanced / Full 工作集。</p><em>得到：质量基准 + 可测量起点</em></div></li>
+            <li><span>R07–R12</span><div><b>第一次横向迁移</b><p>声音驱动形态、方向总览、声场雕塑与活体品牌证明同一技术并不只能做水母。</p><em>得到：输入—状态—表现解耦</em></div></li>
+            <li><span>R13–R18</span><div><b>把灵感变成研究图谱</b><p>十方向、十二现实观察、十三技术层和十个指针模块被统一到“现实 → 结构 → 状态 → 体验”。</p><em>得到：可复用的提问方式</em></div></li>
+            <li><span>R19–R25</span><div><b>从雨伞进入业务路径</b><p>雨滴—膜面—积水—声音的机制继续进入天气诊断、商品推荐、比较证据和咨询转化。</p><em>得到：3D 可承担解释而非背景</em></div></li>
+            <li><span>R26–R31</span><div><b>连续验证不同物理语法</b><p>晾衣绳、地铁、书法和窗帘验证风、网络压力、时间记忆和遮挡光影；同时暴露资产与艺术指导短板。</p><em>得到：技术通过 ≠ 作品成熟</em></div></li>
+            <li><span>R32–R38</span><div><b>旗舰候选与乌贼探索</b><p>对照场与乌贼加入更完整 3D、附肢、状态机和交互，但仍无法用局部优化填平选题与资产差距。</p><em>得到：先选因果闭环，再堆技术</em></div></li>
+            <li><span>R39–R40</span><div><b>暂停扩张，形成研究总账</b><p>汇总案例、参数、证据、缺口、价值与来源，让后续工作从共同事实出发。</p><em>得到：可审计的项目记忆</em></div></li>
+          </ol>
+
+          <aside class="source-index" aria-labelledby="source-index-title">
+            <div><span>SOURCE INDEX</span><h3 id="source-index-title">从哪里继续阅读</h3></div>
+            <section><b>基础架构</b><code>notes/architecture.md</code><code>src/main.js</code><a href="./index.html">水母基准 ↗</a></section>
+            <section><b>扩展方法</b><code>notes/extension-lab.md</code><code>notes/creative-directions.md</code><a href="./lab.html">GPU 实验室 ↗</a></section>
+            <section><b>研究图谱</b><code>notes/research-atlas.md</code><code>atlas.html</code><a href="./atlas.html">Field Atlas ↗</a></section>
+            <section><b>现实案例</b><code>notes/rain-umbrella.md</code><code>notes/wind-clothesline.md</code><code>notes/metro-crowd.md</code><code>notes/living-ink.md</code><code>notes/tree-curtain.md</code></section>
+            <section><b>业务纵切</b><code>notes/weatherproof-business.md</code><code>notes/weatherproof-synthetic-data.md</code><a href="./weatherproof.html">Weatherproof ↗</a></section>
+            <section><b>旗舰探索</b><code>notes/flagship-arena.md</code><code>notes/lumen-cuttlefish.md</code><a href="./arena.html">对照场 ↗</a></section>
+            <section><b>本次总账</b><code>notes/project-summary.md</code><code>notes/project-summary-web.md</code><a href="#evidence">回到证据账 ↑</a></section>
+          </aside>
+        </div>
+      </section>
+
+      <section id="gaps" class="summary-section gaps-section" aria-labelledby="gaps-title">
+        <header class="section-heading split-heading">
+          <div><p><span>09</span> HONEST GAPS / 真实缺口</p><h2 id="gaps-title">距离平台化和作品化，<br />还差四组基础设施。</h2></div>
+          <p>这些缺口不是继续增加页面能够解决的。它们决定项目是否能从研究集合升级为可持续系统。</p>
+        </header>
+
+        <div class="gap-grid">
+          <article><span>ENGINEERING</span><h3>工程层</h3><ul><li>公共 API、类型与测试</li><li>统一 renderer / 生命周期</li><li>跨 GPU 与显存预算</li><li>确定性和视觉回归</li></ul></article>
+          <article><span>PHYSICS</span><h3>物理层</h3><ul><li>XPBD、质量与柔度</li><li>塑性、断裂与迟滞</li><li>碰撞、自碰撞和摩擦</li><li>动态拓扑与邻域搜索</li></ul></article>
+          <article><span>ASSET</span><h3>视觉与资产</h3><ul><li>授权与来源审计</li><li>拓扑、UV、PBR 与绑定</li><li>跨设备压缩和 LOD</li><li>艺术指导与质量门</li></ul></article>
+          <article><span>PRODUCT</span><h3>产品层</h3><ul><li>真实 PIM、库存与 CRM</li><li>业务—物理配置层</li><li>数据治理与分析</li><li>发布、内容与多语言</li></ul></article>
+        </div>
+      </section>
+
+      <section id="value" class="summary-section value-section" aria-labelledby="value-title">
+        <header class="section-heading split-heading">
+          <div><p><span>10</span> VALUE / 对我们的意义</p><h2 id="value-title">价值不只在画面，<br />而在新的表达能力。</h2></div>
+          <p>项目已经为创意、技术、品牌、产品和决策分别留下可复用的证据。</p>
+        </header>
+
+        <div class="value-list">
+          <article><span>01</span><p>CREATIVE R&amp;D</p><h3>从现实观察提取物理语法</h3><b>不再只收集视觉风格，而是寻找能够生长为作品的因果机制。</b></article>
+          <article><span>02</span><p>GRAPHICS</p><h3>获得真实 WebGPU 工程证据</h3><b>Compute、Storage Buffer、TSL 表面与物理—渲染同缓冲已经跑通。</b></article>
+          <article><span>03</span><p>BRAND</p><h3>让品牌拥有状态与记忆</h3><b>字形、声音、天气和空间材料可以持续响应，而不是播放一次动画。</b></article>
+          <article><span>04</span><p>PRODUCT</p><h3>让实时视觉进入业务决策</h3><b>从选择和推荐，到比较、解释与转化，3D 可以承担证据而非装饰。</b></article>
+          <article><span>05</span><p>DECISION</p><h3>建立排除低潜力方向的标准</h3><b>我们尚未找到第二只水母，但已经知道什么不值得继续靠堆效果推进。</b></article>
+        </div>
+      </section>
+
+      <section id="decision" class="summary-section decision-section" aria-labelledby="decision-title">
+        <header class="section-heading split-heading">
+          <div><p><span>11</span> CURRENT DECISION / 当前决策</p><h2 id="decision-title">暂停扩张，<br />开始形成体系。</h2></div>
+          <p>下一阶段不是再做一个案例，而是把已经得到的能力和失败经验变成可持续的项目基础。</p>
+        </header>
+
+        <ol class="decision-list">
+          <li><span>01</span><p>保留全部已有案例，不删除、不覆盖原水母基准。</p><b>KEEP THE EVIDENCE</b></li>
+          <li><span>02</span><p>乌贼作为探索性样例冻结，暂不继续局部优化。</p><b>FREEZE THE SAMPLE</b></li>
+          <li><span>03</span><p>暂停按顺序新增现实案例，避免数量继续快于质量沉淀。</p><b>STOP EXPANSION</b></li>
+          <li><span>04</span><p>转向公共能力抽取、质量基准、选题机制和旗舰前置研究。</p><b>BUILD THE SYSTEM</b></li>
+          <li><span>05</span><p>新作品必须先通过因果、资产、运动、材质、环境、交互和预算评审。</p><b>PASS THE GATE</b></li>
+        </ol>
+
+        <div class="next-frame">
+          <span>NEXT FRAME</span>
+          <h3>从“案例集合”升级为<br /><em>数字生命与动态物质研究系统</em>。</h3>
+          <div><a href="./atlas.html">查看研究图谱 <span>↗</span></a><a href="./index.html">返回水母基准 <span>↗</span></a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="summary-footer">
+      <p>AURELIA RESEARCH / PROJECT 001</p>
+      <p>证据 → 原型 → 浏览器验证 → 有边界的结论</p>
+      <a href="#summary-content">返回顶部 ↑</a>
+    </footer>
+
+    <script type="module" src="/src/summary.js"></script>
+  </body>
+</html>
