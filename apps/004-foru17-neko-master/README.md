@@ -28,6 +28,7 @@ npm run build
 - [完整能力映射](docs/capability-matrix.md)
 - [本机代理兼容性只读检查](docs/local-proxy-compatibility.md)
 - [真实浏览器验收](docs/browser-validation.md)
+- [我们的理解与后续恢复点](../../research/004-foru17-neko-master/notes/product-interpretation.md)
 
 ## 第三方来源
 

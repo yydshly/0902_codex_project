@@ -16,7 +16,7 @@
 | 上游许可证 | [MIT License](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/LICENSE) |
 | 研究状态 | `validated` |
 | 首次研究 | `2026-09-03` |
-| 最近更新 | `2026-09-03` |
+| 最近更新 | `2026-09-04` |
 | 标签 | `observability, network, realtime, sqlite, clickhouse, edge-agent` |
 
 ## 为什么值得研究
@@ -46,6 +46,12 @@ Neko Master 不是代理内核，也不是抓包器。它位于 Clash/Mihomo/Sur
 - **已验证：** SQLite 是默认且保留的配置/统计存储；ClickHouse 是可选扩展，提供双写、读路由、迁移对账与失败回退。
 - **推断：** 项目的竞争力更接近“网关遥测语义和实时数据一致性”，而不是通用网络安全或代理管理。
 - **评价：** 它适合作为家庭、工作室、Homelab 和小型多站点的流量观察层；不应被当作全网抓包、DPI、IDS/IPS 或企业级多租户平台。
+
+## 我们的理解
+
+Neko Master 已经形成“接入 → 采集 → 存储 → 分析 → 展示”的基础闭环。当前 Demo 展示的是这套能力和交互外壳，数据仍为合成数据；接入真实网关主要是安全配置、collector 部署与数据适配，而 AI 工具识别、进程归因、Token/成本、异常告警和团队治理属于需要补充数据源的上层产品能力。
+
+统一判断、能力分层和下一次继续工作的起点见 [`notes/product-interpretation.md`](notes/product-interpretation.md)。
 
 ## 能力边界
 
@@ -163,4 +169,5 @@ Remote Go Agent ────────┘          │
 
 ## 变更记录
 
+- `2026-09-04`：固化产品定位、真实数据边界、可复用能力与真实 Mihomo 只读 PoC 的后续恢复点。
 - `2026-09-03`：固定 v1.4.0 研究基线，完成架构研究、九视图全量能力 Demo，并记录当前 Clash Verge Rev 的只读兼容性检查。

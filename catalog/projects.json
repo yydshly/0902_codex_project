@@ -1,7 +1,7 @@
 {
   "$schema": "./projects.schema.json",
   "version": 1,
-  "updatedAt": "2026-09-03",
+  "updatedAt": "2026-09-04",
   "projects": [
     {
       "id": "001",
@@ -117,7 +117,7 @@
       ],
       "studyPath": "research/004-foru17-neko-master/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "apps/004-foru17-neko-master/docs/neko-master-capability-panorama.png",
         "alt": "Neko Master 能力全景图串联数据接入、实时采集、存储扩展、动态分析，并标出可观察范围、能力边界和产品扩展方向",
