@@ -72,7 +72,7 @@
       "slug": "mengto-threeui",
       "title": "ThreeUI",
       "repository": "https://github.com/MengTo/threeui",
-      "summary": "以 43 个 Community 父条目、163 个具名变体的完整索引和 13 个跨类别实时案例，研究 ThreeUI 如何把 WebGL、Canvas、DOM 与完整网页作品产品化为可预览、可调参、可分发的 React 视觉资产。",
+      "summary": "以 48 个实时案例和 162 个可运行配置覆盖 43/43 个 Community 父能力，并用 Brief → PageSpec → 三层网页验证 ThreeUI 作为优秀网页生成系统视觉 Registry 的价值、边界与生产接入方式。",
       "status": "validated",
       "tags": [
         "react",
@@ -85,12 +85,12 @@
       ],
       "studyPath": "research/003-mengto-threeui/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "research/003-mengto-threeui/assets/cover.webp",
-        "alt": "ThreeUI Runtime Atlas 左侧标明 43 个父条目、163 个变体和 13 个实时案例，右侧运行 Raw WebGL 液态金属效果",
-        "caption": "ThreeUI Runtime Atlas 用完整能力索引、13 个实时案例与底层渲染路径解释组件库的广度、原理和边界。",
-        "credit": "自制展台；Liquid Form 来自 ThreeUI Community（MIT）"
+        "alt": "ThreeUI Runtime Atlas 展示 Brief 到 PageSpec 的视觉选型流程，以及 48 个实时案例、162 个配置和 43 个父能力的验证状态",
+        "caption": "ThreeUI Runtime Atlas 将上游视觉素材整理为可按页面角色、运行时、成本和降级策略调用的 Registry，并生成可编辑三层网页。",
+        "credit": "自制研究展台；视觉 renderer 来自 ThreeUI Community（MIT）"
       },
       "demo": {
         "sourcePath": "apps/003-mengto-threeui",

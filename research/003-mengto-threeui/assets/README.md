@@ -2,7 +2,7 @@
 
 | 文件 | 替代文本 | 画面说明 | 研究意义 | 来源与权利 | 日期 |
 | --- | --- | --- | --- | --- | --- |
-| `cover.webp` | ThreeUI Runtime Atlas 左侧标明 43 个父条目、163 个变体与 13 个实时案例，右侧运行 Liquid Form | 1440×900 首屏压缩封面 | 证明 Demo 同时呈现完整能力规模、真实高级视觉组件与运行时解释 | 展台自制；Liquid Form 来自 ThreeUI Community，MIT | `2026-09-03` |
+| `cover.webp` | ThreeUI Runtime Atlas 左侧说明视觉 Registry 定位、PageSpec 0.1、48 个实时案例、162 个配置与 43/43 父能力，右侧运行 Liquid Form | 1440×900 当前发布首屏压缩封面 | 证明 Demo 已从早期效果展台推进为带主旅程、能力证据和发布边界的视觉 Registry 研究 | 展台自制；Liquid Form 来自 ThreeUI Community，MIT | `2026-09-04` |
 | `screenshots/runtime-atlas-desktop.png` | ThreeUI Runtime Atlas 桌面首屏、Raw WebGL 液态金属舞台与 13 案例选择器 | 1440×900 Chromium 截图 | 支持桌面构图、真实 Canvas 挂载、完整数量声明和多案例入口 | 自制集成截图；上游组件 MIT | `2026-09-03` |
 | `screenshots/runtime-atlas-mobile.png` | 390 像素宽移动端的 Semantic Bloom 舞台、13 案例选择器和参数滑杆 | 390×844 Chromium 截图 | 证明扩展后的选择器在移动端无横向溢出且仍可直接操作 | 自制集成截图；上游组件 MIT | `2026-09-03` |
 | `screenshots/kage-live.png` | ThreeUI Runtime Atlas 在第 13 个 tab 中加载 Kage 完整落地页 | 1440×900 Chromium 截图 | 证明库不仅包含局部特效，也能以 iframe 交付带媒体、滚动和交互的完整网页作品 | 自制集成截图；Kage 页面与资产来自 ThreeUI Community，MIT/包内资产声明 | `2026-09-03` |
@@ -20,3 +20,5 @@
 - [x] 界面截取日期已记录。
 - [x] 图片不包含密钥、个人信息或无关浏览器内容。
 - [x] 封面使用 WebP；验证截图保留无损 PNG。
+
+除 `cover.webp` 外，`screenshots/` 中的图片保留各轮研究当时的历史状态，用于追踪从 13 个代表案例到 48 个实时案例与 PageSpec 闭环的演进；当前公开入口以封面和真实 Web Demo 为准。

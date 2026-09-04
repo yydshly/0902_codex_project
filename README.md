@@ -25,7 +25,7 @@
 | ---: | --- | --- | --- | --- | --- | --- | --- |
 | `001` | [Aurelia](https://github.com/holtsetio/aurelia/) | 从程序化水母出发，把 GPU 软体、动态材料、交互、声音和业务数据扩展为 15 个案例，并以研究总账记录能力证据、真实边界和下一阶段决策。 | 已验证 | `three.js` `webgpu` `compute` `procedural` `soft-body` `web-audio` `audio-reactive` | [查看](./research/001-holtsetio-aurelia/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/001-holtsetio-aurelia/) | 2026-09-04 |
 | `002` | [Lieflat Charts](https://github.com/larashero3-dotcom/lieflat-charts) | 把数据形状判断、图型选型、编辑设计规则和真实 HTML 模板编码成 Agent 可执行的数据可视化工作流。 | 已验证 | `agent-skills` `data-visualization` `html` `svg` `design-system` | [查看](./research/002-larashero3-dotcom-lieflat-charts/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/002-larashero3-dotcom-lieflat-charts/) | 2026-09-03 |
-| `003` | [ThreeUI](https://github.com/MengTo/threeui) | 以 43 个 Community 父条目、163 个具名变体的完整索引和 13 个跨类别实时案例，研究 ThreeUI 如何把 WebGL、Canvas、DOM 与完整网页作品产品化为可预览、可调参、可分发的 React 视觉资产。 | 已验证 | `react` `three.js` `webgl` `canvas` `ui-components` `shaders` `agent-skills` | [查看](./research/003-mengto-threeui/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/) | 2026-09-03 |
+| `003` | [ThreeUI](https://github.com/MengTo/threeui) | 以 48 个实时案例和 162 个可运行配置覆盖 43/43 个 Community 父能力，并用 Brief → PageSpec → 三层网页验证 ThreeUI 作为优秀网页生成系统视觉 Registry 的价值、边界与生产接入方式。 | 已验证 | `react` `three.js` `webgl` `canvas` `ui-components` `shaders` `agent-skills` | [查看](./research/003-mengto-threeui/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/) | 2026-09-04 |
 | `004` | [Neko Master](https://github.com/foru17/neko-master) | 研究代理网关如何把连接累计快照转换成实时、多维、可持久化的流量事实，并以合成数据验证差分、批量落库与热数据合并。 | 已验证 | `observability` `network` `realtime` `edge-agent` `sqlite` `clickhouse` | [查看](./research/004-foru17-neko-master/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/004-foru17-neko-master/) | 2026-09-04 |
 | `005` | [Yichen Skills](https://github.com/mcncarl/yichen-skills) | 研究一个个人工作流如何被拆成多 Skill 能力库，并以路由、执行器、权限闸门、数据契约和结果验证形成可复用的 Agent 工作协议。 | 已验证 | `agent-skills` `workflow-automation` `research` `content-ops` `local-first` `safety` | [查看](./research/005-mcncarl-yichen-skills/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/005-mcncarl-yichen-skills/) | 2026-09-03 |
 | `006` | [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。 | 已验证 | `layout` `composition` `visual-design` `taxonomy` `dataset` `static-gallery` | [查看](./research/006-nevertoday-350-layout-compositions/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) | 2026-09-03 |
@@ -64,11 +64,11 @@
 
 ### `003` · [ThreeUI](https://github.com/MengTo/threeui)
 
-[![ThreeUI Runtime Atlas 左侧标明 43 个父条目、163 个变体和 13 个实时案例，右侧运行 Raw WebGL 液态金属效果](./research/003-mengto-threeui/assets/cover.webp)](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/)
+[![ThreeUI Runtime Atlas 展示 Brief 到 PageSpec 的视觉选型流程，以及 48 个实时案例、162 个配置和 43 个父能力的验证状态](./research/003-mengto-threeui/assets/cover.webp)](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/)
 
-*ThreeUI Runtime Atlas 用完整能力索引、13 个实时案例与底层渲染路径解释组件库的广度、原理和边界。 · 自制展台；Liquid Form 来自 ThreeUI Community（MIT）*
+*ThreeUI Runtime Atlas 将上游视觉素材整理为可按页面角色、运行时、成本和降级策略调用的 Registry，并生成可编辑三层网页。 · 自制研究展台；视觉 renderer 来自 ThreeUI Community（MIT）*
 
-以 43 个 Community 父条目、163 个具名变体的完整索引和 13 个跨类别实时案例，研究 ThreeUI 如何把 WebGL、Canvas、DOM 与完整网页作品产品化为可预览、可调参、可分发的 React 视觉资产。
+以 48 个实时案例和 162 个可运行配置覆盖 43/43 个 Community 父能力，并用 Brief → PageSpec → 三层网页验证 ThreeUI 作为优秀网页生成系统视觉 Registry 的价值、边界与生产接入方式。
 
 [阅读研究](./research/003-mengto-threeui/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/) · [查看上游](https://github.com/MengTo/threeui)
 
