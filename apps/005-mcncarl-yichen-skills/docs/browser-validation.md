@@ -46,6 +46,10 @@
 | Revision 4 双主题 | pass | 最终理解模块在深色和浅色主题均保持标题、状态、四项判断和停止条件的清晰层级 |
 | Revision 4 响应式 | pass | 1440px 无溢出；768px 为 2 列判断，scrollWidth 753；390px 为单列，scrollWidth 375 |
 | Revision 4 导航与回归 | pass | 桌面和移动导航均显示“结论与采用”；移动 dialog 可开关；22 张能力卡、22 项采用条目和空台账均保留 |
+| 应用与站点构建 | pass | 005 的 `npm run check` / `npm run build`、根目录 catalog 校验和 `build:site` 均通过；本机全库安装曾受项目 001 正在运行的 Vite 锁定 `esbuild.exe` 影响，远端干净环境随后完成完整 `npm run verify` |
+| GitHub Pages | pass | 主提交 `a6ec261` 触发 [Actions run 33860325800](https://github.com/yydshly/0902_codex_project/actions/runs/33860325800)，验证、构建、上传和部署在 5m48s 内全部成功 |
+| 线上 Demo 回读 | pass | 公开 URL 返回正确标题；`STUDY SETTLED`、STOP RULE、4 项判断、3 步路径、22 张能力卡和 22 项采用条目均存在，错误 overlay 为空 |
+| 线上目录回读 | pass | `catalog/projects.json` 中 005 的更新时间为 `2026-09-04`，摘要与公开 Demo URL 均已更新 |
 
 ## Revision 4 最终结论截图
 

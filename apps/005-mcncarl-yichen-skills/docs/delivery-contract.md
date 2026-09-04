@@ -78,11 +78,11 @@
 | 交付 | 文档、构建与最终证据同步 | README/docs/dist/screenshots | file + check/build output | 9 | pass | README、研究说明、验证记录、dist 与 6 张 Revision 3 截图已同步 |
 | 4 最终理解 | 本质、执行主体、价值和非目标形成一屏可读结论 | adoption / final verdict | DOM + desktop screenshot | 2,3 | pass | 4 项结论与“不是 Agent”主判断已在桌面深浅主题验证 |
 | 4 按需使用 | 明确“遇到任务再查、低风险体验、证据后沉淀、无需试遍” | final verdict / usage path | DOM + responsive screenshots | 3,7 | pass | 3 步路径、STOP RULE 与按需路线在 1440/768/390px 验证 |
-| 4 研究收束 | 研究 README、应用 README、目录摘要和日期同步 | docs/catalog/root README | file + catalog check | 9 | continue | 更新说明并重新生成门户索引 |
+| 4 研究收束 | 研究 README、应用 README、目录摘要和日期同步 | docs/catalog/root README | file + catalog check | 9 | pass | 阶段结论、2026-09-04 日期、目录摘要与自动生成的根 README 已同步 |
 | 4 发布验收 | 新结论模块在深浅主题及 1440/768/390px 可读 | final verdict / cross-surface | browser screenshots + overflow | 7 | pass | 4 张最终截图保留；768/390 scrollWidth 为 753/375，均无溢出 |
-| 4 工程验收 | 应用 check/build 与全站 verify 通过 | local build + Pages artifact | command output | 9 | continue | 执行应用检查和根目录 verify |
-| 4 远端提交 | 仅提交 005 项目、对应研究与目录文件 | git staged diff | status + staged diff | 9 | continue | 精确暂存、提交并推送 origin/main |
-| 4 Pages 部署 | GitHub Actions Pages 成功且线上 Demo 更新 | workflow + production URL | GitHub run + browser DOM | 9 | continue | 等待工作流并核验公开 URL |
+| 4 工程验收 | 应用 check/build 与全站 verify 通过 | local build + Pages artifact | command output | 9 | pass | 005 本地 check/build、catalog check 和 build:site 通过；Pages 干净环境完整 `npm run verify` 通过 |
+| 4 远端提交 | 仅提交 005 项目、对应研究与目录文件 | git staged diff | status + staged diff | 9 | pass | 主提交 `a6ec261` 仅含 11 个预期文件并已推送 `origin/main`；其他项目未跟踪文件未暂存 |
+| 4 Pages 部署 | GitHub Actions Pages 成功且线上 Demo 更新 | workflow + production URL | GitHub run + browser DOM | 9 | pass | Pages run `33860325800` 5m48s 成功；线上结论、22 项能力、22 项采用与 catalog 日期均已回读 |
 
 ## Support boundaries
 
