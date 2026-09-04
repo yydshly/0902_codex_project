@@ -1,6 +1,6 @@
 # 展示素材清单
 
-所有截图生成于 `2026-09-03`，浏览器为 Windows Headless Chromium 152。页面外壳是本项目原创；截图中出现的教学海报来自 [nevertoday/350-layout-compositions 固定 commit](https://github.com/nevertoday/350-layout-compositions/tree/34dc39cb5128776b594754624fa2202d5942a35b)，上游使用 CC BY 4.0。
+截图生成于 `2026-09-03` 至 `2026-09-04`，浏览器为 Windows Headless Chromium 152。页面外壳是本项目原创；截图中出现的教学海报来自 [nevertoday/350-layout-compositions 固定 commit](https://github.com/nevertoday/350-layout-compositions/tree/34dc39cb5128776b594754624fa2202d5942a35b)，上游使用 CC BY 4.0。
 
 | 文件 | 替代文本 | 画面说明 | 研究意义 | 来源与权利 |
 | --- | --- | --- | --- | --- |
@@ -10,5 +10,13 @@
 | `screenshots/full-catalog-last.png` | 全量图鉴末尾：第 8 类“演示文稿页面”及第 350 项“全图页幻灯片版式”已进入视口并加载真实缩略图 | 1440×1000 桌面长页面末端，左侧仍保留 8 类导航 | 证明完整目录不只是计数，最后一项也真实可达、可见 | Demo 自制截图；内嵌上游海报依据 CC BY 4.0 署名展示 |
 | `screenshots/catalog-dialog.png` | 目录详情弹窗：右侧 catalog 将 242 标为容器查询布局，左侧上游海报大标题实际显示特写跨页 | 桌面详情状态、metadata 字段、固定版本原图入口和风险提示 | 同时证明机器目录能力与语义映射缺陷 | Demo 自制截图；上游海报依据 CC BY 4.0 署名展示 |
 | `screenshots/mobile-atlas.png` | 390 像素手机视口中的图鉴筛选界面，分类按钮纵向排列且没有横向溢出 | 手机端搜索、主题选择与 8 个分类入口 | 证明能力展厅在窄屏仍保留主要浏览路径 | Demo 自制截图；画面中未显示第三方海报 |
+| `screenshots/repository-article-case.png` | 当前仓库自我汇总案例：左侧显示真实材料包，右侧显示可编辑研究文章 | 1440×1000 桌面输入状态；标题、固定 commit、文件清单、文章和生成入口同时可见 | 证明输入是一整个仓库研究包，而不是给一张图片搭配文字 | Demo 自制截图；未嵌入第三方海报 |
+| `screenshots/repository-article-case-mobile.png` | 390 像素手机视口中的仓库自我汇总案例，标题、说明、生成入口和材料包依次排列 | 手机端案例首屏，无横向溢出，中文标题保持自然短语 | 证明文章到多端输出的主旅程在窄屏仍可进入 | Demo 自制截图；未嵌入第三方海报 |
+| `screenshots/repository-capability-ownership.png` | 三层能力账本：并列区分原库已有、本 Demo 补充和真正产品仍需的能力 | 1440×1000 桌面页面；底部用公式收束为内容编排系统 | 避免把文章理解和四种输出误认成上游原生 AI，也把下一阶段建设项变成可检查边界 | Demo 自制截图；画面中未显示第三方海报 |
+| `screenshots/repository-visual-report.png` | 自动生成的汇总网页：真实海报拼贴与主结论组成非对称双栏报告 | 1440×1000 桌面输出，当前视口同时出现媒介标签、主结论和真实素材 | 证明网页结果已经使用图像、尺度和空间关系表达，不是纯色背景加文字 | Demo 自制截图；内嵌上游海报依据 CC BY 4.0 署名展示 |
+| `screenshots/repository-visual-carousel.png` | 自动生成的社媒轮播封面：真实海报拼贴、大数字与问题形成传播构图 | 六页轮播的第 1 页；其余页分别使用数字、模块、流程、证据和路线图构图 | 证明连续传播媒介拥有独立阅读节奏和视觉语法 | Demo 自制截图；内嵌上游海报依据 CC BY 4.0 署名展示 |
+| `screenshots/repository-visual-poster.png` | 自动生成的单页知识图：350 核心数字、真实素材带与八类数据轨道同屏 | 一屏型知识海报，素材被约束在成品画布内，不遮挡页面标题 | 证明知识图不是网页报告的缩小版，而是重新压缩后的扫描结构 | Demo 自制截图；内嵌上游海报依据 CC BY 4.0 署名展示 |
+| `screenshots/repository-visual-deck.png` | 自动生成的 PPT 提纲：六张微型幻灯片采用图像、数字、模块、流程、证据和决策构图 | 1440×1000 桌面输出，可见前四张独立 16:9 预览 | 证明 PPT 输出按讲述节奏重排，而非把文章逐段搬进幻灯片 | Demo 自制截图；内嵌上游海报依据 CC BY 4.0 署名展示 |
+| `screenshots/repository-visual-report-mobile.png` | 390 像素手机视口中的汇总网页：输出标签、报告窗口和 350 主结论纵向排列 | 手机端真实输出，无横向溢出 | 证明增强视觉系统在窄屏仍保持信息层级和成品边界 | Demo 自制截图；当前视口未出现第三方海报 |
 
 截图不证明上游 catalog 的标签准确，也不扩大上游图片底层人物、品牌或素材的商业授权范围。

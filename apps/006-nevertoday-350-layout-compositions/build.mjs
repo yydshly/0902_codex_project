@@ -99,6 +99,10 @@ function build() {
   for (const filename of ['index.html', 'styles.css', 'app.js']) {
     fs.copyFileSync(path.join(sourceDirectory, filename), path.join(outputDirectory, filename));
   }
+  const assetsDirectory = path.join(sourceDirectory, 'assets');
+  if (fs.existsSync(assetsDirectory)) {
+    fs.cpSync(assetsDirectory, path.join(outputDirectory, 'assets'), { recursive: true });
+  }
 
   fs.copyFileSync(catalogPath, path.join(upstreamOutput, 'catalog.json'));
   fs.copyFileSync(

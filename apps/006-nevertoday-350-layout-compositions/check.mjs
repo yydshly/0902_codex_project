@@ -78,9 +78,49 @@ for (const marker of [
   'search-input',
   'detail-dialog',
   'quality-boundary',
+  'image-case',
+  'case-studio',
+  'article-input',
+  'article-analyze',
+  'article-analysis-status',
+  'layout-decisions',
+  'repo-carousel-next',
+  'repo-panel-poster',
+  'repo-panel-deck',
 ]) {
   if (!html.includes(`id="${marker}"`)) {
     throw new Error(`页面缺少关键表面：${marker}`);
+  }
+}
+
+for (const caseMarker of [
+  '案例对象 · 350 Layout Compositions',
+  '不是一张图片',
+  '系统不是“挑一张好看的图”',
+  '文章拆解、规则匹配和网页渲染是本 Demo 新增',
+  '汇总网页',
+  '社媒轮播',
+  '单页知识图',
+  'PPT 提纲',
+  '原仓库只提供候选版式知识',
+]) {
+  if (!html.includes(caseMarker)) {
+    throw new Error(`单图研究应用案例缺少关键说明：${caseMarker}`);
+  }
+}
+
+for (const visualMarker of [
+  'class="selfcase-visual-hook"',
+  'class="capability-ownership"',
+  'class="repository-contact-sheet"',
+  'class="generated-report-taxonomy"',
+  'class="generated-category-bars"',
+  'class="carousel-cover-posters"',
+  'class="knowledge-category-map"',
+  'class="deck-slide-opening"',
+]) {
+  if (!html.includes(visualMarker)) {
+    throw new Error(`真实视觉演示缺少关键构图：${visualMarker}`);
   }
 }
 
@@ -95,6 +135,11 @@ for (const marker of [
   'catalog-topic-group',
   'IntersectionObserver',
   'image.dataset.src',
+  'activateDemo',
+  'renderCarousel',
+  'analyzeRepositoryArticle',
+  'scoreArticleSignals',
+  'signalRules',
 ]) {
   if (!appSource.includes(marker)) {
     throw new Error(`全量分组逻辑缺少标记：${marker}`);
@@ -108,5 +153,22 @@ if (styles.includes('content-visibility')) {
 if (!styles.includes('.empty-state[hidden]')) {
   throw new Error('空结果组件必须保留显式 hidden 样式。');
 }
+for (const marker of [
+  '.repository-packet',
+  '.layout-decision-grid',
+  '.selfcase-visual-hook',
+  '.capability-ownership',
+  '.repository-contact-sheet',
+  '.generated-report-browser',
+  '.generated-category-bars',
+  '.carousel-cover-posters',
+  '.knowledge-poster-output',
+  '.knowledge-category-map',
+  '.deck-slide-grid',
+]) {
+  if (!styles.includes(marker)) {
+    throw new Error(`主题关联演示缺少样式：${marker}`);
+  }
+}
 
-console.log('检查通过：350 项全量分组、8 类、33 主题、JSON/CSV 与关键交互表面完整。');
+console.log('检查通过：真实海报、数据图形、六种轮播构图、知识图、PPT 预览、文章分析、四种输出与 350 / 8 / 33 全量目录完整。');

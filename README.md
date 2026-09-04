@@ -28,7 +28,7 @@
 | `003` | [ThreeUI](https://github.com/MengTo/threeui) | 以 48 个实时案例和 162 个可运行配置覆盖 43/43 个 Community 父能力，并用 Brief → PageSpec → 三层网页验证 ThreeUI 作为优秀网页生成系统视觉 Registry 的价值、边界与生产接入方式。 | 已验证 | `react` `three.js` `webgl` `canvas` `ui-components` `shaders` `agent-skills` | [查看](./research/003-mengto-threeui/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/003-mengto-threeui/) | 2026-09-04 |
 | `004` | [Neko Master](https://github.com/foru17/neko-master) | 研究代理网关如何把连接累计快照转换成实时、多维、可持久化的流量事实，并以合成数据验证差分、批量落库与热数据合并。 | 已验证 | `observability` `network` `realtime` `edge-agent` `sqlite` `clickhouse` | [查看](./research/004-foru17-neko-master/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/004-foru17-neko-master/) | 2026-09-04 |
 | `005` | [Yichen Skills](https://github.com/mcncarl/yichen-skills) | 研究一个个人工作流如何被拆成多 Skill 能力库，并以路由、执行器、权限闸门、数据契约和结果验证形成可复用的 Agent 工作协议。 | 已验证 | `agent-skills` `workflow-automation` `research` `content-ops` `local-first` `safety` | [查看](./research/005-mcncarl-yichen-skills/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/005-mcncarl-yichen-skills/) | 2026-09-03 |
-| `006` | [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。 | 已验证 | `layout` `composition` `visual-design` `taxonomy` `dataset` `static-gallery` | [查看](./research/006-nevertoday-350-layout-compositions/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) | 2026-09-03 |
+| `006` | [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并以当前仓库文章演示可解释选版及网页、轮播、知识图和 PPT 四种成品，同时标明语义映射风险。 | 已验证 | `layout` `composition` `visual-design` `taxonomy` `dataset` `static-gallery` | [查看](./research/006-nevertoday-350-layout-compositions/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) | 2026-09-04 |
 | `007` | [Qiuner.github.io](https://github.com/Qiuner/Qiuner.github.io) | 以五个实时 World、单一内容内核和共享 Runtime 拆解多世界作品集，并用六个真实研究项目演示如何构建可筛选、可验证、可运行的个人品牌证据系统。 | 已验证 | `astro` `three.js` `webgl` `multi-world` `interactive-portfolio` `runtime` | [查看](./research/007-qiuner-qiuner-github-io/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/007-qiuner-qiuner-github-io/) | 2026-09-03 |
 | `008` | [fanqiang](https://github.com/bannedbook/fanqiang) | 以源码调用链区分 fanqiang 分发仓库、ChromeGo 浏览器工具箱与 FQNews2 应用级代理产品，并把协议能力归还给 sing-box、Xray、Clash Meta 等上游内核。 | 已验证 | `network` `proxy` `sing-box` `android` `rss` `toolbox` `control-plane` | [查看](./research/008-bannedbook-fanqiang/README.md) | [打开](https://yydshly.github.io/0902_codex_project/demos/008-bannedbook-fanqiang/) | 2026-09-04 |
 <!-- PROJECT_INDEX_END -->
@@ -102,9 +102,9 @@
 
 [![能力图鉴首屏，左侧说明项目定位与 350、8、33 三个规模数字，右侧由三张教学海报组成拼贴](./research/006-nevertoday-350-layout-compositions/assets/cover.png)](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/)
 
-*全量网页档案将 350 项视觉知识、8×33 分类、静态生产管线和数据质量边界放进同一个可检索展示。 · 自制 Demo 截图；内嵌上游海报遵循 CC BY 4.0*
+*全量网页档案将 350 项视觉知识、8×33 分类、静态生产管线和数据质量边界放进同一可检索展示，并演示文章到四种媒介成品的最小编排链路。 · 自制 Demo 截图；内嵌上游海报遵循 CC BY 4.0*
 
-把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。
+把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并以当前仓库文章演示可解释选版及网页、轮播、知识图和 PPT 四种成品，同时标明语义映射风险。
 
 [阅读研究](./research/006-nevertoday-350-layout-compositions/README.md) · [打开 Demo](https://yydshly.github.io/0902_codex_project/demos/006-nevertoday-350-layout-compositions/) · [查看上游](https://github.com/nevertoday/350-layout-compositions)
 

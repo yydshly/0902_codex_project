@@ -22,6 +22,7 @@
       </a>
       <nav class="site-nav" aria-label="主要导航">
         <a href="#capabilities">能力</a>
+        <a href="#case-studio">案例</a>
         <a href="#taxonomy">总览</a>
         <a href="#atlas">全量图鉴</a>
         <a href="#quality-boundary">边界</a>
@@ -102,6 +103,463 @@
           <p class="capability-limit"><strong>没有包含：</strong>内容理解、自动版式选择、可编辑模板、CSS / PPT / Figma 输出。</p>
         </div>
       </section>
+
+      <section id="image-case" class="case-section selfcase-section section-shell" aria-labelledby="repository-case-title">
+        <div class="case-heading selfcase-heading">
+          <div>
+            <p class="eyebrow">THIS REPOSITORY → AUTO-COMPOSED SUMMARY</p>
+            <h2 id="repository-case-title">就用这个仓库，<br>演示文章如何自动变成版式。</h2>
+          </div>
+          <div class="case-heading-copy">
+            <span class="case-label">案例对象 · 350 Layout Compositions</span>
+            <p>把我们对当前仓库的研究文章交给一个最小选择器：它先识别“规模、能力、流程、边界、场景、路线图”，再为每种信息选择不同版式，最后生成四种汇总成品。</p>
+            <a class="button button-primary real-case-jump" href="#case-studio">查看真实生成链路 ↓</a>
+          </div>
+        </div>
+
+        <div class="selfcase-visual-hook" aria-label="350 Layout Compositions 真实素材与规模可视化">
+          <div class="visual-hook-statement">
+            <span>FROM REPOSITORY TO VISUAL SYSTEM</span>
+            <strong><b>350</b><i>种视觉语法，<br>不该只剩文字说明。</i></strong>
+            <p>真实海报负责建立视觉证据，数据图形说明知识结构，编辑网格负责把研究变成可阅读的成品。</p>
+            <div class="visual-hook-scale" aria-label="仓库规模：8 类，33 个主题，350 项">
+              <span style="--scale: 100%"><b>350</b> items</span>
+              <span style="--scale: 58%"><b>33</b> topics</span>
+              <span style="--scale: 32%"><b>8</b> categories</span>
+            </div>
+          </div>
+          <div class="visual-hook-posters" aria-label="上游真实教学海报拼贴，目录语义尚未逐项校验">
+            <figure><img src="./upstream/thumbs/001.jpg" alt="上游编号 001 的真实教学海报样张" width="480" height="640"><figcaption>001 / SOURCE PLATE</figcaption></figure>
+            <figure><img src="./upstream/thumbs/132.jpg" alt="上游编号 132 的真实教学海报样张，目录语义尚未校验" width="480" height="640"><figcaption>132 / UNVERIFIED</figcaption></figure>
+            <figure><img src="./upstream/thumbs/222.jpg" alt="上游编号 222 的真实教学海报样张，目录语义尚未校验" width="480" height="640"><figcaption>222 / UNVERIFIED</figcaption></figure>
+            <span class="visual-hook-orbit" aria-hidden="true">8 × 33</span>
+          </div>
+        </div>
+
+        <section class="capability-ownership" aria-labelledby="capability-ownership-title">
+          <header>
+            <span>CAPABILITY OWNERSHIP / DO NOT CONFUSE</span>
+            <h3 id="capability-ownership-title">先分清三层，<br>再谈“自动生成”。</h3>
+            <p>这个库提供视觉知识；当前网页补上最小编排演示；真正的产品还需要干净语义、可执行模板和质量检查。</p>
+          </header>
+          <ol>
+            <li><span>01 / UPSTREAM</span><strong>原库已经有</strong><b>350 海报 · 8×33 分类 · JSON/CSV · 静态脚本</b><p>能学习、检索、交换和验证文件结构，但不会理解任意文章。</p></li>
+            <li><span>02 / THIS DEMO</span><strong>我们这次补上</strong><b>文章拆解 · 透明匹配 · 四种前端成品</b><p>证明版式知识可以进入内容生产链；这不是上游原生 AI。</p></li>
+            <li><span>03 / PRODUCT NEXT</span><strong>真正产品仍需</strong><b>OCR 清洗 · 内容槽位 · 可编辑模板 · 自动 QA</b><p>完成后才可能稳定输出 HTML、SVG、PPT 或 Figma。</p></li>
+          </ol>
+          <footer><span>准确公式</span><strong>清洗后的知识库 + 内容理解 + 可执行模板 + 质量检查 = 内容编排系统</strong></footer>
+        </section>
+
+        <div class="selfcase-source-grid">
+          <article class="repository-packet" aria-labelledby="repository-packet-title">
+            <header>
+              <div>
+                <span class="eyebrow">01 / REAL INPUT</span>
+                <h3 id="repository-packet-title">不是一张图片，<br>是一整个仓库材料包。</h3>
+              </div>
+              <span class="repository-commit">34dc39c</span>
+            </header>
+            <ul class="repository-file-list" aria-label="仓库输入文件">
+              <li><span>MD</span><strong>README.md</strong><small>项目定位与使用说明</small></li>
+              <li><span>JSON</span><strong>v2/catalog.json</strong><small>350 条机器目录</small></li>
+              <li><span>CSV</span><strong>v2/catalog.csv</strong><small>可交换结构化数据</small></li>
+              <li><span>PY</span><strong>scripts/import-350.py</strong><small>素材导入与规范化</small></li>
+              <li><span>PY</span><strong>scripts/verify-collection.py</strong><small>文件与链接验证</small></li>
+              <li><span>IMG</span><strong>v2/full + thumbnails</strong><small>350 张教学海报</small></li>
+            </ul>
+            <div class="repository-contact-sheet" aria-label="仓库中的真实海报素材样张">
+              <img src="./upstream/thumbs/001.jpg" alt="上游 001 教学海报样张" loading="lazy" width="480" height="640">
+              <img src="./upstream/thumbs/087.jpg" alt="上游 087 教学海报样张，已知目录与图内标题错位" loading="lazy" width="480" height="640">
+              <img src="./upstream/thumbs/222.jpg" alt="上游 222 教学海报样张，目录语义尚未校验" loading="lazy" width="480" height="640">
+              <img src="./upstream/thumbs/350.jpg" alt="上游 350 教学海报样张，目录语义尚未校验" loading="lazy" width="480" height="640">
+              <span>REAL ASSET CONTACT SHEET · LABELS UNVERIFIED</span>
+            </div>
+            <dl class="repository-packet-stats">
+              <div><dt>350</dt><dd>知识条目</dd></div>
+              <div><dt>8</dt><dd>一级分类</dd></div>
+              <div><dt>33</dt><dd>二级主题</dd></div>
+            </dl>
+          </article>
+
+          <article class="article-input-card">
+            <header>
+              <span class="eyebrow">02 / RESEARCH ARTICLE</span>
+              <span>可编辑输入</span>
+            </header>
+            <label for="article-input">交给选择器的汇总文章</label>
+            <textarea id="article-input" rows="10">350 Layout Compositions 收录 350 种构图与版式，分为 8 个一级分类和 33 个二级主题。它的核心能力是知识压缩、分类导航、机器目录和静态生产。
+
+项目通过 Python 脚本导入图片、规范编号与路径，生成高清图、缩略图、JSON 和 CSV，并验证文件、链接和哈希。它适合设计检索、知识汇总、作品集编排和社媒内容规划。
+
+但它目前不能理解文章、自动选择版式，也不能直接导出 HTML、PPT 或 Figma 模板；目录标签与海报内容还存在语义错位风险。下一步应补充内容槽位、阅读顺序和适用条件，建立“文章理解—版式匹配—自动渲染—质量检查”的生产链路。</textarea>
+            <div class="article-input-actions">
+              <button id="article-analyze" class="button button-primary" type="button">分析文章并生成</button>
+              <output id="article-analysis-status" role="status" aria-live="polite">已载入当前仓库研究 · 等待运行</output>
+            </div>
+          </article>
+        </div>
+
+        <section class="analysis-workbench" aria-labelledby="analysis-title">
+          <div class="analysis-workbench-head">
+            <div>
+              <p class="eyebrow">03 / CONTENT SIGNALS → LAYOUT MATCHING</p>
+              <h3 id="analysis-title">系统不是“挑一张好看的图”，<br>而是为不同信息选择不同结构。</h3>
+            </div>
+            <ol class="analysis-steps" aria-label="自动分析进度">
+              <li data-analysis-step="read"><span>01</span>读取</li>
+              <li data-analysis-step="extract"><span>02</span>拆解</li>
+              <li data-analysis-step="match"><span>03</span>匹配</li>
+              <li data-analysis-step="render"><span>04</span>生成</li>
+            </ol>
+          </div>
+
+          <div id="layout-decisions" class="layout-decision-grid" aria-live="polite">
+            <article data-signal-rule="overview"><figure><img src="./upstream/thumbs/289.jpg" alt="上游目录候选 289 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>项目定义</span><strong>289 · Hero 主视觉布局</strong><p>先用一句判断回答“它是什么”，建立整份汇总的入口。</p><small data-signal-match>待分析</small></article>
+            <article data-signal-rule="scale"><figure><img src="./upstream/thumbs/344.jpg" alt="上游目录候选 344 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>规模数字</span><strong>344 · 大数字页</strong><p>350 / 8 / 33 是最强识别信息，适合独立建立尺度感。</p><small data-signal-match>待分析</small></article>
+            <article data-signal-rule="capability"><figure><img src="./upstream/thumbs/272.jpg" alt="上游目录候选 272 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>能力清单</span><strong>272 · 便当盒布局</strong><p>四项并列能力需要模块化容器，而不是塞进一段正文。</p><small data-signal-match>待分析</small></article>
+            <article data-signal-rule="process"><figure><img src="./upstream/thumbs/347.jpg" alt="上游目录候选 347 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>生产流程</span><strong>347 · 流程页</strong><p>导入、规范化、派生、索引和发布具有明确先后关系。</p><small data-signal-match>待分析</small></article>
+            <article data-signal-rule="boundary"><figure><img src="./upstream/thumbs/339.jpg" alt="上游目录候选 339 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>能力边界</span><strong>339 · 比较页</strong><p>“现有能力 / 尚未具备”需要对照，避免把扩展方向当成事实。</p><small data-signal-match>待分析</small></article>
+            <article data-signal-rule="roadmap"><figure><img src="./upstream/thumbs/346.jpg" alt="上游目录候选 346 的真实海报，语义尚未校验" loading="lazy" width="480" height="640"><figcaption>CATALOG CANDIDATE</figcaption></figure><span>扩展方向</span><strong>346 · 时间线页</strong><p>从语义修复到可编辑输出是一条逐步建设的路线。</p><small data-signal-match>待分析</small></article>
+          </div>
+          <p class="selection-disclaimer"><strong>能力分层：</strong>上游仓库提供 350 种版式知识；这里的文章拆解、规则匹配和网页渲染是本 Demo 新增的最小增强层。编号与名称沿用尚未完成语义校验的上游 catalog，投入自动推荐前仍需 OCR 与人工复核。它证明方向可行，但不冒充上游已经拥有 AI。</p>
+        </section>
+
+        <ol class="case-flow selfcase-flow" aria-label="仓库研究自动生成汇总内容的流程">
+          <li><span>01</span><strong>仓库材料</strong><small>文档 / 数据 / 图片 / 脚本</small></li>
+          <li><span>02</span><strong>文章理解</strong><small>结论 / 数字 / 流程 / 风险</small></li>
+          <li><span>03</span><strong>版式匹配</strong><small>内容类型 → 候选结构</small></li>
+          <li><span>04</span><strong>自动渲染</strong><small>网页 / 轮播 / 长图 / PPT</small></li>
+          <li><span>05</span><strong>质量检查</strong><small>溢出 / 层级 / 语义边界</small></li>
+        </ol>
+
+        <section id="case-studio" class="demo-studio selfcase-studio" aria-labelledby="demo-studio-title">
+          <div class="demo-studio-header">
+            <div>
+              <p class="eyebrow">04 / GENERATED OUTPUTS</p>
+              <h3 id="demo-studio-title">同一篇仓库研究，生成四种不同成品。</h3>
+            </div>
+            <p>它们使用相同事实，但阅读任务不同：网页负责完整理解，轮播负责连续传播，知识图负责一屏扫描，PPT 负责讲述顺序。</p>
+          </div>
+
+          <div class="demo-tabs" role="tablist" aria-label="选择汇总成品">
+            <button id="repo-tab-report" role="tab" type="button" aria-selected="true" aria-controls="repo-panel-report" data-demo-target="report"><span>01</span>汇总网页</button>
+            <button id="repo-tab-carousel" role="tab" type="button" aria-selected="false" aria-controls="repo-panel-carousel" data-demo-target="carousel" tabindex="-1"><span>02</span>社媒轮播</button>
+            <button id="repo-tab-poster" role="tab" type="button" aria-selected="false" aria-controls="repo-panel-poster" data-demo-target="poster" tabindex="-1"><span>03</span>单页知识图</button>
+            <button id="repo-tab-deck" role="tab" type="button" aria-selected="false" aria-controls="repo-panel-deck" data-demo-target="deck" tabindex="-1"><span>04</span>PPT 提纲</button>
+          </div>
+
+          <div class="demo-stage selfcase-output-stage">
+            <section id="repo-panel-report" class="demo-panel" role="tabpanel" aria-labelledby="repo-tab-report" data-demo-panel="report">
+              <div class="generated-report-browser">
+                <div class="generated-browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>generated.local / 350-layout-compositions-report</p></div>
+                <header class="generated-report-hero">
+                  <div class="report-hero-copy">
+                    <p>REPOSITORY RESEARCH · GENERATED SUMMARY</p>
+                    <h4><em>350</em> 种版式，<br>不是自动排版引擎。</h4>
+                    <span>它是一套可检索、可验证、可继续机器化的视觉知识库。</span>
+                  </div>
+                  <div class="report-hero-collage" aria-label="上游真实教学海报拼贴">
+                    <img src="./upstream/thumbs/001.jpg" alt="上游 001 教学海报样张" loading="lazy" width="480" height="640">
+                    <img src="./upstream/thumbs/132.jpg" alt="上游 132 教学海报样张，目录语义尚未校验" loading="lazy" width="480" height="640">
+                    <img src="./upstream/thumbs/222.jpg" alt="上游 222 教学海报样张，目录语义尚未校验" loading="lazy" width="480" height="640">
+                    <i aria-hidden="true">8 × 33</i>
+                  </div>
+                </header>
+                <dl class="generated-report-metrics">
+                  <div><dt>350</dt><dd>版式条目</dd></div><div><dt>8</dt><dd>一级分类</dd></div><div><dt>33</dt><dd>二级主题</dd></div><div><dt>4</dt><dd>现有能力层</dd></div>
+                </dl>
+                <section class="generated-report-taxonomy" aria-labelledby="generated-taxonomy-title">
+                  <header><span>DATA VIEW / 8 CATEGORIES</span><h5 id="generated-taxonomy-title">知识不是均匀分布，网页与 UI 占比最高。</h5><p>每一条长度对应上游 catalog 的真实条目数量。</p></header>
+                  <div class="generated-category-bars">
+                    <div style="--size:86"><span>01 构图逻辑</span><i></i><b>86</b></div>
+                    <div style="--size:45"><span>02 视觉原则</span><i></i><b>45</b></div>
+                    <div style="--size:36"><span>03 平面出版</span><i></i><b>36</b></div>
+                    <div style="--size:54"><span>04 字体网格</span><i></i><b>54</b></div>
+                    <div style="--size:79"><span>05 网页 UI</span><i></i><b>79</b></div>
+                    <div style="--size:14"><span>06 影视画面</span><i></i><b>14</b></div>
+                    <div style="--size:20"><span>07 传统构图</span><i></i><b>20</b></div>
+                    <div style="--size:16"><span>08 演示页面</span><i></i><b>16</b></div>
+                  </div>
+                </section>
+                <div class="generated-report-capabilities">
+                  <article><span>01 / COMPRESS</span><strong>知识压缩</strong><p>把抽象经验变成可以扫读、比较和讨论的视觉卡片。</p><i class="capability-glyph glyph-stack" aria-hidden="true"></i></article>
+                  <article><span>02 / NAVIGATE</span><strong>分类导航</strong><p>8 类和 33 个主题形成从原则到媒介的路径。</p><i class="capability-glyph glyph-orbit" aria-hidden="true"></i></article>
+                  <article><span>03 / READ</span><strong>机器目录</strong><p>JSON / CSV 让编号、路径和哈希继续进入程序。</p><i class="capability-glyph glyph-grid" aria-hidden="true"></i></article>
+                  <article><span>04 / PRODUCE</span><strong>静态生产</strong><p>脚本把原始图片派生为缩略图、目录和发布包。</p><i class="capability-glyph glyph-flow" aria-hidden="true"></i></article>
+                </div>
+                <section class="generated-report-evidence">
+                  <figure><img src="./upstream/thumbs/087.jpg" alt="上游 087 海报，图内标题与 catalog 记录存在已知错位" loading="lazy" width="480" height="640"><figcaption><span>CATALOG SAYS</span><b>087 · 放射平衡原则</b><span>POSTER PRINTS</span><b>棋盘构图</b></figcaption></figure>
+                  <div>
+                    <span>STATIC ETL / MATERIAL FLOW</span>
+                    <h5>图片不是终点，<br>它进入一条可追踪的生产链。</h5>
+                    <ol class="generated-report-pipeline"><li><b>01</b>图片 / TSV</li><li><b>02</b>规范化</li><li><b>03</b>PNG / JPEG</li><li><b>04</b>JSON / CSV</li><li><b>05</b>Markdown / ZIP</li></ol>
+                  </div>
+                </section>
+                <aside class="generated-report-boundary"><strong>结构正确 ≠ 语义正确</strong><p>文件和哈希正确，不代表目录名称与海报内容一致；原库也不会理解文章或自动生成模板。视觉更丰富之后，这条边界仍然必须比装饰更清楚。</p></aside>
+              </div>
+              <aside class="demo-output-notes"><span>当前成品 / WEB REPORT</span><strong>完整回答“是什么、怎么做、有什么风险”。</strong><p>这里不是把原文换个字体，而是把定义、数字、能力、流程和边界分别放进适合的阅读结构。</p></aside>
+            </section>
+
+            <section id="repo-panel-carousel" class="demo-panel" role="tabpanel" aria-labelledby="repo-tab-carousel" data-demo-panel="carousel" hidden>
+              <div class="carousel-demo repository-carousel-demo">
+                <div class="carousel-player">
+                  <div class="carousel-frame" aria-live="polite">
+                    <article class="demo-carousel-slide repo-carousel-cover" data-carousel-slide="0">
+                      <span>01 / 06 · REPOSITORY NOTE</span>
+                      <div class="carousel-cover-posters" aria-label="三张上游真实海报拼贴"><img src="./upstream/thumbs/001.jpg" alt="上游 001 教学海报" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/132.jpg" alt="上游 132 教学海报，目录语义尚未校验" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/222.jpg" alt="上游 222 教学海报，目录语义尚未校验" loading="lazy" width="480" height="640"></div>
+                      <div class="carousel-cover-copy"><b>350</b><h4>种版式，<br>到底能做什么？</h4><p>先说结论：它是知识库，不是自动排版引擎。</p></div>
+                    </article>
+                    <article class="demo-carousel-slide repo-carousel-scale" data-carousel-slide="1" hidden>
+                      <span>02 / 06 · SCALE</span><div class="carousel-scale-core"><b>350</b><i>8 类</i><i>33 主题</i></div><div class="carousel-scale-bars" aria-hidden="true"><i style="--bar:86"></i><i style="--bar:45"></i><i style="--bar:36"></i><i style="--bar:54"></i><i style="--bar:79"></i><i style="--bar:14"></i><i style="--bar:20"></i><i style="--bar:16"></i></div><p>八条比例柱对应八类真实数量，不再只是三个孤立数字。</p>
+                    </article>
+                    <article class="demo-carousel-slide repo-carousel-grid" data-carousel-slide="2" hidden>
+                      <span>03 / 06 · CAPABILITIES</span><h4>四层能力，<br>四种信息形态。</h4><ul><li><b>01</b>知识压缩</li><li><b>02</b>分类导航</li><li><b>03</b>机器目录</li><li><b>04</b>静态生产</li></ul><div class="carousel-grid-strip" aria-hidden="true"><img src="./upstream/thumbs/087.jpg" alt="" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/272.jpg" alt="" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/339.jpg" alt="" loading="lazy" width="480" height="640"></div>
+                    </article>
+                    <article class="demo-carousel-slide repo-carousel-flow" data-carousel-slide="3" hidden>
+                      <span>04 / 06 · PIPELINE</span><h4>底层是一条<br>静态 ETL</h4><ol><li><b>01</b>输入<small>TSV / IMG</small></li><li><b>02</b>规范<small>ID / PATH</small></li><li><b>03</b>派生<small>PNG / JPG</small></li><li><b>04</b>索引<small>JSON / CSV</small></li><li><b>05</b>发布<small>MD / ZIP</small></li></ol><div class="carousel-flow-line" aria-hidden="true"></div>
+                    </article>
+                    <article class="demo-carousel-slide repo-carousel-risk" data-carousel-slide="4" hidden>
+                      <span>05 / 06 · LIMIT</span><figure><img src="./upstream/thumbs/087.jpg" alt="上游编号 087 的错位证据海报" loading="lazy" width="480" height="640"><figcaption>REAL EVIDENCE / 087</figcaption></figure><div class="carousel-risk-copy"><p>结构校验通过</p><b>≠</b><p>图片语义正确</p><small>catalog 写“放射平衡”，海报印“棋盘构图”。</small></div>
+                    </article>
+                    <article class="demo-carousel-slide repo-carousel-end" data-carousel-slide="5" hidden>
+                      <span>06 / 06 · WHY IT MATTERS</span><div class="carousel-end-orbit" aria-hidden="true"><i>文章</i><i>版式</i><i>网页</i><i>PPT</i></div><h4>真正的机会，是把视觉知识变成内容编排系统。</h4><p>文章理解 → 版式匹配 → 自动渲染 → 质量检查。</p><div class="carousel-end-posters" aria-hidden="true"><img src="./upstream/thumbs/289.jpg" alt="" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/344.jpg" alt="" loading="lazy" width="480" height="640"></div>
+                    </article>
+                  </div>
+                  <div class="carousel-controls">
+                    <button id="repo-carousel-prev" type="button" aria-label="上一页轮播">← 上一页</button>
+                    <div id="repo-carousel-status" role="status" aria-live="polite">01 / 06</div>
+                    <button id="repo-carousel-next" type="button" aria-label="下一页轮播">下一页 →</button>
+                  </div>
+                </div>
+                <aside class="demo-output-notes"><span>当前成品 / SOCIAL CAROUSEL</span><strong>六页，每页只承担一个认知任务。</strong><p>封面提出问题，数字建立尺度，能力和流程展开，风险纠偏，最后给出对我们的意义。</p></aside>
+              </div>
+            </section>
+
+            <section id="repo-panel-poster" class="demo-panel" role="tabpanel" aria-labelledby="repo-tab-poster" data-demo-panel="poster" hidden>
+              <div class="knowledge-poster-layout">
+                <article class="knowledge-poster-output" aria-label="350 Layout Compositions 单页知识图">
+                  <header><span>REPOSITORY MAP / 006</span><strong>350 LAYOUT<br>COMPOSITIONS</strong></header>
+                  <div class="knowledge-poster-hero">
+                    <div class="knowledge-poster-core"><b>350</b><span>种版式知识</span><i>8 类 · 33 主题</i></div>
+                    <div class="knowledge-poster-fan" aria-label="上游真实教学海报素材带"><img src="./upstream/thumbs/001.jpg" alt="上游 001 教学海报" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/132.jpg" alt="上游 132 教学海报，目录语义尚未校验" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/222.jpg" alt="上游 222 教学海报，目录语义尚未校验" loading="lazy" width="480" height="640"></div>
+                  </div>
+                  <div class="knowledge-category-map" aria-label="八类条目数量">
+                    <div style="--size:86"><span>构图</span><i></i><b>86</b></div><div style="--size:45"><span>原则</span><i></i><b>45</b></div><div style="--size:36"><span>出版</span><i></i><b>36</b></div><div style="--size:54"><span>字体</span><i></i><b>54</b></div><div style="--size:79"><span>网页</span><i></i><b>79</b></div><div style="--size:14"><span>影视</span><i></i><b>14</b></div><div style="--size:20"><span>传统</span><i></i><b>20</b></div><div style="--size:16"><span>PPT</span><i></i><b>16</b></div>
+                  </div>
+                  <div class="knowledge-poster-quadrants">
+                    <section><span>WHAT</span><h4>视觉知识库</h4><p>教学海报 + 分类目录</p></section>
+                    <section><span>HOW</span><h4>静态 ETL</h4><p>导入 → 派生 → 索引 → 发布</p></section>
+                    <section><span>LIMIT</span><h4>不会自动理解</h4><p>标签语义仍需复核</p></section>
+                    <section><span>NEXT</span><h4>内容编排引擎</h4><p>文章 → 版式 → 多端输出</p></section>
+                  </div>
+                  <footer><span>34dc39c · CC BY 4.0</span><strong>STRUCTURE ≠ SEMANTICS</strong></footer>
+                </article>
+                <aside class="demo-output-notes"><span>当前成品 / KNOWLEDGE POSTER</span><strong>一屏扫描，不承担完整论证。</strong><p>它压缩为定义、规模、原理、边界和方向五类信息，适合报告封面、知识卡或分享长图。</p></aside>
+              </div>
+            </section>
+
+            <section id="repo-panel-deck" class="demo-panel" role="tabpanel" aria-labelledby="repo-tab-deck" data-demo-panel="deck" hidden>
+              <div class="deck-output-layout">
+                <ol class="deck-slide-grid" aria-label="350 Layout Compositions 六页汇报提纲">
+                  <li class="deck-slide-opening"><span>01</span><figure><img src="./upstream/thumbs/001.jpg" alt="上游 001 教学海报" loading="lazy" width="480" height="640"></figure><div><small>OPENING</small><strong>它是什么？</strong><p>350 种版式组成的视觉知识库。</p></div></li>
+                  <li class="deck-slide-scale"><span>02</span><div><small>SCALE</small><strong>350</strong><p>8 类 / 33 主题</p><i aria-hidden="true"></i></div></li>
+                  <li class="deck-slide-capability"><span>03</span><div><small>CAPABILITY</small><strong>四层现有能力</strong><p>知识、导航、目录、生产。</p><ul aria-hidden="true"><li></li><li></li><li></li><li></li></ul></div></li>
+                  <li class="deck-slide-flow"><span>04</span><div><small>MECHANISM</small><strong>静态 ETL</strong><p>输入到发布的五步管线。</p><ol aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol></div></li>
+                  <li class="deck-slide-risk"><span>05</span><figure><img src="./upstream/thumbs/087.jpg" alt="上游 087 语义错位证据海报" loading="lazy" width="480" height="640"></figure><div><small>RISK</small><strong>结构 ≠ 语义</strong><p>为什么需要 OCR 与复核。</p></div></li>
+                  <li class="deck-slide-decision"><span>06</span><div><small>DECISION</small><strong>从图鉴到编排器</strong><p>文章 → 版式 → 多端成品。</p></div><div class="deck-mini-fan" aria-hidden="true"><img src="./upstream/thumbs/289.jpg" alt="" loading="lazy" width="480" height="640"><img src="./upstream/thumbs/344.jpg" alt="" loading="lazy" width="480" height="640"></div></li>
+                </ol>
+                <aside class="demo-output-notes"><span>当前成品 / PRESENTATION OUTLINE</span><strong>六页形成可以讲述的决策顺序。</strong><p>PPT 不复制长文，而是把“定义—尺度—能力—机制—风险—意义”变成现场表达节奏。</p></aside>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="case-boundary selfcase-boundary">
+          <strong>这次案例证明了什么？</strong>
+          <p>输入是一篇关于当前仓库的研究文章；系统先判断内容类型，再选择不同版式并实际渲染四种结果。原仓库只提供候选版式知识，真正的“自主选择”需要我们补上语义结构、匹配规则和可执行模板。</p>
+          <a class="button button-secondary" href="#taxonomy">查看它可用的 350 种候选版式 →</a>
+        </aside>
+      </section>
+
+      <template id="legacy-image-case">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">ONE REAL PROJECT → FOUR OUTPUTS</p>
+            <h2 id="legacy-case-title">一个真实项目，<br>如何变成四种内容？</h2>
+          </div>
+          <div class="case-heading-copy">
+            <span class="case-label">案例主题 · 风如何被看见</span>
+            <p>风本身看不见。这个项目让风先吹动帘布，再让褶皱改变树影，最后同步影响空间声场。下面用同一份真实研究，演示它如何成为作品集、社媒轮播、方法卡和视频分镜。</p>
+            <a class="button button-primary real-case-jump" href="#case-studio">直接操作四个成品 ↓</a>
+          </div>
+        </div>
+
+        <div class="real-case-source">
+          <figure class="real-source-figure">
+            <div class="real-source-image-wrap">
+              <img class="case-source-image" src="./assets/veil-of-light-curtains.png" alt="Veil of Light 真实运行画面：两幅亚麻帘悬挂在日光房窗前，树叶阴影投在帘布褶皱上" width="1440" height="900">
+              <span>REAL RUNTIME CAPTURE · CURTAIN + SHADOW</span>
+            </div>
+            <figcaption>
+              <strong>这才是完整主题画面：帘布承受风，树影落在褶皱上</strong>
+              <span>取自总库 001 的真实 2D fallback 运行状态；无帘环境底片只负责房间背景，不再冒充成品。</span>
+            </figcaption>
+          </figure>
+
+          <aside class="real-source-brief">
+            <p class="eyebrow">先把主题说清楚</p>
+            <h3>让看不见的风，<br><span>通过帘布显形。</span></h3>
+            <blockquote>你看到的不是一张房间照片，而是一条连续反应：风改变帘，帘改变影，影与声音共同改变空间感受。</blockquote>
+            <p>项目名称是「Veil of Light / 树影与帘」。人的靠近、拖动与风强进入同一套状态，驱动双帘、树影和空间声场。</p>
+            <dl class="real-source-facts">
+              <div><dt>输入</dt><dd>风力、靠近、拖动</dd></div>
+              <div><dt>材料</dt><dd>两幅亚麻帘</dd></div>
+              <div><dt>反馈</dt><dd>褶皱、树影、声音</dd></div>
+              <div><dt>证据</dt><dd>1,344 节点 / 7,548 约束</dd></div>
+            </dl>
+            <p class="real-source-note">事实来自 `research/001` 的 FIELD 05；含帘图像由其真实 fallback 页面在本机浏览器运行后截取。</p>
+          </aside>
+        </div>
+
+        <ol class="case-flow" aria-label="Veil of Light 研究转化为四种内容成品的流程">
+          <li><span>01</span><strong>真实项目</strong><small>图像 + 研究记录</small></li>
+          <li><span>02</span><strong>提取证据</strong><small>命题 / 过程 / 数据</small></li>
+          <li><span>03</span><strong>选择版式</strong><small>满幅 / 序列 / 网格 / 分镜</small></li>
+          <li><span>04</span><strong>实际重排</strong><small>四个可切换成品</small></li>
+          <li><span>05</span><strong>形成栏目</strong><small>让方法可以持续复用</small></li>
+        </ol>
+
+        <section id="legacy-case-studio" class="demo-studio" aria-labelledby="legacy-demo-studio-title">
+          <div class="demo-studio-header">
+            <div>
+              <p class="eyebrow">CONTENT OUTPUT STUDIO</p>
+              <h3 id="legacy-demo-studio-title">先看懂主题，再看四种成品。</h3>
+            </div>
+            <p>先在“作品集网页”里拖动风力，理解主题；再切换其他标签，比较同一内容如何适配不同媒介。</p>
+          </div>
+
+          <div class="demo-tabs" role="tablist" aria-label="选择内容成品">
+            <button id="demo-tab-portfolio" role="tab" type="button" aria-selected="true" aria-controls="demo-panel-portfolio" data-demo-target="portfolio"><span>01</span>作品集网页</button>
+            <button id="demo-tab-carousel" role="tab" type="button" aria-selected="false" aria-controls="demo-panel-carousel" data-demo-target="carousel" tabindex="-1"><span>02</span>社媒轮播</button>
+            <button id="demo-tab-method" role="tab" type="button" aria-selected="false" aria-controls="demo-panel-method" data-demo-target="method" tabindex="-1"><span>03</span>方法卡</button>
+            <button id="demo-tab-story" role="tab" type="button" aria-selected="false" aria-controls="demo-panel-story" data-demo-target="story" tabindex="-1"><span>04</span>视频分镜</button>
+          </div>
+
+          <div class="demo-stage">
+            <section id="demo-panel-portfolio" class="demo-panel" role="tabpanel" aria-labelledby="demo-tab-portfolio" data-demo-panel="portfolio">
+              <div class="portfolio-browser">
+                <div class="portfolio-browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>portfolio.local / veil-of-light</p></div>
+                <header class="portfolio-output-intro">
+                  <p>FIELD 05 · INTERACTIVE ENVIRONMENT</p>
+                  <h4>风，如何被空间看见？</h4>
+                  <p>让真实材料连续回应：帘布先变形，树影随后改变，声音最后补足空间感。</p>
+                </header>
+                <div class="curtain-demo-console">
+                  <label for="case-wind"><span><b>拖动风力</b><small>看帘布和树影一起变化</small></span><output id="case-wind-output" for="case-wind">28%</output></label>
+                  <input id="case-wind" type="range" min="0" max="100" value="28" aria-describedby="case-wind-status">
+                  <button id="case-gust" type="button" aria-pressed="false">模拟一阵风</button>
+                  <p id="case-wind-status" role="status" aria-live="polite"><strong>微风：</strong>帘布轻微偏移，树影缓慢滑过褶皱。</p>
+                </div>
+                <div id="curtain-demo-scene" class="curtain-demo-scene" style="--curtain-angle: 0.8deg; --curtain-shift: 0.8%; --shadow-x: 51%;">
+                  <img src="./assets/veil-of-light.png" alt="暖色日光房和窗外树冠，前方叠加两幅可响应风力的亚麻帘" width="1672" height="941">
+                  <div class="curtain-panel curtain-panel-left" aria-hidden="true"></div>
+                  <div class="curtain-panel curtain-panel-right" aria-hidden="true"></div>
+                  <span class="scene-callout scene-callout-curtain"><b>帘布</b>承受风力，褶皱产生偏移</span>
+                  <span class="scene-callout scene-callout-shadow"><b>树影</b>被褶皱切碎并重新投射</span>
+                </div>
+                <div class="portfolio-output-body">
+                  <div class="portfolio-essay">
+                    <span>主题结论</span>
+                    <h5>让不可见的输入，通过可见的材料显形。</h5>
+                    <p>上面的风力控件没有更换图片；它改变的是帘布角度与树影位置，用最小模型演示原项目的核心因果。</p>
+                  </div>
+                  <ol class="portfolio-cause-chain" aria-label="项目因果链">
+                    <li><b>01 风</b><span>不可见的输入</span></li>
+                    <li><b>02 帘布</b><span>材料发生形变</span></li>
+                    <li><b>03 树影</b><span>遮挡随褶皱改变</span></li>
+                    <li><b>04 声场</b><span>空间反馈被补足</span></li>
+                  </ol>
+                  <dl class="portfolio-proof">
+                    <div><dt>1,344</dt><dd>GPU 布料节点</dd></div>
+                    <div><dt>7,548</dt><dd>弹簧约束</dd></div>
+                    <div><dt>3</dt><dd>日照预设</dd></div>
+                    <div><dt>390px</dt><dd>移动端验证</dd></div>
+                  </dl>
+                </div>
+              </div>
+              <aside class="demo-output-notes"><span>当前成品 / PORTFOLIO</span><strong>完整叙事，而不是一张图。</strong><p>满幅首屏先建立情绪，问题—因果—证据的长页面结构再证明作品背后的判断和技术。</p></aside>
+            </section>
+
+            <section id="demo-panel-carousel" class="demo-panel" role="tabpanel" aria-labelledby="demo-tab-carousel" data-demo-panel="carousel" hidden>
+              <div class="carousel-demo">
+                <div class="carousel-player">
+                  <div class="carousel-frame" aria-live="polite">
+                    <article class="demo-carousel-slide carousel-cover" data-carousel-slide="0">
+                      <img src="./assets/veil-of-light-curtains.png" alt="社媒轮播封面：亚麻帘与帘面树影" width="1440" height="900">
+                      <span>01 / 06 · 树影与帘</span><h4>一阵风，<br>如何改变整个房间？</h4><p>先看帘布，再看树影。</p>
+                    </article>
+                    <article class="demo-carousel-slide carousel-question" data-carousel-slide="1" hidden>
+                      <span>02 / 06 · 问题</span><p>如果界面不等点击，而是先感知人的靠近，空间会发生什么？</p><small>从“控制按钮”转向“环境回应”</small>
+                    </article>
+                    <article class="demo-carousel-slide carousel-system" data-carousel-slide="2" hidden>
+                      <span>03 / 06 · 机制</span><h4>同一阵风，经过四层变化。</h4><ol><li>① 风场输入</li><li>② 帘布起褶</li><li>③ 树影变形</li><li>④ 声场偏移</li></ol>
+                    </article>
+                    <article class="demo-carousel-slide carousel-rebuild" data-carousel-slide="3" hidden>
+                      <img src="./assets/veil-of-light-curtains.png" alt="日光房、亚麻帘与帘面树影组成的项目重构页" width="1440" height="900"><div><span>04 / 06 · 重构</span><h4>物理与环境必须同时可信。</h4><p>房间使用摄影底片，帘布保持独立响应，树影使用自然纹理。</p></div>
+                    </article>
+                    <article class="demo-carousel-slide carousel-proof" data-carousel-slide="4" hidden>
+                      <span>05 / 06 · BROWSER PROOF</span><h4>不是概念稿，<br>是运行中的系统。</h4><dl><div><dt>1,344</dt><dd>节点</dd></div><div><dt>7,548</dt><dd>约束</dd></div><div><dt>390</dt><dd>px</dd></div><div><dt>2D</dt><dd>fallback</dd></div></dl>
+                    </article>
+                    <article class="demo-carousel-slide carousel-ending" data-carousel-slide="5" hidden>
+                      <img src="./assets/veil-of-light-curtains.png" alt="Veil of Light 轮播结尾页：帘布承载风与树影" width="1440" height="900"><div><span>06 / 06 · 方法</span><h4>让不可见的输入，通过材料显形。</h4><p>这个方法可以迁移到天气、距离与传感器数据。</p></div>
+                    </article>
+                  </div>
+                  <div class="carousel-controls">
+                    <button id="carousel-prev" type="button" aria-label="上一页轮播">← 上一页</button>
+                    <div id="carousel-status" role="status" aria-live="polite">01 / 06</div>
+                    <button id="carousel-next" type="button" aria-label="下一页轮播">下一页 →</button>
+                  </div>
+                </div>
+                <aside class="demo-output-notes"><span>当前成品 / CAROUSEL</span><strong>可翻阅的 6 页轮播。</strong><p>每页只承担一个认知任务：钩子、问题、机制、改造、证据、方法。点击“下一页”查看完整序列。</p></aside>
+              </div>
+            </section>
+
+            <section id="demo-panel-method" class="demo-panel" role="tabpanel" aria-labelledby="demo-tab-method" data-demo-panel="method" hidden>
+              <div class="method-demo-layout">
+                <article class="method-card-output" aria-label="由 Veil of Light 研究生成的方法卡">
+                  <div class="method-card-image"><img src="./assets/veil-of-light-curtains.png" alt="方法卡中的亚麻帘和帘面树影" width="1440" height="900"><span>METHOD / 005</span></div>
+                  <div class="method-card-copy"><p>可复用的交互原则</p><h4>让不可见的输入，通过材料显形。</h4><ol><li><b>找到输入</b><span>风、距离、速度、时间</span></li><li><b>选择材料</b><span>帘布、树影、声音</span></li><li><b>建立因果</b><span>一个输入驱动多层变化</span></li><li><b>保留证据</b><span>状态、数据、fallback</span></li></ol></div>
+                  <footer><span>VEIL OF LIGHT</span><strong>0902 / REUSABLE FIELD NOTE</strong></footer>
+                </article>
+                <aside class="method-annotations"><span>当前成品 / METHOD CARD</span><h4>提炼一条可复用的方法。</h4><p>卡片不再介绍完整作品，只保留下一次创作仍然有用的原则。它可以进入知识库、课程、社媒收藏或团队设计规范。</p><dl><div><dt>版式</dt><dd>3:4 模块网格</dd></div><div><dt>信息</dt><dd>1 个原则 + 4 个步骤</dd></div><div><dt>复用</dt><dd>脱离原项目仍成立</dd></div></dl></aside>
+              </div>
+            </section>
+
+            <section id="demo-panel-story" class="demo-panel" role="tabpanel" aria-labelledby="demo-tab-story" data-demo-panel="story" hidden>
+              <div class="story-player">
+                <div class="story-player-head"><div><span>当前成品 / 60-SECOND STORYBOARD</span><h4>60 秒短视频分镜预演</h4></div><button id="story-play" type="button" aria-pressed="false">▶ 10× 速度预演</button></div>
+                <div class="story-progress" aria-hidden="true"><span id="story-progress"></span></div>
+                <p id="story-status" class="story-status" role="status" aria-live="polite">待播放 · 01 / 06 · 00:00–00:05</p>
+                <ol class="storyboard-grid">
+                  <li class="is-active" data-story-shot="0"><div><img src="./assets/veil-of-light-curtains.png" alt="分镜一：帘布与树影构成的日光房全景" width="1440" height="900"></div><span>00:00–00:05</span><strong>先展示结果</strong><p>帘布摆动，树影随褶皱改变。</p></li>
+                  <li data-story-shot="1"><div class="story-text-frame">?</div><span>00:05–00:13</span><strong>提出问题</strong><p>界面能不能在点击之前，先回应人的靠近？</p></li>
+                  <li data-story-shot="2"><div class="story-chain-frame"><i>风</i><i>帘</i><i>影</i><i>声</i></div><span>00:13–00:25</span><strong>机制拆解</strong><p>用四个视觉节点解释同一输入的连续传播。</p></li>
+                  <li data-story-shot="3"><div><img src="./assets/veil-of-light-curtains.png" alt="分镜四：摄影环境、亚麻帘与自然树影的组合" width="1440" height="900"></div><span>00:25–00:38</span><strong>展示画面结构</strong><p>摄影环境负责空间，实时帘布负责响应，树影负责光照反馈。</p></li>
+                  <li data-story-shot="4"><div class="story-metric-frame"><b>1,344</b><small>NODES</small></div><span>00:38–00:50</span><strong>给出证据</strong><p>展示节点、约束、移动端和降级路径。</p></li>
+                  <li data-story-shot="5"><div class="story-end-frame">METHOD<br>OVER<br>EFFECT</div><span>00:50–01:00</span><strong>方法收束</strong><p>留下可迁移原则，而不是只展示一次性的效果。</p></li>
+                </ol>
+                <p class="story-boundary">这是按真实项目内容生成并可播放的分镜预演；为了在网页中快速观看，以 10× 速度推进。它不是已经导出的 60 秒视频文件。</p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="case-boundary">
+          <strong>这次真正演示了什么？</strong>
+          <p>真实项目素材和研究事实被分别重排成四个可以直接观看、切换和操作的成品。350 Layout Compositions 提供版式词汇；本页完成内容选择与前端渲染，但不会替你登录平台或真实发布。</p>
+          <a class="button button-secondary" href="#taxonomy">去完整目录找版式 →</a>
+        </aside>
+      </template>
 
       <section id="taxonomy" class="taxonomy-section section-shell" aria-labelledby="taxonomy-title">
         <div class="section-heading taxonomy-heading">

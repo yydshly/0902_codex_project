@@ -433,3 +433,155 @@ if (isFileProtocol) {
 } else {
   loadCatalog();
 }
+
+const demoRoot = document.querySelector('#case-studio');
+const demoTabs = [...(demoRoot?.querySelectorAll('[data-demo-target]') || [])];
+const demoPanels = [...(demoRoot?.querySelectorAll('[data-demo-panel]') || [])];
+const carouselSlides = [...(demoRoot?.querySelectorAll('[data-carousel-slide]') || [])];
+const carouselPrevious = document.querySelector('#repo-carousel-prev');
+const carouselNext = document.querySelector('#repo-carousel-next');
+const carouselStatus = document.querySelector('#repo-carousel-status');
+const articleInput = document.querySelector('#article-input');
+const articleAnalyze = document.querySelector('#article-analyze');
+const articleAnalysisStatus = document.querySelector('#article-analysis-status');
+const analysisSteps = [...document.querySelectorAll('[data-analysis-step]')];
+const decisionCards = [...document.querySelectorAll('[data-signal-rule]')];
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+let carouselIndex = 0;
+let analysisTimers = [];
+
+const signalRules = {
+  overview: /收录|仓库|项目|知识库|是什么/i,
+  scale: /\d+|规模|分类|主题|条目/i,
+  capability: /能力|知识压缩|分类导航|机器目录|静态生产/i,
+  process: /通过|导入|生成|验证|流程|输入|输出|生产链路/i,
+  boundary: /但|不能|边界|风险|错位|不等于|尚未/i,
+  roadmap: /下一步|扩展|补充|建立|走向|路线/i,
+};
+
+const analysisLabels = {
+  read: '正在读取仓库研究文章…',
+  extract: '正在提取定义、数字、能力、流程、边界和路线图…',
+  match: '正在将内容信号匹配到 350 项目录候选…',
+  render: '生成完成 · 已得到 4 种汇总成品',
+};
+
+function clearAnalysisTimers() {
+  analysisTimers.forEach((timer) => window.clearTimeout(timer));
+  analysisTimers = [];
+}
+
+function setAnalysisStep(index) {
+  analysisSteps.forEach((step, stepIndex) => {
+    step.classList.toggle('is-active', stepIndex === index);
+    step.classList.toggle('is-complete', stepIndex < index || index === analysisSteps.length - 1);
+  });
+  if (articleAnalysisStatus) {
+    const key = analysisSteps[index]?.dataset.analysisStep;
+    articleAnalysisStatus.textContent = analysisLabels[key] || analysisLabels.render;
+  }
+}
+
+function scoreArticleSignals() {
+  const source = articleInput?.value.trim() || '';
+  let matched = 0;
+  decisionCards.forEach((card) => {
+    const key = card.dataset.signalRule;
+    const isMatched = Boolean(signalRules[key]?.test(source));
+    const state = card.querySelector('[data-signal-match]');
+    card.classList.toggle('is-matched', isMatched);
+    card.classList.toggle('is-fallback', !isMatched);
+    if (state) state.textContent = isMatched ? '已从文章命中' : '由汇总目标补位';
+    if (isMatched) matched += 1;
+  });
+  return { matched, characters: [...source].length };
+}
+
+function completeArticleAnalysis() {
+  const { matched, characters } = scoreArticleSignals();
+  setAnalysisStep(analysisSteps.length - 1);
+  if (articleAnalysisStatus) {
+    articleAnalysisStatus.textContent = `生成完成 · 读取 ${characters} 字 · 命中 ${matched}/6 类内容信号 · 输出 4 种成品`;
+  }
+  if (articleAnalyze) {
+    articleAnalyze.disabled = false;
+    articleAnalyze.textContent = '重新分析并生成';
+  }
+}
+
+function analyzeRepositoryArticle({ animate = true } = {}) {
+  if (!analysisSteps.length) return;
+  clearAnalysisTimers();
+  decisionCards.forEach((card) => card.classList.remove('is-matched', 'is-fallback'));
+  if (articleAnalyze) {
+    articleAnalyze.disabled = animate;
+    articleAnalyze.textContent = animate ? '正在分析…' : '分析文章并生成';
+  }
+
+  if (!animate || prefersReducedMotion.matches) {
+    completeArticleAnalysis();
+    return;
+  }
+
+  setAnalysisStep(0);
+  [1, 2].forEach((stepIndex) => {
+    analysisTimers.push(window.setTimeout(() => setAnalysisStep(stepIndex), stepIndex * 420));
+  });
+  analysisTimers.push(window.setTimeout(completeArticleAnalysis, 1260));
+}
+
+function renderCarousel() {
+  carouselSlides.forEach((slide, index) => {
+    slide.hidden = index !== carouselIndex;
+  });
+  if (carouselStatus) {
+    carouselStatus.textContent = `${String(carouselIndex + 1).padStart(2, '0')} / ${String(carouselSlides.length).padStart(2, '0')}`;
+  }
+}
+
+function activateDemo(target, { focus = false } = {}) {
+  demoTabs.forEach((tab) => {
+    const active = tab.dataset.demoTarget === target;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    if (active && focus) tab.focus();
+  });
+  demoPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.demoPanel !== target;
+  });
+}
+
+demoTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => activateDemo(tab.dataset.demoTarget));
+  tab.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    let nextIndex = index;
+    if (event.key === 'ArrowLeft') nextIndex = (index - 1 + demoTabs.length) % demoTabs.length;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % demoTabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = demoTabs.length - 1;
+    activateDemo(demoTabs[nextIndex].dataset.demoTarget, { focus: true });
+  });
+});
+
+carouselPrevious?.addEventListener('click', () => {
+  carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length;
+  renderCarousel();
+});
+
+carouselNext?.addEventListener('click', () => {
+  carouselIndex = (carouselIndex + 1) % carouselSlides.length;
+  renderCarousel();
+});
+
+articleAnalyze?.addEventListener('click', () => analyzeRepositoryArticle());
+
+prefersReducedMotion.addEventListener('change', () => {
+  if (analysisTimers.length) analyzeRepositoryArticle({ animate: false });
+});
+
+if (demoTabs.length) activateDemo('report');
+if (carouselSlides.length) renderCarousel();
+if (analysisSteps.length) analyzeRepositoryArticle({ animate: false });

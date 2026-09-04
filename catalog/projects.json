@@ -169,7 +169,7 @@
       "slug": "nevertoday-350-layout-compositions",
       "title": "350 Layout Compositions",
       "repository": "https://github.com/nevertoday/350-layout-compositions",
-      "summary": "把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并揭示结构校验无法发现的语义映射错位。",
+      "summary": "把 350 张版式教学海报、8×33 分类和机器目录完整整理成网页档案，并以当前仓库文章演示可解释选版及网页、轮播、知识图和 PPT 四种成品，同时标明语义映射风险。",
       "status": "validated",
       "tags": [
         "layout",
@@ -181,11 +181,11 @@
       ],
       "studyPath": "research/006-nevertoday-350-layout-compositions/README.md",
       "createdAt": "2026-09-03",
-      "updatedAt": "2026-09-03",
+      "updatedAt": "2026-09-04",
       "cover": {
         "path": "research/006-nevertoday-350-layout-compositions/assets/cover.png",
         "alt": "能力图鉴首屏，左侧说明项目定位与 350、8、33 三个规模数字，右侧由三张教学海报组成拼贴",
-        "caption": "全量网页档案将 350 项视觉知识、8×33 分类、静态生产管线和数据质量边界放进同一个可检索展示。",
+        "caption": "全量网页档案将 350 项视觉知识、8×33 分类、静态生产管线和数据质量边界放进同一可检索展示，并演示文章到四种媒介成品的最小编排链路。",
         "credit": "自制 Demo 截图；内嵌上游海报遵循 CC BY 4.0"
       },
       "demo": {
